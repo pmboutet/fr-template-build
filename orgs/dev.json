@@ -1,6 +1,7 @@
 {
   "orgName": "France Template - Dev Org",
   "edition": "Developer",
+  "release": "Preview",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
