@@ -1,7 +1,7 @@
 {
     "orgName": "France Template Org",
     "edition": "Developer",
-   
+    "release": "preview",
     "features": ["EnableSetPasswordInApi"],
     "settings": {
       "lightningExperienceSettings": {
