@@ -1,0 +1,15 @@
+{
+    "orgName": "France Template Org",
+    "edition": "Developer",
+    "release": "preview",
+    "features": ["EnableSetPasswordInApi"],
+    "settings": {
+      "lightningExperienceSettings": {
+        "enableS1DesktopEnabled": true
+      },
+      "mobileSettings": {
+        "enableS1EncryptedStoragePref2": false
+      }
+    }
+  }
+  
