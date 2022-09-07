@@ -29,6 +29,9 @@ tasks:
 sources:
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
+    postinstall:
+             github: 'https://github.com/SFDO-Alliances/NPSP-PostInstallSteps'
+
 flows:
     dependencies:
         steps:
@@ -36,3 +39,8 @@ flows:
                 flow: npsp:config_managed
             4:
                 flow: npsp:enable_rd2_managed
+
+    config_dev:
+        steps:
+            3:
+                 flow: postinstall:complete_install        
