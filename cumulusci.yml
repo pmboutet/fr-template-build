@@ -43,4 +43,4 @@ flows:
     config_dev:
         steps:
             3:
-                 flow: postinstall:complete_install        
+                 flow: postinstall:config_only        
