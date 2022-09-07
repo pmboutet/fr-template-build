@@ -8,8 +8,8 @@ It will be shown on the main page of the project's GitHub repository.
 To work on this project in a scratch org:
 
 TODO
-Devhub startegy? SFDX: Authorize a Dev Hub
-Known error/fix
+1. Devhub startegy? SFDX: Authorize a Dev Hub
+2. Known error/fix
 
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
 2. Run `cci flow run dev_org --org dev` to deploy this project.
