@@ -1,7 +1,4 @@
-# fr-template-build
-
-Add a brief description of this project here, in Markdown format.
-It will be shown on the main page of the project's GitHub repository.
+# France Template 
 
 ## Development
 
@@ -16,8 +13,8 @@ To work on this project in a scratch org:
 sfdx force:auth:web:login -d -a <org_name>
 
 force:auth:web:login	        [Authorizes a Salesforce org by opening a browser so you can log in through salesforce.com]
--d (--setdefaultdevhubusername)	[Sets the authenticated org as the default Dev Hub org for scratch org creation.]
--a (--setalias)	                [Sets an alias for the authenticated org.]
+-d --setdefaultdevhubusername	[Sets the authenticated org as the default Dev Hub org for scratch org creation.]
+-a --setalias	                [Sets an alias for the authenticated org.]
 
 ## Authorize a Dev Hub using CCI 
 
