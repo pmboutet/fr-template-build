@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sffr_Anonymized__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set the contact to be anonymize according to GDPR legislation</description>
+    <externalId>false</externalId>
+    <label>Anonymized</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>
