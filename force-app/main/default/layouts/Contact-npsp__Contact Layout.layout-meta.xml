@@ -54,6 +54,14 @@
                 <behavior>Edit</behavior>
                 <field>sffr_Campaign_origin__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>sffr_Do_not_thanks__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>sffr_No_tax_receipt__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

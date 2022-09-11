@@ -198,10 +198,30 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sffr_Do_not_thanks__c</fieldItem>
+                <identifier>Recordsffr_Do_not_thanks_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-67c48e0e-e858-4672-87c6-8297e432b901</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sffr_No_tax_receipt__c</fieldItem>
+                <identifier>Recordsffr_No_tax_receipt_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e3f47f65-d873-4909-9132-37f67f8e731d</name>
         <type>Facet</type>
     </flexiPageRegions>
