@@ -244,6 +244,16 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sffr_Campaign_origin__c</fieldItem>
+                <identifier>Recordsffr_Campaign_origin_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6f620490-f1cb-4a9f-9319-0b6d4d1d95c4</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -63,12 +63,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Number_Yearly_Marketing_Request__c</field>
+            <field>sffr_Number_Yearly_Marketing__c</field>
             <table>Contact</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>anonymize__c</field>
+            <field>sffr_Anonymized__c</field>
+            <table>Contact</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>sffr_Campaign_origin__c</field>
             <table>Contact</table>
         </columns>
         <masterLabel>Contacts</masterLabel>
