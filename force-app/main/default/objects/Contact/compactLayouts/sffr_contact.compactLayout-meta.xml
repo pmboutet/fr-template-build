@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>FR_template</fullName>
+    <fullName>sffr_contact</fullName>
     <fields>Name</fields>
     <fields>Phone</fields>
     <fields>Email</fields>
     <fields>npo02__Total_Household_Gifts__c</fields>
     <fields>npo02__AverageAmount__c</fields>
     <fields>npo02__FirstCloseDate__c</fields>
-    <label>FR template</label>
+    <label>sffr Contact</label>
 </CompactLayout>
