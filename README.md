@@ -38,4 +38,19 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
 
     https://apsynergy.quip.com/ebVoAz35rQ3a/Scratch-Org-Creation-using-CumulusCI
 
- 
+ ## Add data to your scratch org
+  
+  - Make sure to update the cumulusci.yml file adding the task: load_dataset
+
+      flows:
+         config_qa:
+            steps:
+                  3:
+                     task: load_dataset
+         config_dev:
+            steps:
+                  3:
+                     task: load_dataset
+
+   - Run the command cci flow run dev_org --org dev (cci flow run qa_org --org qa), 
+     the data will be loaded in the new scratch org!
