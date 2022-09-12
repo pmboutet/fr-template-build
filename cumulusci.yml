@@ -4,8 +4,10 @@ project:
     package:
         name: France Template
         api_version: '55.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/NPSP'
     git:
-        default_branch: 'main'
+        default_branch: 'contact_layout'
     source_format: sfdx
 
 tasks:
@@ -23,3 +25,25 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+sources:
+    npsp:
+        github: https://github.com/SalesforceFoundation/NPSP
+    postinstall:
+             github: 'https://github.com/SFDO-Alliances/NPSP-PostInstallSteps'
+ 
+flows:
+    dependencies:
+        steps:
+            3:
+                flow: npsp:config_managed
+            4:
+                flow: npsp:enable_rd2_managed
+ 
+    config_dev:
+        steps:
+            3:
+                 flow: postinstall:config_only  
+    config_qa:
+        steps:
+            3:
+                 flow: postinstall:config_only    
