@@ -52,5 +52,5 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
                   3:
                      task: load_dataset
 
-   - Run the command cci flow run dev_org --org dev (cci flow run qa_org --org qa), 
-     the data will be loaded in the new scratch org!
+   - I you are creating a new Scratch Org: Run the command cci flow run dev_org --org dev (cci flow run qa_org --org qa), the data will be loaded in the new scratch org!
+   - I you want to add data in an existing Scratch Org: Run the command cci task run load_dataset --org dev(qa) -> (scratch org name), the data will be loaded in the specified scratch org!   
