@@ -6,155 +6,45 @@ project:
         api_version: '55.0'
     dependencies:
         - github: 'https://github.com/SalesforceFoundation/NPSP'
-        - namespace: cpm
-          version: 2.97.11
-        - namespace: proh
-          version: 2.18
-        - namespace: npsp4hub
-          version: 1.133
-        - namespace: fddemo
-          version: 1.27
-        - namespace: paysepa
-          version: 1.27.1
-        - namespace: gaid
-          version: 1.35
-        - namespace: phstr
-          version: 1.17
-
     git:
         default_branch: 'main'
-        repo_url: https://github.com/pmboutet/fr-template-build
-sources:
-    npsp:
-        github: https://github.com/SalesforceFoundation/NPSP
-    postinstall:
-             github: 'https://github.com/SFDO-Alliances/NPSP-PostInstallSteps'
-
-plans: 
-    deploy_demo:
-            slug: install
-            title: Install FinDock and Demo Environment
-            tier: primary
-            is_listed: True
-            steps:
-                1: 
-                    task: unschedule_apex
-                    ui_options: 
-                        name: Unschedule Scheduled Apex Jobs
-                        is_required: False
-                        is_recomended: True
-                2: 
-                    task: update_dependencies
-                    ui_options: 
-                        name: Install/Update FinDock
-                3:
-                    task: findock_assign_permissionsets
-                    ui_options: 
-                        name: Assign FinDock Permission Sets
-                        is_required: True
-                        is_recomended: True
-                4:
-                    task: findock_initialsetup
-                    ui_options: 
-                        name: Run Initial FinDock Setup
-                        is_required: True
-                        is_recomended: True
-                5:
-                    task: dx_convert_from
-                    ui_options: 
-                        name: Convert Unmanaged Source
-                6:
-                    task: deploy
-                    ui_options: 
-                        name: Deploy Extra Configuration (Bot Actions, Page Layouts, etc)
-                        is_required: False
-                        is_recomended: False
-                7:
-                    task: update_admin_profile
-                    ui_options: 
-                        name: Update Profile
-                8:
-                    task: findock_load_demodata
-                    ui_options: 
-                        name: Load FinDock Demo Data
-                        is_required: True
-                        is_recomended: True
-
-flows:
-        dependencies:
-                steps:
-                    3:
-                        flow: npsp:config_managed
-                    4:
-                        flow: npsp:enable_rd2_managed
-
-        deploy_unmanaged_ee:
-            steps:
-                6:
-                    task: None
-
-        config_dev:
-            steps:
-                2:
-                    flow: postinstall:config_only
-                3:
-                    task: findock_assign_permissionsets
-                4:
-                    task: findock_initialsetup
-                5:
-                    task: findock_load_demodata
-                6:
-                    task: findock_load_demodata               
-        config_qa:
-            steps:
-                2:
-                    flow: postinstall:config_only
-                3:
-                    task: findock_assign_permissionsets
-                4:
-                    task: findock_initialsetup
-                5:
-                    task: findock_load_demodata
-                6:
-                    task: findock_load_demodata 
-
+    source_format: sfdx
+    
 tasks:
     robot:
         options:
             suites: robot/fr-template-build/tests
             options:
                 outputdir: robot/fr-template-build/results
-
+ 
     robot_testdoc:
         options:
             path: robot/fr-template-build/tests
             output: robot/fr-template-build/doc/fr-template-build_tests.html
-
+ 
     run_tests:
         options:
             required_org_code_coverage_percent: 75
-            
-    findock_assign_permissionsets: 
-        description: 'Runs Anonymous Apex to create initial setup for FinDock'
-        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
-        options:
-            apex: >
-                fddemo.FinDockAPIService.assignPermissionSets();
-
-    findock_initialsetup: 
-        description: 'Runs Anonymous Apex to create initial setup for FinDock'
-        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
-        options:
-            apex: >
-                fddemo.FinDockAPIService.createInitialSetup();
-
-    findock_load_demodata: 
-        description: 'Runs Anonymous Apex to create initial setup for FinDock'
-        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
-        options:
-            apex: >
-                fddemo.FinDockAPIService.createFinDockDemoData();
-                				
-    get_dependencies_findock:
-        description: Gets FinDock Dependency List
-        class_path: tasks.ImportDependencies.GetDependencies
+ 
+sources:
+    npsp:
+        github: https://github.com/SalesforceFoundation/NPSP
+    postinstall:
+             github: 'https://github.com/SFDO-Alliances/NPSP-PostInstallSteps'
+ 
+flows:
+    dependencies:
+        steps:
+            3:
+                flow: npsp:config_managed
+            4:
+                flow: npsp:enable_rd2_managed
+ 
+    config_dev:
+        steps:
+            3:
+                 flow: postinstall:config_only  
+    config_qa:
+        steps:
+            3:
+                 flow: postinstall:config_only    
