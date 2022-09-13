@@ -9,16 +9,19 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>FR template</label>
+    <label>French Template</label>
     <navType>Console</navType>
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
+    <tabs>standard-Campaign</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>FR_template_UtilityBar</utilityBar>
+    <utilityBar>French_Template_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
-            <fieldName>npe01__One2OneContact__c</fieldName>
             <tab>standard-Account</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Campaign</tab>
         </mappings>
         <mappings>
             <tab>standard-Contact</tab>

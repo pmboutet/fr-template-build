@@ -435,8 +435,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.npsp__Current_Address__c</fieldItem>
-                <identifier>Recordnpsp_Current_Address_cField</identifier>
+                <fieldItem>Record.npe01__Primary_Address_Type__c</fieldItem>
+                <identifier>Recordnpe01_Primary_Address_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -445,8 +445,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.npsp__is_Address_Override__c</fieldItem>
-                <identifier>Recordnpsp_is_Address_Override_cField</identifier>
+                <fieldItem>Record.MailingAddress</fieldItem>
+                <identifier>RecordMailingAddressField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-6c2a109e-ad55-44f9-b4c2-fbd71e55b50a</name>
@@ -459,28 +459,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.MailingAddress</fieldItem>
-                <identifier>RecordMailingAddressField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.OtherAddress</fieldItem>
-                <identifier>RecordOtherAddressField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.npo02__Formula_HouseholdMailingAddress__c</fieldItem>
                 <identifier>Recordnpo02_Formula_HouseholdMailingAddress_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npsp__is_Address_Override__c</fieldItem>
+                <identifier>Recordnpsp_is_Address_Override_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-6ee70881-bd8f-43ba-a422-2962f123f88c</name>
@@ -508,6 +498,58 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-1e847474-ee5b-40de-8b86-5bc5bfcf04b7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npe01__Secondary_Address_Type__c</fieldItem>
+                <identifier>Recordnpe01_Secondary_Address_Type_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.OtherAddress</fieldItem>
+                <identifier>RecordOtherAddressField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-b407f5ad-daef-402b-9ea8-24b8bedb8f44</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>Facet-f734e73b-8191-4651-8a9d-d614f236b31e</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-b407f5ad-daef-402b-9ea8-24b8bedb8f44</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f734e73b-8191-4651-8a9d-d614f236b31e</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-9e2c4996-876b-4344-a115-c260acff891d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -615,10 +657,24 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Coordonnées postales</value>
+                    <value>Adresse Principale</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-9e2c4996-876b-4344-a115-c260acff891d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Adresse Secondaire</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
