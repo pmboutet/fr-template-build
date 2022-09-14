@@ -9,7 +9,7 @@ To work on this project in a scratch org:
 3. Run `cci org browser dev` to open the org in your browser.
 
 ## Authorize a Dev Hub using CLI
-
+ 
 sfdx force:auth:web:login -d -a <org_name>
 
 force:auth:web:login	        [Authorizes a Salesforce org by opening a browser so you can log in through salesforce.com]
@@ -54,3 +54,16 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
 
    - I you are creating a new Scratch Org: Run the command cci flow run dev_org --org dev (cci flow run qa_org --org qa), the data will be loaded in the new scratch org!
    - I you want to add data in an existing Scratch Org: Run the command cci task run load_dataset --org dev(qa) -> (scratch org name), the data will be loaded in the specified scratch org!   
+
+
+
+   ## project backlog  cci task https://cumulusci.readthedocs.io/en/stable/tasks.html?highlight=profilename
+   - Security
+     Admin persona (system admin profile)
+      cci task update_admin_profile
+     User persona (new profile)
+     permission set french template
+      cci task assign_permission_sets 
+   - Validate if other project is missing
+      cci tack check_sobjects_available
+   - How to control user-def.json?
