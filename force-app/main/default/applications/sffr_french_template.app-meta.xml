@@ -15,7 +15,6 @@
     <tabs>standard-Contact</tabs>
     <tabs>standard-Campaign</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>French_Template_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>standard-Account</tab>
