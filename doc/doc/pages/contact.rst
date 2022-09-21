@@ -21,19 +21,6 @@ Une flexipage a été ajouté qui reprend tous les champs pertinents, avec des f
 
 Data modèle
 ~~~~~~~~~~~~~~~~~~
-``Campagne d'origine``
-
-``Pas de remerciements``
-
-``Statut RGPD``
-
-``Pas de reçu fiscal``
-
-``Nombre de sollicitations``
-
-``Nombre de PND``
-
-``Motif PND``
 
 .. list-table:: Champs Contact et NPSP Address
     :widths:  10 10 10 10 20 30
@@ -57,7 +44,24 @@ Data modèle
       - SFFR_Do_Not_Thanks__c
       - Checkbox
       - Contact qui ne souhaite pas reçevoir de remerciements
-
+    * - Contact
+      - Statut RGPD
+      - GDPR Status
+      - SFFR_GDPR_Status__c
+      - Picklist
+      - Statut RGPD d'un contact
+    * - Contact
+      - Pas de reçu fiscal
+      - No Tax Receipt
+      - SFFR_No_Tax_Receipt__c
+      - Checkbox
+      - Possibilité d'enregistrer qu'un contact donateur ne souhaite pas avoir de reçu fiscal
+    * - Contact
+      - Nombre de sollicitations
+      - Restrict Solicitations
+      - SFFR_Retrict_Yearly_Marketing_Sol__c
+      - Number
+      - Possibilité des compter le nombre de sollicitations par année
 
 Layouts
 ~~~~~~~~~~~~~~~~~~
