@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide d’implémentation &mdash; SF.org FR TEMPLATE 0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="FR .org template installation implementation guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> SF.org FR TEMPLATE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Implémentation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contact-foyer-entreprise">Contact, foyer, entreprise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#marketing-et-campagnes">Marketing et campagnes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#campagne-campaing">Campagne / campaing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SF.org FR TEMPLATE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Guide d’implémentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/implementation_guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guide-d-implementation">
+<h1>Guide d’implémentation<a class="headerlink" href="#guide-d-implementation" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+</section>
+<section id="contact-foyer-entreprise">
+<h2>Contact, foyer, entreprise<a class="headerlink" href="#contact-foyer-entreprise" title="Permalink to this heading"></a></h2>
+</section>
+<section id="marketing-et-campagnes">
+<h2>Marketing et campagnes<a class="headerlink" href="#marketing-et-campagnes" title="Permalink to this heading"></a></h2>
+<section id="campagne-campaing">
+<h3>Campagne / campaing<a class="headerlink" href="#campagne-campaing" title="Permalink to this heading"></a></h3>
+<p>Les campagnes marketing sont gérées sous l’objet standart <code class="docutils literal notranslate"><span class="pre">campaign</span></code>.</p>
+<p>Dans Salesforce il est possible de rendre compte du plan média à l’intérieur de l’application.</p>
+<p>Une campagne peut être soit une campagne parent soit une campagne enfant.
+La campagne est dite “enfant” si elle dispose dans le champ <code class="docutils literal notranslate"><span class="pre">Campagne</span> <span class="pre">principale</span></code> (FR) noté <code class="docutils literal notranslate"><span class="pre">ParentId</span></code> (API) d’une valeur.</p>
+<p>Les campagnes sont par essence omni-canal ce qui implique qu’elle ne peuvent être typées.</p>
+<p>Aussi nous recommandons de ne pas saisir au niveau d’une campagne parente un <code class="docutils literal notranslate"><span class="pre">Type</span></code> (FR) <code class="docutils literal notranslate"><span class="pre">Type</span></code> (API).</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 29%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Record type</p></th>
+<th class="head"><p>(API)</p></th>
+<th class="head"><p>Usage</p></th>
+<th class="head"><p>Exemple</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Campagne</p></td>
+<td><p>sffr_campaing</p></td>
+<td><p>Contient un ou plusieurs opérations marketing</p></td>
+<td><p>Campagne de urgence tsunami</p></td>
+</tr>
+<tr class="row-odd"><td><p>Opération</p></td>
+<td><p>sffr_operation</p></td>
+<td><p>Une opération marketing contenant 1 ou plusieurs segments</p></td>
+<td><p>Appel à don décembre 2022</p></td>
+</tr>
+<tr class="row-even"><td><p>Segment interne</p></td>
+<td><p>sffr_internal_segment</p></td>
+<td><p>Un segment est une liste de contact allant recevoir un message.
+C’est un segment interne s’il contient une liste de contact présent dans Salesforce</p></td>
+<td><p>Lettre premium - grand donateurs non réactivés</p></td>
+</tr>
+<tr class="row-odd"><td><p>Segment externe</p></td>
+<td><p>sffr_external_segment</p></td>
+<td><p>Un segment est une liste de contact allant recevoir un message
+C’est un segment externe si la liste de diffusion n’est pas présente dans Salesforce</p></td>
+<td><p>Lettre premium - grand donateurs non réactivés</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les record type campagne et opérations sont dans les faits équivalents et existe plus comme convention de nommage chez certains clients (voir si on garde)</p>
+</div>
+<p>La particularité des segments interne est qu’ils sont liés à des contacts issus de l’instance de l’organisation.
+Les segments externes sont des segments ou les contacts ne sont pas présent dans l’instance. Le cas le plus fréquent est qu’ils sont loués ou échangés auprès de data-brokers.
+Les contacts ne transiteront donc jamais par les instances clientes.
+C’est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Vérifier que le fait d’ajouter une opp sur un contact l’ajoute automatiquement à la campagne d’origine</p>
+</div>
+<p><strong>Champs d’une campagne (ajoutés à NPSP)</strong></p>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom</p></th>
+<th class="head"><p>(EN)</p></th>
+<th class="head"><p>(API)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nombre d’envois</p></td>
+<td><p>Number sent</p></td>
+<td><p>numbersent</p></td>
+<td><p>Nombre de messages envoyés</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Champs communs à tous les segments</strong></p>
+<table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom</p></th>
+<th class="head"><p>(EN)</p></th>
+<th class="head"><p>(API)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nombre d’envois</p></td>
+<td><p>Number sent</p></td>
+<td><p>numbersent</p></td>
+<td><p>Nombre de messages envoyés</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Champs spécifiques aux segments internes</strong></p>
+<table class="colwidths-given docutils align-default" id="id4">
+<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom</p></th>
+<th class="head"><p>(EN)</p></th>
+<th class="head"><p>(API)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Element de campagne</p></td>
+<td><p>Campaign content</p></td>
+<td><p>sffr_campaign_content</p></td>
+<td><p>Lookup renvoyant au message envoyé sur ce segment de campagne</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="FR .org template installation implementation guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, SF.ORG FR TEAM.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
