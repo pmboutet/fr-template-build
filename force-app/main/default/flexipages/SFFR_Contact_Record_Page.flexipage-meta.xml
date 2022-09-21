@@ -172,8 +172,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sffr_Do_not_thanks__c</fieldItem>
-                <identifier>Recordsffr_Do_not_thanks_cField</identifier>
+                <fieldItem>Record.SFFR_Do_Not_Thanks__c</fieldItem>
+                <identifier>RecordSFFR_Do_Not_Thanks_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-67c48e0e-e858-4672-87c6-8297e432b901</name>
@@ -186,8 +186,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sffr_No_tax_receipt__c</fieldItem>
-                <identifier>Recordsffr_No_tax_receipt_cField</identifier>
+                <fieldItem>Record.SFFR_No_Tax_Receipt__c</fieldItem>
+                <identifier>RecordSFFR_No_Tax_Receipt_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e3f47f65-d873-4909-9132-37f67f8e731d</name>
@@ -238,8 +238,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sffr_Campaign_origin__c</fieldItem>
-                <identifier>Recordsffr_Campaign_origin_cField</identifier>
+                <fieldItem>Record.SFFR_Campaign_Origin__c</fieldItem>
+                <identifier>RecordSFFR_Campaign_Origin_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-6f620490-f1cb-4a9f-9319-0b6d4d1d95c4</name>
@@ -593,8 +593,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sffr_Retrict_Yearly_Marketing_Sol__c</fieldItem>
-                <identifier>Recordsffr_Retrict_Yearly_Marketing_Sol_cField</identifier>
+                <fieldItem>Record.SFFR_Retrict_Yearly_Marketing_Sol__c</fieldItem>
+                <identifier>RecordsSFFR_Retrict_Yearly_Marketing_Sol_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -603,8 +603,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sffr_GDPR_Status__c</fieldItem>
-                <identifier>Recordsffr_GDPR_Status_cField</identifier>
+                <fieldItem>Record.SFFR_GDPR_Status__c</fieldItem>
+                <identifier>RecordSFFR_GDPR_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e33ffa22-bc1c-4385-bda0-96c4ab59e50a</name>
