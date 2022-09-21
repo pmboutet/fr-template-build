@@ -108,9 +108,23 @@ La campagne est dite “enfant” si elle dispose dans le champ <code class="doc
 </ul>
 </dd>
 </dl>
+<p>Nouveaux Champs
+- SFFR_external_ref
+-</p>
 </section>
 <section id="layouts">
 <h3>Layouts<a class="headerlink" href="#layouts" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>Il y a 2 présentations de page livrées avec le FR Template</dt><dd><ul class="simple">
+<li><p>SFFR Campaign IS Layout</p></li>
+<li><p>SFFR Campaign ES Layout: Capagne PArnet, Externet Reference (code source)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Certains champs sont de ces présentations de page sont des chmaps standard Salesforce -&gt; <a class="reference external" href="https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&amp;type=5&amp;language=fr">https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&amp;type=5&amp;language=fr</a>
+Média aevc Contenu de la campagne, qui est un lien vers un objet personnalisé appelé Contenu de la campagne (Les pièces de la camapgne, les médias de la campagne)
+Autre section qui s’appelle cible. Cette cible va pointer vers un segment tiers (par exmeple une association propose un fichier de contaqacts à la locations).
+Les deux champs stanards num, …</p>
 </section>
 <section id="automatismes">
 <h3>Automatismes<a class="headerlink" href="#automatismes" title="Permalink to this heading"></a></h3>
@@ -118,6 +132,13 @@ La campagne est dite “enfant” si elle dispose dans le champ <code class="doc
 </section>
 <section id="autres-recommandations-et-bonnes-pratiques">
 <h2>Autres recommandations et bonnes pratiques<a class="headerlink" href="#autres-recommandations-et-bonnes-pratiques" title="Permalink to this heading"></a></h2>
+<p>Rattachement d’un contact à une campagne:
+- depuis un rapport, on peut choisr de rajouter à la campagne
+- importer des enregistrement dans l’objet membres de campagnes
+- manuellement
+- Saisie Opportunité</p>
+<p>Article SalesforceBen <a class="reference external" href="https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/">https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/</a></p>
+<p>Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.</p>
 <p>Les campagnes marketing sont gérées sous l’objet standart <code class="docutils literal notranslate"><span class="pre">campaign</span></code>.</p>
 <p>Dans Salesforce il est possible de rendre compte du plan média à l’intérieur de l’application.</p>
 <p>Une campagne peut être soit une campagne parent soit une campagne enfant.
@@ -249,6 +270,7 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </tbody>
 </table>
 <p>Action todo : New child Action on campaign layout</p>
+<p>todo#2 ajout</p>
 </section>
 </section>
 

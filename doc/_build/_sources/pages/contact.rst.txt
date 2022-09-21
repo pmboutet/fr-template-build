@@ -3,26 +3,74 @@ Contact
 
 Description métier 
 -------------------------
-Le FR Template propose des fonctionalités sur la fiche contact qui permet de gérer la levée de fonds
-auprès du grand public et les grands donateurs, les mécènes.
+Le FR Template propose des fonctionalités spécifiques sur la fiche contact. Un compteur est ajouté ``Nombre de PND`` permettant de compter le nombre
+de fois où un pli est non distribué à un destinatiare, mais aussi les raisons pour lesquelles le pli est non distribué : ``Motif PND``
+
+Un autre indicateur pertinent pour le monde associatif est le nombre de sollicitations Postales Marketing annuelles. Cet indicateur se trouve dans le champ ``Nombre de sollicitations``. 
+
+D'autres préférences sont gérées telles que les reçus fiscaux, les remerciements.
+
+On trouve aussi un champ pour gérer le ``Statut RGPD``.
+
+Campagne d'origine permet d'enregistrer d'ou viengt un contact lorsqu'il est saisi automatiquement
+ou manuellement dans Salesforce.
 
 Spécificités du FR template
 -----------------------------
-Campagne d'origine permet d'enregistrer d'ou viengt uncontact lorsqu'il est saisi automatiquement
-ou manuellement dans Salesforce.
-Nombre de sollicitations annuelle marketing, ce champ est utillisé exclusivement pour le postal.
+Une flexipage a été ajouté qui reprend tous les champs pertinents, avec des formulaires dynamiques. 
 
 Data modèle
 ~~~~~~~~~~~~~~~~~~
-Campagne d'origine
+``Campagne d'origine``
+
+``Pas de remerciements``
+
+``Statut RGPD``
+
+``Pas de reçu fiscal``
+
+``Nombre de sollicitations``
+
+``Nombre de PND``
+
+``Motif PND``
+
+.. list-table:: Champs Contact et NPSP Address
+    :widths:  10 10 10 10 20 30
+    :header-rows: 1 
+
+    * - Objet
+      - Nom
+      - (EN)
+      - (API)
+      - Type
+      - Description
+    * - Contact
+      - Campagne d'origine
+      - Campaign Source
+      - SFFR_Campaign_Origin__c
+      - Lookup (Campaign)
+      - Possibilité de lier un contact avec la première campagne
+
 
 
 Layouts
 ~~~~~~~~~~~~~~~~~~
+Nouvelle présentation de page : SFFR Contact Layout
+
+Cette présenattion de page 
+
+Présentation de page compactes : SFFR_Contact_Compact_Layout
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
+#todo1 afficher au niveau du contact si son adresse principale est en pnd>0, ainsi que dans
+la compacte Layout
 
+#todo2 Reset du PND lister les champs qui font que si la valeur change, la couleur change
+dans le Compact Layout.
+
+#todo3 tracker en field history...
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------

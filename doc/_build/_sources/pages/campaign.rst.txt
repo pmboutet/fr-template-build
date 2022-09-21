@@ -32,10 +32,25 @@ Nouveaux Types d'enregistrement
   - Segment externe
   - Internal Segment interne
 
+Nouveaux Champs
+- SFFR_external_ref
+- 
+
 
 
 Layouts
 ~~~~~~~~~~~~~~~~~~
+Il y a 2 présentations de page livrées avec le FR Template
+  - SFFR Campaign IS Layout
+
+
+  - SFFR Campaign ES Layout: Capagne PArnet, Externet Reference (code source)
+
+Certains champs sont de ces présentations de page sont des chmaps standard Salesforce -> https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&type=5&language=fr
+Média aevc Contenu de la campagne, qui est un lien vers un objet personnalisé appelé Contenu de la campagne (Les pièces de la camapgne, les médias de la campagne)
+Autre section qui s'appelle cible. Cette cible va pointer vers un segment tiers (par exmeple une association propose un fichier de contaqacts à la locations).
+Les deux champs stanards num, ... 
+
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
@@ -43,6 +58,16 @@ Automatismes
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
+
+Rattachement d'un contact à une campagne:
+- depuis un rapport, on peut choisr de rajouter à la campagne
+- importer des enregistrement dans l'objet membres de campagnes
+- manuellement
+- Saisie Opportunité
+
+Article SalesforceBen https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
+
+Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
 
 Les campagnes marketing sont gérées sous l'objet standart ``campaign``. 
 
@@ -143,3 +168,5 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
       - Lookup renvoyant au message envoyé sur ce segment de campagne
 
 Action todo : New child Action on campaign layout 
+
+todo#2 ajout 
