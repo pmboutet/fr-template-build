@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>sffr_Campaign_origin__c</fullName>
+    <fullName>SFFR_Campaign_Origin__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Campaign of origin</label>
+    <label>Campaign Source</label>
     <referenceTo>Campaign</referenceTo>
-    <relationshipLabel>Contacts first campaign</relationshipLabel>
+    <relationshipLabel>Contacts Initially Created From</relationshipLabel>
     <relationshipName>Contacts</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

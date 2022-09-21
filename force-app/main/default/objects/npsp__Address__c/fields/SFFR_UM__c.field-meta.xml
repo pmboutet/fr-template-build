@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>sffr_pnd_reason__c</fullName>
+    <fullName>SFFR_UM__c</fullName>
     <externalId>false</externalId>
-    <label>PND reason</label>
+    <label>Number of Undelivered Mail</label>
+    <precision>2</precision>
     <required>false</required>
+    <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Picklist</type>
-    <valueSet>
-        <restricted>true</restricted>
-        <valueSetName>sffr_pnd</valueSetName>
-    </valueSet>
+    <type>Number</type>
+    <unique>false</unique>
 </CustomField>
