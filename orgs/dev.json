@@ -1,7 +1,14 @@
 {
-  "orgName": "France Template - Dev Org",
-  "edition": "Developer",
+  "orgName": "France Fundraising Template - Dev Org",
+  "description": "scratch org definition used by developer to progress - all english",
+  "edition": "Partner Enterprise",
   "release": "Preview",
+  "country" : "US",
+  "language": " en_US",
+  "features": [
+    "InsightsPlatform", 
+    "AddInsightsQueryLimit:30", 
+    "AccountingSubledgerUser"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
@@ -20,6 +27,9 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
     }
   }
 }

@@ -7,24 +7,25 @@ project:
     dependencies:
         - github: 'https://github.com/SalesforceFoundation/NPSP'
     git:
-        default_branch: 'contact_layout'
+        default_branch: 'main'
     source_format: sfdx
-
+    
 tasks:
     robot:
         options:
             suites: robot/fr-template-build/tests
             options:
                 outputdir: robot/fr-template-build/results
-
+ 
     robot_testdoc:
         options:
             path: robot/fr-template-build/tests
             output: robot/fr-template-build/doc/fr-template-build_tests.html
-
+ 
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+ 
 sources:
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
