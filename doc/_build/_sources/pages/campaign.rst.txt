@@ -1,30 +1,48 @@
-Guide d'implémentation 
-============================
+Campagne
+=================
+
+Description métier 
+-------------------------
+Le FR Template permets de gérer les spécificités des campagnes de levée de fonds
+
+Les campagnes marketing sont gérées sous l'objet standart ``campaign``. 
+
+Dans Salesforce il est possible de rendre compte du plan média à l'intérieur de l'application. 
+
+Une campagne peut être soit une campagne parent soit une campagne enfant. 
+La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
+
+Les campagnes sont par essence omni-canal ce qui implique qu'elle ne peuvent être typées.
+
+Un segment de camapgne est un conteneur qui contien un message associé à une liste de diffusion.
+Si cette liste de diffusion est interne à Salesforce (présente dasn Salesforce), soit cette 
+liste de diffusion n'est pas présente dans Salesforce au lancement de la campagne, on utilise le segent externe.
+
+Une campagne peut être soit une campagne parent soit une campagne enfant. 
+La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
+
+Spécificités du FR template
+-----------------------------
+Le FR Template propose un page Lightning pour les enregistrements ayant le Type d'enregistrement Segment Interne.
 
 
-Introduction
-------------------
-
-Contact, foyer, entreprise 
-----------------------------
-Le FR template offre une page Contact qui apporte des améliorations apr rapport aux pages NPSP déjà exitantes.
-Ces finctionnalités supplémentaires permettent de gérer des problématiques spéfiques telles :
-- les pnd (plis non distribués)
-- les préférences RGPD du contact
-- des remontées d'informations
-- les préférences de commmunications
-- la campagne d'origine
-``mon champ`` test
-
-Les pnd 
+Data modèle
+~~~~~~~~~~~~~~~~~~
+Nouveaux Types d'enregistrement
+  - Segment externe
+  - Internal Segment interne
 
 
 
-Marketing et campagnes
-----------------------------
+Layouts
+~~~~~~~~~~~~~~~~~~
 
-Campagne / campaing
-~~~~~~~~~~~~~~~~~~~~~
+Automatismes
+~~~~~~~~~~~~~~~~~~
+
+
+Autres recommandations et bonnes pratiques
+-------------------------------------------------
 
 Les campagnes marketing sont gérées sous l'objet standart ``campaign``. 
 
@@ -123,3 +141,5 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
       - Campaign content
       - sffr_campaign_content
       - Lookup renvoyant au message envoyé sur ce segment de campagne
+
+Action todo : New child Action on campaign layout 
