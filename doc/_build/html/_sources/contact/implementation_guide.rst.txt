@@ -1,0 +1,28 @@
+Contact implementation guide
+================================
+
+Nous entendons par ``contact``, l'ensemble des object suivant : 
+
+*  la personne morale
+*  le foyer
+
+Dans l'écosystème Salesforce celà renvoi à des objects différents : 
+
+*  contacts
+*  account (et household)
+*  personne physique
+
+
+Uses cases descriptions 
+------------------------
+
+
+Implementation 
+---------------------
+
+Navigation 
+---------------------
+
+.. toctree::
+    Object <contact/object>
+    Flow <contact/flow>
