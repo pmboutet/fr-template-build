@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Pas de remerciements</label>
+    <name>SFFR_Do_Not_Thanks__c</name>
+</CustomFieldTranslation>
