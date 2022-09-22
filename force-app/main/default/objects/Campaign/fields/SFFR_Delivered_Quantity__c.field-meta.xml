@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>sffr_external_ref__c</fullName>
+    <fullName>SFFR_Delivered_Quantity__c</fullName>
     <externalId>false</externalId>
-    <label>External Reference</label>
-    <length>255</length>
+    <label>Delivered Quantity</label>
+    <precision>18</precision>
     <required>false</required>
-    <type>Text</type>
+    <scale>0</scale>
+    <type>Number</type>
     <unique>false</unique>
 </CustomField>
