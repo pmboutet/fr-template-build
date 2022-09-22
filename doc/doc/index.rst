@@ -12,6 +12,8 @@ BIENVENUE to SF.org FR TEMPLATE's documentation!
    Campagne<pages/campaign>
    Intégration<pages/integration>
    Implémentation guide<pages/implementation_guide>
+   Jeu de données test<pages/dataset>
+   Gestion des versements/Paiements<pages/payment>
 
    Démo<pages/demo>
 

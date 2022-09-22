@@ -5,18 +5,20 @@ Description métier
 -------------------------
 Le FR Template permets de gérer les spécificités des campagnes de levée de fonds.
 
-Les campagnes marketing sont gérées sous l'objet standard ``Campaign``. 
+Les campagnes marketing sont gérées sous l'objet standard ``Campagne``. 
 
 Grâce au FR Tepplate il est possible dans Salesforce de rendre compte du plan média à l'intérieur de l'application. 
 
 Une campagne peut être soit une campagne parent soit une campagne enfant. 
-La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
+La campagne est dite "enfant" si le champ lookup ``Campagne principale`` est renseigné avec un enregistrement parent. 
 
 Les campagnes sont par essence omni-canal ce qui implique qu'elle ne peuvent être typées.
 
 Un segment de campagne est un conteneur qui contient un message associé à une liste de diffusion.
-Si cette liste de diffusion est interne à Salesforce (présente dans Salesforce), soit cette 
-liste de diffusion n'est pas présente dans Salesforce au lancement de la campagne, on utilise le segment externe.
+Si cette liste de diffusion est interne à Salesforce (présente dans la base de données Salesforce)
+on utilise un segment interne (campagne enfant de type d'enregistrement ``segment interne``),
+soit cette liste de diffusion n'est pas présente dans Salesforce au lancement de la campagne,
+et dans ce cas on utilise le segment externe (campagne enfant de type d'enregistrement ``segment externe``)
 
 Une campagne peut être soit une campagne parent soit une campagne enfant. 
 La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 

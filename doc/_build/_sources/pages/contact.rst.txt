@@ -21,19 +21,6 @@ Une flexipage a été ajouté qui reprend tous les champs pertinents, avec des f
 
 Data modèle
 ~~~~~~~~~~~~~~~~~~
-``Campagne d'origine``
-
-``Pas de remerciements``
-
-``Statut RGPD``
-
-``Pas de reçu fiscal``
-
-``Nombre de sollicitations``
-
-``Nombre de PND``
-
-``Motif PND``
 
 .. list-table:: Champs Contact et NPSP Address
     :widths:  10 10 10 10 20 30
