@@ -18,9 +18,9 @@ Plan C (Ideal)
 Saisir dans Gift Entry, Ne pas utiliser le Processing NPSP Data Import, mais le Processing de Guided matching
 
 These are the items the FR Template UI and or loading mechanism will require:
-Collecting Contact
+Collecting Contact or Account
 Household Collecting Contact
-Opportunity Contact
+Opportunity Contact or Account
 Household Opportunity Contact
 Payment Information
 Opportunity Allocation Details (GAUs, Opp RT, Allocation Amount)

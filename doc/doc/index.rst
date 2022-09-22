@@ -10,7 +10,9 @@ BIENVENUE to SF.org FR TEMPLATE's documentation!
    Quick start<pages/quickstart>
    Contact<pages/contact>
    Campagne<pages/campaign>
+   Intégration<pages/integration>
    Implémentation guide<pages/implementation_guide>
+
    Démo<pages/demo>
 
 Indices and tables
