@@ -3,20 +3,20 @@ Campagne
 
 Description métier 
 -------------------------
-Le FR Template permets de gérer les spécificités des campagnes de levée de fonds
+Le FR Template permets de gérer les spécificités des campagnes de levée de fonds.
 
-Les campagnes marketing sont gérées sous l'objet standart ``campaign``. 
+Les campagnes marketing sont gérées sous l'objet standard ``Campaign``. 
 
-Dans Salesforce il est possible de rendre compte du plan média à l'intérieur de l'application. 
+Grâce au FR Tepplate il est possible dans Salesforce de rendre compte du plan média à l'intérieur de l'application. 
 
 Une campagne peut être soit une campagne parent soit une campagne enfant. 
 La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
 
 Les campagnes sont par essence omni-canal ce qui implique qu'elle ne peuvent être typées.
 
-Un segment de camapgne est un conteneur qui contien un message associé à une liste de diffusion.
-Si cette liste de diffusion est interne à Salesforce (présente dasn Salesforce), soit cette 
-liste de diffusion n'est pas présente dans Salesforce au lancement de la campagne, on utilise le segent externe.
+Un segment de campagne est un conteneur qui contient un message associé à une liste de diffusion.
+Si cette liste de diffusion est interne à Salesforce (présente dans Salesforce), soit cette 
+liste de diffusion n'est pas présente dans Salesforce au lancement de la campagne, on utilise le segment externe.
 
 Une campagne peut être soit une campagne parent soit une campagne enfant. 
 La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
@@ -28,15 +28,33 @@ Le FR Template propose un page Lightning pour les enregistrements ayant le Type 
 
 Data modèle
 ~~~~~~~~~~~~~~~~~~
+Le data modèle prend en compte les Campagnes enfants des Campagnes parents, et il y a 2 objets personnalisés 
+qui s'ajoutent au modèle :
+- Segment tiers
+- Contenu de campagne
+- (++ Add in Meta Data, including list views columns)
+
 Nouveaux Types d'enregistrement
   - Segment externe
   - Internal Segment interne
 
-Nouveaux Champs
-- SFFR_external_ref
-- 
 
+.. list-table:: Nouveaux Champs Campaign
+    :widths:  10 10 10 10 20 30
+    :header-rows: 1 
 
+    * - Objet
+      - Nom
+      - (EN)
+      - (API)
+      - Type
+      - Description
+    * - Campaign
+      - Campagne d'origine
+      - Campaign Source
+      - SFFR_Campaign_Origin__c
+      - Lookup (Campaign)
+      - Possibilité de lier un contact avec la première campagne
 
 Layouts
 ~~~~~~~~~~~~~~~~~~
@@ -54,7 +72,7 @@ Les deux champs stanards num, ...
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
-
+ 
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
@@ -169,4 +187,8 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
 
 Action todo : New child Action on campaign layout 
 
-todo#2 ajout 
+todo#2 choisir les colonees de la hierarchy de campagne
+
+todo3 Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
+
+POC : Lorsque l'on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse 
