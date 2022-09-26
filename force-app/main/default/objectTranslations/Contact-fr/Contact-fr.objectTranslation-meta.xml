@@ -12,6 +12,87 @@
         <label></label>
         <name>npsp__ContactMergeFoundFS</name>
     </fieldSets>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label>Détails du contact</label>
+            <section>Contact Details</section>
+        </sections>
+        <sections>
+            <label>Informations sur les dons</label>
+            <section>Donation Information</section>
+        </sections>
+        <sections>
+            <label>Totaux des dons</label>
+            <section>Donation Totals</section>
+        </sections>
+        <sections>
+            <label>Adresse du foyer</label>
+            <section>Household Address</section>
+        </sections>
+        <sections>
+            <label>Informations sur les dons de foyers</label>
+            <section>Household Donation Info</section>
+        </sections>
+        <sections>
+            <label>Informations sur l’adhésion</label>
+            <section>Membership Information</section>
+        </sections>
+        <sections>
+            <label>Divers</label>
+            <section>Misc</section>
+        </sections>
+        <sections>
+            <label>Totaux des crédits indirects</label>
+            <section>Soft Credit Totals</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Lightning Layout</layout>
+        <sections>
+            <label></label>
+            <section>Contact Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Donation Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Donation Totals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Household Address</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Household Donation Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Membership Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Misc</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Soft Credit Total</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SFFR Contact Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
     <quickActions>
         <label></label>
         <name>NewDonation</name>

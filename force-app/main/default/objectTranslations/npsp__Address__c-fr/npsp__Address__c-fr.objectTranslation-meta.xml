@@ -9,6 +9,13 @@
         <value>Adresses</value>
     </caseValues>
     <gender>Feminine</gender>
+    <layouts>
+        <layout>Address Layout</layout>
+        <sections>
+            <label>Informations saisonnières</label>
+            <section>Seasonal Information</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>ID d&apos;adresse</nameFieldLabel>
     <quickActions>
         <label></label>

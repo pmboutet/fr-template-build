@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SFFR_Retrict_Yearly_Marketing_Sol__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>The number of marketing solicitations by mail per year.</inlineHelpText>
     <label>Restrict Solicitations</label>
     <precision>18</precision>
     <required>false</required>
