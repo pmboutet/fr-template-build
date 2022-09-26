@@ -7,6 +7,7 @@ Le FR Template propose des fonctionalités spécifiques sur la fiche contact. Un
 de fois où un pli est non distribué à un destinatiare, mais aussi les raisons pour lesquelles le pli est non distribué : ``Motif PND``
 
 Un autre indicateur pertinent pour le monde associatif est le nombre de sollicitations Postales Marketing annuelles. Cet indicateur se trouve dans le champ ``Nombre de sollicitations``. 
+A date il n'y a pas d'automatismes particulier liés à ce champ. Il a vocation à être exploité dans les outils de segmentation retenus dans le projet. 
 
 D'autres préférences sont gérées telles que les reçus fiscaux, les remerciements.
 

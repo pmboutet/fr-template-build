@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Méthose d’intégration universelle &mdash; SF.org FR TEMPLATE 0 documentation</title>
+  <title>Paiements &mdash; SF.org FR TEMPLATE 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Guide d’implémentation" href="implementation_guide.html" />
-    <link rel="prev" title="Campagne" href="campaign.html" /> 
+    <link rel="next" title="Titre" href="demo.html" />
+    <link rel="prev" title="Données test" href="dataset.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,8 +42,10 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="campaign.html">Campagne</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Intégration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="implementation_guide.html">Implémentation guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Jeu de données test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gestion des versements/Paiements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demo.html">Démo</a></li>
 </ul>
 
@@ -61,9 +63,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Méthose d’intégration universelle</li>
+      <li>Paiements</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/pages/integration.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/pages/payment.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -71,16 +73,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="methose-d-integration-universelle">
-<h1>Méthose d’intégration universelle<a class="headerlink" href="#methose-d-integration-universelle" title="Permalink to this heading"></a></h1>
+  <section id="paiements">
+<h1>Paiements<a class="headerlink" href="#paiements" title="Permalink to this heading"></a></h1>
+<p>Quoi qu’ilarrive, on arrive GE pour les cas les plus simples (80/20)</p>
+<p>Plan a</p>
+<p>utiliser  GE pour gere la compleité:
+- Creer un payeur et Benefiiaire dans 2 households differnet?
+- Capacité dans GE de créer ET un paiemnet ET un Payeur à la volée avec plusieurs entrée</p>
+<p>Plan B
+On abandonne GE, on utilise une table NPSP Data Import, SOIT une table Findock</p>
+<p>Plan C (Ideal)
+Saisir dans Gift Entry, Ne pas utiliser le Processing NPSP Data Import, mais le Processing de Guided matching</p>
+<p>These are the items the FR Template UI and or loading mechanism will require:
+Collecting Contact or Account
+Household Collecting Contact
+Opportunity Contact or Account
+Household Opportunity Contact
+Payment Information
+Opportunity Allocation Details (GAUs, Opp RT, Allocation Amount)
+Recurring Donation
+Campaign source</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="campaign.html" class="btn btn-neutral float-left" title="Campagne" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="implementation_guide.html" class="btn btn-neutral float-right" title="Guide d’implémentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dataset.html" class="btn btn-neutral float-left" title="Données test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="demo.html" class="btn btn-neutral float-right" title="Titre" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
