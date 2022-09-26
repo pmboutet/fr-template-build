@@ -3,6 +3,7 @@
     <fullName>SFFR_Supplier__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
+    <inlineHelpText>Lookup to the Supplier Account providing the contacts.</inlineHelpText>
     <label>Supplier</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Third Party Segments</relationshipLabel>

@@ -3,8 +3,9 @@
     <fullName>SFFR_3party_Segment__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
+    <inlineHelpText>Lookup to a third party segment (advertising agency, externally rented contacts database).</inlineHelpText>
     <label>Third Party Segment</label>
-    <referenceTo>sffr_3party_segment__c</referenceTo>
+    <referenceTo>SFFR_3party_Segment__c</referenceTo>
     <relationshipLabel>Campaign Segments</relationshipLabel>
     <relationshipName>Campaign_Segments</relationshipName>
     <required>false</required>

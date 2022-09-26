@@ -3,7 +3,8 @@
     <fullName>SFFR_Dispatcher__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Account</label>
+    <inlineHelpText>Lookup to the Account which send out the campaign message on behalf of the non profit organisation.</inlineHelpText>
+    <label>Dispatcher</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Campaigns</relationshipLabel>
     <relationshipName>Campaigns</relationshipName>

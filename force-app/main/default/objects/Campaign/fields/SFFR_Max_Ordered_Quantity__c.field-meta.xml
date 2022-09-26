@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SFFR_Max_Ordered_Quantity__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Indicates the total number of messages requested for a given source code/external reference.</inlineHelpText>
     <label>Maximum Ordered Quantity</label>
     <precision>18</precision>
     <required>false</required>
