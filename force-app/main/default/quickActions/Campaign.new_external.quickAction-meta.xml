@@ -45,6 +45,6 @@
     </quickActionLayout>
     <targetObject>Campaign</targetObject>
     <targetParentField>Parent</targetParentField>
-    <targetRecordType>Campaign.sffr_external_segment</targetRecordType>
+    <targetRecordType>Campaign.SFFR_External_Segment</targetRecordType>
     <type>Create</type>
 </QuickAction>
