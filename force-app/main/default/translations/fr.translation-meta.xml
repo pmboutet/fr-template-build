@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label>Modèle France - Levée de fond</label>
+        <name>SFFR_Nonprofit_CRM</name>
+    </customApplications>    
+    <customLabels>
+        <label>Informations système</label>
+        <name>SFFR_SystemInformation</name>
+    </customLabels>
+    <customLabels>
+        <label>Identité</label>
+        <name>SFFR_Identity</name>
+    </customLabels>
+    <customLabels>
+        <label>Préférences remerciements et reçu fiscal</label>
+        <name>SFFR_PrefsFiscalReceipt</name>
+    </customLabels>
+    <customLabels>
+        <label>Origine du contact</label>
+        <name>SFFR_ContactOrigin</name>
+    </customLabels>
+</Translations>
