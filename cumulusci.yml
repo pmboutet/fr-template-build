@@ -32,22 +32,14 @@ plans:
         message: "France Template requires the Nonprofit Success Pack. Please install the Nonprofit Success Pack and try again."
     steps:
         1:
-            task: sffr_apps
-            ui_options:
-                name: Add Fundraising French Template Apps
-        2:
-            task: sffr_flexipages
-            ui_options:
-                name: Add Fundraising French Template Flexipages
-        3:
             task: sffr_list_views
             ui_options:
                 name: Configure Contact List Views
-        4:
+        2:
             flow: sffr_profile
             ui_options:
                 name: Update System Administrator Profile
-        5:
+        3:
             task: disable_tdtm_trigger_handlers
             ui_options:
                 name: Disable NPSP TDTM Triggers (Required if loading sample data)
@@ -56,13 +48,13 @@ plans:
             options:
               namespace: npsp
               active: False
-        6:
+        4:
             task: sffr_load_sdata
             ui_options:
                 name: Load Sample data for Organizations, Households, Donations, and Addresses
                 is_required: False
                 is_recommended: True
-        7:
+        5:
             task: restore_tdtm_trigger_handlers
             ui_options:
                 name: Restore NPSP TDTM Triggers status (Required if TDTM were disabled)
@@ -87,20 +79,6 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
-    
-    sffr_apps:
-        description: Add Fundraising French Template Apps
-        class_path: cumulusci.tasks.salesforce.Deploy
-        group: "SFFR: Installation"
-        options:
-            path: force-app/main/default/applications
-
-    sffr_flexipages:
-        description: Add Fundraising French Template Flexipages
-        class_path: cumulusci.tasks.salesforce.Deploy
-        group: "SFFR: Installation"
-        options:
-            path: force-app/main/default/flexipages
 
     sffr_list_views:
         description: Configure Contact List Views
