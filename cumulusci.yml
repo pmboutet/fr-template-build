@@ -132,28 +132,41 @@ flows:
                 flow: postinstall:config_only
             4:
                 flow: complete_install
+                
+    config_qa:
+        steps:
+            3:
+                flow: postinstall:config_only
+            4:
+                flow: complete_install
 
     complete_install:
         description: France Template Installation Configuration and Sample Data
         steps:
           1:
-            task: sffr_apps
+            task: sffr_list_views
           2:
-            task: sffr_flexipages     
-          3:
             flow: sffr_profile
-          4:
+          3:
             task: disable_tdtm_trigger_handlers
             options:
               namespace: npsp
               active: False
-          5:
+          4:
             task: sffr_load_sdata
-          6:
+          5:
             task: restore_tdtm_trigger_handlers
             options:
               namespace: npsp
               restore: True
+
+    config_only:
+        description: France Template Installation Configuration Only
+        steps:
+          1:
+            task: sffr_list_views
+          2:
+            flow: sffr_profile
 
     sffr_profile:
         steps:
@@ -163,21 +176,13 @@ flows:
                 name: Update Admin profile object and field access permissions
                 is_required: True
                 is_recommended: True
-            fields:
-                - field: Contact.SFFR_Campaign_Origin__c
-                - field: Contact.SFFR_Do_Not_Thanks__c
-                - field: Contact.SFFR_GDPR_Status__c
-                - field: Contact.SFFR_No_Tax_Receipt__c    
-                - field: Contact.SFFR_Retrict_Yearly_Marketing_Sol__c
-                - field: npsp__Address__c.SFFR_UM__c         
-                - field: npsp__Address__c.SFFR_UM_Reason__c  
 
           2:
             task: deploy
             ui_options:
-                name: Update Admin profile record type and layout assignments
+                name: Update Admin profile applications assignment
                 is_required: True
                 is_recommended: True
             
             options:
-              path: force-app/main/default/profiles
+              path: unpackaged/pre/profile
