@@ -18,7 +18,9 @@
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Paiements" href="payment.html" />
+    <link rel="prev" title="Guide d’implémentation" href="implementation_guide.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,12 +38,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="campaign.html">Campagne</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integration.html">Intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="implementation_guide.html">Implémentation guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jeu de données test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payment.html">Gestion des versements/Paiements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demo.html">Démo</a></li>
 </ul>
 
@@ -71,18 +74,22 @@
              
   <section id="donnees-test">
 <h1>Données test<a class="headerlink" href="#donnees-test" title="Permalink to this heading"></a></h1>
-<p>11 contacts représentent des donateurs fictifs, tous les contacts sont associés à 11 comptes de type Household.
-Respectivement 11 enregistrements d’adresses (adresses vérifiées en France) sont créés pour stocker des adresses supplémentaires pour les comptes des ménages, ce qui est pratique pour les adresses saisonnières ou lorsqu’un membre d’un ménage est absent.
-Au moins 1 don par donateur est effectué. Il y a 19 opportunités au total pour enregistrer chaque étape d’un don, de prospectif, à promis, à fermé, à reçu. Ces opportunités proviennent d’activités génératrices de revenus telles que des dons, des subventions ou des frais d’adhésion. Pour les opportunités gagnées clôturées, nous avons 18 enregistrements de paiement.
-Pour afficher le retour sur investissement à partir d’un e-mail, d’un publipostage ou d’une autre communication, 3 enregistrements de campagne sont créés.
-Nous avons 2 grandes unités de comptabilité générale pour gérer nos fonds qui devraient aller vers un programme particulier.
-5 Les enregistrements d’allocation GAU sont créés pour désigner des parties d’opportunités à des GAU particulières.</p>
+<p>11 contacts représentent des donateurs fictifs, tous les contacts sont associés à 11 comptes de type Household.</p>
+<p>Respectivement 11 enregistrements d’adresses (adresses vérifiées en France) sont créés pour stocker des adresses supplémentaires pour les comptes des ménages, ce qui est pratique pour les adresses saisonnières ou lorsqu’un membre d’un ménage est absent.</p>
+<p>Il existe au moins 1 don (opportunités) par donateur. Il y a 19 opportunités au total. Ces opportunités proviennent d’activités génératrices de revenus telles que des dons,
+des subventions ou des adhésions. Pour les opportunités clôturées gagnées, nous avons 18 enregistrements de paiement correspondants.</p>
+<p>Pour afficher le retour sur investissement à partir d’un e-mail, d’un publipostage ou d’une autre campagne, 3 enregistrements campagne existent.</p>
+<p>Nous avons 2 UCG (Unités comptables générale) pour représenter les possibilités de ventilation des dons sur plusieurs fonds. Nous avons aussi ajouté 5 enregistrements
+d’allocation UCG pour désigner ces ventilations de dons sur plusieurs fonds.</p>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="implementation_guide.html" class="btn btn-neutral float-left" title="Guide d’implémentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="payment.html" class="btn btn-neutral float-right" title="Paiements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

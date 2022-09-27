@@ -3,6 +3,7 @@
     <fullName>SFFR_Do_Not_Thanks__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
+    <inlineHelpText>Indicates the contact doesn&apos;t want to receive thank you messages.</inlineHelpText>
     <label>Do Not Thank</label>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Checkbox</type>
