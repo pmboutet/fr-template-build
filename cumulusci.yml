@@ -85,7 +85,7 @@ tasks:
         class_path: cumulusci.tasks.salesforce.Deploy
         group: "SFFR: Installation"
         options:
-            path: unpackaged/pre/listviews
+            path: unpackaged/listviews
 
     sffr_load_sdata:
         description: Load Sample Dataset for Organizations, Households, and Addresses
@@ -163,4 +163,4 @@ flows:
                 is_recommended: True
             
             options:
-              path: unpackaged/pre/profile
+              path: unpackaged/profile
