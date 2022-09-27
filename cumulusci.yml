@@ -32,14 +32,22 @@ plans:
         message: "France Template requires the Nonprofit Success Pack. Please install the Nonprofit Success Pack and try again."
     steps:
         1:
+            task: sffr_apps
+            ui_options:
+                name: Add Fundraising French Template Apps
+        2:
+            task: sffr_flexipages
+            ui_options:
+                name: Add Fundraising French Template Flexipages
+        3:
             task: sffr_list_views
             ui_options:
-                name: Configure Account and Opportunity List Views
-        2:
+                name: Configure Contact List Views
+        4:
             flow: sffr_profile
             ui_options:
                 name: Update System Administrator Profile
-        3:
+        5:
             task: disable_tdtm_trigger_handlers
             ui_options:
                 name: Disable NPSP TDTM Triggers (Required if loading sample data)
@@ -48,13 +56,13 @@ plans:
             options:
               namespace: npsp
               active: False
-        4:
+        6:
             task: sffr_load_sdata
             ui_options:
                 name: Load Sample data for Organizations, Households, Donations, and Addresses
                 is_required: False
                 is_recommended: True
-        5:
+        7:
             task: restore_tdtm_trigger_handlers
             ui_options:
                 name: Restore NPSP TDTM Triggers status (Required if TDTM were disabled)
@@ -80,6 +88,20 @@ tasks:
         options:
             required_org_code_coverage_percent: 75
     
+    sffr_apps:
+        description: Add Fundraising French Template Apps
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: "SFFR: Installation"
+        options:
+            path: force-app/main/default/applications
+
+    sffr_flexipages:
+        description: Add Fundraising French Template Flexipages
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: "SFFR: Installation"
+        options:
+            path: force-app/main/default/flexipages
+
     sffr_list_views:
         description: Configure Contact List Views
         class_path: cumulusci.tasks.salesforce.Deploy
@@ -115,15 +137,47 @@ flows:
         description: France Template Installation Configuration and Sample Data
         steps:
           1:
+            task: sffr_apps
+          2:
+            task: sffr_flexipages     
+          3:
+            flow: sffr_profile
+          4:
             task: disable_tdtm_trigger_handlers
             options:
               namespace: npsp
               active: False
-          2:
+          5:
             task: sffr_load_sdata
-          3:
+          6:
             task: restore_tdtm_trigger_handlers
             options:
               namespace: npsp
               restore: True
-        
+
+    sffr_profile:
+        steps:
+          1:
+            task: update_admin_profile
+            ui_options:
+                name: Update Admin profile object and field access permissions
+                is_required: True
+                is_recommended: True
+            fields:
+                - field: Contact.SFFR_Campaign_Origin__c
+                - field: Contact.SFFR_Do_Not_Thanks__c
+                - field: Contact.SFFR_GDPR_Status__c
+                - field: Contact.SFFR_No_Tax_Receipt__c    
+                - field: Contact.SFFR_Retrict_Yearly_Marketing_Sol__c
+                - field: npsp__Address__c.SFFR_UM__c         
+                - field: npsp__Address__c.SFFR_UM_Reason__c  
+
+          2:
+            task: deploy
+            ui_options:
+                name: Update Admin profile record type and layout assignments
+                is_required: True
+                is_recommended: True
+            
+            options:
+              path: force-app/main/default/profiles
