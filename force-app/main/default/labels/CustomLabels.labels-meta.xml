@@ -32,4 +32,12 @@
         <shortDescription>SFFR_ContactOrigin</shortDescription>
         <value>Contact Origin</value>
     </labels>
+    <labels>
+        <fullName>SFFR_PhoneAndAddress</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_PhoneAndAddress</shortDescription>
+        <value>Phone &amp; Address</value>
+    </labels>
 </CustomLabels>

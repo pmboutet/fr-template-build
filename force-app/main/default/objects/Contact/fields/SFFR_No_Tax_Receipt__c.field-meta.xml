@@ -3,6 +3,7 @@
     <fullName>SFFR_No_Tax_Receipt__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
+    <inlineHelpText>TODO</inlineHelpText>
     <label>No Tax Receipt</label>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Checkbox</type>
