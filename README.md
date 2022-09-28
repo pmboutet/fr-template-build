@@ -5,8 +5,11 @@
 To work on this project in a scratch org:
 
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
-2. Run `cci flow run dev_org --org dev` to deploy this project.
-3. Run `cci org browser dev` to open the org in your browser.
+2. Run `cci flow run dev_org --org qa` to deploy this project.
+3. Run `cci org browser qa` to open the org in your browser.
+
+cci task run list_changes --org qa -o exclude "Profile:"  
+cci task run retrieve_changes --org qa -o exclude "Profile:"
 
 ## Authorize a Dev Hub using CLI
 
