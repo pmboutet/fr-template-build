@@ -3,9 +3,9 @@
     <fullName>SFFR_Campaign_Content__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
-    <inlineHelpText>Lookup to Campaign Content.</inlineHelpText>
+    <inlineHelpText>Recherche du contenu de la campagne.</inlineHelpText>
     <label>Campaign Content</label>
-    <referenceTo>SFFR_campaign_content__c</referenceTo>
+    <referenceTo>SFFR_Campaign_Content__c</referenceTo>
     <relationshipLabel>Campaign Content</relationshipLabel>
     <relationshipName>Campaigns</relationshipName>
     <required>false</required>

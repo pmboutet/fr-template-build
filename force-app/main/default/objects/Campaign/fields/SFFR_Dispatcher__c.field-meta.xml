@@ -3,8 +3,17 @@
     <fullName>SFFR_Dispatcher__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <inlineHelpText>Lookup to the Account which send out the campaign message on behalf of the non profit organisation.</inlineHelpText>
+    <inlineHelpText>Recherche du Compte tiers succeptible de distribuer le message de l&apos;association.</inlineHelpText>
     <label>Dispatcher</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Organization</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Campaigns</relationshipLabel>
     <relationshipName>Campaigns</relationshipName>

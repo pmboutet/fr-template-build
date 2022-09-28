@@ -155,7 +155,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Campaign Content</label>
     <nameField>
-        <label>SSFR_Campaign_Content Name</label>
+        <label>Name</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
