@@ -95,7 +95,14 @@ tasks:
             mapping: datasets/mapping.yml
             sql_path: datasets/sample.sql
             drop_missing_schema: True
- 
+
+    sffr_translations:
+        description: Configure Translations
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: "SFFR: Translations"
+        options:
+            path: unpackaged/translations
+
 flows:
     dependencies:
         steps:
@@ -126,13 +133,15 @@ flows:
           2:
             flow: sffr_profile
           3:
+            task: sffr_translations
+          4:
             task: disable_tdtm_trigger_handlers
             options:
               namespace: npsp
               active: False
-          4:
-            task: sffr_load_sdata
           5:
+            task: sffr_load_sdata
+          6:
             task: restore_tdtm_trigger_handlers
             options:
               namespace: npsp
@@ -145,6 +154,8 @@ flows:
             task: sffr_list_views
           2:
             flow: sffr_profile
+          3:
+            task: sffr_translations
 
     sffr_profile:
         steps:

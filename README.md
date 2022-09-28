@@ -3,10 +3,14 @@
 ## Development
 
 To work on this project in a scratch org:
-
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
 2. Run `cci flow run dev_org --org dev` to deploy this project.
 3. Run `cci org browser dev` to open the org in your browser.
+4. You must Activate the French Language settings under Setup/User Interface/Transalation Workbench/Translation Language Settings
+
+To get/list your scratch org changes
+1. Run `cci task run list_changes --org dev -o exclude "Profile:"`
+2. Run `cci task run retrieve_changes --org dev -o exclude "Profile:"`
 
 ## Authorize a Dev Hub using CLI
  
