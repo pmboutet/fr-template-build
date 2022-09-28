@@ -22,6 +22,14 @@
                 <behavior>Edit</behavior>
                 <field>SFFR_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SFFR_Total_Cost_Items__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SFFR_Total_Cost_Campaign_Content__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

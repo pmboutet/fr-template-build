@@ -3,6 +3,21 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SFFR_Campaign_Content_Item__c.SFFR_Unit_Cost__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SFFR_Campaign_Content__c.SFFR_Total_Cost_Campaign_Content__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SFFR_Campaign_Content__c.SFFR_Total_Cost_Items__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>npsp__Address__c.npsp__API_Response__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -163,6 +178,12 @@
     </fieldPermissions>
     <layoutAssignments>
         <layout>Campaign-SFFR Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SFFR_Campaign_Content_Item__c-Campaign Content Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SFFR_Campaign_Content__c-Présentation Campaign Content</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>npsp__DataImportBatch__c-npsp__NPSP Data Import Batch Layout</layout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Désigne la somme de tous les éléments de campagne lié à ce contenu de campagne.</help>
+    <label>Coût total des éléments</label>
+    <name>SFFR_Total_Cost_Items__c</name>
+</CustomFieldTranslation>

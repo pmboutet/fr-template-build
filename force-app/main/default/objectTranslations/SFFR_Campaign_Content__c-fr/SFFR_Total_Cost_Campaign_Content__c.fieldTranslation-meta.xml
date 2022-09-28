@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Formule : Désigne la somme du coût total des éléments plus le coût unitaire.</help>
+    <label>Coût total contenu et éléments</label>
+    <name>SFFR_Total_Cost_Campaign_Content__c</name>
+</CustomFieldTranslation>
