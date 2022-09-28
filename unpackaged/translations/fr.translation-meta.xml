@@ -3,7 +3,7 @@
     <customApplications>
         <label>Modèle France</label>
         <name>SFFR_Nonprofit_CRM</name>
-    </customApplications>    
+    </customApplications>
     <customLabels>
         <label>Informations système</label>
         <name>SFFR_SystemInformation</name>
@@ -21,7 +21,48 @@
         <name>SFFR_ContactOrigin</name>
     </customLabels>
     <customLabels>
-        <label></label>
+        <label>TODO</label>
         <name>SFFR_PhoneAndAddress</name>
+    </customLabels>
+    <customLabels>
+        <label>TODO</label>
+        <name>SFFR_Ecosystem</name>
+    </customLabels>
+    <customLabels>
+        <label>TODO</label>
+        <name>SFFR_Interactions</name>
+    </customLabels>
+    </customLabels>
+    <customLabels>
+        <label>TODO</label>
+        <name>SFFR_Transactions</name>
+    </customLabels>
+    <customLabels>
+        <label>Telephone et Courriel</label>
+        <name>SFFR_PhoneAndEmail</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse Principale</label>
+        <name>SFFR_MainAddress</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse Secondaire</label>
+        <name>SFFR_SecondaryAddress</name>
+    </customLabels>
+    <customLabels>
+        <label>RGPD et préférences de sollicitation</label>
+        <name>SFFR_GDPRAndSolicitationPreferences</name>
+    </customLabels>
+    <customLabels>
+        <label>Fil d&apos;activité</label>
+        <name>SFFR_ActivityFeed</name>
+    </customLabels>
+    <customLabels>
+        <label>TODO</label>
+        <name>SFFR_Files</name>
+    </customLabels>
+    <customLabels>
+        <label>TODO</label>
+        <name>SFFR_Notes</name>
     </customLabels>
 </Translations>
