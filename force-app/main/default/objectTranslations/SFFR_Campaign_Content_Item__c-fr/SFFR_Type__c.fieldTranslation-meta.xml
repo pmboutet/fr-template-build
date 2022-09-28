@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Détermine le type d&apos;élément de contenu de campagne.</help>
+    <label>Type d&apos;élément de contenu</label>
+    <name>SFFR_Type__c</name>
+    <picklistValues>
+        <masterLabel>Envelope</masterLabel>
+        <translation>Enveloppe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Letter</masterLabel>
+        <translation>Courrier</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Flyer</masterLabel>
+        <translation>Flyer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slip</masterLabel>
+        <translation>Bordereau</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -3,6 +3,16 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SFFR_Campaign_Content_Item__c.SFFR_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SFFR_Campaign_Content_Item__c.SFFR_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SFFR_Campaign_Content_Item__c.SFFR_Unit_Cost__c</field>
         <readable>true</readable>
     </fieldPermissions>
