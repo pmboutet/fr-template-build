@@ -73,12 +73,15 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>createQuickActionName</name>
+                    <value>npsp__New_Campaign</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>lookupFieldName</name>
                     <value>Campaign.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>titleFieldName</name>
-                    <value>edit description</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>updateQuickActionName</name>
@@ -88,28 +91,7 @@
                 <identifier>console_relatedRecord</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-c9050f52-ae5f-4ec5-8d18-c69819d7b23c</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>lookupFieldName</name>
-                    <value>Campaign.SFFR_3party_Segment__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>titleFieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>updateQuickActionName</name>
-                    <value>Campaign.test1</value>
-                </componentInstanceProperties>
-                <componentName>console:relatedRecord</componentName>
-                <identifier>console_relatedRecord2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-4786274a-fe2c-4041-a1e3-193de28e4876</name>
+        <name>Facet-f6307cc7-23b3-4ecf-9907-09504a57d3ef</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -149,28 +131,14 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-c9050f52-ae5f-4ec5-8d18-c69819d7b23c</value>
+                    <value>Facet-f6307cc7-23b3-4ecf-9907-09504a57d3ef</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Standard.Tab.discounts</value>
+                    <value>Standard.Tab.dataShares</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-4786274a-fe2c-4041-a1e3-193de28e4876</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.media</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -241,7 +209,7 @@
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Campaign Record Page</masterLabel>
+    <masterLabel>SFFR Campaign Internal Segment</masterLabel>
     <parentFlexiPage>runtime_sales_campaign__Campaign_rec_L_s</parentFlexiPage>
     <sobjectType>Campaign</sobjectType>
     <template>
