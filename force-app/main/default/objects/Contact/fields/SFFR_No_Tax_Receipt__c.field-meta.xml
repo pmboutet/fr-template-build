@@ -3,7 +3,7 @@
     <fullName>SFFR_No_Tax_Receipt__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>TODO</inlineHelpText>
+    <inlineHelpText>Indicates that the Contact does not wish to receive a Tax Receipt for Donations</inlineHelpText>
     <label>No Tax Receipt</label>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Checkbox</type>
