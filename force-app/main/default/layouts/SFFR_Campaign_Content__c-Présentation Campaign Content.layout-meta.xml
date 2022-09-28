@@ -80,7 +80,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>SFFR_Campaign_Content_Item__c.SFFT_Campaign_Content__c</relatedList>
+        <relatedList>SFFR_Campaign_Content_Item__c.SFFR_Campaign_Content__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

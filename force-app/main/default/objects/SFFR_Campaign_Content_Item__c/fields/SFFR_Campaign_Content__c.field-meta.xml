@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>SFFT_Campaign_Content__c</fullName>
+    <fullName>SFFR_Campaign_Content__c</fullName>
     <externalId>false</externalId>
     <label>Campaign Content</label>
-    <referenceTo>SSFR_Campaign_Content__c</referenceTo>
+    <referenceTo>SFFR_Campaign_Content__c</referenceTo>
     <relationshipLabel>Campaign Content Items</relationshipLabel>
     <relationshipName>Campaign_Content_Items</relationshipName>
     <relationshipOrder>0</relationshipOrder>

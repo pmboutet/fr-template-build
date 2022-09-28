@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Lookup to Campaign Content.</inlineHelpText>
     <label>Campaign Content</label>
-    <referenceTo>ssfr_campaign_content__c</referenceTo>
+    <referenceTo>SFFR_campaign_content__c</referenceTo>
     <relationshipLabel>Campaign Content</relationshipLabel>
     <relationshipName>Campaigns</relationshipName>
     <required>false</required>

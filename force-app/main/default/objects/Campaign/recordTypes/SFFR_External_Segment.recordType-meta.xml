@@ -33,14 +33,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Conference</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Direct Mail</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Email</fullName>
             <default>false</default>
         </values>
