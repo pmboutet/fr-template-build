@@ -162,7 +162,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Campaign-npsp__NPSP Campaign Layout</layout>
+        <layout>Campaign-SFFR Campaign Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>npsp__DataImportBatch__c-npsp__NPSP Data Import Batch Layout</layout>

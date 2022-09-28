@@ -92,23 +92,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>lookupFieldName</name>
-                    <value>Campaign.SFFR_3party_Segment__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>titleFieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>updateQuickActionName</name>
-                    <value>Campaign.test1</value>
-                </componentInstanceProperties>
-                <componentName>console:relatedRecord</componentName>
-                <identifier>console_relatedRecord2</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>Facet-4786274a-fe2c-4041-a1e3-193de28e4876</name>
         <type>Facet</type>
     </flexiPageRegions>
