@@ -21,19 +21,19 @@
         <name>SFFR_ContactOrigin</name>
     </customLabels>
     <customLabels>
-        <label>TODO</label>
+        <label>Téléphone et adresse</label>
         <name>SFFR_PhoneAndAddress</name>
     </customLabels>
     <customLabels>
-        <label>TODO</label>
+        <label>Ecosystème</label>
         <name>SFFR_Ecosystem</name>
     </customLabels>
     <customLabels>
-        <label>TODO</label>
+        <label>Interactions</label>
         <name>SFFR_Interactions</name>
     </customLabels>
     <customLabels>
-        <label>TODO</label>
+        <label>Transactions</label>
         <name>SFFR_Transactions</name>
     </customLabels>
     <customLabels>
@@ -57,11 +57,11 @@
         <name>SFFR_ActivityFeed</name>
     </customLabels>
     <customLabels>
-        <label>TODO</label>
+        <label>Fichiers</label>
         <name>SFFR_Files</name>
     </customLabels>
     <customLabels>
-        <label>TODO</label>
+        <label>Notes</label>
         <name>SFFR_Notes</name>
     </customLabels>
 </Translations>
