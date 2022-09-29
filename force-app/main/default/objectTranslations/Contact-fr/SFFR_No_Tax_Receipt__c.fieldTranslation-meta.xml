@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help>Indique que le contact ne souhaite pas reçevoir de reçu fiscal</help>
+    <help>Indique que le contact ne souhaite pas reçevoir de reçu fiscal.</help>
     <label>Pas de reçu fiscal</label>
     <name>SFFR_No_Tax_Receipt__c</name>
 </CustomFieldTranslation>
