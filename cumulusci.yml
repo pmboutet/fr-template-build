@@ -8,20 +8,21 @@ project:
         - github: 'https://github.com/SalesforceFoundation/NPSP'
     git:
         default_branch: 'main'
+        repo_url: https://github.com/pmboutet/fr-template-build
     source_format: sfdx
 
 sources:
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
-    postinstall:
-        github: 'https://github.com/SFDO-Alliances/NPSP-PostInstallSteps'
+    npsp_postinstall:
+        github: https://github.com/SFDO-Alliances/NPSP-PostInstallSteps
  
 plans:
   install:
     slug: install
-    title: Install France Template
+    title: Install French Template
     tier: primary
-    description: Install France Template steps
+    description: Install French Template
     is_listed: True
     checks:
       - when: "not tasks.check_my_domain_active()"
@@ -34,7 +35,7 @@ plans:
         1:
             task: sffr_list_views
             ui_options:
-                name: Configure Contact List Views
+                name: Configure FR Contact List Views
         2:
             flow: sffr_profile
             ui_options:
@@ -114,14 +115,14 @@ flows:
     config_dev:
         steps:
             3:
-                flow: postinstall:config_only
+                flow: npsp_postinstall:config_only
             4:
                 flow: complete_install
                 
     config_qa:
         steps:
             3:
-                flow: postinstall:config_only
+                flow: npsp_postinstall:config_only
             4:
                 flow: complete_install
 
