@@ -70,7 +70,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_PhoneAndEmail</shortDescription>
-        <value>TODO</value>
+        <value>Phone and Email</value>
     </labels>
     <labels>
         <fullName>SFFR_MainAddress</fullName>
@@ -78,7 +78,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_MainAddress</shortDescription>
-        <value>TODO</value>
+        <value>Main Address</value>
     </labels>
     <labels>
         <fullName>SFFR_SecondaryAddress</fullName>
@@ -86,7 +86,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_SecondaryAddress</shortDescription>
-        <value>TODO</value>
+        <value>Secondary Address</value>
     </labels>
     <labels>
         <fullName>SFFR_GDPRAndSolicitationPreferences</fullName>
@@ -94,7 +94,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_GDPRAndSolicitationPreferences</shortDescription>
-        <value>TODO</value>
+        <value>GDPR and Solicitation Preferences</value>
     </labels>
     <labels>
         <fullName>SFFR_ActivityFeed</fullName>
@@ -102,7 +102,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_ActivityFeed</shortDescription>
-        <value>TODO</value>
+        <value>Activity Feed</value>
     </labels>
     <labels>
         <fullName>SFFR_Files</fullName>
@@ -110,7 +110,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_Files</shortDescription>
-        <value>TODO</value>
+        <value>Files</value>
     </labels>
     <labels>
         <fullName>SFFR_Notes</fullName>
@@ -118,6 +118,6 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SFFR_Notes</shortDescription>
-        <value>TODO</value>
+        <value>Notes</value>
     </labels>
 </CustomLabels>
