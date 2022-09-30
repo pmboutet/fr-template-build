@@ -13,7 +13,7 @@ BIENVENUE to SF.org FR TEMPLATE's documentation!
    Intégration<pages/integration>
    Implémentation guide<pages/implementation_guide>
    Jeu de données test<pages/dataset>
-   Gestion des versements/Paiements<pages/payment>
+   Saisie de paiements<pages/payment>
 
    Démo<pages/demo>
 

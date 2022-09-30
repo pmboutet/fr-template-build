@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Méthose d’intégration universelle &mdash; SF.org FR TEMPLATE 0 documentation</title>
+  <title>Méthode d’intégration universelle &mdash; SF.org FR TEMPLATE 0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -44,13 +44,16 @@
 <li class="toctree-l1"><a class="reference internal" href="campaign.html">Campagne</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Intégration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#principe">Principe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#possibilites-d-integrations-de-donnees-vers-salesforce">Possibilités d’intégrations de données vers Salesforce</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dataloader-et-import-wizard">dataloader et Import Wizard</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#modele-de-donnees-simplifie">Modèle de données simplifié</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modele-de-donnees">Modèle de données</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="implementation_guide.html">Implémentation guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Jeu de données test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="payment.html">Gestion des versements/Paiements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payment.html">Saisie de paiements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demo.html">Démo</a></li>
 </ul>
 
@@ -68,7 +71,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Méthose d’intégration universelle</li>
+      <li>Méthode d’intégration universelle</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/pages/integration.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -78,8 +81,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="methose-d-integration-universelle">
-<h1>Méthose d’intégration universelle<a class="headerlink" href="#methose-d-integration-universelle" title="Permalink to this heading"></a></h1>
+  <section id="methode-d-integration-universelle">
+<h1>Méthode d’intégration universelle<a class="headerlink" href="#methode-d-integration-universelle" title="Permalink to this heading"></a></h1>
 <section id="principe">
 <h2>Principe<a class="headerlink" href="#principe" title="Permalink to this heading"></a></h2>
 <p>Le principe est de proposer aux associations un standard pour gérer à moindre coût les intégration de données depuis tout type d’acteur du marché.</p>
@@ -111,26 +114,37 @@
 <li><p>éventuellement un ou plusieur engagement de type “don régulier”</p></li>
 </ul>
 </div></blockquote>
+</section>
+<section id="possibilites-d-integrations-de-donnees-vers-salesforce">
+<h2>Possibilités d’intégrations de données vers Salesforce<a class="headerlink" href="#possibilites-d-integrations-de-donnees-vers-salesforce" title="Permalink to this heading"></a></h2>
 <p>Ces données peuvent <strong>être intégrées dans Salesforce</strong> de différentes manières :</p>
 <ul class="simple">
-<li><p>en saisie direct depuis l’interface avec Gift Entry</p></li>
-<li><p>en import de CSV depuis une interface de Salesforce (Import Wizard)</p></li>
-<li><p>en import de CSV au travers d’un outil de type ETL tel que Mulesoft ou outil équivalent</p></li>
+<li><p>en saisie direct depuis l’interface avec Gift Entry (cf. Saisie des paiements) (&#64;PM comment ajouter un lien vers une autre page de la doc?)</p></li>
+<li><p>en import de CSV depuis une interface de Salesforce (Import Wizard) vers l’objet NPSP Data Import</p></li>
+<li><p>en import de CSV au travers d’un outil de type ETL tel que Mulesoft ou outil équivalent avec en cible l’objet NPSP Data Import</p></li>
 <li><p>par des API et dataloader</p></li>
 </ul>
+<section id="dataloader-et-import-wizard">
+<h3>dataloader et Import Wizard<a class="headerlink" href="#dataloader-et-import-wizard" title="Permalink to this heading"></a></h3>
+<p>L’objet cible des imports est <code class="docutils literal notranslate"><span class="pre">NPSP</span> <span class="pre">Data</span> <span class="pre">Import</span></code> dans Salesforce</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Trailhead
+Voici le lien vers le module Trailhead pertinent pour découvrir NPSP Data Import : <a class="reference external" href="https://trailhead.salesforce.com/fr/content/learn/projects/import-your-data-using-npsp-data-importer">https://trailhead.salesforce.com/fr/content/learn/projects/import-your-data-using-npsp-data-importer</a></p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Performance de nos API
-&#64;todo_fabrice
-Dans l’hypothèse d’intégration par des API Salesforce, il est essentiel de prendre en considération les limitations inhérentes à toute plateforme.
+<p>Performance de nos API</p>
+<p>Dans l’hypothèse d’intégration par des API Salesforce, il est essentiel de prendre en considération les limitations inhérentes à toute plateforme.
 Pour garantir la performance de vos intégration en fonction de la volumétrie attendues considérez :</p>
 <ul class="simple">
-<li><p>l’utilisation d’un Bulk API pour regrouper les appels …. &#64;todo_fabrice</p></li>
-<li><p>l’utilisation d’un ETL marché ou d’un outil Open Source tel que <code class="docutils literal notranslate"><span class="pre">Apache</span> <span class="pre">Kafka</span></code> pour créer une liste d’attente</p></li>
+<li><p>Les boucles et les requêtes non optimisées sont l’une des causes les plus courantes d’atteinte des limites de la plateforme. En utilisant des collections et en effectuant des requêtes en mode “Bulk” on peut adresser le problème.</p></li>
+<li><p>l’utilisation d’un ETL marché ou d’un outil Open Source tel que <code class="docutils literal notranslate"><span class="pre">Apache</span> <span class="pre">Kafka</span></code> pour créer une liste d’attente.</p></li>
 </ul>
 <p>D’une manière générale, souvenez vous que vous utilisez la même plateforme que de grands comptes internationnaux travaillant sur des volumétries très significatives.
 <strong>Un temps de réponse anormalement bas doit vous alerter sur le fait que vous utilisez la mauvaise méthode</strong></p>
 </div>
+</section>
 </section>
 <section id="modele-de-donnees-simplifie">
 <h2>Modèle de données simplifié<a class="headerlink" href="#modele-de-donnees-simplifie" title="Permalink to this heading"></a></h2>
@@ -161,71 +175,27 @@ Pour garantir la performance de vos intégration en fonction de la volumétrie a
 <td><p>Référence aux contact qui porte l’opportunité</p></td>
 <td><p>Madame Lucette Sanchez, <a class="reference external" href="mailto:lucette&#37;&#52;&#48;gmail&#46;com">lucette<span>&#64;</span>gmail<span>&#46;</span>com</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>Foyer payeur</p></td>
-<td><p>Référence au foyer dont le contact payeur est issu</p></td>
-<td><p>Foyer Edouard Sanchez</p></td>
-</tr>
-<tr class="row-even"><td><p>Payment</p></td>
+<tr class="row-odd"><td><p>Payment</p></td>
 <td><p>Toutes les informations relatives au paiement</p></td>
 <td><p>Chèque numéro XXX d’une montant de 30€ daté du 10/01/2022</p></td>
 </tr>
-<tr class="row-odd"><td><p>Opportunité</p></td>
+<tr class="row-even"><td><p>Opportunité</p></td>
 <td><p>Toutes les informations relatives à l’opportunité et son affectation</p></td>
 <td><p>Don de 1000€</p></td>
 </tr>
-<tr class="row-even"><td><p>Affecation</p></td>
+<tr class="row-odd"><td><p>Affecation</p></td>
 <td><p>Toutes les allocations de l’opportunité en question</p></td>
 <td><p>500€ affecté au projet A, 500€ affecté au projet B</p></td>
 </tr>
-<tr class="row-odd"><td><p>Code source</p></td>
+<tr class="row-even"><td><p>Code source</p></td>
 <td><p>Le champ code source de la campagne de record type segment (interne ou externe) sur lequel est effectué le don</p></td>
 <td><p>CSXYZ (équivalent à l’entrée ‘donateurs 0-24, lettre A’ de la campange de )</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="modele-de-donnees">
-<h2>Modèle de données<a class="headerlink" href="#modele-de-donnees" title="Permalink to this heading"></a></h2>
-<p>Les données sont stockées dans l’objet standard Salesforce <code class="docutils literal notranslate"><span class="pre">NPSP</span> <span class="pre">Data</span> <span class="pre">Import</span></code></p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Groupe fonctionnel</p></th>
-<th class="head"><p>Nom du champ</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Mandatory</p></th>
-<th class="head"><p>Défaut</p></th>
-<th class="head"><p>Règles</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Contact payeur</p></td>
-<td><p><strong>SFFR_external_key</strong></p></td>
-<td><p>string</p></td>
-<td><p>indenfiant unique externe du contact payeur</p></td>
-<td><p>no</p></td>
-<td><p>null</p></td>
-<td><p>If null, <code class="docutils literal notranslate"><span class="pre">SFFR_id_contact</span></code> can’t be null</p></td>
-</tr>
-<tr class="row-odd"><td><p>Contact payeur</p></td>
-<td><p><strong>SFFR_id_contact</strong></p></td>
-<td><p>int</p></td>
-<td><p>indenfiant unique interne SFDO du contact</p></td>
-<td><p>no</p></td>
-<td><p>null</p></td>
-<td><p>If null, <code class="docutils literal notranslate"><span class="pre">SFFR_external_key</span></code> can’t be null</p></td>
-</tr>
-</tbody>
-</table>
+<p>Le FR Template met à disposition un modèle de fichier à plat d’import (XXXXXXXXXXXXXXXXXXXXXXXXX Fournir un Lien ici). Si les données à charger contiennent une complexité qui dépasse le fichier à plat, alors
+on duplique les lignes du fichier pour refleter cette complexité. Par exemple, si un don est ventilé sur 2 UCG différentes, il y aura 2 lignes dans le fichier.</p>
+<p>Le FR Template utilise le Processing de Findock Guided matching.</p>
 </section>
 </section>
 

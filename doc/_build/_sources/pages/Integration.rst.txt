@@ -1,4 +1,4 @@
-Méthose d'intégration universelle
+Méthode d'intégration universelle
 =====================================
 
 Principe
@@ -30,20 +30,35 @@ L'ensemble de ces systèmes envoies **des données similaires** comprenant dans 
  * une ou plusieurs affectation de chaque opportunité
  * éventuellement un ou plusieur engagement de type "don régulier"
 
+Possibilités d'intégrations de données vers Salesforce
+-----------------------------------------------------------------
+
 Ces données peuvent **être intégrées dans Salesforce** de différentes manières : 
 
-*  en saisie direct depuis l'interface avec Gift Entry
-*  en import de CSV depuis une interface de Salesforce (Import Wizard)
-*  en import de CSV au travers d'un outil de type ETL tel que Mulesoft ou outil équivalent 
+*  en saisie direct depuis l'interface avec Gift Entry (cf. Saisie des paiements) (@PM comment ajouter un lien vers une autre page de la doc?)
+*  en import de CSV depuis une interface de Salesforce (Import Wizard) vers l'objet NPSP Data Import
+*  en import de CSV au travers d'un outil de type ETL tel que Mulesoft ou outil équivalent avec en cible l'objet NPSP Data Import
 *  par des API et dataloader
 
+dataloader et Import Wizard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+L'objet cible des imports est ``NPSP Data Import`` dans Salesforce
+
+.. note:: Trailhead
+  Voici le lien vers le module Trailhead pertinent pour découvrir NPSP Data Import : https://trailhead.salesforce.com/fr/content/learn/projects/import-your-data-using-npsp-data-importer
+
+
+
+
+
 .. warning:: Performance de nos API
-    @todo_fabrice
+    
     Dans l'hypothèse d'intégration par des API Salesforce, il est essentiel de prendre en considération les limitations inhérentes à toute plateforme. 
     Pour garantir la performance de vos intégration en fonction de la volumétrie attendues considérez :
 
-    * l'utilisation d'un Bulk API pour regrouper les appels .... @todo_fabrice
-    * l'utilisation d'un ETL marché ou d'un outil Open Source tel que ``Apache Kafka`` pour créer une liste d'attente 
+    * Les boucles et les requêtes non optimisées sont l'une des causes les plus courantes d'atteinte des limites de la plateforme. En utilisant des collections et en effectuant des requêtes en mode "Bulk" on peut adresser le problème.
+    * l'utilisation d'un ETL marché ou d'un outil Open Source tel que ``Apache Kafka`` pour créer une liste d'attente.
 
     D'une manière générale, souvenez vous que vous utilisez la même plateforme que de grands comptes internationnaux travaillant sur des volumétries très significatives. 
     **Un temps de réponse anormalement bas doit vous alerter sur le fait que vous utilisez la mauvaise méthode**
@@ -69,9 +84,6 @@ Avant d'entrer champ à champ dans le modèle de données voici son modèle simp
     * - Contact bienfaiteur
       - Référence aux contact qui porte l'opportunité
       - Madame Lucette Sanchez, lucette@gmail.com
-    * - Foyer payeur 
-      - Référence au foyer dont le contact payeur est issu
-      - Foyer Edouard Sanchez
     * - Payment
       - Toutes les informations relatives au paiement 
       - Chèque numéro XXX d'une montant de 30€ daté du 10/01/2022 
@@ -87,32 +99,8 @@ Avant d'entrer champ à champ dans le modèle de données voici son modèle simp
 
 
 
-Modèle de données
-------------------------------
 
-Les données sont stockées dans l'objet standard Salesforce ``NPSP Data Import``
+Le FR Template met à disposition un modèle de fichier à plat d'import (XXXXXXXXXXXXXXXXXXXXXXXXX Fournir un Lien ici). Si les données à charger contiennent une complexité qui dépasse le fichier à plat, alors
+on duplique les lignes du fichier pour refleter cette complexité. Par exemple, si un don est ventilé sur 2 UCG différentes, il y aura 2 lignes dans le fichier.
 
-.. list-table:: 
-    :header-rows: 1 
-
-    * - Groupe fonctionnel
-      - Nom du champ
-      - Type
-      - Description
-      - Mandatory
-      - Défaut
-      - Règles 
-    * - Contact payeur
-      - **SFFR_external_key**
-      - string
-      - indenfiant unique externe du contact payeur
-      - no
-      - null
-      - If null, ``SFFR_id_contact`` can't be null
-    * - Contact payeur
-      - **SFFR_id_contact**
-      - int
-      - indenfiant unique interne SFDO du contact
-      - no
-      - null
-      - If null, ``SFFR_external_key`` can't be null
+Le FR Template utilise le Processing de Findock Guided matching.
