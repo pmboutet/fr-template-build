@@ -72,3 +72,10 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
    - Validate if other project is missing
       cci tack check_sobjects_available
    - How to control user-def.json?
+
+
+   QClaudio
+   1: when Main/default is deployed when doing a cci flow run dev_org --org dev
+   2: how to adjust demendencies
+   3: ISV Cci template pattern
+   4: Review our FR-TEMPLATE template
