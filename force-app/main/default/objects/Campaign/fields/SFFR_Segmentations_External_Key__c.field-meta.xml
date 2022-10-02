@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SFFR_Segmentations_External_Key__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Designates the External Key of the contacts generated from external segments.</inlineHelpText>
     <label>Segmentation External Key</label>
     <length>255</length>
     <required>false</required>

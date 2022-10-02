@@ -3,7 +3,7 @@
     <fullName>SFFR_Dispatcher__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <inlineHelpText>Recherche du Compte tiers succeptible de distribuer le message de l&apos;association.</inlineHelpText>
+    <inlineHelpText>Lookup to the Account which send out the campaign message on behalf of the non profit organisation.</inlineHelpText>
     <label>Dispatcher</label>
     <lookupFilter>
         <active>true</active>
