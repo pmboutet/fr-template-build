@@ -8,6 +8,6 @@
         <plural>true</plural>
         <value>Campaigns Content</value>
     </caseValues>
-    <gender>Neuter</gender>
+    <gender>Masculine</gender>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

@@ -49,10 +49,6 @@
         <label></label>
         <name>new_external</name>
     </quickActions>
-    <quickActions>
-        <label></label>
-        <name>test1</name>
-    </quickActions>
     <recordTypes>
         <label></label>
         <name>SFFR_External_Segment</name>

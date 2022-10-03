@@ -56,13 +56,5 @@
             <fullName>Telemarketing</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Trade Show</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Webinar</fullName>
-            <default>false</default>
-        </values>
     </picklistValues>
 </RecordType>
