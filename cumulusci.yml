@@ -5,7 +5,9 @@ project:
         name: France Template
         api_version: '55.0'
     dependencies:
-        - github: 'https://github.com/SalesforceFoundation/NPSP'
+        - github: https://github.com/SalesforceFoundation/NPSP
+        - github: https://github.com/pmboutet/findock-fr-template-build
+
     git:
         default_branch: 'main'
         repo_url: https://github.com/pmboutet/fr-template-build
@@ -16,7 +18,8 @@ sources:
         github: https://github.com/SalesforceFoundation/NPSP
     npsp_postinstall:
         github: https://github.com/SFDO-Alliances/NPSP-PostInstallSteps
- 
+    findock:
+        github: https://github.com/pmboutet/findock-fr-template-build
 plans:
   install:
     slug: install
@@ -117,6 +120,8 @@ flows:
             3:
                 flow: npsp_postinstall:config_only
             4:
+                flow: findock:configure_findock
+            5:
                 flow: complete_install
                 
     config_qa:
