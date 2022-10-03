@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IF(NULLVALUE(SFFR_Unit_Cost__c, 0)==0,0,SFFR_Unit_Cost__c) + IF(NULLVALUE(SFFR_Total_Cost_Items__c,0)==0 , 0,SFFR_Total_Cost_Items__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <inlineHelpText>Formula: total Amount of all Related Content Items plus the Cost of the Content Unit Cost</inlineHelpText>
+    <inlineHelpText>Formula: total Amount of all Related Content Items plus the Cost of the Content Unit Cost.</inlineHelpText>
     <label>Total Campaign Content Cost</label>
     <precision>18</precision>
     <required>false</required>

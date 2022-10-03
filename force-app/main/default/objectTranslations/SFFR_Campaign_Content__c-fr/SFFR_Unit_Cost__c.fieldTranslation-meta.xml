@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help>Détermine le coût de l&apos;élément de campagne.</help>
+    <help>Le coût unitaire du contenu de campagne</help>
     <label>Coût unitaire</label>
     <name>SFFR_Unit_Cost__c</name>
 </CustomFieldTranslation>
