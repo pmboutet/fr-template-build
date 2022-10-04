@@ -176,6 +176,7 @@ flows:
               record_types:
                 - record_type: Campaign.SFFR_External_Segment
                 - record_type: Campaign.SFFR_Internal_Segment
+                - record_type: Campaign.SFFR_Campaign
                   default: true
 
           2:
