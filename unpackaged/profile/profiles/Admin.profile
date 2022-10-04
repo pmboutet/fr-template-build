@@ -18,5 +18,9 @@
         </layoutAssignments>
         <layoutAssignments>
                 <layout>Campaign-SFFR Campaign Layout</layout>
+                <recordType>Campaign.SFFR_Campaign</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Campaign-SFFR Campaign Layout</layout>
         </layoutAssignments>
 </Profile>
