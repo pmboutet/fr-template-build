@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>SFFR_SystemInformation</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_SystemInformation</shortDescription>
+        <value>System Information</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Identity</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Identity</shortDescription>
+        <value>Identity</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_PrefsFiscalReceipt</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_PrefsFiscalReceipt</shortDescription>
+        <value>Thank you &amp; Tax Receipt Preferences</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_ContactOrigin</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_ContactOrigin</shortDescription>
+        <value>Contact Origin</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_PhoneAndAddress</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_PhoneAndAddress</shortDescription>
+        <value>Phone &amp; Address</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Ecosystem</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Ecosystem</shortDescription>
+        <value>Ecosystem</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Interactions</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Interactions</shortDescription>
+        <value>Interactions</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Transactions</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Transactions</shortDescription>
+        <value>Transactions</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_PhoneAndEmail</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_PhoneAndEmail</shortDescription>
+        <value>Phone and Email</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_MainAddress</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_MainAddress</shortDescription>
+        <value>Main Address</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_SecondaryAddress</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_SecondaryAddress</shortDescription>
+        <value>Secondary Address</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_GDPRAndSolicitationPreferences</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_GDPRAndSolicitationPreferences</shortDescription>
+        <value>GDPR and Solicitation Preferences</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_ActivityFeed</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_ActivityFeed</shortDescription>
+        <value>Activity Feed</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Files</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Files</shortDescription>
+        <value>Files</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Notes</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Notes</shortDescription>
+        <value>Notes</value>
+    </labels>
+</CustomLabels>

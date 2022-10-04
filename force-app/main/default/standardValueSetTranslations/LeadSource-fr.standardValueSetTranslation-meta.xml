@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Web</masterLabel>
+        <translation>Internet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Phone Inquiry</masterLabel>
+        <translation>Appel entrant</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner Referral</masterLabel>
+        <translation>Contact via partnenaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Purchased List</masterLabel>
+        <translation>Liste achetée</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Autre</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

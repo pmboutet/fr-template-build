@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Other</fullName>
+        <default>true</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Address illegible / inaccessible</fullName>
+        <default>false</default>
+        <label>Address illegible / inaccessible</label>
+    </customValue>
+    <customValue>
+        <fullName>Addressee unknown at marked address</fullName>
+        <default>false</default>
+        <label>Addressee unknown at marked address</label>
+    </customValue>
+    <customValue>
+        <fullName>Delivery refused by addressee</fullName>
+        <default>false</default>
+        <label>Delivery refused by addressee</label>
+    </customValue>
+    <customValue>
+        <fullName>Unclaimed recorded delivery</fullName>
+        <default>false</default>
+        <label>Unclaimed recorded delivery</label>
+    </customValue>
+    <description>Undeliverable Mail value set</description>
+    <masterLabel>SFFR UM</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

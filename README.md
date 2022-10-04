@@ -3,16 +3,19 @@
 ## Development
 
 To work on this project in a scratch org:
-
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
-2. Run `cci flow run dev_org --org qa` to deploy this project.
-3. Run `cci org browser qa` to open the org in your browser.
 
-cci task run list_changes --org qa -o exclude "Profile:"  
-cci task run retrieve_changes --org qa -o exclude "Profile:"
+2. CumulusCI: If you have CCI already ensure that your VS Code is running the latest version of SFDX with the following command in the Terminal `sfdx update`
+3. Run `cci flow run dev_org --org dev` to deploy this project.
+4. Run `cci org browser dev` to open the org in your browser.
+5. You must Activate the French Language settings under Setup/User Interface/Transalation Workbench/Translation Language Settings
+
+To get/list your scratch org changes
+1. Run `cci task run list_changes --org dev -o exclude "Profile:"`
+2. Run `cci task run retrieve_changes --org dev -o exclude "Profile:"`
 
 ## Authorize a Dev Hub using CLI
-
+ 
 sfdx force:auth:web:login -d -a <org_name>
 
 force:auth:web:login	        [Authorizes a Salesforce org by opening a browser so you can log in through salesforce.com]
@@ -41,4 +44,39 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
 
     https://apsynergy.quip.com/ebVoAz35rQ3a/Scratch-Org-Creation-using-CumulusCI
 
- 
+ ## Add data to your scratch org
+  
+  - Make sure to update the cumulusci.yml file adding the task: load_dataset
+
+      flows:
+         config_qa:
+            steps:
+                  3:
+                     task: load_dataset
+         config_dev:
+            steps:
+                  3:
+                     task: load_dataset
+
+   - I you are creating a new Scratch Org: Run the command cci flow run dev_org --org dev (cci flow run qa_org --org qa), the data will be loaded in the new scratch org!
+   - I you want to add data in an existing Scratch Org: Run the command cci task run load_dataset --org dev(qa) -> (scratch org name), the data will be loaded in the specified scratch org!   
+
+
+
+   ## project backlog  cci task https://cumulusci.readthedocs.io/en/stable/tasks.html?highlight=profilename
+   - Security
+     Admin persona (system admin profile)
+      cci task update_admin_profile
+     User persona (new profile)
+     permission set french template
+      cci task assign_permission_sets 
+   - Validate if other project is missing
+      cci tack check_sobjects_available
+   - How to control user-def.json?
+
+
+   QClaudio
+   1: when Main/default is deployed when doing a cci flow run dev_org --org dev
+   2: how to adjust demendencies
+   3: ISV Cci template pattern
+   4: Review our FR-TEMPLATE template

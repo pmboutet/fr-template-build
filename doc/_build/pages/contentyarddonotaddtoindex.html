@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modèle de données &mdash; SF.org FR TEMPLATE 0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> SF.org FR TEMPLATE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="campaign.html">Campagne</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Intégration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementation_guide.html">Implémentation guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Jeu de données test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payment.html">Saisie de paiements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Démo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SF.org FR TEMPLATE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Modèle de données</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/contentyarddonotaddtoindex.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modele-de-donnees">
+<h1>Modèle de données<a class="headerlink" href="#modele-de-donnees" title="Permalink to this heading"></a></h1>
+<p>Les données sont stockées dans l’objet standard Salesforce <code class="docutils literal notranslate"><span class="pre">NPSP</span> <span class="pre">Data</span> <span class="pre">Import</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Groupe fonctionnel</p></th>
+<th class="head"><p>Nom du champ</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Mandatory</p></th>
+<th class="head"><p>Défaut</p></th>
+<th class="head"><p>Règles</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contact payeur</p></td>
+<td><p><strong>SFFR_external_key</strong></p></td>
+<td><p>string</p></td>
+<td><p>indenfiant unique externe du contact payeur</p></td>
+<td><p>no</p></td>
+<td><p>null</p></td>
+<td><p>If null, <code class="docutils literal notranslate"><span class="pre">SFFR_id_contact</span></code> can’t be null</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contact payeur</p></td>
+<td><p><strong>SFFR_id_contact</strong></p></td>
+<td><p>int</p></td>
+<td><p>indenfiant unique interne SFDO du contact</p></td>
+<td><p>no</p></td>
+<td><p>null</p></td>
+<td><p>If null, <code class="docutils literal notranslate"><span class="pre">SFFR_external_key</span></code> can’t be null</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="saisie-automatique-integration-et-import-de-dons-avec-des-paiements">
+<h1>Saisie automatique/intégration et import de Dons avec des paiements<a class="headerlink" href="#saisie-automatique-integration-et-import-de-dons-avec-des-paiements" title="Permalink to this heading"></a></h1>
+<p>Lorsqu’il s’agit d’importer les données par un insert ou si on intègre un outil tiers pour que les dons/donateurs/versement, alors le FR Template met à disposition
+un certain nombre de champs dans l’objet NPSP Data Import pour faciliter et standardiser ces insdert et intégrations.</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Types de données pour insert ou intégration de paiement</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type de données</p></th>
+<th class="head"><p>Exemple</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Collecting Contact or Account</p></td>
+<td><p>Données concernant le contact qui fait le versement</p></td>
+</tr>
+<tr class="row-odd"><td><p>Household Collecting Contact</p></td>
+<td><p>Données concernant le foyer ou compte qui fait le versement</p></td>
+</tr>
+<tr class="row-even"><td><p>Household Opportunity Contact</p></td>
+<td><p>Données concernant le contact du foyer en lien avec le don</p></td>
+</tr>
+<tr class="row-odd"><td><p>Payment Information</p></td>
+<td><p>Données concernant le paiement</p></td>
+</tr>
+<tr class="row-even"><td><p>Opportunity Allocation Details</p></td>
+<td><p>Données de ventilation du don</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recurring Donation</p></td>
+<td><p>Données concernant les dons récurrents</p></td>
+</tr>
+<tr class="row-even"><td><p>Campaign source</p></td>
+<td><p>Données concernant la source de campagne</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, SF.ORG FR TEAM.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

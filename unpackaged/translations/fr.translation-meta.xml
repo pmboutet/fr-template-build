@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label>Modèle France</label>
+        <name>SFFR_Nonprofit_CRM</name>
+    </customApplications>
+    <customLabels>
+        <label>Informations système</label>
+        <name>SFFR_SystemInformation</name>
+    </customLabels>
+    <customLabels>
+        <label>Identité</label>
+        <name>SFFR_Identity</name>
+    </customLabels>
+    <customLabels>
+        <label>Préférences remerciements et reçu fiscal</label>
+        <name>SFFR_PrefsFiscalReceipt</name>
+    </customLabels>
+    <customLabels>
+        <label>Origine du contact</label>
+        <name>SFFR_ContactOrigin</name>
+    </customLabels>
+    <customLabels>
+        <label>Téléphone et adresse</label>
+        <name>SFFR_PhoneAndAddress</name>
+    </customLabels>
+    <customLabels>
+        <label>Ecosystème</label>
+        <name>SFFR_Ecosystem</name>
+    </customLabels>
+    <customLabels>
+        <label>Interactions</label>
+        <name>SFFR_Interactions</name>
+    </customLabels>
+    <customLabels>
+        <label>Transactions</label>
+        <name>SFFR_Transactions</name>
+    </customLabels>
+    <customLabels>
+        <label>Telephone et Courriel</label>
+        <name>SFFR_PhoneAndEmail</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse Principale</label>
+        <name>SFFR_MainAddress</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse Secondaire</label>
+        <name>SFFR_SecondaryAddress</name>
+    </customLabels>
+    <customLabels>
+        <label>RGPD et préférences de sollicitation</label>
+        <name>SFFR_GDPRAndSolicitationPreferences</name>
+    </customLabels>
+    <customLabels>
+        <label>Fil d&apos;activité</label>
+        <name>SFFR_ActivityFeed</name>
+    </customLabels>
+    <customLabels>
+        <label>Fichiers</label>
+        <name>SFFR_Files</name>
+    </customLabels>
+    <customLabels>
+        <label>Notes</label>
+        <name>SFFR_Notes</name>
+    </customLabels>
+</Translations>

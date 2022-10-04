@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Address illegible / inaccessible</masterLabel>
+        <translation>Défaut d&apos;accès ou d&apos;adressage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Addressee unknown at marked address</masterLabel>
+        <translation>Destinataire inconnu à l&apos;adresse</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Delivery refused by addressee</masterLabel>
+        <translation>Pli refusé par le destinataire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Autre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unclaimed recorded delivery</masterLabel>
+        <translation>Pli avisé et non réclamé</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

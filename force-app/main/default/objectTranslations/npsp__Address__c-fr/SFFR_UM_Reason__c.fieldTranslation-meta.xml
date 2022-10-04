@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Indique le motif suite à un Pli Non Distribué (PND). Valeurs basées sur les étiquettes pour les plis non distribuables fournis par La Poste.</help>
+    <label>Motif PND</label>
+    <name>SFFR_UM_Reason__c</name>
+</CustomFieldTranslation>
