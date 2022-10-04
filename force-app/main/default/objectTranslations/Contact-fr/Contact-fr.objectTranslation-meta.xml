@@ -95,6 +95,10 @@
     </layouts>
     <quickActions>
         <label></label>
+        <name>NewDonation</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>NewInKind</name>
     </quickActions>
     <quickActions>
@@ -108,6 +112,10 @@
     <quickActions>
         <label></label>
         <name>NewMembership</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>New_Open_Recurring_Donation</name>
     </quickActions>
     <quickActions>
         <label></label>
@@ -139,6 +147,10 @@
     </webLinks>
     <webLinks>
         <label></label>
+        <name>Relationships_Viewer</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
         <name>SendGmail</name>
     </webLinks>
     <webLinks>
@@ -148,6 +160,10 @@
     <webLinks>
         <label></label>
         <name>YahooWeather</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>npe4__Relationships_Viewer</name>
     </webLinks>
     <webLinks>
         <label></label>
