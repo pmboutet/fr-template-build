@@ -107,23 +107,23 @@ tasks:
             path: unpackaged/translations
 
 flows:
- 
-    config_dev:
+    dependencies:
         steps:
             3:
                 flow: npsp:config_managed
-            4:
+
+    config_dev:
+        steps:
+            3:
                 flow: findock:configure_findock
-            5:
+            4:
                 flow: complete_install
                 
     config_qa:
         steps:
             3:
-                flow: npsp:config_managed
-            4:
                 flow: findock:configure_findock
-            5:
+            4:
                 flow: complete_install
 
     complete_install:
