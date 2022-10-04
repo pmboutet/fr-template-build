@@ -8,4 +8,15 @@
         <layoutAssignments>
                 <layout>Contact-SFFR Contact Layout</layout>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>Campaign-SFFR ES Campaign Layout</layout>
+                <recordType>Campaign.SFFR_External_Segment</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Campaign-SFFR IS Campaign Layout</layout>
+                <recordType>Campaign.SFFR_Internal_Segment</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Campaign-SFFR Campaign Layout</layout>
+        </layoutAssignments>
 </Profile>
