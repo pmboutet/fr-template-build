@@ -160,6 +160,13 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Third Party Segments</pluralLabel>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>SFFR_Description__c</fields>
+        <fields>SFFR_Supplier__c</fields>
+        <fields>SFFR_Type__c</fields>
+        <profileName>System Administrator</profileName>
+    </profileSearchLayouts>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

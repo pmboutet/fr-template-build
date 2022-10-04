@@ -5,6 +5,15 @@
     <externalId>false</externalId>
     <inlineHelpText>Lookup to the Supplier Account providing the contacts.</inlineHelpText>
     <label>Supplier</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Organization</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Third Party Segments</relationshipLabel>
     <relationshipName>Third_Party_Segments</relationshipName>
