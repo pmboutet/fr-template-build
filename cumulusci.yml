@@ -11,6 +11,7 @@ project:
     git:
         default_branch: 'main'
         repo_url: https://github.com/pmboutet/fr-template-build
+
     source_format: sfdx
 
 sources:
@@ -171,6 +172,11 @@ flows:
                 name: Update Admin profile object and field access permissions
                 is_required: True
                 is_recommended: True
+            options:
+              record_types:
+                - record_type: Campaign.SFFR_External_Segment
+                - record_type: Campaign.SFFR_Internal_Segment
+                  default: true
 
           2:
             task: deploy

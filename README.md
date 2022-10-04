@@ -4,6 +4,7 @@
 
 To work on this project in a scratch org:
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
+
 2. CumulusCI: If you have CCI already ensure that your VS Code is running the latest version of SFDX with the following command in the Terminal `sfdx update`
 3. Run `cci flow run dev_org --org dev` to deploy this project.
 4. Run `cci org browser dev` to open the org in your browser.

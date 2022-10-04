@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Désigne la référence du segment chez le prestataire externe.</help>
+    <label>Identifiant Externe</label>
+    <name>SFFR_External_Key__c</name>
+</CustomFieldTranslation>
