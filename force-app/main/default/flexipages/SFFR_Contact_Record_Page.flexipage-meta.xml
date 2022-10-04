@@ -14,12 +14,6 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Contact.NewDonation</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Contact.New_Open_Recurring_Donation</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>CustomButton.Contact.npsp__Recalculate_Rollups</value>
                         </valueListItems>
                         <valueListItems>
@@ -51,9 +45,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Submit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.Contact.Relationships_Viewer</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CallHighlightAction</value>
