@@ -17,8 +17,6 @@ project:
 sources:
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
-    npsp_postinstall:
-        github: https://github.com/SFDO-Alliances/NPSP-PostInstallSteps
     findock:
         github: https://github.com/pmboutet/findock-fr-template-build
 plans:
@@ -109,17 +107,11 @@ tasks:
             path: unpackaged/translations
 
 flows:
-    dependencies:
-        steps:
-            3:
-                flow: npsp:config_managed
-            4:
-                flow: npsp:enable_rd2_managed
  
     config_dev:
         steps:
             3:
-                flow: npsp_postinstall:config_only
+                flow: npsp:config_managed
             4:
                 flow: findock:configure_findock
             5:
@@ -128,8 +120,10 @@ flows:
     config_qa:
         steps:
             3:
-                flow: npsp_postinstall:config_only
+                flow: npsp:config_managed
             4:
+                flow: findock:configure_findock
+            5:
                 flow: complete_install
 
     complete_install:
