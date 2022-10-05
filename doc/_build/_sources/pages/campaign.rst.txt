@@ -30,108 +30,18 @@ Le FR Template propose un page Lightning pour les enregistrements ayant le Type 
 
 Data modèle
 ~~~~~~~~~~~~~~~~~~
-Le data modèle prend en compte les Campagnes enfants des Campagnes parents, et il y a 2 objets personnalisés 
+Le data modèle prend en compte les Campagnes enfants des Campagnes parents, et il y a 3 objets personnalisés 
 qui s'ajoutent au modèle :
-- Segment tiers
+- Segment externe
 - Contenu de campagne
-- (++ Add in Meta Data, including list views columns)
+- Elément de conenu de campagne
 
 Nouveaux Types d'enregistrement
+  - Campagne
   - Segment externe
-  - Internal Segment interne
+  - Segment interne
 
-
-.. list-table:: Nouveaux Champs Campaign
-    :widths:  10 10 10 10 20 30
-    :header-rows: 1 
-
-    * - Objet
-      - Nom
-      - (EN)
-      - (API)
-      - Type
-      - Description
-    * - Campaign
-      - Campagne d'origine
-      - Campaign Source
-      - SFFR_Campaign_Origin__c
-      - Lookup (Campaign)
-      - Possibilité de lier un contact avec la première campagne
-
-Layouts
-~~~~~~~~~~~~~~~~~~
-Il y a 2 présentations de page livrées avec le FR Template
-  - SFFR Campaign IS Layout
-
-
-  - SFFR Campaign ES Layout: Capagne PArnet, Externet Reference (code source)
-
-Certains champs sont de ces présentations de page sont des chmaps standard Salesforce -> https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&type=5&language=fr
-Média aevc Contenu de la campagne, qui est un lien vers un objet personnalisé appelé Contenu de la campagne (Les pièces de la camapgne, les médias de la campagne)
-Autre section qui s'appelle cible. Cette cible va pointer vers un segment tiers (par exmeple une association propose un fichier de contaqacts à la locations).
-Les deux champs stanards num, ... 
-
-
-Automatismes
-~~~~~~~~~~~~~~~~~~
- 
-
-Autres recommandations et bonnes pratiques
--------------------------------------------------
-
-Rattachement d'un contact à une campagne:
-- depuis un rapport, on peut choisr de rajouter à la campagne
-- importer des enregistrement dans l'objet membres de campagnes
-- manuellement
-- Saisie Opportunité
-
-Article SalesforceBen https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
-
-Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
-
-Les campagnes marketing sont gérées sous l'objet standart ``campaign``. 
-
-Dans Salesforce il est possible de rendre compte du plan média à l'intérieur de l'application. 
-
-Une campagne peut être soit une campagne parent soit une campagne enfant. 
-La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
-
-Les campagnes sont par essence omni-canal ce qui implique qu'elle ne peuvent être typées.
-
-Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
-
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 30
-    :header-rows: 1 
-
-    * - Record type
-      - (API)
-      - Usage 
-      - Exemple
-    * - Campagne 
-      - sffr_campaing
-      - Contient un ou plusieurs opérations marketing  
-      - Campagne de urgence tsunami
-    * - Opération 
-      - sffr_operation 
-      - Une opération marketing contenant 1 ou plusieurs segments
-      - Appel à don décembre 2022
-    * - Segment interne
-      - sffr_internal_segment
-      - Un segment est une liste de contact allant recevoir un message.
-        C'est un segment interne s'il contient une liste de contact présent dans Salesforce
-      - Lettre premium - grand donateurs non réactivés
-    * - Segment externe 
-      - sffr_external_segment
-      - Un segment est une liste de contact allant recevoir un message
-        C'est un segment externe si la liste de diffusion n'est pas présente dans Salesforce
-      - Lettre premium - grand donateurs non réactivés
-
-.. note:: 
-  Les record type campagne et opérations sont dans les faits équivalents et existe plus comme convention de nommage chez certains clients (voir si on garde)
-  
-
-La particularité des segments interne est qu'ils sont liés à des contacts issus de l'instance de l'organisation. 
+La particularité des segments internes : ils sont liés à des contacts issus de l'instance Salesforce de l'organisation. 
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l'instance. Le cas le plus fréquent est qu'ils sont loués ou échangés auprès de data-brokers. 
 Les contacts ne transiteront donc jamais par les instances clientes. 
 C'est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne. 
@@ -277,50 +187,43 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
       - Le cout unitaire d'un élément de contenu de campagne
 
 
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 20 
-    :header-rows: 1 
+Layouts
+~~~~~~~~~~~~~~~~~~
+Il y a 3 présentations de page livrées avec le FR Template
+  - SFFR Campaign Layout
+  - SFFR ES Campaign Layout (Externe)
+  - SFFR IS Campaign Layout (Interne)
 
-    * - Nom
-      - (EN)
-      - (API)
-      - Description 
-    * - Nombre d'envois
-      - Number sent 
-      - numbersent
-      - Nombre de messages envoyés 
+Certains champs de ces présentations de page sont des champs standard Salesforce -> https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&type=5&language=fr
 
+Automatismes
+~~~~~~~~~~~~~~~~~~
+ 
 
-**Champs communs à tous les segments** 
+Autres recommandations et bonnes pratiques
+-------------------------------------------------
 
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 20
-    :header-rows: 1 
+Rattachement d'un contact à une campagne :
 
-    * - Nom
-      - (EN)
-      - (API)
-      - Description 
-    * - Nombre d'envois
-      - Number sent 
-      - numbersent
-      - Nombre de messages envoyés 
-  
+- depuis un rapport, on peut choisr de rajouter à la campagne
+- importer des enregistrement dans l'objet membres de campagnes
+- manuellement
+- Saisie Opportunité
 
-**Champs spécifiques aux segments internes**
+Article SalesforceBen
 
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 20 
-    :header-rows: 1 
+https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
 
-    * - Nom
-      - (EN)
-      - (API)
-      - Description 
-    * - Element de campagne
-      - Campaign content
-      - sffr_campaign_content
-      - Lookup renvoyant au message envoyé sur ce segment de campagne
+Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
+
+Dans Salesforce il est possible de rendre compte du plan média à l'intérieur de l'application. 
+
+Une campagne peut être soit une campagne parent soit une campagne enfant. 
+La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
+
+Les campagnes sont par essence omni-canal ce qui implique qu'elle ne peuvent être typées.
+
+Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
 
 Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
 

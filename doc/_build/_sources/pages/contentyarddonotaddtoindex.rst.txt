@@ -64,3 +64,52 @@ un certain nombre de champs dans l'objet NPSP Data Import pour faciliter et stan
 .. danger::
   Vérifier que le fait d'ajouter une opp sur un contact l'ajoute automatiquement à la campagne d'origine 
 
+.. list-table:: Les types de campagne
+    :widths:  10 10 20 20 
+    :header-rows: 1 
+
+    * - Nom
+      - (EN)
+      - (API)
+      - Description 
+    * - Nombre d'envois
+      - Number sent 
+      - numbersent
+      - Nombre de messages envoyés 
+
+
+**Champs communs à tous les segments** 
+
+.. list-table:: Les types de campagne
+    :widths:  10 10 20 20
+    :header-rows: 1 
+
+    * - Nom
+      - (EN)
+      - (API)
+      - Description 
+    * - Nombre d'envois
+      - Number sent 
+      - numbersent
+      - Nombre de messages envoyés 
+  
+
+**Champs spécifiques aux segments internes**
+
+.. list-table:: Les types de campagne
+    :widths:  10 10 20 20 
+    :header-rows: 1 
+
+    * - Nom
+      - (EN)
+      - (API)
+      - Description 
+    * - Element de campagne
+      - Campaign content
+      - sffr_campaign_content
+      - Lookup renvoyant au message envoyé sur ce segment de campagne
+
+
+.. note:: 
+  Les record type campagne et opérations sont dans les faits équivalents et existe plus comme convention de nommage chez certains clients (voir si on garde)
+  
