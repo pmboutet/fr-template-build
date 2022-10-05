@@ -59,3 +59,8 @@ un certain nombre de champs dans l'objet NPSP Data Import pour faciliter et stan
       - Données concernant les dons récurrents
     * - Campaign source
       - Données concernant la source de campagne
+
+
+.. danger::
+  Vérifier que le fait d'ajouter une opp sur un contact l'ajoute automatiquement à la campagne d'origine 
+

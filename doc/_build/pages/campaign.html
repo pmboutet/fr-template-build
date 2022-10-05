@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Guide d’implémentation" href="implementation_guide.html" />
+    <link rel="next" title="Méthode d’intégration universelle" href="integration.html" />
     <link rel="prev" title="Contact" href="contact.html" /> 
 </head>
 
@@ -52,6 +52,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#autres-recommandations-et-bonnes-pratiques">Autres recommandations et bonnes pratiques</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="implementation_guide.html">Implémentation guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Jeu de données test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="payment.html">Saisie de paiements</a></li>
@@ -228,35 +229,176 @@ C’est un segment externe si la liste de diffusion n’est pas présente dans S
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l’instance. Le cas le plus fréquent est qu’ils sont loués ou échangés auprès de data-brokers.
 Les contacts ne transiteront donc jamais par les instances clientes.
 C’est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne.</p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Vérifier que le fait d’ajouter une opp sur un contact l’ajoute automatiquement à la campagne d’origine</p>
-</div>
 <p><strong>Champs d’une campagne (ajoutés à NPSP)</strong></p>
 <table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<caption><span class="caption-text">Champs Contact et NPSP Address</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Nom</p></th>
+<tr class="row-odd"><th class="head"><p>Objet</p></th>
+<th class="head"><p>Nom</p></th>
 <th class="head"><p>(EN)</p></th>
 <th class="head"><p>(API)</p></th>
+<th class="head"><p>Type</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Nombre d’envois</p></td>
-<td><p>Number sent</p></td>
-<td><p>numbersent</p></td>
-<td><p>Nombre de messages envoyés</p></td>
+<tr class="row-even"><td><p>Campagne</p></td>
+<td><p>Segment externe</p></td>
+<td><p>External Segment</p></td>
+<td><p>SFFR_3party_Segment__c</p></td>
+<td><p>Lookup (Segment externe)</p></td>
+<td><p>Lien vers les segment externes décrits dans Salesforce (régie pub, base de contact externe louée)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Campagne</p></td>
+<td><p>Contenu de la campagne</p></td>
+<td><p>Campaign Content</p></td>
+<td><p>SFFR_Campaign_Content__c</p></td>
+<td><p>Lookup (Contenu de campagne)</p></td>
+<td><p>Les packages de médias envoyés</p></td>
+</tr>
+<tr class="row-even"><td><p>Campagne</p></td>
+<td><p>Code source</p></td>
+<td><p>External Key</p></td>
+<td><p>SFFR_External_Key__c</p></td>
+<td><p>Text</p></td>
+<td><p>C’est le code source ou code segment qui identifie de manière unique une liste de contact à laquelle on envoie un message donnée (E-mail, courrier, téléphone, script street marketing)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Campagne</p></td>
+<td><p>Quantité commandée maximum</p></td>
+<td><p>Maximum Ordered Quantity</p></td>
+<td><p>SFFR_Max_Ordered_Quantity__c</p></td>
+<td><p>Number</p></td>
+<td><p>Le nombre total maximum de messages souhaité pour un code source/external ref donné</p></td>
+</tr>
+<tr class="row-even"><td><p>Campagne</p></td>
+<td><p>Quantité livrée</p></td>
+<td><p>Delivered Quantity</p></td>
+<td><p>SFFR_Delivered_Quantity__c</p></td>
+<td><p>Number</p></td>
+<td><p>Possibilité des compter le nombre de sollicitations par année</p></td>
+</tr>
+<tr class="row-odd"><td><p>Campagne</p></td>
+<td><p>Ordre de deduplication</p></td>
+<td><p>Dedupe Order</p></td>
+<td><p>SFFR_Dedup_Order__c</p></td>
+<td><p>Text</p></td>
+<td><p>Dans une même campagne, il est possible d’exclure un contact présent dans un autre segment, l’ordre de dedupe définit une priorité d’un segment sur un autre segment. Note : ces informations sont uniquement descriptives dans le FR Template</p></td>
+</tr>
+<tr class="row-even"><td><p>Campagne</p></td>
+<td><p>Routeur</p></td>
+<td><p>Dispatcher</p></td>
+<td><p>SFFR_Dispatcher__c</p></td>
+<td><p>Lookup (Compte)</p></td>
+<td><p>Ceci est soit un ESP (Email Service Provider), soit une agence de Street Marketing, un plateau d’appel téléphonique, un imprimeur, ou tout autre tiers succeptible de distribuer notre message.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Campagne</p></td>
+<td><p>Identifiant routeur externe</p></td>
+<td><p>Dispatcher External Key</p></td>
+<td><p>SFFR_Dispatcher_External_Key__c</p></td>
+<td><p>Text</p></td>
+<td><p>Identifiant auprès du routeur de cet enregistrement Campagne. Il est saisi pour automatiser la synchronisation de données (envoi de la liste des contacts et des message (montée) ou en descente: click et interactions)</p></td>
+</tr>
+<tr class="row-even"><td><p>Campagne</p></td>
+<td><p>Identifiant segment externe</p></td>
+<td><p>Segmentation External Key</p></td>
+<td><p>SFFR_Segmentations_External_Key__c</p></td>
+<td><p>Text</p></td>
+<td><p>La référence éventuelle à la liste de contact générés par les segment externes (a des fins de création des membres de campagnes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Segment Externe</p></td>
+<td><p>Prestataire</p></td>
+<td><p>Supplier</p></td>
+<td><p>SFFR_Retrict_Yearly_Marketing_Sol__c</p></td>
+<td><p>Lookup (Account)</p></td>
+<td><p>Le lien vers le partenaire qui fournit les contacts</p></td>
+</tr>
+<tr class="row-even"><td><p>Segment Externe</p></td>
+<td><p>Type</p></td>
+<td><p>Type</p></td>
+<td><p>SFFR_Type__c</p></td>
+<td><p>Picklist</p></td>
+<td><p>Le canal pour l’envoi du segment tiers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Segment Externe</p></td>
+<td><p>Identifiant Externe</p></td>
+<td><p>External Key</p></td>
+<td><p>SFFR_External_Key__c</p></td>
+<td><p>Text</p></td>
+<td><p>Référence du segment chez le prestataire externe</p></td>
+</tr>
+<tr class="row-even"><td><p>Segment Externe</p></td>
+<td><p>Description</p></td>
+<td><p>Description</p></td>
+<td><p>SFFR_Description__c</p></td>
+<td><p>Text</p></td>
+<td><p>Champ text pour décrire les prestations fournies par un tiers en lien avec une campagne dans Salesforce</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contenu de campagne</p></td>
+<td><p>Type de contenu</p></td>
+<td><p>Content Type</p></td>
+<td><p>SFFR_Type__c</p></td>
+<td><p>Picklist</p></td>
+<td><p>Le type du contenu de la campagne. Les valeurs possbles sont : Adresse, e-mail, script téléphonique</p></td>
+</tr>
+<tr class="row-even"><td><p>Contenu de campagne</p></td>
+<td><p>Description</p></td>
+<td><p>Description</p></td>
+<td><p>SFFR_Description__c</p></td>
+<td><p>Long Text Area(32768)</p></td>
+<td><p>Champ text pour décrire un contenu d’une campagne dans Salesforce</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contenu de campagne</p></td>
+<td><p>Coût unitaire</p></td>
+<td><p>Unit Cost</p></td>
+<td><p>SFFR_Unit_Cost__c</p></td>
+<td><p>Currency</p></td>
+<td><p>Le cout unitaire d’un contenu de campagne</p></td>
+</tr>
+<tr class="row-even"><td><p>Contenu de campagne</p></td>
+<td><p>Coût total des éléments</p></td>
+<td><p>Items Cost</p></td>
+<td><p>SFFR_Total_Cost_Items__c</p></td>
+<td><p>Roll Up Summary</p></td>
+<td><p>La somme des coûts unitaires de chacun des éléments de contenus de campagne liés.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contenu de campagne</p></td>
+<td><p>Coût total contenu et éléments</p></td>
+<td><p>Total Campaign Content Cost</p></td>
+<td><p>SFFR_Total_Cost_Campaign_Content__c</p></td>
+<td><p>Formula Currency</p></td>
+<td><p>La somme des coûts unitaires de chacun des éléments de contenus de campagne liés, plus le coût du contenu de campagne principal     -</p></td>
+</tr>
+<tr class="row-even"><td><p>élément de contenu</p></td>
+<td><p>Type d’élément de contenu</p></td>
+<td><p>Content Item Type</p></td>
+<td><p>SFFR_Type__c</p></td>
+<td><p>Picklist</p></td>
+<td><p>Le type d’élément de contenu de la campagne. Les valeurs possbles sont : Enveloppe, Courrier, Bordereau et Flyer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>élément de contenu</p></td>
+<td><p>Description</p></td>
+<td><p>Description</p></td>
+<td><p>SFFR_Description__c</p></td>
+<td><p>Long Text Area(32768)</p></td>
+<td><p>Champ text pour décrire un élément de contenu d’une campagne dans Salesforce</p></td>
+</tr>
+<tr class="row-even"><td><p>élément de contenu</p></td>
+<td><p>Coût unitaire</p></td>
+<td><p>Unit Cost</p></td>
+<td><p>SFFR_Unit_Cost__c</p></td>
+<td><p>Currency</p></td>
+<td><p>Le cout unitaire d’un élément de contenu de campagne</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Champs communs à tous les segments</strong></p>
 <table class="colwidths-given docutils align-default" id="id4">
 <caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <colgroup>
@@ -280,9 +422,33 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </tr>
 </tbody>
 </table>
-<p><strong>Champs spécifiques aux segments internes</strong></p>
+<p><strong>Champs communs à tous les segments</strong></p>
 <table class="colwidths-given docutils align-default" id="id5">
 <caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom</p></th>
+<th class="head"><p>(EN)</p></th>
+<th class="head"><p>(API)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nombre d’envois</p></td>
+<td><p>Number sent</p></td>
+<td><p>numbersent</p></td>
+<td><p>Nombre de messages envoyés</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Champs spécifiques aux segments internes</strong></p>
+<table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -304,12 +470,11 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </tr>
 </tbody>
 </table>
-<p>Action</p>
-<p>#todo DOC RAPH : New child Action on campaign layout</p>
+<p>Dans le champ de recherche <code class="docutils literal notranslate"><span class="pre">Segment</span> <span class="pre">externe</span></code>, il y a un filtre qui permet de limiter le choix du type d’enregistrement à Organisation.</p>
+<p>Lorsque l’utilisateur consulte une campagne ayant le type d’enregistrement <code class="docutils literal notranslate"><span class="pre">Campagne</span></code>, il y a 2 boutons Actions “Créer : Segment interne” et “Créer : Segment externe”</p>
 <p>#todo DESIGN PMB choisir les colones de la hierarchy de campagne</p>
 <p>#todo DESIGN PMB Preparer les listes view sur l’objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe</p>
 <p>#todo POC FAB Lorsque l’on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse</p>
-<p>#todo DOC RAPH Limiter Organization pour Third Party Segment / Supplier</p>
 <p>#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout</p>
 <p>#todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)</p>
 </section>
@@ -320,7 +485,7 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="contact.html" class="btn btn-neutral float-left" title="Contact" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="implementation_guide.html" class="btn btn-neutral float-right" title="Guide d’implémentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="integration.html" class="btn btn-neutral float-right" title="Méthode d’intégration universelle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
