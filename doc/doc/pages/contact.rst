@@ -68,7 +68,7 @@ Layouts
 ~~~~~~~~~~~~~~~~~~
 Nouvelle présentation de page : SFFR Contact Layout
 
-Cette présenattion de page 
+Cette présentation de page est accompagné d'une Flexipage ``SFFR_Contact_Record_Page`` qui utilise des formulaires dynamiques. 
 
 Présentation de page compactes : SFFR_Contact_Compact_Layout
 
