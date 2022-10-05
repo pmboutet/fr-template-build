@@ -189,7 +189,9 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
 
 Action 
 
-#todo DOC RAPH : New child Action on campaign layout 
+#todo DOC RAPH : New child Action on campaign Layout
+
+#todo DOC RAPH : Added various Compact Layout
 
 #todo DESIGN PMB choisir les colones de la hierarchy de campagne
 
