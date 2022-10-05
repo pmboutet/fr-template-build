@@ -66,6 +66,10 @@ plans:
             options:
               namespace: npsp
               restore: True
+        6: 
+            task: sffr_assign_compact_layout
+            ui_options: 
+                name: Assign Compact Layout to Contact
 
 tasks:
     robot:
@@ -105,6 +109,17 @@ tasks:
         group: "SFFR: Translations"
         options:
             path: unpackaged/translations
+    
+    sffr_assign_compact_layout:
+         class_path: cumulusci.tasks.metadata_etl.UpdateMetadataFirstChildTextTask
+         options:
+            metadata_type: CustomObject
+            managed: False
+            namespace_inject: $project_config.project__package__namespace
+            entity: CustomObject
+            api_names: Contact
+            tag: compactLayoutAssignment
+            value: "%%%NAMESPACE%%%SFFR_Contact_Compact_Layout"   
 
 flows:
     dependencies:
@@ -130,19 +145,21 @@ flows:
         description: France Template Installation Configuration and Sample Data
         steps:
           1:
+            task: sffr_assign_compact_layout
+          2: 
             task: sffr_list_views
-          2:
-            flow: sffr_profile
           3:
-            task: sffr_translations
+            flow: sffr_profile
           4:
+            task: sffr_translations
+          5:
             task: disable_tdtm_trigger_handlers
             options:
               namespace: npsp
               active: False
-          5:
-            task: sffr_load_sdata
           6:
+            task: sffr_load_sdata
+          7:
             task: restore_tdtm_trigger_handlers
             options:
               namespace: npsp
@@ -152,10 +169,12 @@ flows:
         description: France Template Installation Configuration Only
         steps:
           1:
+            task: sffr_assign_compact_layout
+          2: 
             task: sffr_list_views
-          2:
-            flow: sffr_profile
           3:
+            flow: sffr_profile
+          4:
             task: sffr_translations
 
     sffr_profile:

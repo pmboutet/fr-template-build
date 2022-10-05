@@ -74,10 +74,10 @@ Présentation de page compactes : SFFR_Contact_Compact_Layout
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
-#todo BACK afficher au niveau du contact si son adresse principale est en pnd>0, ainsi que dans
+#todo BACKLOG afficher au niveau du contact si son adresse principale est en pnd>0, ainsi que dans
 la compacte Layout
 
-#todo BACK Reset du PND lister les champs qui font que si la valeur change, la couleur change
+#todo BACKLOG Reset du PND lister les champs qui font que si la valeur change, la couleur change
 dans le Compact Layout.
 
 #todo DESIGN PMB tracker en field history...
