@@ -155,15 +155,25 @@ flows:
           5:
             task: disable_tdtm_trigger_handlers
             options:
+              handlers:
+                        - CRLP_Rollup_TDTM
+                        - RLLP_OppRollup_TDTM
+                        - RD2_RecurringDonationsOpp_TDTM
               namespace: npsp
-              active: False
+              active: false
+              restore: false
           6:
             task: sffr_load_sdata
           7:
             task: restore_tdtm_trigger_handlers
             options:
+              handlers:
+                        - CRLP_Rollup_TDTM
+                        - RLLP_OppRollup_TDTM
+                        - RD2_RecurringDonationsOpp_TDTM
               namespace: npsp
-              restore: True
+              active: true
+              restore: true
 
     config_only:
         description: France Template Installation Configuration Only
