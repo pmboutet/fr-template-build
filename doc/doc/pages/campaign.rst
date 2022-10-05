@@ -191,12 +191,12 @@ Action
 
 #todo DOC RAPH : New child Action on campaign layout 
 
-#todo DESIGN PMP choisir les colones de la hierarchy de campagne
+#todo DESIGN PMB choisir les colones de la hierarchy de campagne
 
-#todo DESIGN PMP Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
+#todo DESIGN PMB Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
 
 #todo POC FAB Lorsque l'on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse
 
 #todo DOC RAPH Limiter Organization pour Third Party Segment / Supplier
 
-#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout
+#todo DESIGN PMB Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout
