@@ -4,7 +4,6 @@
         <field>IsActive</field>
         <formula>False</formula>
     </fieldOverrides>
-    <label>New Internal Segment</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
@@ -36,6 +35,7 @@
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
+    <standardLabel>NewRecordType</standardLabel>
     <targetObject>Campaign</targetObject>
     <targetParentField>Parent</targetParentField>
     <targetRecordType>Campaign.SFFR_Internal_Segment</targetRecordType>
