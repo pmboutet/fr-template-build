@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFFR_3party_Segment_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>SFFR_Type__c</fields>
+    <fields>SFFR_Supplier__c</fields>
+    <fields>SFFR_External_Key__c</fields>
+    <label>SFFR 3party Segment Compact Layout</label>
+</CompactLayout>

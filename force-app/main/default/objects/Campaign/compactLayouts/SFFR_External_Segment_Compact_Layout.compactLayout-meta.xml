@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFFR_External_Segment_Compact_Layout</fullName>
+    <fields>IsActive</fields>
+    <fields>Name</fields>
+    <fields>RecordTypeId</fields>
+    <fields>Type</fields>
+    <fields>SFFR_Dispatcher__c</fields>
+    <fields>SFFR_Campaign_Content__c</fields>
+    <fields>SFFR_3party_Segment__c</fields>
+    <label>SFFR External Segment Compact Layout</label>
+</CompactLayout>
