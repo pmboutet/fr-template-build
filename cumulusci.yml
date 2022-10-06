@@ -145,14 +145,8 @@ flows:
         description: France Template Installation Configuration and Sample Data
         steps:
           1:
-            task: sffr_assign_compact_layout
-          2: 
-            task: sffr_list_views
-          3:
-            flow: sffr_profile
-          4:
-            task: sffr_translations
-          5:
+            flow: config_only
+          2:
             task: disable_tdtm_trigger_handlers
             options:
               handlers:
@@ -162,9 +156,9 @@ flows:
               namespace: npsp
               active: false
               restore: false
-          6:
+          3:
             task: sffr_load_sdata
-          7:
+          4:
             task: restore_tdtm_trigger_handlers
             options:
               handlers:
