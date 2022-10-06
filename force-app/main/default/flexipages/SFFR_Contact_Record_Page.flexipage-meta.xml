@@ -759,6 +759,13 @@
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.LanguageLocaleKey}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>fr</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -816,6 +823,13 @@
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.LanguageLocaleKey}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>fr</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-x86k1kl2x3</name>
