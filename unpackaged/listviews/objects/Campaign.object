@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <listViews xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>SFFR_Root_Campaign_fr</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>TOT_NUM_SENT</columns>
+        <columns>CAMPAIGN.TOT_WON_OPPORTUNITIES</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PARENT_NAME</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Campagnes principales</label>
+    </listViews>
+</CustomObject>

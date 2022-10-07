@@ -2,6 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SFFR_Campaign</fullName>
     <active>true</active>
+    <compactLayoutAssignment>SFFR_Campaign_Compact_Layout</compactLayoutAssignment>
     <label>Campaign</label>
     <picklistValues>
         <picklist>Status</picklist>

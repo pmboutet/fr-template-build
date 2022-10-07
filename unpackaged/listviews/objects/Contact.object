@@ -9,6 +9,6 @@
         <columns>CONTACT.TITLE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Mine</filterScope>
-        <label>Tous les Contacts</label>
+        <label>Tous les contacts</label>
     </listViews>
 </CustomObject>

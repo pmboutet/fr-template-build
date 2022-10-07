@@ -5,5 +5,8 @@
     <fields>Name</fields>
     <fields>StartDate</fields>
     <fields>EndDate</fields>
+    <fields>HierarchyNumberSent</fields>
+    <fields>HierarchyAmountWonOpportunities</fields>
+    <fields>HierarchyAmountAllOpportunities</fields>
     <label>SFFR Campaign Compact Layout</label>
 </CompactLayout>
