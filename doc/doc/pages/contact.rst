@@ -87,6 +87,8 @@ dans le Compact Layout.
 #todo DOC RAPH Current limitation prevent to translate Dynamic Releated List (https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle)
 We workaround it using Component Visibility based on French or English of the current user Language
 
+#todo Mettre le Template De CCI dans notre doc
+
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
 
