@@ -279,6 +279,11 @@ ou manuellement dans Salesforce.</p>
 <h3>Layouts<a class="headerlink" href="#layouts" title="Permalink to this heading">#</a></h3>
 <p>Nouvelle présentation de page : <code class="docutils literal notranslate"><span class="pre">SFFR</span> <span class="pre">Contact</span> <span class="pre">Layout</span></code></p>
 <p>Cette présentation de page est accompagné d’une Flexipage <code class="docutils literal notranslate"><span class="pre">SFFR_Contact_Record_Page</span></code> qui utilise des formulaires dynamiques.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Il y a une lilmitation liée à la traduction des listes associées dynamiques, pour laquelle une idée a été créé ici : (<a class="reference external" href="https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle">https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle</a>)</p>
+<p>Si l’utilisateur a Français comme langue dans son enregistrement utilisateur, pas de souci. Par contre si l’utilisateur a une autre langue que le Français, alors la liste associée sera uniquement en Anglais.</p>
+</div>
 <p>Présentation de page compacte : <code class="docutils literal notranslate"><span class="pre">SFFR_Contact_Compact_Layout</span></code></p>
 </section>
 <section id="automatismes">
@@ -289,9 +294,6 @@ la compacte Layout</p>
 dans le Compact Layout.</p>
 <p>#todo DESIGN PMB tracker en field history…</p>
 <p>#todo BUG LAURETA hardcoded french in flexi page</p>
-<p>#todo DOC RAPH Current limitation prevent to translate Dynamic Releated List (<a class="reference external" href="https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle">https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle</a>)
-We workaround it using Component Visibility based on French or English of the current user Language</p>
-<p>#todo Mettre le Template De CCI dans notre doc</p>
 </section>
 </section>
 <section id="autres-recommandations-et-bonnes-pratiques">

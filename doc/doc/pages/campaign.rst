@@ -49,143 +49,157 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
 
 **Champs d'une campagne (ajoutés à NPSP)** 
 
-.. list-table:: Champs Contact et NPSP Address
-    :widths:  10 10 10 10 20 30
+.. list-table:: Champs Campagne
+    :widths:  10 10 10 10 20
     :header-rows: 1 
 
-    * - Objet
-      - Nom
+    * - Nom (FR)
       - (EN)
       - (API)
       - Type
       - Description
-    * - Campagne
-      - Segment externe
+    * - Segment externe
       - External Segment
       - SFFR_3party_Segment__c
       - Lookup (Segment externe)
       - Lien vers les segment externes décrits dans Salesforce (régie pub, base de contact externe louée)
-    * - Campagne
-      - Contenu de la campagne
+    * - Contenu de la campagne
       - Campaign Content
       - SFFR_Campaign_Content__c
       - Lookup (Contenu de campagne)
       - Les packages de médias envoyés
-    * - Campagne
-      - Code source
+    * - Code source
       - External Key
       - SFFR_External_Key__c
       - Text
       - C'est le code source ou code segment qui identifie de manière unique une liste de contact à laquelle on envoie un message donnée (E-mail, courrier, téléphone, script street marketing)
-    * - Campagne
-      - Quantité commandée maximum
+    * - Quantité commandée maximum
       - Maximum Ordered Quantity
       - SFFR_Max_Ordered_Quantity__c
       - Number
       - Le nombre total maximum de messages souhaité pour un code source/external ref donné
-    * - Campagne
-      - Quantité livrée
+    * - Quantité livrée
       - Delivered Quantity
       - SFFR_Delivered_Quantity__c 
       - Number
       - Possibilité des compter le nombre de sollicitations par année
-    * - Campagne
-      - Ordre de deduplication
+    * - Crdre de deduplication
       - Dedupe Order
       - SFFR_Dedup_Order__c
       - Text
       - Dans une même campagne, il est possible d'exclure un contact présent dans un autre segment, l'ordre de dedupe définit une priorité d'un segment sur un autre segment. Note : ces informations sont uniquement descriptives dans le FR Template
-    * - Campagne
-      - Routeur
+    * - Routeur
       - Dispatcher
       - SFFR_Dispatcher__c
       - Lookup (Compte)
       - Ceci est soit un ESP (Email Service Provider), soit une agence de Street Marketing, un plateau d'appel téléphonique, un imprimeur, ou tout autre tiers succeptible de distribuer notre message. 
-    * - Campagne
-      - Identifiant routeur externe
+    * - Identifiant routeur externe
       - Dispatcher External Key
       - SFFR_Dispatcher_External_Key__c
       - Text
       - Identifiant auprès du routeur de cet enregistrement Campagne. Il est saisi pour automatiser la synchronisation de données (envoi de la liste des contacts et des message (montée) ou en descente: click et interactions)
-    * - Campagne
-      - Identifiant segment externe
+    * - Identifiant segment externe
       - Segmentation External Key
       - SFFR_Segmentations_External_Key__c
       - Text
       - La référence éventuelle à la liste de contact générés par les segment externes (a des fins de création des membres de campagnes)
-    * - Segment Externe
-      - Prestataire
+
+**Champs d'un segment externe (ajoutés à NPSP)** 
+
+.. list-table:: Champs Segment Externe
+    :widths:  10 10 10 10 20
+    :header-rows: 1 
+
+    * - Nom (FR)
+      - (EN)
+      - (API)
+      - Type
+      - Description
+    * - Prestataire
       - Supplier
       - SFFR_Retrict_Yearly_Marketing_Sol__c
       - Lookup (Account)
       - Le lien vers le partenaire qui fournit les contacts
-    * - Segment Externe
-      - Type
+    * - Type
       - Type
       - SFFR_Type__c
       - Picklist
       - Le canal pour l'envoi du segment tiers
-    * - Segment Externe
-      - Identifiant Externe
+    * - Identifiant Externe
       - External Key
       - SFFR_External_Key__c
       - Text
       - Référence du segment chez le prestataire externe
-    * - Segment Externe
-      - Description
+    * - Description
       - Description
       - SFFR_Description__c
       - Text
       - Champ text pour décrire les prestations fournies par un tiers en lien avec une campagne dans Salesforce
-    * - Contenu de campagne
-      - Type de contenu
+
+**Champs d'un Contenu de Campagne (ajoutés à NPSP)** 
+
+.. list-table:: Champs Contenu de Campagne
+    :widths:  10 10 10 10 20
+    :header-rows: 1 
+
+    * - Nom (FR)
+      - (EN)
+      - (API)
+      - Type
+      - Description
+    * - Type de contenu
       - Content Type
       - SFFR_Type__c
       - Picklist
       - Le type du contenu de la campagne. Les valeurs possbles sont : Adresse, e-mail, script téléphonique
-    * - Contenu de campagne
-      - Description
+    * - Description
       - Description
       - SFFR_Description__c
       - Long Text Area(32768)
       - Champ text pour décrire un contenu d'une campagne dans Salesforce
-    * - Contenu de campagne
-      - Coût unitaire
+    * - Coût unitaire
       - Unit Cost
       - SFFR_Unit_Cost__c
       - Currency
       - Le cout unitaire d'un contenu de campagne
-    * - Contenu de campagne
-      - Coût total des éléments
+    * - Coût total des éléments
       - Items Cost
       - SFFR_Total_Cost_Items__c
       - Roll Up Summary
       - La somme des coûts unitaires de chacun des éléments de contenus de campagne liés.
-    * - Contenu de campagne
-      - Coût total contenu et éléments
+    * - Coût total contenu et éléments
       - Total Campaign Content Cost
       - SFFR_Total_Cost_Campaign_Content__c
       - Formula Currency
       - La somme des coûts unitaires de chacun des éléments de contenus de campagne liés, plus le coût du contenu de campagne principal     - 
-    * - élément de contenu
-      - Type d'élément de contenu
+
+
+**Champs d'un Elément de Contenu (ajoutés à NPSP)** 
+
+.. list-table:: Champs Elément de Contenu
+    :widths:  10 10 10 10 20
+    :header-rows: 1 
+
+    * - Nom (FR)
+      - (EN)
+      - (API)
+      - Type
+      - Description
+    * - Type d'élément de contenu
       - Content Item Type
       - SFFR_Type__c
       - Picklist
       - Le type d'élément de contenu de la campagne. Les valeurs possbles sont : Enveloppe, Courrier, Bordereau et Flyer.
-    * - élément de contenu
-      - Description
+    * - Description
       - Description
       - SFFR_Description__c
       - Long Text Area(32768)
       - Champ text pour décrire un élément de contenu d'une campagne dans Salesforce
-    * - élément de contenu
-      - Coût unitaire
+    * - Coût unitaire
       - Unit Cost
       - SFFR_Unit_Cost__c
       - Currency
       - Le cout unitaire d'un élément de contenu de campagne
-
 
 Layouts
 ~~~~~~~~~~~~~~~~~~
@@ -215,13 +229,6 @@ Article SalesforceBen
 https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
 
 Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
-
-Dans Salesforce il est possible de rendre compte du plan média à l'intérieur de l'application. 
-
-Une campagne peut être soit une campagne parent soit une campagne enfant. 
-La campagne est dite "enfant" si elle dispose dans le champ ``Campagne principale`` (FR) noté ``ParentId`` (API) d'une valeur. 
-
-Les campagnes sont par essence omni-canal ce qui implique qu'elle ne peuvent être typées.
 
 Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
 

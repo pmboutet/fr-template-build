@@ -70,6 +70,12 @@ Nouvelle présentation de page : ``SFFR Contact Layout``
 
 Cette présentation de page est accompagné d'une Flexipage ``SFFR_Contact_Record_Page`` qui utilise des formulaires dynamiques. 
 
+.. Attention::
+  Il y a une lilmitation liée à la traduction des listes associées dynamiques, pour laquelle une idée a été créé ici : (https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle)
+  
+  Si l'utilisateur a Français comme langue dans son enregistrement utilisateur, pas de souci. Par contre si l'utilisateur a une autre langue que le Français, alors la liste associée sera uniquement en Anglais.
+  
+
 Présentation de page compacte : ``SFFR_Contact_Compact_Layout``
 
 Automatismes
@@ -83,11 +89,6 @@ dans le Compact Layout.
 #todo DESIGN PMB tracker en field history...
 
 #todo BUG LAURETA hardcoded french in flexi page
-
-#todo DOC RAPH Current limitation prevent to translate Dynamic Releated List (https://ideas.salesforce.com/s/idea/a0B8W00000K3St1UAF/translation-for-the-label-of-dynamic-related-listsingle)
-We workaround it using Component Visibility based on French or English of the current user Language
-
-#todo Mettre le Template De CCI dans notre doc
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
