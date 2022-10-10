@@ -1085,7 +1085,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Statistiques</value>
+                    <value>{!$Label.SFFR_Statistics}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection9</identifier>
@@ -1475,11 +1475,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>searchHint</name>
-                    <value>Type a topic name and press Enter.</value>
+                    <value>{!$Label.SFFR_QualifiersSearchHint}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Tags (qualifiants)</value>
+                    <value>{!$Label.SFFR_Qualifiers}</value>
                 </componentInstanceProperties>
                 <componentName>forceChatter:topicsOnRecordWrapper</componentName>
                 <identifier>forceChatter_topicsOnRecordWrapper</identifier>

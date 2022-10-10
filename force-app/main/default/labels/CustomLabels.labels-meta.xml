@@ -120,4 +120,28 @@
         <shortDescription>SFFR_Notes</shortDescription>
         <value>Notes</value>
     </labels>
+    <labels>
+        <fullName>SFFR_Statistics</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Statistics</shortDescription>
+        <value>Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Qualifiers</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Qualifiers</shortDescription>
+        <value>Tags (qualifiers)</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_QualifiersSearchHint</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_QualifiersSearchHint</shortDescription>
+        <value>Type a topic name and press Enter.</value>
+    </labels>
 </CustomLabels>

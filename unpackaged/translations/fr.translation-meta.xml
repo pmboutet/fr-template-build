@@ -64,4 +64,16 @@
         <label>Notes</label>
         <name>SFFR_Notes</name>
     </customLabels>
+    <customLabels>
+        <label>Statistiques</label>
+        <name>SFFR_Statistics</name>
+    </customLabels>
+    <customLabels>
+        <label>Tags (qualifiants)</label>
+        <name>SFFR_Qualifiers</name>
+    </customLabels>
+    <customLabels>
+        <label>Tapez un nom de rubrique et appuyez sur Entrée.</label>
+        <name>SFFR_QualifiersSearchHint</name>
+    </customLabels>
 </Translations>
