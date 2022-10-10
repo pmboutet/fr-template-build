@@ -247,3 +247,5 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 #todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)
 
 #todo DOC RAPH 4 tableaux au lieu de 1
+
+#todo DOC document / Links how to import laead/contact/Members from IS campaign RT
