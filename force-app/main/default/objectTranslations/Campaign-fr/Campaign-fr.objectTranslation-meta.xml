@@ -50,11 +50,15 @@
         <name>new_external</name>
     </quickActions>
     <recordTypes>
-        <label></label>
+        <label>Campagne</label>
+        <name>SFFR_Campaign</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Segment Externe</label>
         <name>SFFR_External_Segment</name>
     </recordTypes>
     <recordTypes>
-        <label></label>
+        <label>Segment Interne</label>
         <name>SFFR_Internal_Segment</name>
     </recordTypes>
     <webLinks>
