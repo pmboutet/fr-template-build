@@ -108,18 +108,15 @@ tasks:
         class_path: cumulusci.tasks.salesforce.Deploy
         group: "SFFR: Translations"
         options:
-            path: unpackaged/translations
-    
-    sffr_assign_compact_layout:
-         class_path: cumulusci.tasks.metadata_etl.UpdateMetadataFirstChildTextTask
-         options:
+            path: unpackaged/translations 
+
+    sffr_assign_compact_layout_task:
+        class_path: cumulusci.tasks.metadata_etl.UpdateMetadataFirstChildTextTask
+        options:
             metadata_type: CustomObject
-            managed: False
             namespace_inject: $project_config.project__package__namespace
             entity: CustomObject
-            api_names: Contact
             tag: compactLayoutAssignment
-            value: "%%%NAMESPACE%%%SFFR_Contact_Compact_Layout"   
 
 flows:
     dependencies:
@@ -173,7 +170,7 @@ flows:
         description: France Template Installation Configuration Only
         steps:
           1:
-            task: sffr_assign_compact_layout
+            flow: sffr_assign_compact_layout
           2: 
             task: sffr_list_views
           3:
@@ -205,3 +202,37 @@ flows:
             
             options:
               path: unpackaged/profile
+
+    sffr_assign_compact_layout:
+        description: Assign Compact Layouts
+        steps:
+          1:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: Contact
+                value: "%%%NAMESPACE%%%SFFR_Contact_Compact_Layout"  
+          2:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: SFFR_3party_Segment__c
+                value: "%%%NAMESPACE%%%SFFR_3party_Segment_Compact_Layout"  
+          3:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: Campaign
+                value: "%%%NAMESPACE%%%SFFR_Campaign_Compact_Layout" 
+          4:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: npsp__Address__c
+                value: "%%%NAMESPACE%%%SFFR_Address_Compact_Layout" 
+          5:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: SFFR_Campaign_Content__c
+                value: "%%%NAMESPACE%%%SFFR_Campaign_Content_Compact_Layout" 
+          6:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: SFFR_Campaign_Content_Item__c
+                value: "%%%NAMESPACE%%%SFFR_Campaign_Content_Item_Compact_Layout" 
