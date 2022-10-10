@@ -248,4 +248,5 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 
 #todo DOC RAPH 4 tableaux au lieu de 1
 
-#todo DOC document / Links how to import laead/contact/Members from IS campaign RT
+#todo DOC RAPH document / Links how to import laead/contact/Members from IS campaign RT
+
