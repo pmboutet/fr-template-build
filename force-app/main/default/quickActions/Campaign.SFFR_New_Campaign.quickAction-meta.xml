@@ -48,7 +48,7 @@
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
-    <standardLabel>NewChildRecordType</standardLabel>
+    <standardLabel>NewChild</standardLabel>
     <targetObject>Campaign</targetObject>
     <targetParentField>Parent</targetParentField>
     <targetRecordType>Campaign.SFFR_Campaign</targetRecordType>
