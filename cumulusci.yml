@@ -34,7 +34,7 @@ plans:
         action: error
         message: "France Template requires the Nonprofit Success Pack. Please install the Nonprofit Success Pack and try again."
     steps:
-        1:
+        1: 
             task: sffr_list_views
             ui_options:
                 name: Configure FR Contact List Views
@@ -66,10 +66,8 @@ plans:
             options:
               namespace: npsp
               restore: True
-        6: 
-            task: sffr_assign_compact_layout
-            ui_options: 
-                name: Assign Compact Layout to Contact
+        6:
+            flow: sffr_assign_compact_layout 
 
 tasks:
     robot:
@@ -169,14 +167,14 @@ flows:
     config_only:
         description: France Template Installation Configuration Only
         steps:
-          1:
-            flow: sffr_assign_compact_layout
-          2: 
+          1: 
             task: sffr_list_views
-          3:
+          2:
             flow: sffr_profile
-          4:
+          3:
             task: sffr_translations
+          4:
+            flow: sffr_assign_compact_layout
 
     sffr_profile:
         steps:
