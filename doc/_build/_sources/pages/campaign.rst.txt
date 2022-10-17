@@ -217,12 +217,21 @@ Automatismes
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
 
-Rattachement d'un contact à une campagne :
+Rattacher des contacts à une campagne
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- depuis un rapport, on peut choisr de rajouter à la campagne
-- importer des enregistrement dans l'objet membres de campagnes
-- manuellement
-- Saisie Opportunité
+1. Grâce aux rapports on peut segmenter ses contacts (filtres) pour ensuite les ajouter à une campagne.
+
+-> Cliquez sur le menu d'actions du rapport, puis sélectionnez ``Ajouter à la campagne``. Ensuite Saisissez ou sélectionnez la campagne à laquelle ajouter ces membres, puis sélectionnez un statut pour les nouveaux membres ou gardez leur statut actuel. Enregistrez.
+
+2. Une autre façon de procéder et d'importer des enregistrements dans l'objet membres de campagne. le fichier CSV que vous allez insérer va comporter à la fois l'identifiant du contact et l'identifiant de la campagne, plus d'autres informations telles que statut de membre de campagne
+
+.. note:: Article de l'aide en ligne Salesforce
+  https://help.salesforce.com/s/articleView?id=000386155&type=1&language=fr
+
+4. On peut également ajouter manuellement des contacts à une campagne. Pour ce faire, naviguer vers la campagne puis dans la liste associée ``membres de campagne``, ensuite dans le menu d'action choisir ``ajouter des contacts`` et choisir les contacts à ajouter manuellement.
+
+5. Enfin il est possible également d'ajouter des membres de campagne à une campagne lorsqu'on crée un don et que l'on renseigne le champ ``campagne principale`` dans le don. ceci va automatiquement ajouter de contact principal du don à la campagne qui est renseigné sur le don.
 
 Article SalesforceBen
 
@@ -246,7 +255,4 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 
 #todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)
 
-#todo DOC RAPH 4 tableaux au lieu de 1
-
-#todo DOC RAPH document / Links how to import laead/contact/Members from IS campaign RT
 

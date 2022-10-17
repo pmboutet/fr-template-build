@@ -474,13 +474,24 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </section>
 <section id="autres-recommandations-et-bonnes-pratiques">
 <h2>Autres recommandations et bonnes pratiques<a class="headerlink" href="#autres-recommandations-et-bonnes-pratiques" title="Permalink to this heading">#</a></h2>
-<p>Rattachement d’un contact à une campagne :</p>
-<ul class="simple">
-<li><p>depuis un rapport, on peut choisr de rajouter à la campagne</p></li>
-<li><p>importer des enregistrement dans l’objet membres de campagnes</p></li>
-<li><p>manuellement</p></li>
-<li><p>Saisie Opportunité</p></li>
-</ul>
+<section id="rattacher-des-contacts-a-une-campagne">
+<h3>Rattacher des contacts à une campagne<a class="headerlink" href="#rattacher-des-contacts-a-une-campagne" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Grâce aux rapports on peut segmenter ses contacts (filtres) pour ensuite les ajouter à une campagne.</p></li>
+</ol>
+<p>-&gt; Cliquez sur le menu d’actions du rapport, puis sélectionnez <code class="docutils literal notranslate"><span class="pre">Ajouter</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">campagne</span></code>. Ensuite Saisissez ou sélectionnez la campagne à laquelle ajouter ces membres, puis sélectionnez un statut pour les nouveaux membres ou gardez leur statut actuel. Enregistrez.</p>
+<ol class="arabic simple" start="2">
+<li><p>Une autre façon de procéder et d’importer des enregistrements dans l’objet membres de campagne. le fichier CSV que vous allez insérer va comporter à la fois l’identifiant du contact et l’identifiant de la campagne, plus d’autres informations telles que statut de membre de campagne</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Article de l’aide en ligne Salesforce
+<a class="reference external" href="https://help.salesforce.com/s/articleView?id=000386155&amp;type=1&amp;language=fr">https://help.salesforce.com/s/articleView?id=000386155&amp;type=1&amp;language=fr</a></p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>On peut également ajouter manuellement des contacts à une campagne. Pour ce faire, naviguer vers la campagne puis dans la liste associée <code class="docutils literal notranslate"><span class="pre">membres</span> <span class="pre">de</span> <span class="pre">campagne</span></code>, ensuite dans le menu d’action choisir <code class="docutils literal notranslate"><span class="pre">ajouter</span> <span class="pre">des</span> <span class="pre">contacts</span></code> et choisir les contacts à ajouter manuellement.</p></li>
+<li><p>Enfin il est possible également d’ajouter des membres de campagne à une campagne lorsqu’on crée un don et que l’on renseigne le champ <code class="docutils literal notranslate"><span class="pre">campagne</span> <span class="pre">principale</span></code> dans le don. ceci va automatiquement ajouter de contact principal du don à la campagne qui est renseigné sur le don.</p></li>
+</ol>
 <p>Article SalesforceBen</p>
 <p><a class="reference external" href="https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/">https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/</a></p>
 <p>Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.</p>
@@ -492,8 +503,7 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 <p>#todo DOC RAPH Lorsque l’on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse</p>
 <p>#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout</p>
 <p>#todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)</p>
-<p>#todo DOC RAPH 4 tableaux au lieu de 1</p>
-<p>#todo DOC RAPH document / Links how to import laead/contact/Members from IS campaign RT</p>
+</section>
 </section>
 </section>
 
@@ -562,7 +572,10 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 <li><a class="reference internal" href="#automatismes">Automatismes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#autres-recommandations-et-bonnes-pratiques">Autres recommandations et bonnes pratiques</a></li>
+<li><a class="reference internal" href="#autres-recommandations-et-bonnes-pratiques">Autres recommandations et bonnes pratiques</a><ul>
+<li><a class="reference internal" href="#rattacher-des-contacts-a-une-campagne">Rattacher des contacts à une campagne</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

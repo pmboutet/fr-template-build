@@ -88,6 +88,8 @@ dans le Compact Layout.
 
 #todo DESIGN PMB tracker en field history...
 
+#todo PMB Design Salutation
+
 #todo BUG LAURETA hardcoded french in flexi page
 
 Autres recommandations et bonnes pratiques
