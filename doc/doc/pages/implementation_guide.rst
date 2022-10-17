@@ -5,28 +5,36 @@ Guide d'implémentation
 Introduction
 ------------------
 
+Application Lightning "Modèle France"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cette application assemble tous les onglets nécessaire pour utiliser le Modèle France développé par Salesforce.org.
+
+
+
 Contact, foyer, entreprise 
 ----------------------------
-Le FR template offre une page Contact qui apporte des améliorations apr rapport aux pages NPSP déjà exitantes.
-Ces finctionnalités supplémentaires permettent de gérer des problématiques spéfiques telles :
+Le FR template offre une page Contact qui apporte des améliorations par rapport aux pages NPSP déjà exitantes.
+Ces fonctionnalités supplémentaires permettent de gérer des problématiques spéfiques telles que :
+
 - les pnd (plis non distribués)
+
 - les préférences RGPD du contact
+
 - des remontées d'informations
+
 - les préférences de commmunications
+
 - la campagne d'origine
-``mon champ`` test
-
-Les pnd 
-
 
 
 Marketing et campagnes
 ----------------------------
 
-Campagne / campaing
+Campagne / Campaign
 ~~~~~~~~~~~~~~~~~~~~~
 
-Les campagnes marketing sont gérées sous l'objet standart ``campaign``. 
+Les campagnes marketing sont gérées sous l'objet standart ``Campaign``. 
 
 Dans Salesforce il est possible de rendre compte du plan média à l'intérieur de l'application. 
 
@@ -68,58 +76,11 @@ Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``T
   Les record type campagne et opérations sont dans les faits équivalents et existe plus comme convention de nommage chez certains clients (voir si on garde)
   
 
-La particularité des segments interne est qu'ils sont liés à des contacts issus de l'instance de l'organisation. 
+La particularité des segments interne est qu'ils sont liés à des contacts issus de l'instance de l'organisation Salesforce ou instance Salesforce. 
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l'instance. Le cas le plus fréquent est qu'ils sont loués ou échangés auprès de data-brokers. 
 Les contacts ne transiteront donc jamais par les instances clientes. 
 C'est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne. 
 
-.. danger::
-  Vérifier que le fait d'ajouter une opp sur un contact l'ajoute automatiquement à la campagne d'origine 
 
 
-**Champs d'une campagne (ajoutés à NPSP)** 
-
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 20 
-    :header-rows: 1 
-
-    * - Nom
-      - (EN)
-      - (API)
-      - Description 
-    * - Nombre d'envois
-      - Number sent 
-      - numbersent
-      - Nombre de messages envoyés 
-
-
-**Champs communs à tous les segments** 
-
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 20
-    :header-rows: 1 
-
-    * - Nom
-      - (EN)
-      - (API)
-      - Description 
-    * - Nombre d'envois
-      - Number sent 
-      - numbersent
-      - Nombre de messages envoyés 
-  
-
-**Champs spécifiques aux segments internes**
-
-.. list-table:: Les types de campagne
-    :widths:  10 10 20 20 
-    :header-rows: 1 
-
-    * - Nom
-      - (EN)
-      - (API)
-      - Description 
-    * - Element de campagne
-      - Campaign content
-      - sffr_campaign_content
-      - Lookup renvoyant au message envoyé sur ce segment de campagne
+#TODO PMB il n'y a que 3 Campagne Record Type (Campagne, Interne, Externe) pourtant cette page fat référence à "Opération" -> discussion

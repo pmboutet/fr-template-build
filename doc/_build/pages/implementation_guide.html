@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Données test" href="dataset.html" /><link rel="prev" title="Méthode d’intégration universelle" href="integration.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Contact" href="contact.html" /><link rel="prev" title="FR Template installation et déploiement" href="quickstart.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.09.29"/>
         <title>Guide d’implémentation - SF.org FR TEMPLATE 0 documentation</title>
@@ -156,10 +156,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Implémentation guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="campaign.html">Campagne</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Intégration</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Implémentation guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Jeu de données test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="payment.html">Saisie de paiements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demo.html">Démo</a></li>
@@ -201,24 +201,28 @@
 <h1>Guide d’implémentation<a class="headerlink" href="#guide-d-implementation" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="application-lightning-modele-france">
+<h3>Application Lightning “Modèle France”<a class="headerlink" href="#application-lightning-modele-france" title="Permalink to this heading">#</a></h3>
+<p>Cette application assemble tous les onglets nécessaire pour utiliser le Modèle France développé par Salesforce.org.</p>
+</section>
 </section>
 <section id="contact-foyer-entreprise">
 <h2>Contact, foyer, entreprise<a class="headerlink" href="#contact-foyer-entreprise" title="Permalink to this heading">#</a></h2>
-<p>Le FR template offre une page Contact qui apporte des améliorations apr rapport aux pages NPSP déjà exitantes.
-Ces finctionnalités supplémentaires permettent de gérer des problématiques spéfiques telles :
-- les pnd (plis non distribués)
-- les préférences RGPD du contact
-- des remontées d’informations
-- les préférences de commmunications
-- la campagne d’origine
-<code class="docutils literal notranslate"><span class="pre">mon</span> <span class="pre">champ</span></code> test</p>
-<p>Les pnd</p>
+<p>Le FR template offre une page Contact qui apporte des améliorations par rapport aux pages NPSP déjà exitantes.
+Ces fonctionnalités supplémentaires permettent de gérer des problématiques spéfiques telles que :</p>
+<ul class="simple">
+<li><p>les pnd (plis non distribués)</p></li>
+<li><p>les préférences RGPD du contact</p></li>
+<li><p>des remontées d’informations</p></li>
+<li><p>les préférences de commmunications</p></li>
+<li><p>la campagne d’origine</p></li>
+</ul>
 </section>
 <section id="marketing-et-campagnes">
 <h2>Marketing et campagnes<a class="headerlink" href="#marketing-et-campagnes" title="Permalink to this heading">#</a></h2>
-<section id="campagne-campaing">
-<h3>Campagne / campaing<a class="headerlink" href="#campagne-campaing" title="Permalink to this heading">#</a></h3>
-<p>Les campagnes marketing sont gérées sous l’objet standart <code class="docutils literal notranslate"><span class="pre">campaign</span></code>.</p>
+<section id="campagne-campaign">
+<h3>Campagne / Campaign<a class="headerlink" href="#campagne-campaign" title="Permalink to this heading">#</a></h3>
+<p>Les campagnes marketing sont gérées sous l’objet standart <code class="docutils literal notranslate"><span class="pre">Campaign</span></code>.</p>
 <p>Dans Salesforce il est possible de rendre compte du plan média à l’intérieur de l’application.</p>
 <p>Une campagne peut être soit une campagne parent soit une campagne enfant.
 La campagne est dite “enfant” si elle dispose dans le champ <code class="docutils literal notranslate"><span class="pre">Campagne</span> <span class="pre">principale</span></code> (FR) noté <code class="docutils literal notranslate"><span class="pre">ParentId</span></code> (API) d’une valeur.</p>
@@ -270,92 +274,11 @@ C’est un segment externe si la liste de diffusion n’est pas présente dans S
 <p class="admonition-title">Note</p>
 <p>Les record type campagne et opérations sont dans les faits équivalents et existe plus comme convention de nommage chez certains clients (voir si on garde)</p>
 </div>
-<p>La particularité des segments interne est qu’ils sont liés à des contacts issus de l’instance de l’organisation.
+<p>La particularité des segments interne est qu’ils sont liés à des contacts issus de l’instance de l’organisation Salesforce ou instance Salesforce.
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l’instance. Le cas le plus fréquent est qu’ils sont loués ou échangés auprès de data-brokers.
 Les contacts ne transiteront donc jamais par les instances clientes.
 C’est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne.</p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Vérifier que le fait d’ajouter une opp sur un contact l’ajoute automatiquement à la campagne d’origine</p>
-</div>
-<p><strong>Champs d’une campagne (ajoutés à NPSP)</strong></p>
-<div class="table-wrapper colwidths-given docutils container" id="id2">
-<table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Nom</p></th>
-<th class="head"><p>(EN)</p></th>
-<th class="head"><p>(API)</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Nombre d’envois</p></td>
-<td><p>Number sent</p></td>
-<td><p>numbersent</p></td>
-<td><p>Nombre de messages envoyés</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Champs communs à tous les segments</strong></p>
-<div class="table-wrapper colwidths-given docutils container" id="id3">
-<table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Nom</p></th>
-<th class="head"><p>(EN)</p></th>
-<th class="head"><p>(API)</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Nombre d’envois</p></td>
-<td><p>Number sent</p></td>
-<td><p>numbersent</p></td>
-<td><p>Nombre de messages envoyés</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Champs spécifiques aux segments internes</strong></p>
-<div class="table-wrapper colwidths-given docutils container" id="id4">
-<table class="colwidths-given docutils align-default" id="id4">
-<caption><span class="caption-text">Les types de campagne</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Nom</p></th>
-<th class="head"><p>(EN)</p></th>
-<th class="head"><p>(API)</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Element de campagne</p></td>
-<td><p>Campaign content</p></td>
-<td><p>sffr_campaign_content</p></td>
-<td><p>Lookup renvoyant au message envoyé sur ce segment de campagne</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>#TODO PMB il n’y a que 3 Campagne Record Type (Campagne, Interne, Externe) pourtant cette page fat référence à “Opération” -&gt; discussion</p>
 </section>
 </section>
 </section>
@@ -365,23 +288,23 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="dataset.html">
+          <a class="next-page" href="contact.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Données test</div>
+                <div class="title">Contact</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="integration.html">
+          <a class="prev-page" href="quickstart.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Méthode d’intégration universelle</div>
+                <div class="title">FR Template installation et déploiement</div>
                 
               </div>
             </a>
@@ -418,10 +341,13 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Guide d’implémentation</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#application-lightning-modele-france">Application Lightning “Modèle France”</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#contact-foyer-entreprise">Contact, foyer, entreprise</a></li>
 <li><a class="reference internal" href="#marketing-et-campagnes">Marketing et campagnes</a><ul>
-<li><a class="reference internal" href="#campagne-campaing">Campagne / campaing</a></li>
+<li><a class="reference internal" href="#campagne-campaign">Campagne / Campaign</a></li>
 </ul>
 </li>
 </ul>
