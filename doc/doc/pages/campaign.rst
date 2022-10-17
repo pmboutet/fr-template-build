@@ -255,4 +255,6 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 
 #todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)
 
+#todo IMPLEMENT PMB looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
+
 
