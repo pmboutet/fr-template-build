@@ -245,16 +245,17 @@ Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de l
 
 Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
 
-#todo DESIGN PMB choisir les colones de la hierarchy de campagne
+#todo DOC RAPH hierarchy de campagne + List View 'Campagnes principales'
 
 #todo DESIGN PMB Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
 
 #todo DOC RAPH Lorsque l'on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse
 
-#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout
+#todo DOC RAPH Campaign Content, Third Party Segment
 
-#todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)
+#todo DESIGN FAB Add ecord Types to all Page Layouts System Info Section
 
-#todo IMPLEMENT PMB looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
+#todo DESIGN FAB Review Compact layout ES IS
 
+#todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
