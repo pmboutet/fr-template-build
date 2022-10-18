@@ -260,3 +260,5 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 #todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
 #TODO DESIGN PMB Review Tab icons of new objects.
+
+#TODO DOC RAPH dedupe order field as been renamend to Deduplication Order -> manage impacts on doc + translation if any

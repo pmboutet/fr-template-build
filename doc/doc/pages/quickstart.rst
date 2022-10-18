@@ -7,3 +7,10 @@ FR Template installation et déploiement
 4. Une fois installé, il y a une tâche post installation :
 
 * Activer la langue française pour les traductions personnalisées -> Configuration > Paramètres de langue de traduction > Français > Modifier > Cochez "Actif" > Enregistrer
+
+#TODO DOC RAPH Update DEfault currency to Euro
+
+#TODO DESIGN FAB Automatize Euro currency
+
+#TODO DESIGN FAB Automatize Activate French translation
+
