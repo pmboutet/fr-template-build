@@ -253,7 +253,7 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 
 #todo DOC RAPH Campaign Content, Third Party Segment
 
-#todo DESIGN FAB Add ecord Types to all Page Layouts System Info Section
+#todo DOC RAPH Record Types where relevant to all Page Layouts System Info Section
 
 #todo DESIGN FAB Review Compact layout ES IS
 
