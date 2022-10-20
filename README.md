@@ -75,11 +75,4 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
    - How to control user-def.json?
 
 
-   TODO Evalute SF in French Data Load with snowflake: https://github.com/SFDO-Tooling/Snowfakery
-
-
-   TODO FAB Create Findock Integration User + Add permission Set see: https://docs.findock.com/permissions/
-      task assign_permission_sets: https://cumulusci.readthedocs.io/en/stable/tasks.html#assign-permission-sets
-   TODO FAB Manual post install to connect Payment Processing with the Findock Integration User
-   TODO FAB Manual post install to connect WebHub with the Findock Integration User
-   
+   TODO Evalute SF in French Data Load with snowflake: https://github.com/SFDO-Tooling/Snowfakery   

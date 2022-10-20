@@ -255,10 +255,17 @@ Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Cam
 
 #todo DOC RAPH Record Types where relevant to all Page Layouts System Info Section
 
-#todo DESIGN FAB Review Compact layout ES IS
+#todo DESIGN PMP Review Compact layout ES IS
 
 #todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
 #TODO DESIGN PMB Review Tab icons of new objects.
 
 #TODO DOC RAPH dedupe order field as been renamend to Deduplication Order -> manage impacts on doc + translation if any
+
+#TODO DOC RAPH how to find the correct third party segment from lookup.
+  lookup search in multiple field https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&type=5
+  All searchable field from the object, but not lookup object
+  So if we create a segment 024 for WWF, and you search WWF 024 you can't find WWF 024 except if you put this as the segment name
+  Recommendation is to add into the description field what would be used to naroow down the search
+  so I put WWF 024 in the description of the third party segment named 024 for WFF
