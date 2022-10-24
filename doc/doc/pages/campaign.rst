@@ -241,7 +241,12 @@ Article SalesforceBen
 https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
 
 Recherche de référence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Lorsque vous allez créer des entrées dans le champ de type Lookup ``Segment externe``, lorsque l'utilisateur commence à saisir du texte, Salesforce propose les enregistrements dans l'objet ``SFFR_3party_Segment`` ou Segment Externe 
+Il est probable que les valeurs dans le chalmp SFFR_3party_Segment.Name ne soit pas assez explicite pour les utilisateurs, donc notre recommendation est la suivante : Si l'utilisateur créé un segment dont le Name = X et que le prestatire du Segment externe est "Broker de liste A", alors la meilleure pratique veut que l'on renseigne le champ description avec les valeurs ``Broker de liste A - X``.
+
+Ceci permet aux utilisateurs de retrouver le segment externe en question lorsqu'ils commencent à taper Broker de liste...
 
 Code Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
