@@ -205,14 +205,17 @@ Layouts
 ~~~~~~~~~~~~~~~~~~
 Il y a 3 présentations de page livrées avec le FR Template
   - SFFR Campaign Layout
-  - SFFR ES Campaign Layout (Externe)
   - SFFR IS Campaign Layout (Interne)
+  - SFFR ES Campaign Layout (Externe)
+
+Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
 
 Certains champs de ces présentations de page sont des champs standard Salesforce -> https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&type=5&language=fr
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
- 
+
+Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
@@ -237,24 +240,41 @@ Article SalesforceBen
 
 https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
 
+Recherche de référence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Code Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
 
 Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
 
-Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
 
-Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
 
-#todo DESIGN PMB choisir les colones de la hierarchy de campagne
+
+
+#todo DOC RAPH hierarchy de campagne + List View 'Campagnes principales'
 
 #todo DESIGN PMB Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
 
 #todo DOC RAPH Lorsque l'on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse
 
-#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout
+#todo DOC RAPH Campaign Content, Third Party Segment
 
-#todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)
+#todo DOC RAPH Record Types where relevant to all Page Layouts System Info Section
 
-#todo IMPLEMENT PMB looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
+#todo DESIGN PMP Review Compact layout ES IS
 
+#todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
+#TODO DESIGN PMB Review Tab icons of new objects.
+
+#TODO DOC RAPH dedupe order field as been renamend to Deduplication Order -> manage impacts on doc + translation if any
+
+#TODO DOC RAPH how to find the correct third party segment from lookup.
+  lookup search in multiple field https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&type=5
+  All searchable field from the object, but not lookup object
+  So if we create a segment 024 for WWF, and you search WWF 024 you can't find WWF 024 except if you put this as the segment name
+  Recommendation is to add into the description field what would be used to naroow down the search
+  so I put WWF 024 in the description of the third party segment named 024 for WFF

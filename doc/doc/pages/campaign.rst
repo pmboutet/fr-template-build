@@ -205,14 +205,17 @@ Layouts
 ~~~~~~~~~~~~~~~~~~
 Il y a 3 présentations de page livrées avec le FR Template
   - SFFR Campaign Layout
-  - SFFR ES Campaign Layout (Externe)
   - SFFR IS Campaign Layout (Interne)
+  - SFFR ES Campaign Layout (Externe)
+
+Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
 
 Certains champs de ces présentations de page sont des champs standard Salesforce -> https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&type=5&language=fr
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
- 
+
+Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
@@ -237,13 +240,19 @@ Article SalesforceBen
 
 https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
 
+Recherche de référence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Code Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
 
 Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
 
-Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
 
-Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
+
+
 
 #todo DOC RAPH hierarchy de campagne + List View 'Campagnes principales'
 

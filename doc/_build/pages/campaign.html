@@ -461,15 +461,17 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 <dl class="simple">
 <dt>Il y a 3 présentations de page livrées avec le FR Template</dt><dd><ul class="simple">
 <li><p>SFFR Campaign Layout</p></li>
-<li><p>SFFR ES Campaign Layout (Externe)</p></li>
 <li><p>SFFR IS Campaign Layout (Interne)</p></li>
+<li><p>SFFR ES Campaign Layout (Externe)</p></li>
 </ul>
 </dd>
 </dl>
+<p>Dans le champ de recherche <code class="docutils literal notranslate"><span class="pre">Segment</span> <span class="pre">externe</span></code>, il y a un filtre qui permet de limiter le choix du type d’enregistrement à Organisation.</p>
 <p>Certains champs de ces présentations de page sont des champs standard Salesforce -&gt; <a class="reference external" href="https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&amp;type=5&amp;language=fr">https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&amp;type=5&amp;language=fr</a></p>
 </section>
 <section id="automatismes">
 <h3>Automatismes<a class="headerlink" href="#automatismes" title="Permalink to this heading">#</a></h3>
+<p>Lorsque l’utilisateur consulte une campagne ayant le type d’enregistrement <code class="docutils literal notranslate"><span class="pre">Campagne</span></code>, il y a 2 boutons Actions “Créer : Segment interne” et “Créer : Segment externe”</p>
 </section>
 </section>
 <section id="autres-recommandations-et-bonnes-pratiques">
@@ -494,16 +496,31 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </ol>
 <p>Article SalesforceBen</p>
 <p><a class="reference external" href="https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/">https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/</a></p>
+</section>
+<section id="recherche-de-reference">
+<h3>Recherche de référence<a class="headerlink" href="#recherche-de-reference" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="code-source">
+<h3>Code Source<a class="headerlink" href="#code-source" title="Permalink to this heading">#</a></h3>
 <p>Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.</p>
 <p>Aussi nous recommandons de ne pas saisir au niveau d’une campagne parente un <code class="docutils literal notranslate"><span class="pre">Type</span></code> (FR) <code class="docutils literal notranslate"><span class="pre">Type</span></code> (API).</p>
-<p>Dans le champ de recherche <code class="docutils literal notranslate"><span class="pre">Segment</span> <span class="pre">externe</span></code>, il y a un filtre qui permet de limiter le choix du type d’enregistrement à Organisation.</p>
-<p>Lorsque l’utilisateur consulte une campagne ayant le type d’enregistrement <code class="docutils literal notranslate"><span class="pre">Campagne</span></code>, il y a 2 boutons Actions “Créer : Segment interne” et “Créer : Segment externe”</p>
-<p>#todo DESIGN PMB choisir les colones de la hierarchy de campagne</p>
+<p>#todo DOC RAPH hierarchy de campagne + List View ‘Campagnes principales’</p>
 <p>#todo DESIGN PMB Preparer les listes view sur l’objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe</p>
 <p>#todo DOC RAPH Lorsque l’on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse</p>
-<p>#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout</p>
-<p>#todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)</p>
-<p>#todo IMPLEMENT PMB looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur</p>
+<p>#todo DOC RAPH Campaign Content, Third Party Segment</p>
+<p>#todo DOC RAPH Record Types where relevant to all Page Layouts System Info Section</p>
+<p>#todo DESIGN PMP Review Compact layout ES IS</p>
+<p>#todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur</p>
+<p>#TODO DESIGN PMB Review Tab icons of new objects.</p>
+<p>#TODO DOC RAPH dedupe order field as been renamend to Deduplication Order -&gt; manage impacts on doc + translation if any</p>
+<dl class="simple">
+<dt>#TODO DOC RAPH how to find the correct third party segment from lookup.</dt><dd><p>lookup search in multiple field <a class="reference external" href="https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&amp;type=5">https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&amp;type=5</a>
+All searchable field from the object, but not lookup object
+So if we create a segment 024 for WWF, and you search WWF 024 you can’t find WWF 024 except if you put this as the segment name
+Recommendation is to add into the description field what would be used to naroow down the search
+so I put WWF 024 in the description of the third party segment named 024 for WFF</p>
+</dd>
+</dl>
 </section>
 </section>
 </section>
@@ -575,6 +592,8 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </li>
 <li><a class="reference internal" href="#autres-recommandations-et-bonnes-pratiques">Autres recommandations et bonnes pratiques</a><ul>
 <li><a class="reference internal" href="#rattacher-des-contacts-a-une-campagne">Rattacher des contacts à une campagne</a></li>
+<li><a class="reference internal" href="#recherche-de-reference">Recherche de référence</a></li>
+<li><a class="reference internal" href="#code-source">Code Source</a></li>
 </ul>
 </li>
 </ul>
