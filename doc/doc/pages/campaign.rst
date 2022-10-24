@@ -44,7 +44,9 @@ Nouveaux Types d'enregistrement
 La particularité des segments internes : ils sont liés à des contacts issus de l'instance Salesforce de l'organisation. 
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l'instance. Le cas le plus fréquent est qu'ils sont loués ou échangés auprès de data-brokers. 
 Les contacts ne transiteront donc jamais par les instances clientes. 
-C'est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne. 
+C'est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne.
+
+Les noms des types d'enregistrement apparaissent dans la section ``Informations Système`` en bas des présentations de page pour Campagne, Segment Interne et Segment Externe.
 
 
 **Champs d'une campagne (ajoutés à NPSP)** 
@@ -84,7 +86,7 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
       - Number
       - Possibilité des compter le nombre de sollicitations par année
     * - Crdre de deduplication
-      - Dedupe Order
+      - Deduplication Order
       - SFFR_Dedup_Order__c
       - Text
       - Dans une même campagne, il est possible d'exclure un contact présent dans un autre segment, l'ordre de dedupe définit une priorité d'un segment sur un autre segment. Note : ces informations sont uniquement descriptives dans le FR Template
@@ -253,21 +255,22 @@ Code Source
 
 Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
 
-Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
+Type de campagne
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Nous recommandons de ne pas saisir un ``Type`` au niveau d'une campagne parente.
 
+Hiérarchie de campagne
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Utilisez la hiérarchie de campagne (standard Salesforce) ainsi que les vues de liste ``Org_Campaign_Hyrarchy`` et ``Campagnes principales`` fournies avec le Modèle France
+(FR Template) pour visualiser les campagnes parentes (ex : Appel dons Dec 2023),
+les campagnes child (Appel dons Dec 2023 appels sortants), les segments internes et externes.
 
-
-#todo DOC RAPH hierarchy de campagne + List View 'Campagnes principales'
 
 #todo DESIGN PMB Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
 
-#todo DOC RAPH Lorsque l'on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse
-
 #todo DOC RAPH Campaign Content, Third Party Segment
-
-#todo DOC RAPH Record Types where relevant to all Page Layouts System Info Section
 
 #todo DESIGN PMP Review Compact layout ES IS
 
@@ -275,11 +278,4 @@ Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``T
 
 #TODO DESIGN PMB Review Tab icons of new objects.
 
-#TODO DOC RAPH dedupe order field as been renamend to Deduplication Order -> manage impacts on doc + translation if any
 
-#TODO DOC RAPH how to find the correct third party segment from lookup.
-  lookup search in multiple field https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&type=5
-  All searchable field from the object, but not lookup object
-  So if we create a segment 024 for WWF, and you search WWF 024 you can't find WWF 024 except if you put this as the segment name
-  Recommendation is to add into the description field what would be used to naroow down the search
-  so I put WWF 024 in the description of the third party segment named 024 for WFF

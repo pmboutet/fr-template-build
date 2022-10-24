@@ -237,6 +237,7 @@ qui s’ajoutent au modèle :
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l’instance. Le cas le plus fréquent est qu’ils sont loués ou échangés auprès de data-brokers.
 Les contacts ne transiteront donc jamais par les instances clientes.
 C’est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne.</p>
+<p>Les noms des types d’enregistrement apparaissent dans la section <code class="docutils literal notranslate"><span class="pre">Informations</span> <span class="pre">Système</span></code> en bas des présentations de page pour Campagne, Segment Interne et Segment Externe.</p>
 <p><strong>Champs d’une campagne (ajoutés à NPSP)</strong></p>
 <div class="table-wrapper colwidths-given docutils container" id="id1">
 <table class="colwidths-given docutils align-default" id="id1">
@@ -288,7 +289,7 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 <td><p>Possibilité des compter le nombre de sollicitations par année</p></td>
 </tr>
 <tr class="row-odd"><td><p>Crdre de deduplication</p></td>
-<td><p>Dedupe Order</p></td>
+<td><p>Deduplication Order</p></td>
 <td><p>SFFR_Dedup_Order__c</p></td>
 <td><p>Text</p></td>
 <td><p>Dans une même campagne, il est possible d’exclure un contact présent dans un autre segment, l’ordre de dedupe définit une priorité d’un segment sur un autre segment. Note : ces informations sont uniquement descriptives dans le FR Template</p></td>
@@ -499,28 +500,28 @@ C’est seulement si une opportunité est saisie que le contact ainsi crée sera
 </section>
 <section id="recherche-de-reference">
 <h3>Recherche de référence<a class="headerlink" href="#recherche-de-reference" title="Permalink to this heading">#</a></h3>
+<p>Lorsque vous allez créer des entrées dans le champ de type Lookup <code class="docutils literal notranslate"><span class="pre">Segment</span> <span class="pre">externe</span></code>, lorsque l’utilisateur commence à saisir du texte, Salesforce propose les enregistrements dans l’objet <code class="docutils literal notranslate"><span class="pre">SFFR_3party_Segment</span></code> ou Segment Externe
+Il est probable que les valeurs dans le chalmp SFFR_3party_Segment.Name ne soit pas assez explicite pour les utilisateurs, donc notre recommendation est la suivante : Si l’utilisateur créé un segment dont le Name = X et que le prestatire du Segment externe est “Broker de liste A”, alors la meilleure pratique veut que l’on renseigne le champ description avec les valeurs <code class="docutils literal notranslate"><span class="pre">Broker</span> <span class="pre">de</span> <span class="pre">liste</span> <span class="pre">A</span> <span class="pre">-</span> <span class="pre">X</span></code>.</p>
+<p>Ceci permet aux utilisateurs de retrouver le segment externe en question lorsqu’ils commencent à taper Broker de liste…</p>
 </section>
 <section id="code-source">
 <h3>Code Source<a class="headerlink" href="#code-source" title="Permalink to this heading">#</a></h3>
 <p>Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.</p>
-<p>Aussi nous recommandons de ne pas saisir au niveau d’une campagne parente un <code class="docutils literal notranslate"><span class="pre">Type</span></code> (FR) <code class="docutils literal notranslate"><span class="pre">Type</span></code> (API).</p>
-<p>#todo DOC RAPH hierarchy de campagne + List View ‘Campagnes principales’</p>
+</section>
+<section id="type-de-campagne">
+<h3>Type de campagne<a class="headerlink" href="#type-de-campagne" title="Permalink to this heading">#</a></h3>
+<p>Nous recommandons de ne pas saisir un <code class="docutils literal notranslate"><span class="pre">Type</span></code> au niveau d’une campagne parente.</p>
+</section>
+<section id="hierarchie-de-campagne">
+<h3>Hiérarchie de campagne<a class="headerlink" href="#hierarchie-de-campagne" title="Permalink to this heading">#</a></h3>
+<p>Utilisez la hiérarchie de campagne (standard Salesforce) ainsi que les vues de liste <code class="docutils literal notranslate"><span class="pre">Org_Campaign_Hyrarchy</span></code> et <code class="docutils literal notranslate"><span class="pre">Campagnes</span> <span class="pre">principales</span></code> fournies avec le Modèle France
+(FR Template) pour visualiser les campagnes parentes (ex : Appel dons Dec 2023),
+les campagnes child (Appel dons Dec 2023 appels sortants), les segments internes et externes.</p>
 <p>#todo DESIGN PMB Preparer les listes view sur l’objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe</p>
-<p>#todo DOC RAPH Lorsque l’on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse</p>
 <p>#todo DOC RAPH Campaign Content, Third Party Segment</p>
-<p>#todo DOC RAPH Record Types where relevant to all Page Layouts System Info Section</p>
 <p>#todo DESIGN PMP Review Compact layout ES IS</p>
 <p>#todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur</p>
 <p>#TODO DESIGN PMB Review Tab icons of new objects.</p>
-<p>#TODO DOC RAPH dedupe order field as been renamend to Deduplication Order -&gt; manage impacts on doc + translation if any</p>
-<dl class="simple">
-<dt>#TODO DOC RAPH how to find the correct third party segment from lookup.</dt><dd><p>lookup search in multiple field <a class="reference external" href="https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&amp;type=5">https://help.salesforce.com/s/articleView?id=sf.search_lookup_lex.htm&amp;type=5</a>
-All searchable field from the object, but not lookup object
-So if we create a segment 024 for WWF, and you search WWF 024 you can’t find WWF 024 except if you put this as the segment name
-Recommendation is to add into the description field what would be used to naroow down the search
-so I put WWF 024 in the description of the third party segment named 024 for WFF</p>
-</dd>
-</dl>
 </section>
 </section>
 </section>
@@ -594,6 +595,8 @@ so I put WWF 024 in the description of the third party segment named 024 for WFF
 <li><a class="reference internal" href="#rattacher-des-contacts-a-une-campagne">Rattacher des contacts à une campagne</a></li>
 <li><a class="reference internal" href="#recherche-de-reference">Recherche de référence</a></li>
 <li><a class="reference internal" href="#code-source">Code Source</a></li>
+<li><a class="reference internal" href="#type-de-campagne">Type de campagne</a></li>
+<li><a class="reference internal" href="#hierarchie-de-campagne">Hiérarchie de campagne</a></li>
 </ul>
 </li>
 </ul>
