@@ -60,43 +60,86 @@ CREATE TABLE "Account" (
 	"npsp__Batch__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES(1,'Multari Household','0127a000002Kef8AAC','True','Household Account','300.0','600.0','2022','2022-09-14','Robert Multari','','Robert','500.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','600.0','0.0','600.0','0.0','2.0','0.0','2.0','','100.0','0.0','600.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','6','');
-INSERT INTO "Account" VALUES(2,'Roux Household','0127a000002Kef8AAC','True','Household Account','84.5','169.0','2022','2022-09-14','Marjorie Roux','','Marjorie','100.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','169.0','0.0','169.0','0.0','2.0','0.0','2.0','','69.0','0.0','169.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','7','');
-INSERT INTO "Account" VALUES(3,'Hebert Household','0127a000002Kef8AAC','True','Household Account','100.0','100.0','2022','2022-09-30','Antoine Hebert','','Antoine','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','8','');
-INSERT INTO "Account" VALUES(4,'Roy Household','0127a000002Kef8AAC','True','Household Account','100.0','100.0','2022','2022-09-30','Paola Roy','','Paola','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','9','');
-INSERT INTO "Account" VALUES(5,'Padovani Household','0127a000002Kef8AAC','True','Household Account','100.0','100.0','2022','2022-09-30','Frank Padovani','','Frank','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','10','');
-INSERT INTO "Account" VALUES(6,'Van Asche Household','0127a000002Kef8AAC','True','Household Account','100.0','100.0','2022','2022-09-30','Sinead Van Asche','','Sinead','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','11','');
-INSERT INTO "Account" VALUES(7,'Quilleron Household','0127a000002Kef8AAC','True','Household Account','100.0','100.0','2022','2022-09-30','Pascale Quilleron','','Pascale','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','2','');
-INSERT INTO "Account" VALUES(8,'Gérard Household','0127a000002Kef8AAC','True','Household Account','62.5','250.0','2022','2022-09-01','Pascal Gérard','','Pascal','100.0','2022-09-30','0.0','','','','100.0','','','4.0','0.0','0.0','250.0','0.0','250.0','0.0','4.0','0.0','4.0','','20.0','0.0','250.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','3','');
-INSERT INTO "Account" VALUES(9,'Sample Account for Entitlements','0127a000002Kef9AAC','False','','0.0','','','','','','','0.0','','0.0','','','','0.0','','','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','','0.0','0.0','0.0','False','False','','False','','','','','','False','','','','','','','','False','','','','','');
-INSERT INTO "Account" VALUES(10,'Ginoux Household','0127a000002Kef8AAC','True','Household Account','125.0','250.0','2022','2022-09-14','Dorian Ginoux','','Dorian','150.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','250.0','0.0','250.0','0.0','2.0','0.0','2.0','','100.0','0.0','250.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','1','');
-INSERT INTO "Account" VALUES(11,'Marconi Household','0127a000002Kef8AAC','True','Household Account','110.0','220.0','2022','2022-09-14','Angelica Marconi','','Angelica','120.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','220.0','0.0','220.0','0.0','2.0','0.0','2.0','','100.0','0.0','220.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','4','');
-INSERT INTO "Account" VALUES(12,'Forêt Household','0127a000002Kef8AAC','True','Household Account','23.0','23.0','2022','2022-09-14','Florence Forêt','','Florence','23.0','2022-09-14','0.0','','','','23.0','','','1.0','0.0','0.0','23.0','0.0','23.0','0.0','1.0','0.0','1.0','','23.0','0.0','23.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','5','');
+INSERT INTO "Account" VALUES(1,'Multari Household','0123O000001jSfvQAE','True','Household Account','300.0','600.0','2022','2022-09-14','Robert Multari','','Robert','500.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','600.0','0.0','600.0','0.0','2.0','0.0','2.0','','100.0','0.0','600.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','1','');
+INSERT INTO "Account" VALUES(2,'Roux Household','0123O000001jSfvQAE','True','Household Account','84.5','169.0','2022','2022-09-14','Marjorie Roux','','Marjorie','100.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','169.0','0.0','169.0','0.0','2.0','0.0','2.0','','69.0','0.0','169.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','5','');
+INSERT INTO "Account" VALUES(3,'Hebert Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Antoine Hebert','','Antoine','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','6','');
+INSERT INTO "Account" VALUES(4,'Roy Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Paola Roy','','Paola','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','7','');
+INSERT INTO "Account" VALUES(5,'Padovani Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Frank Padovani','','Frank','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','8','');
+INSERT INTO "Account" VALUES(6,'Van Asche Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Sinead Van Asche','','Sinead','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','9','');
+INSERT INTO "Account" VALUES(7,'Quilleron Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Pascale Quilleron','','Pascale','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','10','');
+INSERT INTO "Account" VALUES(8,'Gérard Household','0123O000001jSfvQAE','True','Household Account','62.5','250.0','2022','2022-09-01','Pascal Gérard','','Pascal','100.0','2022-09-30','0.0','','','','100.0','','','4.0','0.0','0.0','250.0','0.0','250.0','0.0','4.0','0.0','4.0','','20.0','0.0','250.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','11','');
+INSERT INTO "Account" VALUES(9,'Sample Account for Entitlements','0123O000001jSfwQAE','False','','0.0','','','','','','','0.0','','0.0','','','','0.0','','','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','','0.0','0.0','0.0','False','False','','False','','','','','','False','','','','','','','','False','','','','','');
+INSERT INTO "Account" VALUES(10,'Ginoux Household','0123O000001jSfvQAE','True','Household Account','125.0','250.0','2022','2022-09-14','Dorian Ginoux','','Dorian','150.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','250.0','0.0','250.0','0.0','2.0','0.0','2.0','','100.0','0.0','250.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','2','');
+INSERT INTO "Account" VALUES(11,'Marconi Household','0123O000001jSfvQAE','True','Household Account','110.0','220.0','2022','2022-09-14','Angelica Marconi','','Angelica','120.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','220.0','0.0','220.0','0.0','2.0','0.0','2.0','','100.0','0.0','220.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','3','');
+INSERT INTO "Account" VALUES(12,'Forêt Household','0123O000001jSfvQAE','True','Household Account','23.0','23.0','2022','2022-09-14','Florence Forêt','','Florence','23.0','2022-09-14','0.0','','','','23.0','','','1.0','0.0','0.0','23.0','0.0','23.0','0.0','1.0','0.0','1.0','','23.0','0.0','23.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','4','');
+INSERT INTO "Account" VALUES(13,'Multari Household','0123O000001jSfvQAE','True','Household Account','300.0','600.0','2022','2022-09-14','Robert Multari','','Robert','500.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','600.0','0.0','600.0','0.0','2.0','0.0','2.0','','100.0','0.0','600.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(14,'Roux Household','0123O000001jSfvQAE','True','Household Account','84.5','169.0','2022','2022-09-14','Marjorie Roux','','Marjorie','100.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','169.0','0.0','169.0','0.0','2.0','0.0','2.0','','69.0','0.0','169.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(15,'Hebert Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Antoine Hebert','','Antoine','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(16,'Roy Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Paola Roy','','Paola','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(17,'Padovani Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Frank Padovani','','Frank','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(18,'Van Asche Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Sinead Van Asche','','Sinead','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(19,'Quilleron Household','0123O000001jSfvQAE','True','Household Account','100.0','100.0','2022','2022-09-30','Pascale Quilleron','','Pascale','100.0','2022-09-30','0.0','','','','100.0','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','','100.0','0.0','100.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(20,'Gérard Household','0123O000001jSfvQAE','True','Household Account','62.5','250.0','2022','2022-09-01','Pascal Gérard','','Pascal','100.0','2022-09-30','0.0','','','','100.0','','','4.0','0.0','0.0','250.0','0.0','250.0','0.0','4.0','0.0','4.0','','20.0','0.0','250.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(21,'Sample Account for Entitlements','0123O000001jSfwQAE','False','','0.0','','','','','','','0.0','','0.0','','','','0.0','','','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','','0.0','0.0','0.0','False','False','','False','','','','','','False','','','','','','','','False','','','','','');
+INSERT INTO "Account" VALUES(22,'Ginoux Household','0123O000001jSfvQAE','True','Household Account','125.0','250.0','2022','2022-09-14','Dorian Ginoux','','Dorian','150.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','250.0','0.0','250.0','0.0','2.0','0.0','2.0','','100.0','0.0','250.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(23,'Marconi Household','0123O000001jSfvQAE','True','Household Account','110.0','220.0','2022','2022-09-14','Angelica Marconi','','Angelica','120.0','2022-09-30','0.0','','','','100.0','','','2.0','0.0','0.0','220.0','0.0','220.0','0.0','2.0','0.0','2.0','','100.0','0.0','220.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
+INSERT INTO "Account" VALUES(24,'Forêt Household','0123O000001jSfvQAE','True','Household Account','23.0','23.0','2022','2022-09-14','Florence Forêt','','Florence','23.0','2022-09-14','0.0','','','','23.0','','','1.0','0.0','0.0','23.0','0.0','23.0','0.0','1.0','0.0','1.0','','23.0','0.0','23.0','False','False','','False','','','','','','False','','','','','','1.0','','False','','','','','');
 CREATE TABLE "Account_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 
 	PRIMARY KEY (record_type_id)
 );
-INSERT INTO "Account_rt_mapping" VALUES('0127a000002Kef8AAC','HH_Account');
-INSERT INTO "Account_rt_mapping" VALUES('0127a000002Kef9AAC','Organization');
+INSERT INTO "Account_rt_mapping" VALUES('0123O000001jSfvQAE','HH_Account');
+INSERT INTO "Account_rt_mapping" VALUES('0123O000001jSfwQAE','Organization');
 CREATE TABLE "Campaign" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
 	"Name" VARCHAR(255), 
+	"RecordTypeId" VARCHAR(255), 
+	"SFFR_Dedup_Order__c" VARCHAR(255), 
+	"SFFR_Delivered_Quantity__c" VARCHAR(255), 
+	"SFFR_Dispatcher_External_Key__c" VARCHAR(255), 
+	"SFFR_External_Key__c" VARCHAR(255), 
+	"SFFR_Max_Ordered_Quantity__c" VARCHAR(255), 
+	"SFFR_Segmentations_External_Key__c" VARCHAR(255), 
 	"ParentId" VARCHAR(255), 
+	"SFFR_3party_Segment__c" VARCHAR(255), 
+	"SFFR_Campaign_Content__c" VARCHAR(255), 
+	"SFFR_Dispatcher__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Campaign" VALUES(1,'False','Appel aux dons Janvier 2022','');
-INSERT INTO "Campaign" VALUES(2,'False','Plan canicule 2022','');
-INSERT INTO "Campaign" VALUES(3,'True','Générosité Printemps 2022','');
+INSERT INTO "Campaign" VALUES(1,'False','Appel aux dons Janvier 2022','0123O000001jTAQQA2','','','','','','','','','','');
+INSERT INTO "Campaign" VALUES(2,'False','Plan canicule 2022','0123O000001jTAQQA2','','','','','','','','','','');
+INSERT INTO "Campaign" VALUES(3,'False','Appel aux dons Janvier 2022','0123O000001jTAQQA2','','','','','','','','','','');
+INSERT INTO "Campaign" VALUES(4,'False','Plan canicule 2022','0123O000001jTAQQA2','','','','','','','','','','');
+INSERT INTO "Campaign" VALUES(5,'True','Générosité Printemps 2022','0123O000001jTAQQA2','','','','','','','','','','');
+INSERT INTO "Campaign" VALUES(6,'True','Générosité Printemps 2022','0123O000001jTAQQA2','','','','','','','','','','');
+CREATE TABLE "Campaign_rt_mapping" (
+	record_type_id VARCHAR(18) NOT NULL, 
+	developer_name VARCHAR(255), 
+	PRIMARY KEY (record_type_id)
+);
+INSERT INTO "Campaign_rt_mapping" VALUES('0123O000001jTAQQA2','SFFR_Campaign');
+INSERT INTO "Campaign_rt_mapping" VALUES('0123O000001jTARQA2','SFFR_External_Segment');
+INSERT INTO "Campaign_rt_mapping" VALUES('0123O000001jTASQA2','SFFR_Internal_Segment');
 CREATE TABLE "Contact" (
 	id INTEGER NOT NULL, 
 	"DoNotCall" VARCHAR(255), 
 	"FirstName" VARCHAR(255), 
+	"Title" VARCHAR(255), 
+	"MobilePhone" VARCHAR(255), 
+	"HomePhone" VARCHAR(255), 
 	"Gender__c" VARCHAR(255), 
 	"HasOptedOutOfEmail" VARCHAR(255), 
 	"HasOptedOutOfFax" VARCHAR(255), 
 	"LastName" VARCHAR(255), 
+	"SFFR_Do_Not_Thanks__c" VARCHAR(255), 
+	"SFFR_GDPR_Status__c" VARCHAR(255), 
+	"SFFR_No_Tax_Receipt__c" VARCHAR(255), 
+	"SFFR_Retrict_Yearly_Marketing_Sol__c" VARCHAR(255), 
+	"OtherStreet" VARCHAR(255), 
+	"OtherCity" VARCHAR(255), 
+	"OtherPostalCode" VARCHAR(255), 
 	"npe01__AlternateEmail__c" VARCHAR(255), 
 	"npe01__HomeEmail__c" VARCHAR(255), 
 	"npe01__PreferredPhone__c" VARCHAR(255), 
@@ -161,25 +204,28 @@ CREATE TABLE "Contact" (
 	"npsp__Sustainer__c" VARCHAR(255), 
 	"npsp__Undeliverable_Address__c" VARCHAR(255), 
 	"npsp__is_Address_Override__c" VARCHAR(255), 
+	"paysepa__Tax_Code__c" VARCHAR(255), 
+	"phstr__Stripe_Customer_Id__c" VARCHAR(255), 
 	"AccountId" VARCHAR(255), 
 	"ReportsToId" VARCHAR(255), 
+	"SFFR_Campaign_Origin__c" VARCHAR(255), 
 	"npo02__Household__c" VARCHAR(255), 
 	"npsp__Batch__c" VARCHAR(255), 
 	"npsp__Current_Address__c" VARCHAR(255), 
 	"npsp__Primary_Affiliation__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Contact" VALUES(1,'False','Dorian','','False','False','Ginoux','','dorian.ginoux@gmail.com.invalid','Home','Personal','Home','False','Work','','','','125.0','250.0','2022','2022-09-14','','150.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','250.0','0.0','250.0','0.0','2.0','0.0','2.0','100.0','','','','','','0.0','250.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','10','','','','1','');
-INSERT INTO "Contact" VALUES(2,'False','Pascale','','False','False','Quilleron','','pascale.quilleron@gmail.com.invalid','Home','Personal','Home','False','Work','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','7','','','','2','');
-INSERT INTO "Contact" VALUES(3,'False','Pascal','','False','False','Gérard','','pascal.gerard@gmail.com.invalid','Home','Personal','Home','False','Other','','','','62.5','250.0','2022','2022-09-01','','100.0','2022-09-30','0.0','','','','100.0','','','','4.0','0.0','0.0','250.0','0.0','250.0','0.0','4.0','0.0','4.0','20.0','','','','','','0.0','250.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','8','','','','3','');
-INSERT INTO "Contact" VALUES(4,'False','Angelica','','False','False','Marconi','','angelica.marconi@gmail.com.invalid','Home','Personal','Home','False','Other','','','','110.0','220.0','2022','2022-09-14','','120.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','220.0','0.0','220.0','0.0','2.0','0.0','2.0','100.0','','','','','','0.0','220.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','11','','','','4','');
-INSERT INTO "Contact" VALUES(5,'False','Florence','','False','False','Forêt','','florence.foret@gmail.com.invalid','Home','Personal','Work','False','Other','','','','23.0','23.0','2022','2022-09-14','','23.0','2022-09-14','0.0','','','','23.0','','','','1.0','0.0','0.0','23.0','0.0','23.0','0.0','1.0','0.0','1.0','23.0','','','','','','0.0','23.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','12','','','','5','');
-INSERT INTO "Contact" VALUES(6,'False','Robert','','False','False','Multari','','robert.multari@gmail.com.invalid','Home','Personal','Home','False','Other','','','','300.0','600.0','2022','2022-09-14','','500.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','600.0','0.0','600.0','0.0','2.0','0.0','2.0','100.0','','','','','','0.0','600.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','1','','','','6','');
-INSERT INTO "Contact" VALUES(7,'False','Marjorie','','False','False','Roux','','marjorie.roux@gmail.com.invalid','Home','Personal','Home','False','Other','','','','84.5','169.0','2022','2022-09-14','','100.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','169.0','0.0','169.0','0.0','2.0','0.0','2.0','69.0','','','','','','0.0','169.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','2','','','','7','');
-INSERT INTO "Contact" VALUES(8,'True','Antoine','','True','False','Hebert','','antoine.hebert@gmail.com.invalid','Home','Personal','Work','False','Work','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','True','False','False','False','','','','','','','','','','','','0.0','','False','False','3','','','','8','');
-INSERT INTO "Contact" VALUES(9,'False','Paola','','False','False','Roy','','paola.roy@gmail.com.invalid','Work','Work','Home','False','Work','','','33493939393','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','4','','','','9','');
-INSERT INTO "Contact" VALUES(10,'False','Frank','','False','False','Padovani','','frank.padovani@gmail.com.invalid','Home','Personal','Home','False','Other','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','5','','','','10','');
-INSERT INTO "Contact" VALUES(11,'False','Sinead','','False','False','Van Asche','','sinead.vanasche@gmail.com.invalid','Work','Personal','Home','False','Work','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','6','','','','11','');
+INSERT INTO "Contact" VALUES(1,'False','Robert','Accueil','655225588','+33111111111','','False','False','Multari','False','Active','False','','15 Rue du Dr Delteil','Saint Pierre d''Oléron','17310','','robert.multari@gmail.com.invalid','Home','Personal','Home','False','Other','','','','300.0','600.0','2022','2022-09-14','','500.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','600.0','0.0','600.0','0.0','2.0','0.0','2.0','100.0','','','','','','0.0','600.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','1','','4','','','22','');
+INSERT INTO "Contact" VALUES(2,'False','Dorian','Accueil','699551122','+33111111111','','False','False','Ginoux','False','Active','True','','1 Chem. des Espillières','Aubagne','13400','','dorian.ginoux@gmail.com.invalid','Home','Personal','Home','False','Work','','','','125.0','250.0','2022','2022-09-14','','150.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','250.0','0.0','250.0','0.0','2.0','0.0','2.0','100.0','','','','','','0.0','250.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','10','','6','','','12','');
+INSERT INTO "Contact" VALUES(3,'False','Angelica','Bénévole','755223366','+33111111111','','False','False','Marconi','True','Active','False','','11 Rue du Commandant Raynal','Montauban','82000','','angelica.marconi@gmail.com.invalid','Home','Personal','Home','False','Other','','','','110.0','220.0','2022','2022-09-14','','120.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','220.0','0.0','220.0','0.0','2.0','0.0','2.0','100.0','','','','','','0.0','220.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','11','','3','','','13','');
+INSERT INTO "Contact" VALUES(4,'False','Florence','Bénévole','799663322','+33111111111','','False','False','Forêt','False','Active','False','','22 Bd du Port','Le Barcarès','66420','','florence.foret@gmail.com.invalid','Home','Personal','Work','False','Other','','','','23.0','23.0','2022','2022-09-14','','23.0','2022-09-14','0.0','','','','23.0','','','','1.0','0.0','0.0','23.0','0.0','23.0','0.0','1.0','0.0','1.0','23.0','','','','','','0.0','23.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','12','','6','','','14','');
+INSERT INTO "Contact" VALUES(5,'False','Marjorie','Accueil','655889911','+33111111111','','False','False','Roux','True','Active','True','','15 Rue du Dr Delteil','Saint Pierre d''Oléron','17310','','marjorie.roux@gmail.com.invalid','Home','Personal','Home','False','Other','','','','84.5','169.0','2022','2022-09-14','','100.0','2022-09-30','0.0','','','','100.0','','','','2.0','0.0','0.0','169.0','0.0','169.0','0.0','2.0','0.0','2.0','69.0','','','','','','0.0','169.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','2','','4','','','15','');
+INSERT INTO "Contact" VALUES(6,'True','Antoine','Bénévole','633669955','+33111111111','','True','False','Hebert','True','Active','True','','14 rue Clavel','Paris','75019','','antoine.hebert@gmail.com.invalid','Home','Personal','Work','False','Work','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','True','False','False','False','','','','','','','','','','','','0.0','','False','False','','','3','','4','','','16','');
+INSERT INTO "Contact" VALUES(7,'False','Paola','Coordination terrain','677441122','+33111111111','','False','False','Roy','False','Active','True','','347 Rue du Dr Turcan','Fréjus','83600','','paola.roy@gmail.com.invalid','Work','Work','Home','False','Work','','','33493939393','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','4','','3','','','17','');
+INSERT INTO "Contact" VALUES(8,'False','Frank','Coordination terrain','688558855','+33111111111','','False','False','Padovani','False','Active','False','','11 Rue Chevreul','Angers','49100','','frank.padovani@gmail.com.invalid','Home','Personal','Home','False','Other','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','5','','3','','','18','');
+INSERT INTO "Contact" VALUES(9,'False','Sinead','Bénévole','788441122','+33111111111','','False','False','Van Asche','False','Active','False','','47 Rue Condorcet','Tourcoing','59200','','sinead.vanasche@gmail.com.invalid','Work','Personal','Home','False','Work','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','6','','6','','','19','');
+INSERT INTO "Contact" VALUES(10,'False','Pascale','Bénévole','788552233','+33111111111','','False','False','Quilleron','False','Active','False','','','','','','pascale.quilleron@gmail.com.invalid','Home','Personal','Home','False','Work','','','','100.0','100.0','2022','2022-09-30','','100.0','2022-09-30','0.0','','','','100.0','','','','1.0','0.0','0.0','100.0','0.0','100.0','0.0','1.0','0.0','1.0','100.0','','','','','','0.0','100.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','7','','4','','','20','');
+INSERT INTO "Contact" VALUES(11,'False','Pascal','Accueil','777441122','+33111111111','','False','False','Gérard','False','Active','False','','921 Rte du Violon','Les Adrets-de-l''Estérel','83600','','pascal.gerard@gmail.com.invalid','Home','Personal','Home','False','Other','','','','62.5','250.0','2022','2022-09-01','','100.0','2022-09-30','0.0','','','','100.0','','','','4.0','0.0','0.0','250.0','0.0','250.0','0.0','4.0','0.0','4.0','20.0','','','','','','0.0','250.0','False','False','False','False','False','False','','','','','','','','','','','','0.0','','False','False','','','8','','4','','','21','');
 CREATE TABLE "Opportunity" (
 	id INTEGER NOT NULL, 
 	"CloseDate" VARCHAR(255), 
@@ -194,6 +240,17 @@ CREATE TABLE "Opportunity" (
 	"npe01__Membership_Origin__c" VARCHAR(255), 
 	"npe01__Membership_Start_Date__c" VARCHAR(255), 
 	"npo02__systemHouseholdContactRoleProcessor__c" VARCHAR(255), 
+	"npsp4hub__Bank_Statement_Description__c" VARCHAR(255), 
+	"npsp4hub__Custom_Payment_Reference__c" VARCHAR(255), 
+	"npsp4hub__Generated_Payment_QR__c" VARCHAR(255), 
+	"npsp4hub__Generated_Payment_Reference__c" VARCHAR(255), 
+	"npsp4hub__Generated_Payment_Url__c" VARCHAR(255), 
+	"npsp4hub__Payment_Method__c" VARCHAR(255), 
+	"npsp4hub__Payment_Processor__c" VARCHAR(255), 
+	"npsp4hub__Recurring_Payment_QR__c" VARCHAR(255), 
+	"npsp4hub__Recurring_Payment_Reference__c" VARCHAR(255), 
+	"npsp4hub__Recurring_Payment_Url__c" VARCHAR(255), 
+	"npsp4hub__Target__c" VARCHAR(255), 
 	"npsp__Acknowledgment_Date__c" VARCHAR(255), 
 	"npsp__Acknowledgment_Status__c" VARCHAR(255), 
 	"npsp__Ask_Date__c" VARCHAR(255), 
@@ -242,37 +299,54 @@ CREATE TABLE "Opportunity" (
 	"npsp__Primary_Contact__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Opportunity" VALUES(1,'2022-09-30','False','Dorian crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8xwsQAA','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','10','','1','','','','','','','','1');
-INSERT INTO "Opportunity" VALUES(2,'2022-09-14','False','Don de Dorian pour 150€','0127a000002KewpAAC','Closed Won','0035E00002l8xwsQAA','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','10','1','1','','','','','','','','1');
-INSERT INTO "Opportunity" VALUES(3,'2022-09-30','False','Pascale Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yjAQAQ','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','7','','2','','','','','','','','2');
-INSERT INTO "Opportunity" VALUES(4,'2022-09-01','False','Pascal Gérard Master Opp 150 (100 don/30 adhesion/20 cadeau)','0127a000002KewpAAC','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','3','','','','','','','','3');
-INSERT INTO "Opportunity" VALUES(5,'2022-09-30','False','Pascal Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','3','','','','','','','','3');
-INSERT INTO "Opportunity" VALUES(6,'2022-09-01','False','Pascal Gérard Donation 9/14/2022','0127a000002KewpAAC','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','3','','','','','','','','3');
-INSERT INTO "Opportunity" VALUES(7,'2022-09-01','False','Pascal Gérard Membership 9/14/2022','0127a000002KewuAAC','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','3','','','','','','','','3');
-INSERT INTO "Opportunity" VALUES(8,'2022-09-01','False','Pascal Gérard In-Kind Gift 9/14/2022 peluche','0127a000002KewrAAC','In-Kind Received','0035E00002l8zPQQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','3','','','','','','','','3');
-INSERT INTO "Opportunity" VALUES(9,'2022-09-30','False','Angelica Crowdfunding 100EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yODQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','11','','4','','','','','','','','4');
-INSERT INTO "Opportunity" VALUES(10,'2022-09-14','False','Don de Angelica pour 120€','0127a000002KewpAAC','Closed Won','0035E00002l8yODQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','11','1','4','','','','','','','','4');
-INSERT INTO "Opportunity" VALUES(11,'2022-09-14','False','Don de Florence pour 23€','0127a000002KewpAAC','Closed Won','0035E00002l8yOXQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','12','3','5','','','','','','','','5');
-INSERT INTO "Opportunity" VALUES(12,'2022-09-30','False','Robert Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yOhQAI','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','1','','6','','','','','','','','6');
-INSERT INTO "Opportunity" VALUES(13,'2022-09-14','False','Don de Robert pour 500€','0127a000002KewpAAC','Closed Won','0035E00002l8yOhQAI','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','1','2','6','','','','','','','','6');
-INSERT INTO "Opportunity" VALUES(14,'2022-09-30','False','Marjorie Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yP6QAI','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','2','','7','','','','','','','','7');
-INSERT INTO "Opportunity" VALUES(15,'2022-09-14','False','Marjorie Roux Donation 9/14/2022','0127a000002KewpAAC','Closed Won','0035E00002l8yP6QAI','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','2','2','7','','','','','','','','7');
-INSERT INTO "Opportunity" VALUES(16,'2022-09-30','False','Antoine Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yPLQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','3','','8','','','','','','','','8');
-INSERT INTO "Opportunity" VALUES(17,'2022-09-30','False','Paola Drowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yOEQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','4','','9','','','','','','','','9');
-INSERT INTO "Opportunity" VALUES(18,'2022-09-30','False','Frank Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yOYQAY','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','5','','10','','','','','','','','10');
-INSERT INTO "Opportunity" VALUES(19,'2022-09-30','False','Sinead Crowdfunding 100 EUR','0127a000002KewpAAC','Closed Won','0035E00002l8yiqQAA','False','','','','','All Opportunities','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','6','','11','','','','','','','','11');
+INSERT INTO "Opportunity" VALUES(1,'2022-09-30','False','Robert Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yOhQAI','False','','','','','All Opportunities','Robert Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/90b95780-af28-465c-2997-deacf6b6c7ca','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','1','','1','','','','','','','','1');
+INSERT INTO "Opportunity" VALUES(2,'2022-09-14','False','Don de Robert pour 500€','0123O000001jTAGQA2','Closed Won','0035E00002l8yOhQAI','False','','','','','All Opportunities','Don de Robert pour 500€','','','','https://link.test.findock.com/pay/3o5dpguau0/0cab21c3-1374-a9d5-5efc-1f62cd10939e','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','1','4','1','','','','','','','','1');
+INSERT INTO "Opportunity" VALUES(3,'2022-09-30','False','Dorian crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8xwsQAA','False','','','','','All Opportunities','Dorian crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/ab43cdf3-bacc-136d-de9c-14cf6e681b1e','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','10','','2','','','','','','','','2');
+INSERT INTO "Opportunity" VALUES(4,'2022-09-14','False','Don de Dorian pour 150€','0123O000001jTAGQA2','Closed Won','0035E00002l8xwsQAA','False','','','','','All Opportunities','Don de Dorian pour 150€','','','','https://link.test.findock.com/pay/3o5dpguau0/cc5cb1ab-f51b-19a0-918f-5c817a186ff6','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','10','3','2','','','','','','','','2');
+INSERT INTO "Opportunity" VALUES(5,'2022-09-30','False','Angelica Crowdfunding 100EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yODQAY','False','','','','','All Opportunities','Angelica Crowdfunding 100EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/fd40afcd-c57d-f9a4-af2e-0c823f367355','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','11','','3','','','','','','','','3');
+INSERT INTO "Opportunity" VALUES(6,'2022-09-14','False','Don de Angelica pour 120€','0123O000001jTAGQA2','Closed Won','0035E00002l8yODQAY','False','','','','','All Opportunities','Don de Angelica pour 120€','','','','https://link.test.findock.com/pay/3o5dpguau0/3f2633cd-3957-4072-6eef-6f9891f6e185','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','11','3','3','','','','','','','','3');
+INSERT INTO "Opportunity" VALUES(7,'2022-09-14','False','Don de Florence pour 23€','0123O000001jTAGQA2','Closed Won','0035E00002l8yOXQAY','False','','','','','All Opportunities','Don de Florence pour 23€','','','','https://link.test.findock.com/pay/3o5dpguau0/b6a28c97-ce9f-1666-4eb0-e7fc17134985','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','12','6','4','','','','','','','','4');
+INSERT INTO "Opportunity" VALUES(8,'2022-09-30','False','Marjorie Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yP6QAI','False','','','','','All Opportunities','Marjorie Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/83952ec4-bf8a-f2b2-ed15-a43197c5c86b','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','2','','5','','','','','','','','5');
+INSERT INTO "Opportunity" VALUES(9,'2022-09-14','False','Marjorie Roux Donation 9/14/2022','0123O000001jTAGQA2','Closed Won','0035E00002l8yP6QAI','False','','','','','All Opportunities','Marjorie Roux Donation 9/14/2022','','','','https://link.test.findock.com/pay/3o5dpguau0/3fef92c0-a9e7-39a8-49ef-607a9163d96b','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','2','4','5','','','','','','','','5');
+INSERT INTO "Opportunity" VALUES(10,'2022-09-30','False','Antoine Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yPLQAY','False','','','','','All Opportunities','Antoine Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/821f556b-4106-63da-04c2-0604ab0b5665','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','3','','6','','','','','','','','6');
+INSERT INTO "Opportunity" VALUES(11,'2022-09-30','False','Paola Drowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yOEQAY','False','','','','','All Opportunities','Paola Drowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/a70ab5ba-45d2-6b3d-2411-9b3dd469ead6','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','4','','7','','','','','','','','7');
+INSERT INTO "Opportunity" VALUES(12,'2022-09-30','False','Frank Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yOYQAY','False','','','','','All Opportunities','Frank Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/9340748c-a86b-7327-5f50-e59e93151d99','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','5','','8','','','','','','','','8');
+INSERT INTO "Opportunity" VALUES(13,'2022-09-30','False','Sinead Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yiqQAA','False','','','','','All Opportunities','Sinead Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/b98d21c3-a111-d0f6-2334-f35baa34b8b7','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','6','','9','','','','','','','','9');
+INSERT INTO "Opportunity" VALUES(14,'2022-09-30','False','Pascale Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8yjAQAQ','False','','','','','All Opportunities','Pascale Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/d6ac38cd-ac7d-0fc5-7814-cfeac50d263d','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','7','','10','','','','','','','','10');
+INSERT INTO "Opportunity" VALUES(15,'2022-09-01','False','Pascal Gérard Master Opp 150 (100 don/30 adhesion/20 cadeau)','0123O000001jTAGQA2','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','Pascal Gérard Master Opp 150 (100 don/30 adhesion/20 cadeau)','','','','https://link.test.findock.com/pay/3o5dpguau0/cc0e114e-ee3f-65f9-23ef-23b4792d9ccb','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','11','','','','','','','','11');
+INSERT INTO "Opportunity" VALUES(16,'2022-09-30','False','Pascal Crowdfunding 100 EUR','0123O000001jTAGQA2','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','Pascal Crowdfunding 100 EUR','','','','https://link.test.findock.com/pay/3o5dpguau0/ff7a60ba-f08d-506c-8439-601e3904e06d','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','11','','','','','','','','11');
+INSERT INTO "Opportunity" VALUES(17,'2022-09-01','False','Pascal Gérard Donation 9/14/2022','0123O000001jTAGQA2','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','Pascal Gérard Donation 9/14/2022','','','','https://link.test.findock.com/pay/3o5dpguau0/48f77066-851c-5d77-4192-f03da8259194','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','11','','','','','','','','11');
+INSERT INTO "Opportunity" VALUES(18,'2022-09-01','False','Pascal Gérard Membership 9/14/2022','0123O000001jTALQA2','Closed Won','0035E00002l8zPQQAY','False','','','','','All Opportunities','Pascal Gérard Membership 9/14/2022','','','','https://link.test.findock.com/pay/3o5dpguau0/9404365f-9c81-071c-5329-d2b0769bd750','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','11','','','','','','','','11');
+INSERT INTO "Opportunity" VALUES(19,'2022-09-01','False','Pascal Gérard In-Kind Gift 9/14/2022 peluche','0123O000001jTAIQA2','In-Kind Received','0035E00002l8zPQQAY','False','','','','','All Opportunities','Pascal Gérard In-Kind Gift 9/14/2022 peluche','','','','https://link.test.findock.com/pay/3o5dpguau0/f2bf46c0-7f34-aeae-3732-e9ce70063acf','','','','','','','','','','','','','False','','','','','','','','','','','','False','','False','','','','','','','','','','','','','','','8','','11','','','','','','','','11');
 CREATE TABLE "Opportunity_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 
 	PRIMARY KEY (record_type_id)
 );
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KewpAAC','Donation');
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KewqAAC','Grant');
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KewrAAC','InKindGift');
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KewsAAC','MajorGift');
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KewtAAC','MatchingGift');
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KewuAAC','Membership');
-INSERT INTO "Opportunity_rt_mapping" VALUES('0127a000002KefcAAC','NPSP_Default');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jTAGQA2','Donation');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jTAHQA2','Grant');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jTAIQA2','InKindGift');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jTAJQA2','MajorGift');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jTAKQA2','MatchingGift');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jTALQA2','Membership');
+INSERT INTO "Opportunity_rt_mapping" VALUES('0123O000001jSg0QAE','NPSP_Default');
+CREATE TABLE "SFFR_3party_Segment__c" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"SFFR_Description__c" VARCHAR(255), 
+	"SFFR_External_Key__c" VARCHAR(255), 
+	"SFFR_Type__c" VARCHAR(255), 
+	"SFFR_Supplier__c" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "SFFR_Campaign_Content__c" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"SFFR_Description__c" VARCHAR(255), 
+	"SFFR_Type__c" VARCHAR(255), 
+	"SFFR_Unit_Cost__c" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "npe01__OppPayment__c" (
 	id INTEGER NOT NULL, 
 	"npe01__Check_Reference_Number__c" VARCHAR(255), 
@@ -315,24 +389,24 @@ CREATE TABLE "npe01__OppPayment__c" (
 	"npsp__OriginalPayment__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "npe01__OppPayment__c" VALUES(1,'2628263','','True','500.0','2022-09-14','Check','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','13','');
-INSERT INTO "npe01__OppPayment__c" VALUES(2,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','12','');
-INSERT INTO "npe01__OppPayment__c" VALUES(3,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','1','');
-INSERT INTO "npe01__OppPayment__c" VALUES(4,'9286387','','True','23.0','2022-09-14','Check','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','11','');
-INSERT INTO "npe01__OppPayment__c" VALUES(5,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','17','');
-INSERT INTO "npe01__OppPayment__c" VALUES(6,'','','True','20.0','2022-09-01','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','8','');
-INSERT INTO "npe01__OppPayment__c" VALUES(7,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','18','');
-INSERT INTO "npe01__OppPayment__c" VALUES(8,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','19','');
-INSERT INTO "npe01__OppPayment__c" VALUES(9,'','','True','150.0','2022-09-14','Credit Card','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','2','');
-INSERT INTO "npe01__OppPayment__c" VALUES(10,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','3','');
-INSERT INTO "npe01__OppPayment__c" VALUES(11,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','5','');
-INSERT INTO "npe01__OppPayment__c" VALUES(12,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','16','');
+INSERT INTO "npe01__OppPayment__c" VALUES(1,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','3','');
+INSERT INTO "npe01__OppPayment__c" VALUES(2,'1839638','','True','120.0','2022-09-14','Check','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','6','');
+INSERT INTO "npe01__OppPayment__c" VALUES(3,'9286387','','True','23.0','2022-09-14','Check','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','7','');
+INSERT INTO "npe01__OppPayment__c" VALUES(4,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','1','');
+INSERT INTO "npe01__OppPayment__c" VALUES(5,'2628263','','True','500.0','2022-09-14','Check','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','2','');
+INSERT INTO "npe01__OppPayment__c" VALUES(6,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','8','');
+INSERT INTO "npe01__OppPayment__c" VALUES(7,'','','True','69.0','2022-09-14','Credit Card','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','9','');
+INSERT INTO "npe01__OppPayment__c" VALUES(8,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','10','');
+INSERT INTO "npe01__OppPayment__c" VALUES(9,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','11','');
+INSERT INTO "npe01__OppPayment__c" VALUES(10,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','12','');
+INSERT INTO "npe01__OppPayment__c" VALUES(11,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','13','');
+INSERT INTO "npe01__OppPayment__c" VALUES(12,'','','True','150.0','2022-09-14','Credit Card','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','4','');
 INSERT INTO "npe01__OppPayment__c" VALUES(13,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','14','');
-INSERT INTO "npe01__OppPayment__c" VALUES(14,'1839638','','True','120.0','2022-09-14','Check','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','10','');
-INSERT INTO "npe01__OppPayment__c" VALUES(15,'','','True','100.0','2022-09-01','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','6','');
-INSERT INTO "npe01__OppPayment__c" VALUES(16,'','','True','30.0','2022-09-01','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','7','');
-INSERT INTO "npe01__OppPayment__c" VALUES(17,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','9','');
-INSERT INTO "npe01__OppPayment__c" VALUES(18,'','','True','69.0','2022-09-14','Credit Card','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','15','');
+INSERT INTO "npe01__OppPayment__c" VALUES(14,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','16','');
+INSERT INTO "npe01__OppPayment__c" VALUES(15,'','','True','100.0','2022-09-01','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','17','');
+INSERT INTO "npe01__OppPayment__c" VALUES(16,'','','True','30.0','2022-09-01','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','18','');
+INSERT INTO "npe01__OppPayment__c" VALUES(17,'','','True','20.0','2022-09-01','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','19','');
+INSERT INTO "npe01__OppPayment__c" VALUES(18,'','','True','100.0','2022-09-30','','','False','','','','','','','','','','','','','','','','','','','','','','','','','','','','','5','');
 CREATE TABLE "npe03__Recurring_Donation__c" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -346,6 +420,14 @@ CREATE TABLE "npe03__Recurring_Donation__c" (
 	"npe03__Paid_Amount__c" VARCHAR(255), 
 	"npe03__Schedule_Type__c" VARCHAR(255), 
 	"npe03__Total_Paid_Installments__c" VARCHAR(255), 
+	"npsp4hub__Bank_Statement_Description__c" VARCHAR(255), 
+	"npsp4hub__Custom_Payment_Reference__c" VARCHAR(255), 
+	"npsp4hub__Generated_Payment_Reference__c" VARCHAR(255), 
+	"npsp4hub__Payment_Method__c" VARCHAR(255), 
+	"npsp4hub__Payment_Processor__c" VARCHAR(255), 
+	"npsp4hub__Payment_QR__c" VARCHAR(255), 
+	"npsp4hub__Payment_Url__c" VARCHAR(255), 
+	"npsp4hub__Target__c" VARCHAR(255), 
 	"npsp__ACH_Last_4__c" VARCHAR(255), 
 	"npsp__Always_Use_Last_Day_Of_Month__c" VARCHAR(255), 
 	"npsp__CardExpirationMonth__c" VARCHAR(255), 
@@ -369,19 +451,6 @@ CREATE TABLE "npe03__Recurring_Donation__c" (
 	"npe03__Contact__c" VARCHAR(255), 
 	"npe03__Organization__c" VARCHAR(255), 
 	"npe03__Recurring_Donation_Campaign__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-CREATE TABLE "npe5__Affiliation__c" (
-	id INTEGER NOT NULL, 
-	"npe5__Description__c" VARCHAR(255), 
-	"npe5__EndDate__c" VARCHAR(255), 
-	"npe5__Primary__c" VARCHAR(255), 
-	"npe5__Role__c" VARCHAR(255), 
-	"npe5__StartDate__c" VARCHAR(255), 
-	"npe5__Status__c" VARCHAR(255), 
-	"npsp__Related_Opportunity_Contact_Role__c" VARCHAR(255), 
-	"npe5__Contact__c" VARCHAR(255), 
-	"npe5__Organization__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "npo02__Household__c" (
@@ -431,6 +500,8 @@ CREATE TABLE "npo02__Household__c" (
 );
 CREATE TABLE "npsp__Address__c" (
 	id INTEGER NOT NULL, 
+	"SFFR_UM_Reason__c" VARCHAR(255), 
+	"SFFR_UM__c" VARCHAR(255), 
 	"npsp__API_Response__c" VARCHAR(255), 
 	"npsp__Address_Type__c" VARCHAR(255), 
 	"npsp__Administrative_Area__c" VARCHAR(255), 
@@ -463,32 +534,28 @@ CREATE TABLE "npsp__Address__c" (
 	"npsp__Household_Account__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "npsp__Address__c" VALUES(1,'','Home','','False','','','True','False','','2022-10-17','Marseille','France','13001','','','12 rue de la République','','','','','','','','','','False','','','False','10');
-INSERT INTO "npsp__Address__c" VALUES(2,'','Home','','False','','','True','False','','2022-10-17','Val de Chaise','France','74210','','','12 Chemin de la Traupaz','','','','','','','','','','False','','','False','7');
-INSERT INTO "npsp__Address__c" VALUES(3,'','Home','','False','','','True','False','','2022-10-17','Valbonne','','06560','','','4 Rue Eugène Giraud','','','','','','','','','','False','','','False','8');
-INSERT INTO "npsp__Address__c" VALUES(4,'','Home','','False','','','True','False','','2022-10-17','Toulouse','France','31300','','','455 Rue des Braves','','','','','','','','','','False','','','False','11');
-INSERT INTO "npsp__Address__c" VALUES(5,'','Work','','False','','','True','False','','2022-10-17','Perpignan','France','66000','','','1190 Av. du Languedoc','','','','','','','','','','False','','','False','12');
-INSERT INTO "npsp__Address__c" VALUES(6,'','Home','','False','','','True','False','','2022-10-17','La Rochelle','France','17000','','','12 Rue du Port','','','','','','','','','','False','','','False','1');
-INSERT INTO "npsp__Address__c" VALUES(7,'','Home','','False','','','True','False','','2022-10-17','Paris','France','75015','','','345 Rue Lecourbe','','','','','','','','','','False','','','False','2');
-INSERT INTO "npsp__Address__c" VALUES(8,'','Work','','False','','','True','False','','2022-10-17','Montrouge','France','92120','','','12 Bd du Général de Gaulle','','','','','','','','','','False','','','False','3');
-INSERT INTO "npsp__Address__c" VALUES(9,'','Home','','False','','','True','False','','2022-10-17','Draguignan','France','83300','','','244 Chemin des Vieux Chênes','','','','','','','','','','False','','','False','4');
-INSERT INTO "npsp__Address__c" VALUES(10,'','Home','','False','','','True','False','','2022-10-17','Orleans','','45100','','','120 Rue des Anguignis','','','','','','','','','','False','','','False','5');
-INSERT INTO "npsp__Address__c" VALUES(11,'','Home','','False','','','True','False','','2022-10-17','Lille','France','59800','','','130 Rue de la Louvière','','','','','','','','','','False','','','False','6');
-CREATE TABLE "npsp__Allocation__c" (
-	id INTEGER NOT NULL, 
-	"npsp__Amount__c" VARCHAR(255), 
-	"npsp__Percent__c" VARCHAR(255), 
-	"npsp__Campaign__c" VARCHAR(255), 
-	"npsp__General_Accounting_Unit__c" VARCHAR(255), 
-	"npsp__Opportunity__c" VARCHAR(255), 
-	"npsp__Payment__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "npsp__Allocation__c" VALUES(1,'11.5','50.0','','1','11','');
-INSERT INTO "npsp__Allocation__c" VALUES(2,'60.0','50.0','','1','10','');
-INSERT INTO "npsp__Allocation__c" VALUES(3,'11.5','50.0','','2','11','');
-INSERT INTO "npsp__Allocation__c" VALUES(4,'150.0','100.0','','2','2','');
-INSERT INTO "npsp__Allocation__c" VALUES(5,'60.0','50.0','','2','10','');
+INSERT INTO "npsp__Address__c" VALUES(1,'Other','','','Home','','False','','','True','False','','2022-10-24','La Rochelle','France','17000','','','12 Rue du Port','','','','','','','','','','False','','','False','13');
+INSERT INTO "npsp__Address__c" VALUES(2,'Address illegible / inaccessible','1.0','','Home','','False','','','True','False','','2022-10-24','Marseille','France','13001','','','12 rue de la République','','','','','','','','','','False','','','False','22');
+INSERT INTO "npsp__Address__c" VALUES(3,'Other','','','Home','','False','','','True','False','','2022-10-24','Toulouse','France','31300','','','455 Rue des Braves','','','','','','','','','','False','','','False','23');
+INSERT INTO "npsp__Address__c" VALUES(4,'Other','','','Work','','False','','','True','False','','2022-10-24','Perpignan','France','66000','','','1190 Av. du Languedoc','','','','','','','','','','False','','','False','24');
+INSERT INTO "npsp__Address__c" VALUES(5,'Address illegible / inaccessible','1.0','','Home','','False','','','True','False','','2022-10-24','Paris','France','75015','','','345 Rue Lecourbe','','','','','','','','','','False','','','False','14');
+INSERT INTO "npsp__Address__c" VALUES(6,'Addressee unknown at marked address','1.0','','Work','','False','','','True','False','','2022-10-24','Montrouge','France','92120','','','12 Bd du Général de Gaulle','','','','','','','','','','False','','','False','15');
+INSERT INTO "npsp__Address__c" VALUES(7,'Delivery refused by addressee','3.0','','Home','','False','','','True','False','','2022-10-24','Draguignan','France','83300','','','244 Chemin des Vieux Chênes','','','','','','','','','','False','','','False','16');
+INSERT INTO "npsp__Address__c" VALUES(8,'Unclaimed recorded delivery','2.0','','Home','','False','','','True','False','','2022-10-24','Orleans','','45100','','','120 Rue des Anguignis','','','','','','','','','','False','','','False','17');
+INSERT INTO "npsp__Address__c" VALUES(9,'Address illegible / inaccessible','2.0','','Home','','False','','','True','False','','2022-10-24','Lille','France','59800','','','130 Rue de la Louvière','','','','','','','','','','False','','','False','18');
+INSERT INTO "npsp__Address__c" VALUES(10,'Delivery refused by addressee','2.0','','Home','','False','','','True','False','','2022-10-24','Val de Chaise','France','74210','','','12 Chemin de la Traupaz','','','','','','','','','','False','','','False','19');
+INSERT INTO "npsp__Address__c" VALUES(11,'Delivery refused by addressee','3.0','','Home','','False','','','True','False','','2022-10-24','Valbonne','','06560','','','4 Rue Eugène Giraud','','','','','','','','','','False','','','False','20');
+INSERT INTO "npsp__Address__c" VALUES(12,'Address illegible / inaccessible','1.0','','Home','','False','','','True','False','','2022-10-24','Marseille','France','13001','','','12 rue de la République','','','','','','','','','','False','','','False','10');
+INSERT INTO "npsp__Address__c" VALUES(13,'Other','','','Home','','False','','','True','False','','2022-10-24','Toulouse','France','31300','','','455 Rue des Braves','','','','','','','','','','False','','','False','11');
+INSERT INTO "npsp__Address__c" VALUES(14,'Other','','','Work','','False','','','True','False','','2022-10-24','Perpignan','France','66000','','','1190 Av. du Languedoc','','','','','','','','','','False','','','False','12');
+INSERT INTO "npsp__Address__c" VALUES(15,'Address illegible / inaccessible','1.0','','Home','','False','','','True','False','','2022-10-24','Paris','France','75015','','','345 Rue Lecourbe','','','','','','','','','','False','','','False','2');
+INSERT INTO "npsp__Address__c" VALUES(16,'Addressee unknown at marked address','1.0','','Work','','False','','','True','False','','2022-10-24','Montrouge','France','92120','','','12 Bd du Général de Gaulle','','','','','','','','','','False','','','False','3');
+INSERT INTO "npsp__Address__c" VALUES(17,'Delivery refused by addressee','3.0','','Home','','False','','','True','False','','2022-10-24','Draguignan','France','83300','','','244 Chemin des Vieux Chênes','','','','','','','','','','False','','','False','4');
+INSERT INTO "npsp__Address__c" VALUES(18,'Unclaimed recorded delivery','2.0','','Home','','False','','','True','False','','2022-10-24','Orleans','','45100','','','120 Rue des Anguignis','','','','','','','','','','False','','','False','5');
+INSERT INTO "npsp__Address__c" VALUES(19,'Address illegible / inaccessible','2.0','','Home','','False','','','True','False','','2022-10-24','Lille','France','59800','','','130 Rue de la Louvière','','','','','','','','','','False','','','False','6');
+INSERT INTO "npsp__Address__c" VALUES(20,'Delivery refused by addressee','2.0','','Home','','False','','','True','False','','2022-10-24','Val de Chaise','France','74210','','','12 Chemin de la Traupaz','','','','','','','','','','False','','','False','7');
+INSERT INTO "npsp__Address__c" VALUES(21,'Delivery refused by addressee','3.0','','Home','','False','','','True','False','','2022-10-24','Valbonne','','06560','','','4 Rue Eugène Giraud','','','','','','','','','','False','','','False','8');
+INSERT INTO "npsp__Address__c" VALUES(22,'Other','','','Home','','False','','','True','False','','2022-10-24','La Rochelle','France','17000','','','12 Rue du Port','','','','','','','','','','False','','','False','1');
 CREATE TABLE "npsp__Batch__c" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -508,30 +575,6 @@ CREATE TABLE "npsp__Engagement_Plan_Template__c" (
 	"npsp__Skip_Weekends__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "npsp__General_Accounting_Unit__c" (
-	id INTEGER NOT NULL, 
-	"Name" VARCHAR(255), 
-	"npsp__Active__c" VARCHAR(255), 
-	"npsp__Average_Allocation__c" VARCHAR(255), 
-	"npsp__Description__c" VARCHAR(255), 
-	"npsp__First_Allocation_Date__c" VARCHAR(255), 
-	"npsp__Largest_Allocation__c" VARCHAR(255), 
-	"npsp__Last_Allocation_Date__c" VARCHAR(255), 
-	"npsp__Number_of_Allocations_Last_N_Days__c" VARCHAR(255), 
-	"npsp__Number_of_Allocations_Last_Year__c" VARCHAR(255), 
-	"npsp__Number_of_Allocations_This_Year__c" VARCHAR(255), 
-	"npsp__Number_of_Allocations_Two_Years_Ago__c" VARCHAR(255), 
-	"npsp__Smallest_Allocation__c" VARCHAR(255), 
-	"npsp__Total_Allocations__c" VARCHAR(255), 
-	"npsp__Total_Allocations_Last_N_Days__c" VARCHAR(255), 
-	"npsp__Total_Allocations_Last_Year__c" VARCHAR(255), 
-	"npsp__Total_Allocations_This_Year__c" VARCHAR(255), 
-	"npsp__Total_Allocations_Two_Years_Ago__c" VARCHAR(255), 
-	"npsp__Total_Number_of_Allocations__c" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "npsp__General_Accounting_Unit__c" VALUES(1,'Forage d''un Puits','True','35.75','','2022-09-14','60.0','2022-09-14','2.0','0.0','2.0','0.0','11.5','71.5','71.5','0.0','71.5','0.0','2.0');
-INSERT INTO "npsp__General_Accounting_Unit__c" VALUES(2,'Construction d''une école primaire','True','73.83','','2022-09-14','150.0','2022-09-14','3.0','0.0','3.0','0.0','11.5','221.5','221.5','0.0','221.5','0.0','3.0');
 CREATE TABLE "npsp__Level__c" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
