@@ -68,6 +68,8 @@ plans:
               restore: True
         6:
             flow: sffr_assign_compact_layout 
+        7:
+            flow: sffr_integration_user
 
 tasks:
     robot:
@@ -115,6 +117,12 @@ tasks:
             namespace_inject: $project_config.project__package__namespace
             entity: CustomObject
             tag: compactLayoutAssignment
+
+    sffr_integration_user_task:
+        description: Creates an integration user.
+        class_path: cumulusci.tasks.sfdx.SFDXOrgTask
+        options:
+            command: "force:user:create -a integ --definitionfile datasets/users/integration_user.json"
 
 flows:
     dependencies:
@@ -175,6 +183,8 @@ flows:
             task: sffr_translations
           4:
             flow: sffr_assign_compact_layout
+          5: 
+            flow: sffr_integration_user
 
     sffr_profile:
         steps:
@@ -234,3 +244,13 @@ flows:
             options:
                 api_names: SFFR_Campaign_Content_Item__c
                 value: "%%%NAMESPACE%%%SFFR_Campaign_Content_Item_Compact_Layout" 
+
+    sffr_integration_user:
+        description: Create Integration User and assign PS
+        steps:
+          1:
+            task: sffr_integration_user_task
+          2:
+            task: assign_permission_sets
+            options:
+                      api_names: PaymentHub_Integration_Base,PaymentHub_Operations,ProcessingHub_Operations

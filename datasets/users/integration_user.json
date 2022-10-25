@@ -1,0 +1,13 @@
+{
+    "FirstName": "Integration",
+    "LastName": "User",
+    "Email": "integrationuser@sffr.org",
+    "Alias": "integ",
+    "TimeZoneSidKey": "Europe/Paris",
+    "LocaleSidKey": "fr_FR",
+    "EmailEncodingKey": "UTF-8",
+    "LanguageLocaleKey": "fr",
+    "profileName": "System Administrator",
+    "permsets": ["PaymentHub_Integration_Base", "PaymentHub_Operations", "ProcessingHub_Operations"],
+    "generatePassword": true
+}
