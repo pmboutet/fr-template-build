@@ -104,3 +104,12 @@ Le FR Template met à disposition un modèle de fichier à plat d'import (XXXXXX
 on duplique les lignes du fichier pour refleter cette complexité. Par exemple, si un don est ventilé sur 2 UCG différentes, il y aura 2 lignes dans le fichier.
 
 Le FR Template utilise le Processing de Findock Guided matching.
+
+
+
+TODO APSYNERGY Integration user DOC
+
+TODO PROTO APSYNERGY Profile SFFR_Integration_User
+https://medium.com/salesforce-architects/security-best-practices-for-api-access-and-internal-system-users-a6199d0cda09
+
+User in English, follow additional recommendation from NPSP / Findock (https://docs.findock.com/permissions) review general permission

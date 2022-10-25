@@ -12,8 +12,6 @@ FR Template installation et déploiement
 
 TODO PROTO APSYNERGY Profile SFFR_Standard_User
 
-TODO PROTO APSYNERGY Profile SFFR_Integration_User
-
 #TODO PROTOTYPE APSYNERGY ROBOFRAMEWORK to Automatize Activate French translation
 
 #TODO PROTOTYPE APSYNERGY cci Create new user SFFR_Integration_user
