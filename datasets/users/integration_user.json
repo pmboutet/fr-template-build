@@ -3,6 +3,7 @@
     "LastName": "User",
     "Email": "integrationuser@sffr.org",
     "Alias": "integ",
+    "Username": "integrationuser@sffr.org",
     "TimeZoneSidKey": "Europe/Paris",
     "LocaleSidKey": "fr_FR",
     "EmailEncodingKey": "UTF-8",
