@@ -10,6 +10,10 @@ FR Template installation et déploiement
 
 #TODO DOC RAPH After scratch org creation, Update Default currency to Euro
 
+TODO PROTO APSYNERGY Profile SFFR_Standard_User
+
+TODO PROTO APSYNERGY Profile SFFR_Integration_User
+
 #TODO PROTOTYPE APSYNERGY ROBOFRAMEWORK to Automatize Activate French translation
 
 #TODO PROTOTYPE APSYNERGY cci Create new user SFFR_Integration_user
@@ -22,3 +26,5 @@ FR Template installation et déploiement
 #TODO DESIGN FAB Automatize Euro currency
 
 #TODO DESIGN FAB Automatize Activate French translation
+
+#TODO DESIGN FAB desactivate NPSP Capabilities not needed
