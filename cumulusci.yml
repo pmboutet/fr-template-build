@@ -6,7 +6,7 @@ project:
         api_version: '55.0'
     dependencies:
         - github: https://github.com/SalesforceFoundation/NPSP
-        - github: https://github.com/pmboutet/findock-fr-template-build
+        - github: https://github.com/SFDO-Alliances/findock-fr-template
 
     git:
         default_branch: 'main'
@@ -18,7 +18,7 @@ sources:
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
     findock:
-        github: https://github.com/pmboutet/findock-fr-template-build
+        github: https://github.com/SFDO-Alliances/findock-fr-template
 plans:
   install:
     slug: install

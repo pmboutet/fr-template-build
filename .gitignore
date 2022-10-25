@@ -8,7 +8,7 @@
 __pycache__
 
 # Robot Framework results
-robot/fr-template-build/results/
+robot/findock-fr-template/results/
 
 # Salesforce cache
 .sf/
