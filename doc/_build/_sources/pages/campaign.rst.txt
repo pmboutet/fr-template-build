@@ -2,7 +2,7 @@ Campagne
 =================
 
 Description métier 
--------------------------
+-----------------------------
 Le FR Template permets de gérer les spécificités des campagnes de levée de fonds.
 
 Les campagnes marketing sont gérées sous l'objet standard ``Campagne``. 

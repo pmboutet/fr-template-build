@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Méthode d’intégration universelle" href="integration.html" /><link rel="prev" title="Campagne" href="campaign.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.09.29"/>
-        <title>&lt;no title&gt; - SF.org FR TEMPLATE 0 documentation</title>
+        <title>Opportunité - SF.org FR TEMPLATE 0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -154,11 +154,14 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="implementation_guide.html">Implémentation guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account.html">Account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="campaign.html">Campagne</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Opportunité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Intégration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Jeu de données test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="payment.html">Saisie de paiements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demo.html">Démo</a></li>
@@ -196,21 +199,17 @@
           </label>
         </div>
         <article role="main">
-          <dl>
-<dt>TODO PROTO APSYNERGY - Opportunity - ALLOW to be ready for faster Prototyping</dt><dd><dl class="simple">
-<dt>Compact Layout<span class="classifier">SFFR_Donation_Compact_Layout - Clone of NPSP Donation Compact Layout</span></dt><dd><p>Auto Assign for Profile System Admin based on all NPSP record type - Similar to Campaign</p>
-</dd>
-</dl>
+          <section id="opportunite">
+<h1>Opportunité<a class="headerlink" href="#opportunite" title="Permalink to this heading">#</a></h1>
+<dl>
+<dt>TODO PROTO APSYNERGY - Opportunity - ALLOW to be ready for faster Prototyping</dt><dd><p>Compact Layout : SFFR_Donation_Compact_Layout - Clone of NPSP Donation Compact Layout
+Auto Assign for Profile System Admin based on all NPSP record type - Similar to Campaign</p>
 <p>Page Layout : Opportunity-SFFR Donation Layout - Clone of Donation Layout
-Page Layout : Opportunity-SFFR Membership Layout - Clone of Membership Layout</p>
-<blockquote>
-<div><p>Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign</p>
-</div></blockquote>
+Page Layout : Opportunity-SFFR Membership Layout - Clone of Membership Layout
+Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign</p>
 <p>Flexipage : SFFR_Opportunity_Donation_Record_Page - Clone of NPSP_Opportunity_Record_Page
-Flexipage : SFFR_Opportunity_Membership_Record_Page - Clone of NPSP_Opportunity_Record_Page</p>
-<blockquote>
-<div><p>Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign</p>
-</div></blockquote>
+Flexipage : SFFR_Opportunity_Membership_Record_Page - Clone of NPSP_Opportunity_Record_Page
+Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign</p>
 </dd>
 </dl>
 <p>Findock changes
@@ -220,16 +219,14 @@ Opportuntiy
 - Target
 - Mandate
 - Payment Profile
-For a bit more detail: <a class="reference external" href="https://docs.findock.com/configuring-findock-for-npsp">https://docs.findock.com/configuring-findock-for-npsp</a>
-TODO PROTO APSYNERGY - Recurring Donation - ALLOW to be ready for faster Prototyping</p>
-<blockquote>
-<div><dl class="simple">
-<dt>Compact Layout<span class="classifier">SFFR_Recurring_Donation_Compact_Layout Clone of NPSP Recurring Donation Compact Layout</span></dt><dd><p>Auto Assign for Profile System Admin - Similar to Contact</p>
-</dd>
-<dt>Page Layout<span class="classifier">RecurringDonation-SFFR Recurring Donation Layout - Recurring Donation Layout</span></dt><dd><p>Auto Assign for Profile System Admin - Similar to Contact</p>
+For a bit more detail: <a class="reference external" href="https://docs.findock.com/configuring-findock-for-npsp">https://docs.findock.com/configuring-findock-for-npsp</a></p>
+<dl>
+<dt>TODO PROTO APSYNERGY - Recurring Donation - ALLOW to be ready for faster Prototyping</dt><dd><p>Compact Layout : SFFR_Recurring_Donation_Compact_Layout Clone of NPSP Recurring Donation Compact Layout
+Auto Assign for Profile System Admin - Similar to Contact</p>
+<p>Page Layout : RecurringDonation-SFFR Recurring Donation Layout - Recurring Donation Layout
+Auto Assign for Profile System Admin - Similar to Contact</p>
 </dd>
 </dl>
-</div></blockquote>
 <p>Findock changes
 Recurring Donation:
 - Payment Method (and remove npsp4hub__Payment_Method__c)
@@ -238,14 +235,33 @@ Recurring Donation:
 - Mandate
 - Payment Profile
 For a bit more detail: <a class="reference external" href="https://docs.findock.com/configuring-findock-for-npsp">https://docs.findock.com/configuring-findock-for-npsp</a></p>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="integration.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Méthode d’intégration universelle</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="campaign.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Campagne</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">

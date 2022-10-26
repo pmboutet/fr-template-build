@@ -1,16 +1,21 @@
-
+Opportunité
+====================
 
 
 
 TODO PROTO APSYNERGY - Opportunity - ALLOW to be ready for faster Prototyping
   Compact Layout : SFFR_Donation_Compact_Layout - Clone of NPSP Donation Compact Layout
-    Auto Assign for Profile System Admin based on all NPSP record type - Similar to Campaign
+  Auto Assign for Profile System Admin based on all NPSP record type - Similar to Campaign
+  
   Page Layout : Opportunity-SFFR Donation Layout - Clone of Donation Layout
   Page Layout : Opportunity-SFFR Membership Layout - Clone of Membership Layout
-    Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign
+  Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign
+  
   Flexipage : SFFR_Opportunity_Donation_Record_Page - Clone of NPSP_Opportunity_Record_Page
   Flexipage : SFFR_Opportunity_Membership_Record_Page - Clone of NPSP_Opportunity_Record_Page
-    Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign
+  Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign
+
+
 Findock changes
 Opportuntiy
 - Payment Method (and remove npsp4hub__Payment_Method__c)
@@ -19,11 +24,16 @@ Opportuntiy
 - Mandate
 - Payment Profile
 For a bit more detail: https://docs.findock.com/configuring-findock-for-npsp
+
+
 TODO PROTO APSYNERGY - Recurring Donation - ALLOW to be ready for faster Prototyping
   Compact Layout : SFFR_Recurring_Donation_Compact_Layout Clone of NPSP Recurring Donation Compact Layout
-   Auto Assign for Profile System Admin - Similar to Contact
+  Auto Assign for Profile System Admin - Similar to Contact
+  
   Page Layout : RecurringDonation-SFFR Recurring Donation Layout - Recurring Donation Layout
-   Auto Assign for Profile System Admin - Similar to Contact
+  Auto Assign for Profile System Admin - Similar to Contact
+
+
 Findock changes
 Recurring Donation:
 - Payment Method (and remove npsp4hub__Payment_Method__c)

@@ -12,13 +12,10 @@ BIENVENUE to SF.org FR TEMPLATE's documentation!
    Account<pages/account>
    Contact<pages/contact>
    Campagne<pages/campaign>
+   Opportunité<pages/opportunity>
    Intégration<pages/integration>
    Jeu de données test<pages/dataset>
    Saisie de paiements<pages/payment>
-   Démo<pages/demo>
-   
-
-
    Démo<pages/demo>
 
 Indices and tables
