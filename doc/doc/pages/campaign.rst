@@ -2,7 +2,7 @@ Campagne
 =================
 
 Description métier 
--------------------------
+-----------------------------
 Le FR Template permets de gérer les spécificités des campagnes de levée de fonds.
 
 Les campagnes marketing sont gérées sous l'objet standard ``Campagne``. 
@@ -250,7 +250,7 @@ Il est probable que les valeurs dans le chalmp SFFR_3party_Segment.Name ne soit 
 
 Ceci permet aux utilisateurs de retrouver le segment externe en question lorsqu'ils commencent à taper Broker de liste...
 
-
+.. image:: C:\Utilsateurs\Rapha\Bureau\recherche_de_prestatire_de_segment_externe.png
 
 Code Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
