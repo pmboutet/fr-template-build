@@ -103,11 +103,17 @@ Avant d'entrer champ à champ dans le modèle de données voici son modèle simp
 Le FR Template met à disposition un modèle de fichier à plat d'import (XXXXXXXXXXXXXXXXXXXXXXXXX Fournir un Lien ici). Si les données à charger contiennent une complexité qui dépasse le fichier à plat, alors
 on duplique les lignes du fichier pour refleter cette complexité. Par exemple, si un don est ventilé sur 2 UCG différentes, il y aura 2 lignes dans le fichier.
 
-Le FR Template utilise le Processing de Findock Guided matching.
+Intégration Findock
+------------------------------
 
+Le Modèle France fournit par défaut une installation Findock. 
 
+Utilisateur technique Findock
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO APSYNERGY Integration user DOC
+Cet utilisateur technique dont le nom est 'Integration User' permets à Salesforce une intégration avec les services et process de Findock qui tournent en dehors de Salesforce.
+
+Le Modèle France utilise le Processing de Findock Guided matching.
 
 TODO PROTO APSYNERGY Profile SFFR_Integration_User
 https://medium.com/salesforce-architects/security-best-practices-for-api-access-and-internal-system-users-a6199d0cda09
