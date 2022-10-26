@@ -250,7 +250,7 @@ Il est probable que les valeurs dans le chalmp SFFR_3party_Segment.Name ne soit 
 
 Ceci permet aux utilisateurs de retrouver le segment externe en question lorsqu'ils commencent à taper Broker de liste...
 
-.. image:: C:\Utilsateurs\Rapha\Bureau\recherche_de_prestatire_de_segment_externe.png
+.. image:: ../images/recherche_de_prestatire_de_segment_externe.PNG
 
 Code Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
