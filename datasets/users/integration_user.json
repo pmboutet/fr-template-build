@@ -3,10 +3,10 @@
     "LastName": "User",
     "Email": "integrationuser@sffr.org",
     "Alias": "integ",
-    "TimeZoneSidKey": "Europe/Paris",
-    "LocaleSidKey": "fr_FR",
+    "TimeZoneSidKey": "America/Los_Angeles",
+    "LocaleSidKey": "en_US",
     "EmailEncodingKey": "UTF-8",
-    "LanguageLocaleKey": "fr",
+    "LanguageLocaleKey": "en_US",
     "profileName": "System Administrator",
     "permsets": ["PaymentHub_Integration_Base", "PaymentHub_Operations", "ProcessingHub_Operations"],
     "generatePassword": true
