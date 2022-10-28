@@ -10,8 +10,6 @@ FR Template installation et déploiement
 
 * Modifier les Paramètres régionaux de devise -> Configuration > Paramètres de la Société > Configuration > Paramètres de la société > Informations sur la société > Paramètres régionaux de devise	= Français (France, EURO) - EUR
 
-#TODO DOC RAPH After scratch org creation, Update Default currency to Euro
-
 TODO PROTO APSYNERGY Profile SFFR_Standard_User
 
 #TODO PROTOTYPE APSYNERGY ROBOFRAMEWORK to Automatize Activate French translation
@@ -20,11 +18,12 @@ TODO PROTO APSYNERGY Profile SFFR_Standard_User
    review NPSP yml https://github.com/SalesforceFoundation/NPSP  create_perms_testing_user assign_permission_sets
    Add PS:
 
-PaymentHub Integration Base
 
-PaymentHub Operations
+    PaymentHub Integration Base
+    PaymentHub Operations
+    ProcessingHub Operations
 
-ProcessingHub Operations
+
 
 #TODO DESIGN FAB Automatize Euro currency
 
