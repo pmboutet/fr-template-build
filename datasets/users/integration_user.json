@@ -7,7 +7,7 @@
     "LocaleSidKey": "en_US",
     "EmailEncodingKey": "UTF-8",
     "LanguageLocaleKey": "en_US",
-    "profileName": "System Administrator",
+    "profileName": "SFFR Integration User",
     "permsets": ["PaymentHub_Integration_Base", "PaymentHub_Operations", "ProcessingHub_Operations"],
     "generatePassword": true
 }
