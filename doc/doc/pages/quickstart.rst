@@ -27,6 +27,6 @@ TODO PROTO APSYNERGY Profile SFFR_Standard_User
 
 #TODO DESIGN FAB Automatize Euro currency
 
-#TODO DESIGN FAB Automatize Activate French translation
-
-#TODO DESIGN FAB desactivate NPSP Capabilities not needed
+#TODO DESIGN FAB Automatize Activate French translatio
+ sphinx install steps
+#TODO DESIGN FAB desactivate NPSP Capabilities not needed 
