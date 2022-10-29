@@ -5,6 +5,15 @@ Insert SFFR_Campaign_Content__c:
   - SFFR_Description__c
   - SFFR_Type__c
   - SFFR_Unit_Cost__c
+Insert SFFR_Campaign_Content_Item__c:
+  sf_object: SFFR_Campaign_Content_Item__c
+  fields:
+  - SFFR_Description__c
+  - SFFR_Type__c
+  - SFFR_Unit_Cost__c
+  lookups:
+    SFFR_Campaign_Content__c:
+      table: SFFR_Campaign_Content__c
 Insert npo02__Household__c:
   sf_object: npo02__Household__c
   fields:
@@ -202,6 +211,15 @@ Insert Campaign:
   - IsActive
   - Name
   - RecordTypeId
+  - Status
+  - StartDate
+  - EndDate
+  - Type
+  - Description
+  - BudgetedCost
+  - ActualCost
+  - ExpectedRevenue
+  - ExpectedResponse
   - SFFR_Dedup_Order__c
   - SFFR_Delivered_Quantity__c
   - SFFR_Dispatcher_External_Key__c
@@ -499,3 +517,13 @@ Insert npe01__OppPayment__c:
     npsp__OriginalPayment__c:
       table: npe01__OppPayment__c
       after: Insert npe01__OppPayment__c
+CampaignMember:
+    sf_object: CampaignMember
+    table: CampaignMember
+    fields:
+        Status: status
+    lookups:
+        ContactId:
+            table: Contact
+        CampaignId:
+            table: Campaign
