@@ -97,7 +97,7 @@ tasks:
     sffr_load_sdata:
         description: Load Sample Dataset for Organizations, Households, and Addresses
         class_path: cumulusci.tasks.bulkdata.LoadData
-        group: "NPSP: Post Installation"
+        group: "SFFR: Data Load"
         options:
             mapping: datasets/mapping.yml
             sql_path: datasets/sample.sql
@@ -123,6 +123,13 @@ tasks:
         class_path: cumulusci.tasks.sfdx.SFDXOrgTask
         options:
             command: "force:user:create -a integ --definitionfile datasets/users/integration_user.json"
+
+    sffr_check_data:
+        description: Checks if the org contains data, if any data detected deletes them.
+        class_path: cumulusci.tasks.bulkdata.DeleteData
+        group: "SFFR: Data Load"
+        options:
+            objects: Campaign,SFFR_Campaign_Content__c,SFFR_3party_Segment__c,Opportunity,Contact,Account
 
 flows:
     dependencies:
@@ -150,27 +157,7 @@ flows:
           1:
             flow: config_only
           2:
-            task: disable_tdtm_trigger_handlers
-            options:
-              handlers:
-                        - CRLP_Rollup_TDTM
-                        - RLLP_OppRollup_TDTM
-                        - RD2_RecurringDonationsOpp_TDTM
-              namespace: npsp
-              active: false
-              restore: false
-          3:
-            task: sffr_load_sdata
-          4:
-            task: restore_tdtm_trigger_handlers
-            options:
-              handlers:
-                        - CRLP_Rollup_TDTM
-                        - RLLP_OppRollup_TDTM
-                        - RD2_RecurringDonationsOpp_TDTM
-              namespace: npsp
-              active: true
-              restore: true
+            flow: sffr_add_data
 
     config_only:
         description: France Template Installation Configuration Only
@@ -254,3 +241,31 @@ flows:
             task: assign_permission_sets
             options:
                       api_names: PaymentHub_Integration_Base,PaymentHub_Operations,ProcessingHub_Operations
+
+    sffr_add_data:
+        description: Cleans up data and disables triggers before running data load.
+        steps:
+          1:
+            task: sffr_check_data
+          2:
+            task: disable_tdtm_trigger_handlers
+            options:
+              handlers:
+                        - CRLP_Rollup_TDTM
+                        - RLLP_OppRollup_TDTM
+                        - RD2_RecurringDonationsOpp_TDTM
+              namespace: npsp
+              active: false
+              restore: false
+          3:
+            task: sffr_load_sdata
+          4:
+            task: restore_tdtm_trigger_handlers
+            options:
+              handlers:
+                        - CRLP_Rollup_TDTM
+                        - RLLP_OppRollup_TDTM
+                        - RD2_RecurringDonationsOpp_TDTM
+              namespace: npsp
+              active: true
+              restore: true
