@@ -23,4 +23,12 @@
         <layoutAssignments>
                 <layout>Campaign-SFFR Campaign Layout</layout>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>Account-SFFR Household Layout</layout>
+                <recordType>Account.HH_Account</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Account-SFFR Organization Layout</layout>
+                <recordType>Account.Organization</recordType>
+        </layoutAssignments>
 </Profile>
