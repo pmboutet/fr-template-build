@@ -1,17 +1,39 @@
 *** Settings ***
 
 Resource        cumulusci/robotframework/Salesforce.robot
+Library         ../Libraries/Test.py
 Library         cumulusci.robotframework.PageObjects
-...             tests/DataImportPageObject.py
-
+Library         SeleniumLibrary
 Suite Setup     Open Test Browser
-Suite Teardown  Delete Records and Close Browser
-
+# Suite Teardown  Delete Records and Close Browser
 
 *** Test Cases ***
 
-Via UI
+Make Changes to Settings and Verify Changes
+    [Documentation]            Go to Setup>Company Settings>Company Information. Edit Household Account Record Type seeing to Organization and Save.
+    ...                        Verify that the change is saved and revert the change and Save again. Verify change reverted.
+    [tags]                     feature:NPSP Settings           unstable
+    Open Company Settings        Company Settings            Company Information
 
-    go to setup page            
+Click on Edit Button
+    Click Settings Button        topButtonRow                          Edit 
+    Sleep  3
+    Log To Console	Click Edit Button Succeeded
+    Change Record Picklist Values
+    
 
+*** Keywords ***
+
+Open Company Settings
+    [Documentation]           Goes to NPSP settings page and opens the sublist under the toplist
+    ...                       Required parameters are:
+    ...
+    ...                       |   topmenu   | parent list Ex:Bulk Data Processes |
+    ...                       |   submenu   | child list Ex:Rollup Donations Batch |
+    [Arguments]               ${topmenu}     ${submenu}
+    Go To Setup Home   
+    Open Main Menu            ${topmenu}        
+    Open Sub Link             ${submenu}   
+    Sleep  3
+    Log To Console	wake up next click on edit button
 
