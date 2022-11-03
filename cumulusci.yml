@@ -102,6 +102,7 @@ tasks:
             mapping: datasets/mapping.yml
             sql_path: datasets/sample.sql
             drop_missing_schema: True
+            ignore_row_errors: true
 
     sffr_translations:
         description: Configure Translations
@@ -123,13 +124,6 @@ tasks:
         class_path: cumulusci.tasks.sfdx.SFDXOrgTask
         options:
             command: "force:user:create -a integ --definitionfile datasets/users/integration_user.json"
-
-    sffr_check_data:
-        description: Checks if the org contains data, if any data detected deletes them.
-        class_path: cumulusci.tasks.bulkdata.DeleteData
-        group: "SFFR: Data Load"
-        options:
-            objects: Campaign,SFFR_Campaign_Content__c,SFFR_3party_Segment__c,Opportunity,Contact,Account
 
 flows:
     dependencies:
@@ -246,8 +240,6 @@ flows:
         description: Cleans up data and disables triggers before running data load.
         steps:
           1:
-            task: sffr_check_data
-          2:
             task: disable_tdtm_trigger_handlers
             options:
               handlers:
@@ -257,9 +249,9 @@ flows:
               namespace: npsp
               active: false
               restore: false
-          3:
+          2:
             task: sffr_load_sdata
-          4:
+          3:
             task: restore_tdtm_trigger_handlers
             options:
               handlers:
