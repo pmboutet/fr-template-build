@@ -17,3 +17,5 @@ TODO PROTO APSYNERGY - Account - ALLOW to be ready for faster Prototyping
   Auto Assign for Profile System Admin based on the record type - Similar to Campaign
   
   List View - French Version of the Organization Account and Household Account
+
+TODO CONFIG Laureta Add Acount hierarchy as for Campaign
