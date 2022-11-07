@@ -225,6 +225,11 @@ flows:
             options:
                 api_names: SFFR_Campaign_Content_Item__c
                 value: "%%%NAMESPACE%%%SFFR_Campaign_Content_Item_Compact_Layout" 
+          7:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: Opportunity
+                value: "%%%NAMESPACE%%%SFFR_Donation_Compact_Layout" 
 
     sffr_integration_user:
         description: Create Integration User and assign PS

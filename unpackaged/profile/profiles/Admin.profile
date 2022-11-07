@@ -31,4 +31,12 @@
                 <layout>Account-SFFR Organization Layout</layout>
                 <recordType>Account.Organization</recordType>
         </layoutAssignments>
+                <layoutAssignments>
+                <layout>Opportunity-SFFR Donation Layout</layout>
+                <recordType>Opportunity.Donation</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Opportunity-SFFR Membership Layout</layout>
+                <recordType>Opportunity.Membership</recordType>
+        </layoutAssignments>
 </Profile>
