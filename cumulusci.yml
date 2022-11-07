@@ -230,6 +230,11 @@ flows:
             options:
                 api_names: Opportunity
                 value: "%%%NAMESPACE%%%SFFR_Donation_Compact_Layout" 
+          8:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: npe03__Recurring_Donation__c
+                value: "%%%NAMESPACE%%%SFFR_Recurring_Donation_Compact_Layout" 
 
     sffr_integration_user:
         description: Create Integration User and assign PS

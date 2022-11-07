@@ -39,4 +39,7 @@
                 <layout>Opportunity-SFFR Membership Layout</layout>
                 <recordType>Opportunity.Membership</recordType>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>npe03__Recurring_Donation__c-SFFR Recurring Donation Layout</layout>
+        </layoutAssignments>
 </Profile>
