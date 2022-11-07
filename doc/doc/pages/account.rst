@@ -2,6 +2,7 @@
 Account
 =================
 
+TODO DESIGN APSYNERGY Data load account organization
 
 TODO PROTO APSYNERGY - Account - ALLOW to be ready for faster Prototyping
   Compact Layout : SFFR_Household_Compact_Layout - Clone of NPSP Household Account
@@ -30,3 +31,5 @@ TODO DESIGN FAB
   - Page Autre
 - Compte Famille
   - Propal
+
+TODO PROTO FAB Dup rules for account?
