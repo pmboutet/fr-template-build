@@ -19,3 +19,14 @@ TODO PROTO APSYNERGY - Account - ALLOW to be ready for faster Prototyping
   List View - French Version of the Organization Account and Household Account
 
 TODO CONFIG Laureta Add Acount hierarchy as for Campaign
+
+TODO DESIGN FAB
+- Compte Orga
+  - Page Details:
+      On garde info de base dans details + list des affiliated contact
+      Identifier les champs SFFR PMB (Siret, Siren)
+  - Page Don
+  - Page Grant
+  - Page Autre
+- Compte Famille
+  - Propal

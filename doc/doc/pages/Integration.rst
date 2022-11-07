@@ -122,7 +122,7 @@ User in English, follow additional recommendation from NPSP / Findock (https://d
 
 
 TODO DESIGN FAB EURO-TVS (document: https://docs.google.com/spreadsheets/d/1QZIWDQCxUzBifmbIbcSGJQukj3mW9p-Q_96I2f1YQWE/edit#gid=1574709190)
-2 cvs files : Single Donation - Reccurent Donation ; same format
+2 csv files : Single Donation - Reccurent Donation ; same format
 Fields name could be adjust with EUTO-TVS on demand, we have been given the QUALIDATA version but this is OK to adjust
 
 numtiers: this is the external key for a donor (when provided) that is typically printed - 10 Alpha Max

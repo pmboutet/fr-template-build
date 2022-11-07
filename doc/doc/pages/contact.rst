@@ -91,7 +91,7 @@ dans le Compact Layout.
 #todo DESIGN PMB Salutation
 
 #todo DESIGN FAB SFFR_External_Key__c to match
-
+                 SFFR_ContactID - Autonumber - 
 #todo BUG LAURETA hardcoded french in flexi page
 
 Autres recommandations et bonnes pratiques
