@@ -92,7 +92,8 @@ dans le Compact Layout.
 
 #todo DESIGN FAB SFFR_External_Key__c to match
                  SFFR_ContactID - Autonumber - 
-#todo BUG LAURETA hardcoded french in flexi page
+
+#todo DESIGN FAB review with PBM https://quip.com/yD1wAsdz1m1Q
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
