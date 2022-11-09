@@ -80,7 +80,7 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
    ## Run Change Currency Withon Company Information Automated Robot Script
    - cci task run robot --robot_debug true --suites robot/fr-template-build/tests/change_currency_company_information.robot --org dev
       ### Context
-      - The Test.py (robot\fr-template-build\Libraries\Test.py) contains the custom keywords used in Test.robot
+      - The Test.py (robot\fr-template-build\Libraries\ChangeCurrency.py) contains the custom keywords used in Test.robot
       - All the steps to change the currency is working except the last step to confirm saving changes Alert
       - change_currency_company_information.robot contains 2 test cases
       -- Make Changes to Settings and Verify Changes: this test will open the company information page
