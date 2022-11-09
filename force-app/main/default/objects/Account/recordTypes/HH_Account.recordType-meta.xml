@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HH_Account</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>SFFR_Household_Compact_Layout</compactLayoutAssignment>
+    <label>Household Account</label>
+</RecordType>

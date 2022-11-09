@@ -103,4 +103,48 @@ Avant d'entrer champ à champ dans le modèle de données voici son modèle simp
 Le FR Template met à disposition un modèle de fichier à plat d'import (XXXXXXXXXXXXXXXXXXXXXXXXX Fournir un Lien ici). Si les données à charger contiennent une complexité qui dépasse le fichier à plat, alors
 on duplique les lignes du fichier pour refleter cette complexité. Par exemple, si un don est ventilé sur 2 UCG différentes, il y aura 2 lignes dans le fichier.
 
-Le FR Template utilise le Processing de Findock Guided matching.
+Intégration Findock
+------------------------------
+
+Le Modèle France fournit par défaut une installation Findock. 
+
+Utilisateur technique Findock
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cet utilisateur technique dont le nom est 'Integration User' permets à Salesforce une intégration avec les services et process de Findock qui tournent en dehors de Salesforce.
+
+Le Modèle France utilise le Processing de Findock Guided matching.
+
+TODO PROTO APSYNERGY Profile SFFR_Integration_User
+https://medium.com/salesforce-architects/security-best-practices-for-api-access-and-internal-system-users-a6199d0cda09
+
+User in English, follow additional recommendation from NPSP / Findock (https://docs.findock.com/permissions) review general permission
+
+
+TODO DESIGN FAB EURO-TVS (document: https://docs.google.com/spreadsheets/d/1QZIWDQCxUzBifmbIbcSGJQukj3mW9p-Q_96I2f1YQWE/edit#gid=1574709190)
+2 csv files : Single Donation - Reccurent Donation ; same format
+Fields name could be adjust with EUTO-TVS on demand, we have been given the QUALIDATA version but this is OK to adjust
+
+numtiers: this is the external key for a donor (when provided) that is typically printed - 10 Alpha Max
+when numtiers is provided, contact information are not provided at all for the corresponding row
+TODO FAB QUESTION: comment gerer les maj? le case de monsieur barré?
+either numtiers or contact information are provided, a default numtiers is used as a rollback mecanism when nedeed
+The Customer need to setup a default Donor that will be used to aggregate all anonymous donations (ie: envelope with 20 Euros)
+
+cseg: this is the external key for a campaign (when provided) that is typically printed - 10 Alpha Max
+a default cseg is used as a rollback mecanism when nedeed
+The Customer need to setup a default campaign that will be used to aggregate all orphan donations
+
+Contact field:
+  civ: Customizable for each NGO, we need to provide basic default
+  TODO DESIGN FAB: basic default
+  prenom, Nom, CpltNom, CpltAdr, numrue, typvoie, voie, ldit, cdpost, Commune, Pays
+
+dtrait: Date when EURO-TVS handle the row
+TODO FAB QUESTION: Format de date
+dmdp: Date sur le moyen de paiement
+mtmdp: Montant en centimes
+creg: Type de moyen de paiement
+TODO DESIGN FAB: basic default
+cdev: Code ISO Devise
+

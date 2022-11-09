@@ -2,7 +2,7 @@ Campagne
 =================
 
 Description métier 
--------------------------
+-----------------------------
 Le FR Template permets de gérer les spécificités des campagnes de levée de fonds.
 
 Les campagnes marketing sont gérées sous l'objet standard ``Campagne``. 
@@ -44,7 +44,9 @@ Nouveaux Types d'enregistrement
 La particularité des segments internes : ils sont liés à des contacts issus de l'instance Salesforce de l'organisation. 
 Les segments externes sont des segments ou les contacts ne sont pas présent dans l'instance. Le cas le plus fréquent est qu'ils sont loués ou échangés auprès de data-brokers. 
 Les contacts ne transiteront donc jamais par les instances clientes. 
-C'est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne. 
+C'est seulement si une opportunité est saisie que le contact ainsi crée sera attaché à la campagne.
+
+Les noms des types d'enregistrement apparaissent dans la section ``Informations Système`` en bas des présentations de page pour Campagne, Segment Interne et Segment Externe.
 
 
 **Champs d'une campagne (ajoutés à NPSP)** 
@@ -84,7 +86,7 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
       - Number
       - Possibilité des compter le nombre de sollicitations par année
     * - Crdre de deduplication
-      - Dedupe Order
+      - Deduplication Order
       - SFFR_Dedup_Order__c
       - Text
       - Dans une même campagne, il est possible d'exclure un contact présent dans un autre segment, l'ordre de dedupe définit une priorité d'un segment sur un autre segment. Note : ces informations sont uniquement descriptives dans le FR Template
@@ -205,14 +207,17 @@ Layouts
 ~~~~~~~~~~~~~~~~~~
 Il y a 3 présentations de page livrées avec le FR Template
   - SFFR Campaign Layout
-  - SFFR ES Campaign Layout (Externe)
   - SFFR IS Campaign Layout (Interne)
+  - SFFR ES Campaign Layout (Externe)
+
+Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
 
 Certains champs de ces présentations de page sont des champs standard Salesforce -> https://help.salesforce.com/s/articleView?id=sf.campaigns_fields.htm&type=5&language=fr
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
- 
+
+Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
 
 Autres recommandations et bonnes pratiques
 -------------------------------------------------
@@ -237,24 +242,42 @@ Article SalesforceBen
 
 https://www.salesforceben.com/the-drip/7-tips-for-working-with-salesforce-campaign-member-statuses/ 
 
+Recherche de référence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Lorsque vous allez créer des entrées dans le champ de type Lookup ``Segment externe``, lorsque l'utilisateur commence à saisir du texte, Salesforce propose les enregistrements dans l'objet ``SFFR_3party_Segment`` ou Segment Externe 
+Il est probable que les valeurs dans le chalmp SFFR_3party_Segment.Name ne soit pas assez explicite pour les utilisateurs, donc notre recommendation est la suivante : Si l'utilisateur créé un segment dont le Name = X et que le prestatire du Segment externe est "Broker de liste A", alors la meilleure pratique veut que l'on renseigne le champ description avec les valeurs ``Broker de liste A - X``.
+
+Ceci permet aux utilisateurs de retrouver le segment externe en question lorsqu'ils commencent à taper Broker de liste...
+
+.. image:: ../images/recherche_de_prestatire_de_segment_externe.PNG
+
+Code Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Code Source est le numéro pour gérer le tracking type Google Analytcis ou accompagnement le bordereau papier pour appel aà dons.
 
-Aussi nous recommandons de ne pas saisir au niveau d'une campagne parente un ``Type`` (FR) ``Type`` (API). 
+Type de campagne
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Dans le champ de recherche ``Segment externe``, il y a un filtre qui permet de limiter le choix du type d'enregistrement à Organisation.
+Nous recommandons de ne pas saisir un ``Type`` au niveau d'une campagne parente.
 
-Lorsque l'utilisateur consulte une campagne ayant le type d'enregistrement ``Campagne``, il y a 2 boutons Actions "Créer : Segment interne" et "Créer : Segment externe"
+Hiérarchie de campagne
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#todo DESIGN PMB choisir les colones de la hierarchy de campagne
+Utilisez la hiérarchie de campagne (standard Salesforce) ainsi que les vues de liste ``Org_Campaign_Hyrarchy`` et ``Campagnes principales`` fournies avec le Modèle France
+(FR Template) pour visualiser les campagnes parentes (ex : Appel dons Dec 2023),
+les campagnes child (Appel dons Dec 2023 appels sortants), les segments internes et externes.
+
 
 #todo DESIGN PMB Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
 
-#todo DOC RAPH Lorsque l'on recherche le 3rd party dans la lookup vers 3rd Party Segment, il faut que le nom du compte apparaisse
+#todo DOC RAPH Campaign Content, Third Party Segment
 
-#todo DESIGN PMP Contact, Campaign, Campaign Content, Third Party Segment : System Admin Search Layout
+#todo DESIGN PMP Review Compact layout ES IS
 
-#todo DESIGN PMP Add Campaign Record Types to all Page Layouts (Sinon on ne sait pas si on est sur un segment interne ou ext)
+#todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
-#todo IMPLEMENT PMB looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
+#TODO DESIGN PMB Review Tab icons of new objects.
 
 

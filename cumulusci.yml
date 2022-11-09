@@ -6,7 +6,7 @@ project:
         api_version: '55.0'
     dependencies:
         - github: https://github.com/SalesforceFoundation/NPSP
-        - github: https://github.com/pmboutet/findock-fr-template-build
+        - github: https://github.com/SFDO-Alliances/findock-fr-template
 
     git:
         default_branch: 'main'
@@ -18,7 +18,7 @@ sources:
     npsp:
         github: https://github.com/SalesforceFoundation/NPSP
     findock:
-        github: https://github.com/pmboutet/findock-fr-template-build
+        github: https://github.com/SFDO-Alliances/findock-fr-template
 plans:
   install:
     slug: install
@@ -68,6 +68,8 @@ plans:
               restore: True
         6:
             flow: sffr_assign_compact_layout 
+        7:
+            flow: sffr_integration_user
 
 tasks:
     robot:
@@ -95,11 +97,12 @@ tasks:
     sffr_load_sdata:
         description: Load Sample Dataset for Organizations, Households, and Addresses
         class_path: cumulusci.tasks.bulkdata.LoadData
-        group: "NPSP: Post Installation"
+        group: "SFFR: Data Load"
         options:
             mapping: datasets/mapping.yml
             sql_path: datasets/sample.sql
             drop_missing_schema: True
+            ignore_row_errors: true
 
     sffr_translations:
         description: Configure Translations
@@ -115,6 +118,12 @@ tasks:
             namespace_inject: $project_config.project__package__namespace
             entity: CustomObject
             tag: compactLayoutAssignment
+
+    sffr_integration_user_task:
+        description: Creates an integration user.
+        class_path: cumulusci.tasks.sfdx.SFDXOrgTask
+        options:
+            command: "force:user:create -a integ --definitionfile datasets/users/integration_user.json"
 
 flows:
     dependencies:
@@ -142,27 +151,7 @@ flows:
           1:
             flow: config_only
           2:
-            task: disable_tdtm_trigger_handlers
-            options:
-              handlers:
-                        - CRLP_Rollup_TDTM
-                        - RLLP_OppRollup_TDTM
-                        - RD2_RecurringDonationsOpp_TDTM
-              namespace: npsp
-              active: false
-              restore: false
-          3:
-            task: sffr_load_sdata
-          4:
-            task: restore_tdtm_trigger_handlers
-            options:
-              handlers:
-                        - CRLP_Rollup_TDTM
-                        - RLLP_OppRollup_TDTM
-                        - RD2_RecurringDonationsOpp_TDTM
-              namespace: npsp
-              active: true
-              restore: true
+            flow: sffr_add_data
 
     config_only:
         description: France Template Installation Configuration Only
@@ -175,6 +164,8 @@ flows:
             task: sffr_translations
           4:
             flow: sffr_assign_compact_layout
+          5: 
+            flow: sffr_integration_user
 
     sffr_profile:
         steps:
@@ -234,3 +225,49 @@ flows:
             options:
                 api_names: SFFR_Campaign_Content_Item__c
                 value: "%%%NAMESPACE%%%SFFR_Campaign_Content_Item_Compact_Layout" 
+          7:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: Opportunity
+                value: "%%%NAMESPACE%%%SFFR_Donation_Compact_Layout" 
+          8:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: npe03__Recurring_Donation__c
+                value: "%%%NAMESPACE%%%SFFR_Recurring_Donation_Compact_Layout" 
+
+    sffr_integration_user:
+        description: Create Integration User and assign PS
+        steps:
+          1:
+            task: sffr_integration_user_task
+          2:
+            task: assign_permission_sets
+            options:
+                      api_names: PaymentHub_Integration_Base,PaymentHub_Operations,ProcessingHub_Operations
+
+    sffr_add_data:
+        description: Cleans up data and disables triggers before running data load.
+        steps:
+          1:
+            task: disable_tdtm_trigger_handlers
+            options:
+              handlers:
+                        - CRLP_Rollup_TDTM
+                        - RLLP_OppRollup_TDTM
+                        - RD2_RecurringDonationsOpp_TDTM
+              namespace: npsp
+              active: false
+              restore: false
+          2:
+            task: sffr_load_sdata
+          3:
+            task: restore_tdtm_trigger_handlers
+            options:
+              handlers:
+                        - CRLP_Rollup_TDTM
+                        - RLLP_OppRollup_TDTM
+                        - RD2_RecurringDonationsOpp_TDTM
+              namespace: npsp
+              active: true
+              restore: true

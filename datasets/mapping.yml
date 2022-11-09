@@ -1,10 +1,3 @@
-Insert BusinessHours:
-  sf_object: BusinessHours
-  fields:
-  - IsActive
-  - IsDefault
-  - Name
-  - TimeZoneSidKey
 Insert SFFR_Campaign_Content__c:
   sf_object: SFFR_Campaign_Content__c
   fields:
@@ -12,17 +5,15 @@ Insert SFFR_Campaign_Content__c:
   - SFFR_Description__c
   - SFFR_Type__c
   - SFFR_Unit_Cost__c
-Insert cpm__Guided_Matching_Setup__c:
-  sf_object: cpm__Guided_Matching_Setup__c
+Insert SFFR_Campaign_Content_Item__c:
+  sf_object: SFFR_Campaign_Content_Item__c
   fields:
-  - Name
-  - cpm__Active__c
-  - cpm__Job_Size__c
-  - cpm__Object__c
-  - cpm__Report_Sub_Type__c
-  - cpm__Report_Type__c
-  - cpm__Rules__c
-  - cpm__Target__c
+  - SFFR_Description__c
+  - SFFR_Type__c
+  - SFFR_Unit_Cost__c
+  lookups:
+    SFFR_Campaign_Content__c:
+      table: SFFR_Campaign_Content__c
 Insert npo02__Household__c:
   sf_object: npo02__Household__c
   fields:
@@ -84,111 +75,6 @@ Insert npsp__Engagement_Plan_Template__c:
   - npsp__Description__c
   - npsp__Reschedule_To__c
   - npsp__Skip_Weekends__c
-Insert proh__File__c:
-  sf_object: proh__File__c
-  fields:
-  - proh__Chatter_Feed_Item__c
-  - proh__Failed_Elements__c
-  - proh__File_Type__c
-  - proh__Filename__c
-  - proh__Format__c
-  - proh__Group_Identifier__c
-  - proh__Hashcode__c
-  - proh__Narrative__c
-  - proh__ProcessingHub_Id__c
-  - proh__Source__c
-  - proh__Status__c
-  - proh__Successful_Elements__c
-  - proh__Total_Record_Amount__c
-  - proh__Total_Record_Count__c
-  - proh__Total_elements__c
-  - proh__Unique_File_Reference__c
-  lookups:
-    proh__Parent__c:
-      table: proh__File__c
-      after: Insert proh__File__c
-Insert SFFR_Campaign_Content_Item__c:
-  sf_object: SFFR_Campaign_Content_Item__c
-  fields:
-  - SFFR_Description__c
-  - SFFR_Type__c
-  - SFFR_Unit_Cost__c
-  lookups:
-    SFFR_Campaign_Content__c:
-      table: SFFR_Campaign_Content__c
-Insert cpm__Payment_Journey__c:
-  sf_object: cpm__Payment_Journey__c
-  fields:
-  - Name
-  lookups:
-    cpm__Business_Hours__c:
-      table: BusinessHours
-Insert cpm__Recurring_Mandate_Schedule__c:
-  sf_object: cpm__Recurring_Mandate_Schedule__c
-  fields:
-  - Name
-  - RecordTypeId
-  - cpm__Auto_Create__c
-  - cpm__End_Date__c
-  - cpm__Exclude_from_Auto_Run__c
-  - cpm__Initial_Generated_JSON__c
-  - cpm__Monthly_Day_Strategy__c
-  - cpm__Process_on_Friday__c
-  - cpm__Process_on_Monday__c
-  - cpm__Process_on_Saturday__c
-  - cpm__Process_on_Sunday__c
-  - cpm__Process_on_Thursday__c
-  - cpm__Process_on_Tuesday__c
-  - cpm__Process_on_Wednesday__c
-  - cpm__Processing_Date_Conflict_Strategy__c
-  - cpm__Repeat_Frequency__c
-  - cpm__Run_Date_Conflict_Strategy__c
-  - cpm__Run_of_Days_before_Processing_date__c
-  - cpm__Start_Date__c
-  - cpm__Status__c
-  - cpm__Stored_JSON__c
-  - cpm__Sub_Type__c
-  - cpm__Target__c
-  - cpm__Targeted_Day_of_Month__c
-  lookups:
-    cpm__Business_Hours__c:
-      table: BusinessHours
-Insert cpm__Transaction_Set__c:
-  sf_object: cpm__Transaction_Set__c
-  fields:
-  - cpm__BIC_Code__c
-  - cpm__Closing_Balance_Date__c
-  - cpm__Closing_Balance__c
-  - cpm__Default_Payment_Method__c
-  - cpm__Default_Payment_Processor__c
-  - cpm__Default_Target__c
-  - cpm__Electronic_Sequence_Number__c
-  - cpm__Filename__c
-  - cpm__Filesize__c
-  - cpm__Filetype__c
-  - cpm__From_Date__c
-  - cpm__IBAN__c
-  - cpm__Last_Status_Reason__c
-  - cpm__Nr_Of_Failed__c
-  - cpm__Nr_Of_Guided_Review__c
-  - cpm__Nr_Of_Ignored__c
-  - cpm__Nr_Of_Matched__c
-  - cpm__Nr_Of_New__c
-  - cpm__Nr_Of_No_Match__c
-  - cpm__Nr_Of_Other__c
-  - cpm__Nr_Of_Processing__c
-  - cpm__Number_Of_Credit_Entries_from_file__c
-  - cpm__Number_Of_Debit_Entries_from_file__c
-  - cpm__Opening_Balance_Date__c
-  - cpm__Opening_Balance__c
-  - cpm__ProcessingHub_Id__c
-  - cpm__Status__c
-  - cpm__To_Date__c
-  - cpm__Total_Amount_Credit_from_file__c
-  - cpm__Total_Amount_Debit_from_file__c
-  lookups:
-    cpm__Guided_Matching_Setup__c:
-      table: cpm__Guided_Matching_Setup__c
 Insert npsp__Level__c:
   sf_object: npsp__Level__c
   fields:
@@ -204,99 +90,6 @@ Insert npsp__Level__c:
   lookups:
     npsp__Engagement_Plan_Template__c:
       table: npsp__Engagement_Plan_Template__c
-Insert cpm__Mandate_Schedule__c:
-  sf_object: cpm__Mandate_Schedule__c
-  fields:
-  - cpm__Exclude_from_Auto_Run__c
-  - cpm__Generate_Async_Apex_Job_Id__c
-  - cpm__Last_Status_Reason__c
-  - cpm__Processing_Date__c
-  - cpm__Run_Date__c
-  - cpm__Status_Before_Failed__c
-  - cpm__Status__c
-  - cpm__Sub_Type__c
-  - cpm__Target__c
-  - cpm__Validate_Async_Apex_Job_Id__c
-  lookups:
-    cpm__Recurring_Mandate_Schedule__c:
-      table: cpm__Recurring_Mandate_Schedule__c
-Insert cpm__Recurring_Payment_Schedule__c:
-  sf_object: cpm__Recurring_Payment_Schedule__c
-  fields:
-  - Name
-  - RecordTypeId
-  - cpm__Additional_SOQL__c
-  - cpm__Auto_Create__c
-  - cpm__Collect_on_Friday__c
-  - cpm__Collect_on_Monday__c
-  - cpm__Collect_on_Saturday__c
-  - cpm__Collect_on_Sunday__c
-  - cpm__Collect_on_Thursday__c
-  - cpm__Collect_on_Tuesday__c
-  - cpm__Collect_on_Wednesday__c
-  - cpm__Collection_Date_Conflict_Strategy__c
-  - cpm__End_Date__c
-  - cpm__Exclude_from_Auto_Run__c
-  - cpm__Finished_Status__c
-  - cpm__Initial_Generated_JSON__c
-  - cpm__Monthly_Collection_Day_Strategy__c
-  - cpm__Payment_Method__c
-  - cpm__Payment_Processor__c
-  - cpm__Repeat_Frequency__c
-  - cpm__Run_Date_Conflict_Strategy__c
-  - cpm__Run_of_Days_before_Collection_date__c
-  - cpm__Selection_Day_Strategy__c
-  - cpm__Source__c
-  - cpm__Start_Date__c
-  - cpm__Status__c
-  - cpm__Stored_JSON__c
-  - cpm__Target__c
-  - cpm__Targeted_Collection_Day_of_Month__c
-  lookups:
-    cpm__Business_Hours__c:
-      table: BusinessHours
-    cpm__Payment_Journey__c:
-      table: cpm__Payment_Journey__c
-Insert cpm__Payment_Schedule__c:
-  sf_object: cpm__Payment_Schedule__c
-  fields:
-  - cpm__Additional_SOQL__c
-  - cpm__Channel__c
-  - cpm__Close_Async_Apex_Job_Id__c
-  - cpm__Collection_Date__c
-  - cpm__Exclude_from_Auto_Run__c
-  - cpm__Finished_Status__c
-  - cpm__Generator_Class__c
-  - cpm__Hashcode__c
-  - cpm__Hashcode_date__c
-  - cpm__Job_Group_Identifier__c
-  - cpm__Last_Status_Reason__c
-  - cpm__Nr_Of_Installments__c
-  - cpm__PaymentMethod__c
-  - cpm__Payment_Method__c
-  - cpm__Payment_Processor__c
-  - cpm__Prepare_Async_Apex_Job_Id__c
-  - cpm__Prepare_SOQL_Query__c
-  - cpm__Process_Async_Apex_Job_Id__c
-  - cpm__Process_Batch_Size__c
-  - cpm__Processor_Class__c
-  - cpm__Run_Date__c
-  - cpm__Selection_Date__c
-  - cpm__Source__c
-  - cpm__Status_Before_Failed__c
-  - cpm__Status__c
-  - cpm__Target__c
-  - cpm__Total_Value__c
-  - cpm__Totals_Async_Apex_Job_Id__c
-  - cpm__Validate_Job_Id__c
-  lookups:
-    cpm__Original_Payment_Schedule__c:
-      table: cpm__Payment_Schedule__c
-      after: Insert cpm__Payment_Schedule__c
-    cpm__Payment_Journey__c:
-      table: cpm__Payment_Journey__c
-    cpm__Recurring_Payment_Schedule__c:
-      table: cpm__Recurring_Payment_Schedule__c
 Insert Account:
   sf_object: Account
   fields:
@@ -418,6 +211,15 @@ Insert Campaign:
   - IsActive
   - Name
   - RecordTypeId
+  - Status
+  - StartDate
+  - EndDate
+  - Type
+  - Description
+  - BudgetedCost
+  - ActualCost
+  - ExpectedRevenue
+  - ExpectedResponse
   - SFFR_Dedup_Order__c
   - SFFR_Delivered_Quantity__c
   - SFFR_Dispatcher_External_Key__c
@@ -439,6 +241,9 @@ Insert Contact:
   fields:
   - DoNotCall
   - FirstName
+  - Title
+  - MobilePhone
+  - HomePhone
   - Gender__c
   - HasOptedOutOfEmail
   - HasOptedOutOfFax
@@ -447,7 +252,9 @@ Insert Contact:
   - SFFR_GDPR_Status__c
   - SFFR_No_Tax_Receipt__c
   - SFFR_Retrict_Yearly_Marketing_Sol__c
-  - cpm__ProcessingHub_Id__c
+  - OtherStreet
+  - OtherCity
+  - OtherPostalCode
   - npe01__AlternateEmail__c
   - npe01__HomeEmail__c
   - npe01__PreferredPhone__c
@@ -530,132 +337,6 @@ Insert Contact:
       table: npsp__Address__c
     npsp__Primary_Affiliation__c:
       table: Account
-Insert cpm__Payment_Profile__c:
-  sf_object: cpm__Payment_Profile__c
-  fields:
-  - RecordTypeId
-  - cpm__Active__c
-  - cpm__BIC_Code__c
-  - cpm__Bank_Account__c
-  - cpm__Bank_Name__c
-  - cpm__Brand__c
-  - cpm__CCV__c
-  - cpm__Card_BIN__c
-  - cpm__City__c
-  - cpm__Clearing_Member_Id__c
-  - cpm__Country__c
-  - cpm__Credit_Card_Number__c
-  - cpm__Enforce_Uniqueness__c
-  - cpm__Expiration_Date__c
-  - cpm__Expiration_Year__c
-  - cpm__Funding_Type__c
-  - cpm__Holder_Name__c
-  - cpm__Housename_Or_Number__c
-  - cpm__Housenumber__c
-  - cpm__IBAN__c
-  - cpm__Primary_Identifier__c
-  - cpm__ProcessingHub_Id__c
-  - cpm__State_Province__c
-  - cpm__Street__c
-  - cpm__Suffix__c
-  - cpm__Token_Issuer__c
-  - cpm__Token__c
-  - cpm__Unique_Identifier__c
-  - cpm__Wallet_Id__c
-  - cpm__Wallet_Type__c
-  - cpm__Zipcode__c
-  - paysepa__Custom_Tax_Code__c
-  - phstr__Fingerprint__c
-  lookups:
-    cpm__Account__c:
-      table: Account
-    cpm__Contact__c:
-      table: Contact
-Insert npe5__Affiliation__c:
-  sf_object: npe5__Affiliation__c
-  fields:
-  - npe5__Description__c
-  - npe5__EndDate__c
-  - npe5__Primary__c
-  - npe5__Role__c
-  - npe5__StartDate__c
-  - npe5__Status__c
-  - npsp__Related_Opportunity_Contact_Role__c
-  lookups:
-    npe5__Contact__c:
-      table: Contact
-    npe5__Organization__c:
-      table: Account
-Insert cpm__Mandate__c:
-  sf_object: cpm__Mandate__c
-  fields:
-  - cpm__Active__c
-  - cpm__Custom_Reference__c
-  - cpm__Date_Signed__c
-  - cpm__End_Date__c
-  - cpm__Last_Status_Reason__c
-  - cpm__Last_Used__c
-  - cpm__Payment_Processor__c
-  - cpm__Prefix__c
-  - cpm__Prenotification_Date__c
-  - cpm__Reference__c
-  - cpm__Sort_Code__c
-  - cpm__Status__c
-  - cpm__Target__c
-  - cpm__Type__c
-  - cpm__Unique_Mandate_Id__c
-  - cpm__Use_First_on_next_run__c
-  - phstr__Payment_Method_Id__c
-  lookups:
-    cpm__Mandate_Schedule__c:
-      table: cpm__Mandate_Schedule__c
-    cpm__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
-    proh__File__c:
-      table: proh__File__c
-Insert cpm__Recurring_Payment__c:
-  sf_object: cpm__Recurring_Payment__c
-  fields:
-  - cpm__Active__c
-  - cpm__Amount__c
-  - cpm__Bank_Statement_Description__c
-  - cpm__Collection_Day_of_Month__c
-  - cpm__Custom_Account_Holder_Name__c
-  - cpm__Custom_BIC__c
-  - cpm__Custom_IBAN__c
-  - cpm__Custom_Mandate_Active__c
-  - cpm__Custom_Mandate_Date_Signed__c
-  - cpm__Custom_Mandate_ID__c
-  - cpm__Custom_Payment_Reference__c
-  - cpm__Description_of_Gift__c
-  - cpm__End_Date_Reached__c
-  - cpm__End_Date__c
-  - cpm__Expected_Remaining_Revenue__c
-  - cpm__Frequency__c
-  - cpm__Generated_Payment_Reference__c
-  - cpm__Mandatory_payment__c
-  - cpm__Next_Collection_Date__c
-  - cpm__Payment_Method__c
-  - cpm__Payment_Processor__c
-  - cpm__Payment_QR__c
-  - cpm__Payment_Url__c
-  - cpm__Start_Date__c
-  - cpm__Status_Reason__c
-  - cpm__Status__c
-  - cpm__Target__c
-  - cpm__ls_coll_date__c
-  - cpm__n_of_collected_installments__c
-  lookups:
-    cpm__Account__c:
-      table: Account
-    cpm__Contact__c:
-      table: Contact
-    cpm__Mandate__c:
-      table: cpm__Mandate__c
-    cpm__Originating_Campaign__c:
-      table: Campaign
-    cpm__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
 Insert npe03__Recurring_Donation__c:
   sf_object: npe03__Recurring_Donation__c
   fields:
@@ -705,10 +386,6 @@ Insert npe03__Recurring_Donation__c:
       table: Account
     npe03__Recurring_Donation_Campaign__c:
       table: Campaign
-    npsp4hub__Mandate__c:
-      table: cpm__Mandate__c
-    npsp4hub__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
 Insert Opportunity:
   sf_object: Opportunity
   fields:
@@ -779,10 +456,6 @@ Insert Opportunity:
       table: Contact
     npe03__Recurring_Donation__c:
       table: npe03__Recurring_Donation__c
-    npsp4hub__Mandate__c:
-      table: cpm__Mandate__c
-    npsp4hub__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
     npsp__Batch__c:
       table: npsp__Batch__c
     npsp__Honoree_Contact__c:
@@ -799,168 +472,6 @@ Insert Opportunity:
       after: Insert Opportunity
     npsp__Primary_Contact__c:
       table: Contact
-Insert cpm__Installment__c:
-  sf_object: cpm__Installment__c
-  fields:
-  - RecordTypeId
-  - cpm__Amount_Open__c
-  - cpm__Amount__c
-  - cpm__Bank_Statement_Description__c
-  - cpm__Collection_Count__c
-  - cpm__Custom_1__c
-  - cpm__Custom_2__c
-  - cpm__Custom_3__c
-  - cpm__Custom_4__c
-  - cpm__Custom_5__c
-  - cpm__Custom_Account_Holder_Name__c
-  - cpm__Custom_BIC__c
-  - cpm__Custom_IBAN__c
-  - cpm__Custom_Mandate_Date_Signed__c
-  - cpm__Custom_Mandate_ID__c
-  - cpm__Custom_Payment_Reference__c
-  - cpm__Custom_Sequence_Type__c
-  - cpm__Due_Date__c
-  - cpm__External_ID__c
-  - cpm__GUID__c
-  - cpm__Generated_Payment_Reference__c
-  - cpm__Last_Cancelled_Date__c
-  - cpm__Last_Collection_Date__c
-  - cpm__Last_Failed_Date__c
-  - cpm__Last_Failure_Reason__c
-  - cpm__Last_Paid_Date__c
-  - cpm__Last_Raw_Request__c
-  - cpm__Last_Raw_Response__c
-  - cpm__Last_ReasonCode_Received__c
-  - cpm__Last_Refunded_Date__c
-  - cpm__Last_Rejection_Date__c
-  - cpm__Last_Reversal_Date__c
-  - cpm__Last_Status_Reason__c
-  - cpm__Mandatory_payment__c
-  - cpm__Origin__c
-  - cpm__Original_Due_Date__c
-  - cpm__PayLinks_Page__c
-  - cpm__Pay_Url__c
-  - cpm__Payment_Intent_Id__c
-  - cpm__Payment_Method__c
-  - cpm__Payment_Processor__c
-  - cpm__Payment_QR__c
-  - cpm__Payment_Transaction_Id__c
-  - cpm__ProcessingHub_Id__c
-  - cpm__Processor__c
-  - cpm__Recurring_Pay_Url__c
-  - cpm__Recurring_Payment_QR__c
-  - cpm__Recurring_Payment_Reference__c
-  - cpm__Source__c
-  - cpm__Status_Reason__c
-  - cpm__Status__c
-  - cpm__Target__c
-  - cpm__WebhookURL__c
-  - cpm__of_times_cancelled__c
-  - cpm__of_times_failed__c
-  - cpm__of_times_paid__c
-  - cpm__of_times_refunded__c
-  - cpm__of_times_rejected__c
-  - cpm__of_times_reversed__c
-  lookups:
-    cpm__Account__c:
-      table: Account
-    cpm__Contact__c:
-      table: Contact
-    cpm__Mandate__c:
-      table: cpm__Mandate__c
-    cpm__Originating_Campaign__c:
-      table: Campaign
-    cpm__Payment_Journey__c:
-      table: cpm__Payment_Journey__c
-    cpm__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
-    cpm__Payment_Schedule__c:
-      table: cpm__Payment_Schedule__c
-    cpm__Recurring_Payment__c:
-      table: cpm__Recurring_Payment__c
-    cpm__Relates_To__c:
-      table: cpm__Installment__c
-      after: Insert cpm__Installment__c
-    cpm__Transaction_Sub_Element__c:
-      table: cpm__Transaction_Sub_Element__c
-      after: Insert cpm__Transaction_Sub_Element__c
-    npsp4hub__Opportunity__c:
-      table: Opportunity
-    npsp4hub__Payment__c:
-      table: npe01__OppPayment__c
-      after: Insert npe01__OppPayment__c
-    proh__File__c:
-      table: proh__File__c
-Insert cpm__Transaction__c:
-  sf_object: cpm__Transaction__c
-  fields:
-  - cpm__Account_Holder_Name__c
-  - cpm__Account_Servicer_Reference__c
-  - cpm__Additional_Entry_Information__c
-  - cpm__Address_Line_1__c
-  - cpm__Amount__c
-  - cpm__BIC_Code__c
-  - cpm__Batch_Id__c
-  - cpm__Building_Number__c
-  - cpm__Campaign_Member_Id__c
-  - cpm__City__c
-  - cpm__Country__c
-  - cpm__Custom_1__c
-  - cpm__Custom_2__c
-  - cpm__Custom_3__c
-  - cpm__Custom_4__c
-  - cpm__Custom_5__c
-  - cpm__Date__c
-  - cpm__End_To_End_ID__c
-  - cpm__Entry_Reference__c
-  - cpm__Entry_Type__c
-  - cpm__Failure_Status__c
-  - cpm__Guided_Matching_Error__c
-  - cpm__Guided_Matching_Installment_Processed__c
-  - cpm__Guided_Matching_Job_Id__c
-  - cpm__Guided_Matching_Log__c
-  - cpm__Guided_Matching_Nr_Of_Retries__c
-  - cpm__Guided_Matching_Nr_Of_Rules_Processed__c
-  - cpm__Has_Been_In_Guided_Review__c
-  - cpm__IBAN__c
-  - cpm__Last_Worked_On_Date__c
-  - cpm__Mandate_Reference__c
-  - cpm__Matched_By_ProcessingHub__c
-  - cpm__Multiple_Installment_Ids__c
-  - cpm__Open_Amount__c
-  - cpm__Other_Installment_Ids__c
-  - cpm__Payment_Info_Id__c
-  - cpm__Payment_Reference__c
-  - cpm__PostalCode__c
-  - cpm__Primary__c
-  - cpm__ProcessingHub_Id__c
-  - cpm__Processor__c
-  - cpm__Raw_XML_entry__c
-  - cpm__Reason_Code__c
-  - cpm__Remittance_Information__c
-  - cpm__Reported_Payment_Method_Code__c
-  - cpm__Reported_Payment_Method__c
-  - cpm__Reversal_Indicator__c
-  - cpm__Start_Guided_Matching__c
-  - cpm__Status_Reason__c
-  - cpm__Status__c
-  - cpm__Street__c
-  - cpm__Target__c
-  - cpm__Type__c
-  - cpm__Value_Date__c
-  lookups:
-    cpm__Account__c:
-      table: Account
-    cpm__Campaign__c:
-      table: Campaign
-    cpm__Contact__c:
-      table: Contact
-    cpm__Installment__c:
-      table: cpm__Installment__c
-    cpm__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
-    cpm__Transaction_set__c:
-      table: cpm__Transaction_Set__c
 Insert npe01__OppPayment__c:
   sf_object: npe01__OppPayment__c
   fields:
@@ -972,8 +483,6 @@ Insert npe01__OppPayment__c:
   - npe01__Payment_Method__c
   - npe01__Scheduled_Date__c
   - npe01__Written_Off__c
-  - npsp4hub__Payment_Processor__c
-  - npsp4hub__Target__c
   - npsp__ACH_Code__c
   - npsp__ACH_Last_4__c
   - npsp__Authorized_Date__c
@@ -1005,61 +514,16 @@ Insert npe01__OppPayment__c:
   lookups:
     npe01__Opportunity__c:
       table: Opportunity
-    npsp4hub__Collected_Through__c:
-      table: cpm__Installment__c
-    npsp4hub__Mandate__c:
-      table: cpm__Mandate__c
-    npsp4hub__Payment_Profile__c:
-      table: cpm__Payment_Profile__c
     npsp__OriginalPayment__c:
       table: npe01__OppPayment__c
       after: Insert npe01__OppPayment__c
-Insert cpm__Transaction_Sub_Element__c:
-  sf_object: cpm__Transaction_Sub_Element__c
-  fields:
-  - cpm__Amount__c
-  - cpm__Credit_Debit__c
-  - cpm__Party__c
-  - cpm__ProcessingHub_Id__c
-  - cpm__Status__c
-  - cpm__Type__c
-  lookups:
-    cpm__Cost_Bearer__c:
-      table: Account
-    cpm__Transaction__c:
-      table: cpm__Transaction__c
-Insert npsp__General_Accounting_Unit__c:
-  sf_object: npsp__General_Accounting_Unit__c
-  fields:
-  - Name
-  - npsp__Active__c
-  - npsp__Average_Allocation__c
-  - npsp__Description__c
-  - npsp__First_Allocation_Date__c
-  - npsp__Largest_Allocation__c
-  - npsp__Last_Allocation_Date__c
-  - npsp__Number_of_Allocations_Last_N_Days__c
-  - npsp__Number_of_Allocations_Last_Year__c
-  - npsp__Number_of_Allocations_This_Year__c
-  - npsp__Number_of_Allocations_Two_Years_Ago__c
-  - npsp__Smallest_Allocation__c
-  - npsp__Total_Allocations__c
-  - npsp__Total_Allocations_Last_N_Days__c
-  - npsp__Total_Allocations_Last_Year__c
-  - npsp__Total_Allocations_This_Year__c
-  - npsp__Total_Allocations_Two_Years_Ago__c
-  - npsp__Total_Number_of_Allocations__c
-Insert npsp__Allocation__c:
-  sf_object: npsp__Allocation__c
-  fields:
-  - npsp__Amount__c
-  - npsp__Percent__c
-  lookups:
-    npsp__Campaign__c:
-      table: Campaign
-    npsp__General_Accounting_Unit__c:
-      table: npsp__General_Accounting_Unit__c
-    npsp__Opportunity__c:
-      table: Opportunity  
-    npsp__Payment__c:
-      table: npe01__OppPayment__c
+CampaignMember:
+    sf_object: CampaignMember
+    table: CampaignMember
+    fields:
+        Status: status
+    lookups:
+        ContactId:
+            table: Contact
+        CampaignId:
+            table: Campaign

@@ -9,12 +9,13 @@ BIENVENUE to SF.org FR TEMPLATE's documentation!
 .. toctree::
    Quick start<pages/quickstart>
    Implémentation guide<pages/implementation_guide>
+   Account<pages/account>
    Contact<pages/contact>
    Campagne<pages/campaign>
+   Opportunité<pages/opportunity>
    Intégration<pages/integration>
    Jeu de données test<pages/dataset>
    Saisie de paiements<pages/payment>
-
    Démo<pages/demo>
 
 Indices and tables

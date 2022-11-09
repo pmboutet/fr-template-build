@@ -23,4 +23,23 @@
         <layoutAssignments>
                 <layout>Campaign-SFFR Campaign Layout</layout>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>Account-SFFR Household Layout</layout>
+                <recordType>Account.HH_Account</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Account-SFFR Organization Layout</layout>
+                <recordType>Account.Organization</recordType>
+        </layoutAssignments>
+                <layoutAssignments>
+                <layout>Opportunity-SFFR Donation Layout</layout>
+                <recordType>Opportunity.Donation</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>Opportunity-SFFR Membership Layout</layout>
+                <recordType>Opportunity.Membership</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>npe03__Recurring_Donation__c-SFFR Recurring Donation Layout</layout>
+        </layoutAssignments>
 </Profile>
