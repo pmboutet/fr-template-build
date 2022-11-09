@@ -76,3 +76,25 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
 
 
    TODO Evalute SF in French Data Load with snowflake: https://github.com/SFDO-Tooling/Snowfakery   
+
+   ## Run Automated Robot Script
+   - Please make sure that you have ChromeDriver installed in your machine (Otherwise please install it from here https://sites.google.com/chromium.org/driver/?pli=1)
+      ### Change Currency Withon Company Information (Still In Progress)
+      - cci task run robot --robot_debug true --suites robot/fr-template-build/tests/change_currency_company_information.robot --org dev
+         #### Decription
+         This job will open Setup>Company Settings>Company Information. Click on Edit button. Change the Currency to French (France, EURO). Click on save and confirm the change Alert
+
+         #### Context
+         - The Test.py (robot\fr-template-build\Libraries\ChangeCurrency.py) contains the custom keywords used in Test.robot
+         - All the steps to change the currency is working except the last step to confirm saving changes Alert
+         - change_currency_company_information.robot contains 2 test cases
+         -- Make Changes to Settings and Verify Changes: this test will open the company information page
+         -- Click on Edit Button: this test will click on Edit button, change the value of the currency Picklist and click on Save button and then the Confirm Alert
+         #### Assumption
+         - To be able to click on Edit button and then change the Currency Picklist element, Salesforce uses iframes to render these components. Within the change_record_picklist_values method I'm selecting the iframe that contains these elements. I tried to use the native Keyword "Handle Alert  action=ACCEPT" to accept the Alert, but it didn't work and I'm assuming that because of the the job is running within the iframe, and it wasn't able to recognise the Alert.
+      ### Enable French Within Translation Language Settings
+      - cci task run robot --robot_debug true --suites .\robot\fr-template-build\tests\activate_french_translation.robot --org dev
+         #### Decription
+         - This job will open Setup > User Interface > Translation Workbech > Translate Language Settings. Check Active Checkebox, Click on Save
+
+   
