@@ -1,7 +1,7 @@
 *** Settings ***
 
 Resource        cumulusci/robotframework/Salesforce.robot
-Library         ../Libraries/ChangeCurrency.py
+Library         ../Libraries/ChangeCurrency.py 
 Library         cumulusci.robotframework.PageObjects
 Library         SeleniumLibrary
 Suite Setup     Open Test Browser
@@ -10,9 +10,9 @@ Suite Setup     Open Test Browser
 *** Test Cases ***
 
 Make Changes to Settings and Verify Changes
-    [Documentation]            Go to Setup>Company Settings>Company Information. Edit Household Account Record Type seeing to Organization and Save.
-    ...                        Verify that the change is saved and revert the change and Save again. Verify change reverted.
-    [tags]                     feature:NPSP Settings           unstable
+    [Documentation]            Go to Setup>Company Settings>Company Information. Click on Edit button. Change the Currency to French (France, EURO).
+    ...                        Click on save and confirm the change Alert
+    [tags]                     feature:Company Information           unstable
     Open Company Settings        Company Settings            Company Information
 
 Click on Edit Button
@@ -21,6 +21,7 @@ Click on Edit Button
     Log To Console	Click Edit Button Succeeded
     Change Record Picklist Values
     Sleep  3
+    Unselect Frame
     Handle Alert        action=ACCEPT 
 
 # Accept Edit Confirmation Dialog

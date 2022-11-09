@@ -74,5 +74,10 @@ class ChangeCurrency(BasePage):
         self.selenium.wait_until_page_contains_element(locator2, timeout=20)
         self.selenium.wait_until_element_is_visible(locator2, timeout=20)
         self.salesforce._jsclick(locator2)
+
+        
+    
+
+
         
             

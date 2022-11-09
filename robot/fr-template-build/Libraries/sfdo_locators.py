@@ -7,5 +7,7 @@ npsp_lex_locators={
 	'iframe_section': '//iframe[contains(@title,"{}")]',
 	'picklist_element': '//select[contains(@name,"{}")]',
 	'save_button': '//tbody/tr/td//input[contains(@value,"Save")]',
+	'edit_french': '//tbody/tr/td/a[contains(@title,"- French")]',
+	'is_active_checkbox': '//tbody/tr/td//input[contains(@name,"IsActive")]',
 
 }
