@@ -1,11 +1,11 @@
 from sfdo_locators import npsp_lex_locators as sfdo_locators
 import time
-from cumulusci.robotframework.utils import capture_screenshot_on_error
+# from cumulusci.robotframework.utils import capture_screenshot_on_error
 from cumulusci.robotframework.pageobjects import BasePage
 
 npsp_lex_locators = {}
 
-class Test(BasePage):
+class ChangeCurrency(BasePage):
     
     def __init__(self, debug=False):
         super().__init__()
@@ -37,14 +37,14 @@ class Test(BasePage):
             self.selenium.wait_until_page_contains_element(locator,
                                                error=f"click on {title} link was not successful even after 30 seconds")
             self.salesforce._jsclick(locator)
-        self.selenium.capture_page_screenshot()
+            # self.selenium.capture_page_screenshot()
 
     def open_sub_link(self,title):
         """Waits for the link to load and clicks to make a part of page active"""
         self.selenium.wait_until_page_contains(title,
                                                error=f"{title} link was not found on the page")
         self.click_link_with_text(title)
-        self.selenium.capture_page_screenshot()
+        # self.selenium.capture_page_screenshot()
         time.sleep(2)
 
     def click_link_with_text(self, text):
@@ -54,7 +54,7 @@ class Test(BasePage):
         self.selenium.driver.execute_script('arguments[0].click()', element)
         time.sleep(1)
 
-    @capture_screenshot_on_error
+    # @capture_screenshot_on_error
     def click_settings_button (self,panel_id,btn_value):
         """clicks on the buttons on npsp settings object using panel id and button value"""
         locator=npsp_lex_locators['edit_button_company_info']
@@ -63,13 +63,10 @@ class Test(BasePage):
         self.selenium.wait_until_page_contains_element(locator, timeout=20)
         self.selenium.wait_until_element_is_visible(locator, timeout=20)
         self.salesforce._jsclick(locator)
-        self.selenium.capture_page_screenshot()
+        # self.selenium.capture_page_screenshot()
 
-    @capture_screenshot_on_error
     def change_record_picklist_values(self):
-
         self.selenium.select_frame(npsp_lex_locators['iframe_section'].format("Edit Organization Profil"))
-        
         locator=npsp_lex_locators["picklist_element"].format("DefaultCurrencyIsoCode")
         field_value=self.selenium.get_selected_list_label(locator)
         self.selenium.select_from_list_by_value(locator,"49")
@@ -77,7 +74,5 @@ class Test(BasePage):
         self.selenium.wait_until_page_contains_element(locator2, timeout=20)
         self.selenium.wait_until_element_is_visible(locator2, timeout=20)
         self.salesforce._jsclick(locator2)
-        time.sleep(2)
-        # self.selenium.handle_alert(action="ACCEPT")
-        self.selenium.capture_page_screenshot()
+        
             

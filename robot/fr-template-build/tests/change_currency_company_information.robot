@@ -1,7 +1,7 @@
 *** Settings ***
 
 Resource        cumulusci/robotframework/Salesforce.robot
-Library         ../Libraries/Test.py
+Library         ../Libraries/ChangeCurrency.py
 Library         cumulusci.robotframework.PageObjects
 Library         SeleniumLibrary
 Suite Setup     Open Test Browser
@@ -20,6 +20,12 @@ Click on Edit Button
     Sleep  3
     Log To Console	Click Edit Button Succeeded
     Change Record Picklist Values
+    Sleep  3
+    Handle Alert        action=ACCEPT 
+
+# Accept Edit Confirmation Dialog
+#     Log To Console        Accept Edit Confirmation Dialo      
+#     Handle Alert        action=ACCEPT 
     
 
 *** Keywords ***
