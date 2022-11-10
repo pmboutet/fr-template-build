@@ -11,6 +11,9 @@ npsp_lex_locators={
 	'is_active_checkbox': '//tbody/tr/td//input[contains(@name,"IsActive")]',
 	'findock_processing_hub': '//a[contains(@href,"{}")]',
 	'findock_username_input_findock': '//input[contains(@placeholder,"{}")]',
-	'findock_connect_processing_hub_button': '//input[contains(@value,"{}")]'
+	'findock_connect_processing_hub_button': '//input[contains(@value,"{}")]',
+	'login_password_input': '//input[contains(@name,"{}")]',
+	'salesforce_login_button': '//input[contains(@id,"{}")]',
+	'salesforce_change_password_button': '//button[contains(@id,"{}")]',
 
 }

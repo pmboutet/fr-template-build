@@ -30,3 +30,19 @@ class FindockLibrary(BasePage):
         locator=npsp_lex_locators['findock_connect_processing_hub_button'].format(title)
         self.selenium.wait_until_element_is_visible(locator)
         self.salesforce._jsclick(locator)
+
+    def type_login_password(self,id,password):
+        time.sleep(5)
+        locator=npsp_lex_locators['login_password_input'].format(id)
+        self.selenium.wait_until_element_is_visible(locator)
+        self.selenium.input_password(locator,password,clear= True)
+
+    def click_button_custom(self,id):
+        locator=npsp_lex_locators['salesforce_login_button'].format(id)
+        self.selenium.wait_until_element_is_visible(locator)
+        self.salesforce._jsclick(locator)
+
+    def click_change_password(self,id):
+        locator=npsp_lex_locators['salesforce_change_password_button'].format(id)
+        self.selenium.wait_until_element_is_visible(locator)
+        self.selenium.click_button(locator)
