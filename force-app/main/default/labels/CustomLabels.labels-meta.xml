@@ -97,14 +97,6 @@
         <value>GDPR and Solicitation Preferences</value>
     </labels>
     <labels>
-        <fullName>SFFR_ActivityFeed</fullName>
-        <categories>SFFR</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>SFFR_ActivityFeed</shortDescription>
-        <value>Activity Feed</value>
-    </labels>
-    <labels>
         <fullName>SFFR_Files</fullName>
         <categories>SFFR</categories>
         <language>en_US</language>

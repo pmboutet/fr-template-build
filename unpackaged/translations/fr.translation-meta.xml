@@ -53,10 +53,6 @@
         <name>SFFR_GDPRAndSolicitationPreferences</name>
     </customLabels>
     <customLabels>
-        <label>Fil d&apos;activité</label>
-        <name>SFFR_ActivityFeed</name>
-    </customLabels>
-    <customLabels>
         <label>Fichiers</label>
         <name>SFFR_Files</name>
     </customLabels>

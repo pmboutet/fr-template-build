@@ -93,8 +93,9 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
          #### Assumption
          - To be able to click on Edit button and then change the Currency Picklist element, Salesforce uses iframes to render these components. Within the change_record_picklist_values method I'm selecting the iframe that contains these elements. I tried to use the native Keyword "Handle Alert  action=ACCEPT" to accept the Alert, but it didn't work and I'm assuming that because of the the job is running within the iframe, and it wasn't able to recognise the Alert.
       ### Enable French Within Translation Language Settings
-      - cci task run robot --robot_debug true --suites .\robot\fr-template-build\tests\activate_french_translation.robot --org dev
+      - cci task run robot --robot_debug true --suites robot/fr-template-build/tests/activate_french_translation.robot --org dev
          #### Decription
          - This job will open Setup > User Interface > Translation Workbech > Translate Language Settings. Check Active Checkebox, Click on Save
 
-   
+   ## Install https://cumulusci.readthedocs.io/en/stable/robot.html
+   copy the unziped file to document and copy mv ../../chromedriver /usr/local/bin
