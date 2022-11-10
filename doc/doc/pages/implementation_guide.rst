@@ -84,3 +84,24 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
 
 
 #TODO PMB il n'y a que 3 Campagne Record Type (Campagne, Interne, Externe) pourtant cette page fat référence à "Opération" -> discussion
+
+
+
+
+#NPSP Settings
+
+People / Households
+   - How does this work? what do we need to frenchies
+   via custom Settings
+   - ignore household object
+   - Create the French Household Mailing List Report and select it
+
+People / Addresses
+   - Address verification? Google versus Insight 
+
+Relationships
+   - should we extend?
+   TODO set gender Field? add in the contact?
+   
+TODO Desactivate Households and Households Settings tab
+TODO Missing relation

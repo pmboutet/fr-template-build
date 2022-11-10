@@ -125,6 +125,14 @@ tasks:
         options:
             command: "force:user:create -a integ --definitionfile datasets/users/integration_user.json"
 
+    sffr_integration_user_apex:
+        description: 'Creates Integration user and assigns FinDock PermissionSets'
+        group: "SFFR: Integration user"
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        options:
+            path: scripts/integration_user.cls
+            apex: createIntegrationUser();
+
 flows:
     dependencies:
         steps:
