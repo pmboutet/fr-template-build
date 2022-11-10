@@ -9,5 +9,8 @@ npsp_lex_locators={
 	'save_button': '//tbody/tr/td//input[contains(@value,"Save")]',
 	'edit_french': '//tbody/tr/td/a[contains(@title,"- French")]',
 	'is_active_checkbox': '//tbody/tr/td//input[contains(@name,"IsActive")]',
+	'findock_processing_hub': '//a[contains(@href,"{}")]',
+	'findock_username_input_findock': '//input[contains(@placeholder,"{}")]',
+	'findock_connect_processing_hub_button': '//input[contains(@value,"{}")]'
 
 }
