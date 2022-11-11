@@ -6,7 +6,7 @@ Library         ../Libraries/ActivateFrench.py
 Library         cumulusci.robotframework.PageObjects
 Library         SeleniumLibrary
 Suite Setup     Open Test Browser
-# Suite Teardown  Delete Records and Close Browser
+Suite Teardown  Close Browser
 
 *** Test Cases ***
 
