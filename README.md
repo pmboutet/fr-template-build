@@ -107,8 +107,8 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
          #### Decription
          - This job will retrieve the Integration User from Salesforce then it will open FinDock App > Setup > Processing Hub, it will paste the Integration User Username and Click on connect. A new Login Tab will be opened, So the job will type in the username and password. Finally, the Change Password screen will be showed up, the job will type the new password and answer the Security question and click on Change Password.
          - The Username is dynamic
-         - The Integration User password is hardcoded same as the one used in Integration User Creation Apex Script (scripts/inegration_user.cls)
-         - The new password is the old password concatinated with 'a'
+         - The Integration User password is hardcoded same as the one used in Integration User Creation Apex Script (scripts/integration_user.cls)
+         - The new password is the old password concatenated with 'a'
          - The answer of the security question (In which city were you born?) is hardcoded to 'Paris'
 
          
