@@ -99,11 +99,19 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
 
       ### Configure FinDock Processing Hub with Integration User
       - cci task run robot --robot_debug true --suites .\robot\fr-template-build\tests\findock_integration_user.robot --org dev
-         #### Decription
-         - This job will open FinDock App > Setup > Processing Hub, it will paste the Integration User Username and Click on connect. A new Login Tab will be opened, So the job will type in the username and password. Finally, the Change Password screen will be showed up, the job will type the new password and answer the Security question and click on Change Password.
+
          #### Before Running The Job
-         - Make sure that you already have an Integration User created in your scratch org which the username begins with **integration.user@sffrc**. If not, please run this commande to create the integration user cci task run sffr_integration_user_apex --org dev 
-         - If you have more than 1 Integration User, Keep only the one created on the Previous Instuction and Delete/Freeze the other Integration User(s)
+         - Make sure that you already have an Integration User created in your scratch org which the username begins with **integration.user@sffr**. If not, please run this commande to create the integration user ```cci task run sffr_integration_user_apex --org dev ```
+         - If you have more than 1 Integration User, Keep only the one created (or already exists) on the Previous Instuction and **Deactivate** the other Integration User(s)
+
+         #### Decription
+         - This job will retrieve the Integration User from Salesforce then it will open FinDock App > Setup > Processing Hub, it will paste the Integration User Username and Click on connect. A new Login Tab will be opened, So the job will type in the username and password. Finally, the Change Password screen will be showed up, the job will type the new password and answer the Security question and click on Change Password.
+         - The Username is dynamic
+         - The Integration User password is hardcoded same as the one used in Integration User Creation Apex Script (scripts/inegration_user.cls)
+         - The new password is the old password concatinated with 'a'
+         - The answer of the security question (In which city were you born?) is hardcoded to 'Paris'
+
+         
 
    ## Install https://cumulusci.readthedocs.io/en/stable/robot.html
    copy the unziped file to document and copy mv ../../chromedriver /usr/local/bin

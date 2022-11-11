@@ -5,26 +5,30 @@ Library         ../Libraries/ChangeCurrency.py
 Library         ../Libraries/FindockLibrary.py
 Library         cumulusci.robotframework.PageObjects
 Library         SeleniumLibrary
+Library            Collections
 Suite Setup     Open Test Browser
 # Suite Teardown  Delete Records and Close Browser
 
 *** Test Cases ***
-
-Get Integration User Username
-    @{integration_users}=  
-    ...    Salesforce Query     User  select=Id,Username 
-    ...    where=Profile.Name='SFFR Integration User'
-    ...    limit=1
-    
+       
 Open Findock Setup
     [Documentation]            Go to Setup>User Interface>Translation Workbech> Translate Language Settings. Click on Edit button Next to French. Activate the checkbox
     ...                        Click on Save.
     [tags]                     feature:Translate Language Settings           unstable
     # Get Org Info
+    ${result}=  SOQL Query
+    ...  SELECT Id, Username
+    ...  FROM   User
+    ...  WHERE  Profile.Name='SFFR Integration User' AND IsActive=true
+    ...  LIMIT 1
+
+    ${integration_user} =     Get From List      ${result['records']}  0
+    Log To Console  IU Username : ${integration_user['Username']}
     Select App Launcher App    FinDock        
     Select App Launcher Tab    Setup 
     Open Processing Hub    processing
-    Insert Username        Integration username    	${integration_user}['Username']
+    Log To Console  IU Username : ${integration_user['Username']}
+    Insert Username        Integration username    	${integration_user['Username']}
     Submit Username        Connect with ProcessingHub
     Log To Console	    Ready to sleep
     Sleep     10
