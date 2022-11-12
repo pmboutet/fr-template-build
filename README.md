@@ -98,7 +98,7 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
          - This job will open Setup > User Interface > Translation Workbech > Translate Language Settings. Check Active Checkebox, Click on Save
 
       ### Configure FinDock Processing Hub with Integration User
-      - cci task run robot --robot_debug true --suites .\robot\fr-template-build\tests\findock_integration_user.robot --org dev
+      - cci task run robot --robot_debug true --suites robot/fr-template-build/tests/findock_integration_user.robot --org dev
 
          #### Before Running The Job
          - Make sure that you already have an Integration User created in your scratch org which the username begins with **integration.user@sffr** and its profile is **SFFR Integration User**. If not, please run this commande to create the integration user ```cci task run sffr_integration_user_apex --org dev ```
