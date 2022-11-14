@@ -6,7 +6,7 @@ Library         ../Libraries/ActivateFrench.py
 Library         cumulusci.robotframework.PageObjects
 Library         SeleniumLibrary
 Suite Setup     Open Test Browser
-# Suite Teardown  Delete Records and Close Browser
+Suite Teardown  Close Browser
 
 *** Test Cases ***
 
@@ -18,6 +18,10 @@ Open Translation Language Settings
 
 Click on Edit Button And Activate French Language
     Click Edit Button 
+    Sleep  3
+    Log To Console	Click Edit Button Succeeded
+    Enable Is Active Checkbox
+    Sleep  3
     
  
     
@@ -38,9 +42,3 @@ Translation Language Settings
     Sleep  3
     Log To Console	wake up next click on edit button
 
-Click on Edit Button
-    Click Edit Button 
-    Sleep  3
-    Log To Console	Click Edit Button Succeeded
-    Enable Is Active Checkbox
-    Sleep  3

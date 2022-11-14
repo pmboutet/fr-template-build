@@ -51,6 +51,4 @@ $RECYCLE.BIN/
 .idea
 .project
 .settings
-robot/fr-template-build/results/log.html
-robot/fr-template-build/results/output.xml
-robot/fr-template-build/results/report.html
+robot/fr-template-build/results/*
