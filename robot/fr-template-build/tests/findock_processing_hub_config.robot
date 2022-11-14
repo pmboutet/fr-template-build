@@ -12,9 +12,10 @@ Suite Setup     Open Test Browser
 *** Test Cases ***
        
 Open Findock Setup
-    [Documentation]            Go to Setup>User Interface>Translation Workbech> Translate Language Settings. Click on Edit button Next to French. Activate the checkbox
-    ...                        Click on Save.
-    [tags]                     feature:Translate Language Settings           unstable
+    [Documentation]     open FinDock App > Setup > Processing Hub, it will paste the Integration User Username and Click on connect. 
+    ...    A new Login Tab will be opened, So the job will type in the username and password. Finally, the Change Password screen will be showed up,
+    ...    the job will type the new password and answer the Security question and click on Change Password.
+    [tags]                     feature: FinDock Processing Hub           unstable
     # Get Org Info
     ${result}=  SOQL Query
     ...  SELECT Id, Username

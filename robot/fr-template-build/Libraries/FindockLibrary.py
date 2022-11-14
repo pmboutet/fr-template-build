@@ -20,6 +20,12 @@ class FindockLibrary(BasePage):
         self.selenium.wait_until_element_is_visible(locator)
         self.salesforce._jsclick(locator)
 
+    def open_web_hub(self):
+        locator=npsp_lex_locators['findock_web_hub']
+        self.selenium.select_frame(npsp_lex_locators['iframe_section'].format("accessibility title"))
+        self.selenium.wait_until_element_is_visible(locator)
+        self.salesforce._jsclick(locator)
+
     def insert_username(self,title,username):
         locator=npsp_lex_locators['findock_username_input_findock'].format(title)
         self.selenium.select_frame(npsp_lex_locators['iframe_section'].format("accessibility title"))
