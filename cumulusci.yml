@@ -248,11 +248,7 @@ flows:
         description: Create Integration User and assign PS
         steps:
           1:
-            task: sffr_integration_user_task
-          2:
-            task: assign_permission_sets
-            options:
-                      api_names: PaymentHub_Integration_Base,PaymentHub_Operations,ProcessingHub_Operations
+            task: sffr_integration_user_apex
 
     sffr_add_data:
         description: Cleans up data and disables triggers before running data load.
