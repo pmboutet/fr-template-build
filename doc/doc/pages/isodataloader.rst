@@ -1,4 +1,7 @@
 
+Generic data entry 
+=======================
+
 -data_origin
   * campaign_origin (mandatory, object_reference_campaign)
   * external_key (mandatory, varchar) -> identify line within external system
@@ -135,8 +138,9 @@
   *  payment_method (mandatory, enum (CHQ, VMT, CSH, PA, CB, OTHER, NATURE))
   *  payment_sub_method (optional, enum, default= NULL) -> for example paypal is a sub-method of CB
   *  ext_key (mandatory, varchar 50) -> external key within the third party system
-  *  payment_idenfier (optional, varchar 50, default= NULL) -> payement processor external key
+  *  payment_idenfier (optional, varchar 50, default= NULL) -> payement processor external key 
   *  bank_batch_number (optional, varchar)
+  *  accounting_row_idenfier (optional, varchar)
   *  fullfilment_batch_number(optional, varchar)
   *  amount (mandatory, decimal 2)
   *  is_reccuring (mandatory, enum (no, annual, quarterly, mensually, bi-mensually, weekly, dayly))
@@ -156,3 +160,154 @@
   *  type (mandatory, enum) -> example  "tax_receipt", "direct_mail_scan", "order_form"
   *  url (optional, varchar)
   *  external_key (optional, varchar)
+
+
+Specitifications for payements 
+================================
+
+
+There are differents types of payements : 
+- Checks 
+- Credit cards 
+- Cash 
+- SEPA payments 
+- "non monertary payments"
+- Direct transfer
+- Corrections and cancelations 
+
+All payements must be credited on a bank account. We must handle multiple bank account witch can be related to one or many organisations
+
+All payments must be grouped into "lots". 
+Creation of lots. 
+
+Lots
+-----
+
+please note that there is a difference between fullfilmeent lots and payements lots 
+
+A lot can be : 
+* open 
+* closed 
+* sent to accounting and bank system
+* canceled 
+
+Each modification has to be recorded with Name and Date.
+
+It is not possible to delete a lot (and neither a payment). 
+
+Can be add to the same lot payement : 
+- from same bank 
+- same fullfilment operator (for check lots and cash)
+- same fiscal exercice 
+- number of row in a the lot does not exceed the maximum number defined for this payement method by Admin
+- the lot is open 
+- same payement method 
+
+creation of lots should be automatic (optional)
+we automaticaly close lot each day (optional)
+
+Lots can be created by an external system like a fullfilment platform
+
+each lot as a unique number/identifier. 
+each lot can have in addition : 
+- fullfilmenet identifier
+- banck identifier
+
+Operator has to be able to search lots by any criteria and acess related payements. 
+Operation may access to all lots or only his.
+
+Operator has to view : 
+- nb of payment in lot
+- sum of payment in lot
+- corrected nb of payment in lot
+- corrected sum
+- lot owner 
+- opening and closing date
+- if lot has been sent to accounting and bank 
+
+A list of payements of a sepecific lot can be printed to write the bank deposite documents. 
+
+Some client are building workflows around lots validation. Usually for audit reason we implement to checkbox : 
+- verify by fullilment team (+ name and date)
+- verify by accounting team (+ name and date)
+
+Payements 
+----------
+
+Each payement belong to a lot. 
+
+Eeach payement as a common structure : 
+-> see above payement
+
+
+Checks 
+.........
+
+Checks are very similar to bolitino postal or BVR. 
+Checks arrive by post to the organsiation. They are grouped into fullfimement lots. 
+Then they are manually or automaticaly fullfiled into Salesforce or into supplier system (and if so send to SF via CSV or API)
+Then all thoses payement are physically sent to bank + a "lot deposite" witch is the digital counterpart of the lot is sent to the bank. 
+The digital transmision to bank is a nice to have functionality but we won't handle it so far as it is most often something that the fullfilmeent supplier does
+
+in addition to payement field, each check as a specific payement number called CMC7. This number is physically present on the check and can be read by a magnetic scanner. 
+
+This field is optionnal (usualy not filled by human operator but only by scanners). 
+
+Bank are grouping check (for example if you send 10 checks of 100e each the bank will credit 1000 in one line and provide lot number)
+If there is a cancelation then the create a new line  (for example 10e and provide check number)
+
+Credit cards
+.............................
+
+Nothing specific
+One lot created by day per origin 
+Accounting and bank sometimes group them per day sometimes does not group them depending on client configuration
+
+Cash
+.............................
+
+Nothing specific
+Same rules as checks to create lots
+Grouped by lot in accounting 
+
+Transfers
+.............................
+
+Nothing specific
+One lot per day (fully optional)
+Not grouped. 
+Interested to see what findock has to offer to identify donor from bank account. 
+
+Non monertary
+.............................
+
+Usually non monetary donation are converted into quantity. In this scenario we use the "subpayement" list to define 
+what type of donation we are delivring
+Couple of fields may be added like description, qtt, ...
+The only important field is "amount".
+
+This payement method does not have "bank deposit capabilities" since it is not actual money. 
+
+
+SEPA
+.............................
+
+Probably nothing specific. 
+
+
+
+
+Errors, corrections
+----------------------
+
+It is not possible to remove a payement. Never. 
+
+We simply cancel a payement. 
+
+Each modification has to be recorded with Name and Date.
+
+If cancellation is made after deposite into accounting, then we need to add a row into a cancelation lot. 
+
+
+
+
