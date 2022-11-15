@@ -4,7 +4,7 @@ Account
 
 TODO DESIGN APSYNERGY Data load account organization
 
-TODO PROTO APSYNERGY - Account - ALLOW to be ready for faster Prototyping
+TODO DOC APSYNERGY - Account - ALLOW to be ready for faster Prototyping
   Compact Layout : SFFR_Household_Compact_Layout - Clone of NPSP Household Account
   Compact Layout : SFFR_Organization_Compact_Layout - Clone of NPSP Organization Account
   Auto Assign for Profile System Admin based on the record type - Similar to Campaign
@@ -22,7 +22,8 @@ TODO PROTO APSYNERGY - Account - ALLOW to be ready for faster Prototyping
 TODO CONFIG Laureta Add Acount hierarchy as for Campaign
 
 TODO DESIGN FAB
-- Compte Orga
+- Compte Organization
+remove org
   - Page Details:
       On garde info de base dans details + list des affiliated contact
       Identifier les champs SFFR PMB (Siret, Siren)

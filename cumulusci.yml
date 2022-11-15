@@ -159,8 +159,12 @@ flows:
     config_dev:
         steps:
             3:
-                flow: findock:configure_findock
+                flow: npsp:enable_rd2
             4:
+                flow: npsp:enable_gift_entry
+            5:
+                flow: findock:configure_findock
+            6:
                 flow: complete_install
                 
     config_qa:

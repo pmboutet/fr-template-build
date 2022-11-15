@@ -42,3 +42,6 @@ Recurring Donation:
 - Mandate
 - Payment Profile
 For a bit more detail: https://docs.findock.com/configuring-findock-for-npsp
+
+
+TODO FAB DESIGN remove payment information in layout
