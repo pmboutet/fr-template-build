@@ -135,6 +135,7 @@
     </profileActionOverrides>
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
+    <tabs>standard-Opportunity</tabs>
     <tabs>standard-Campaign</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
@@ -146,6 +147,9 @@
         </mappings>
         <mappings>
             <tab>standard-Contact</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Opportunity</tab>
         </mappings>
     </workspaceConfig>
 </CustomApplication>
