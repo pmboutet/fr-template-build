@@ -132,8 +132,9 @@ tasks:
         options:
             suites: robot/fr-template-build/tests/activate_french_translation.robot
             vars: 'BROWSER:headlesschrome'
-
-    
+            options:
+                outputdir: robot/fr-template-build/results
+  
     sffr_connect_findock_prochub:
         description: Runs Robot Framework task to connect the integration ProcessingHub in Findock Setup
         class_path: cumulusci.tasks.robotframework.Robot
@@ -141,6 +142,8 @@ tasks:
         options:
             suites: robot/fr-template-build/tests/findock_processing_hub_config.robot
             vars: 'BROWSER:headlesschrome'
+            options:
+                outputdir: robot/fr-template-build/results
 
     sffr_connect_findock_webhub:
         description: Runs Robot Framework task to connect the integration WebHub in Findock Setup
@@ -149,6 +152,8 @@ tasks:
         options:
             suites: robot/fr-template-build/tests/findock_web_hub_config.robot
             vars: 'BROWSER:headlesschrome'
+            options:
+                outputdir: robot/fr-template-build/results
 
 flows:
     dependencies:
