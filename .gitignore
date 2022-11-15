@@ -52,7 +52,3 @@ $RECYCLE.BIN/
 .project
 .settings
 robot/fr-template-build/results/*
-log.html
-output.xml
-report.html
-selenium-screenshot-1.png
