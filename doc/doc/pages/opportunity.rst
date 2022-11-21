@@ -1,6 +1,11 @@
 Opportunité
 ====================
 
+TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
+
+TODO DESIGN APSYNERGY - Translation
+TODO DOC APSYNERGY - Opportunity
+TODO DESIGN PMB list view (donations et Membership)
 
 
 TODO PROTO APSYNERGY - Opportunity - ALLOW to be ready for faster Prototyping
@@ -44,4 +49,9 @@ Recurring Donation:
 For a bit more detail: https://docs.findock.com/configuring-findock-for-npsp
 
 
+
+TODO DESIGN PMB Acount hierarchy, list view (compte du foyer et compe d'organisations)
+TODO DESIGN PMB missing fields (Siret, Siren)
+
+TODO PROTO FAB Dup rules for account?
 TODO FAB DESIGN remove payment information in layout
