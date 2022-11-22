@@ -1,11 +1,13 @@
 Opportunité
 ====================
 
-TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
-
-TODO DESIGN APSYNERGY - Translation
 TODO DOC APSYNERGY - Opportunity
+TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
+TODO DESIGN APSYNERGY - Translation
+
 TODO DESIGN PMB list view (donations et Membership)
+     https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Data_Dictionary.htm&type=5
+     review design of sales process
 
 
 TODO PROTO APSYNERGY - Opportunity - ALLOW to be ready for faster Prototyping
