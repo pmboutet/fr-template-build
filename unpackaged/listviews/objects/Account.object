@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <listViews xmlns="http://soap.sforce.com/2006/04/metadata">
+    <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
         <fullName>SFFR_Household_Accounts</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>npo02__Formal_Greeting__c</columns>
-        <columns>npo02__Informal_Greeting__c</columns>
+        <columns>npe01__One2OneContact__c</columns>
+        <columns>ACCOUNT.TYPE</columns>
         <columns>npo02__TotalOppAmount__c</columns>
         <columns>npo02__AverageAmount__c</columns>
         <columns>npo02__Best_Gift_Year__c</columns>
-        <columns>npo02__HouseholdPhone__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ACCOUNT.RECORDTYPE</field>
@@ -16,15 +15,17 @@
             <value>Account.HH_Account</value>
         </filters>
         <label>Comptes du Foyer</label>
-    </listViews>
-    <listViews xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>SFFR_Organization_Accounts</fullName>
+    </ListView>
+    <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>SFFR_Organization_Accounts</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.SITE</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
         <columns>ACCOUNT.TYPE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
+        <columns>npe01__One2OneContact__c</columns>
+        <columns>npo02__NumberOfClosedOpps__c</columns>
+        <columns>npo02__TotalOppAmount__c</columns>
+        <columns>ACCOUNT.EMPLOYEES</columns>
+        <columns>ACCOUNT.INDUSTRY</columns>
+        <columns>npo02__NumberOfMembershipOpps__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ACCOUNT.RECORDTYPE</field>
@@ -32,5 +33,5 @@
             <value>Account.Organization</value>
         </filters>
         <label>Comptes d&apos;organisation</label>
-    </listViews>
+    </ListView>
 </CustomObject>
