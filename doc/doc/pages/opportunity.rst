@@ -2,6 +2,9 @@ Opportunité
 ====================
 
 TODO DOC APSYNERGY - Opportunity
+TODO DOC APSYNERGY - NPSP Settings - Recurring donation
+     Enable Recurring Donation Change Log considerations
+     Use Fiscal Year for Recurring Donations considerations
 TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
 TODO DESIGN APSYNERGY - Translation
 
@@ -9,27 +12,21 @@ TODO DESIGN PMB list view (donations et Membership)
      https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Data_Dictionary.htm&type=5
      review design of sales process
 
+TODO Opportunity set Opportunity Record Type in NPSP Settings and Recurring Donation Name Format
+TODO FAB NPSP Default opportunity RC to be removed
 
-TODO PROTO APSYNERGY - Opportunity - ALLOW to be ready for faster Prototyping
-  Compact Layout : SFFR_Donation_Compact_Layout - Clone of NPSP Donation Compact Layout
-  Auto Assign for Profile System Admin based on all NPSP record type - Similar to Campaign
-  
-  Page Layout : Opportunity-SFFR Donation Layout - Clone of Donation Layout
-  Page Layout : Opportunity-SFFR Membership Layout - Clone of Membership Layout
-  Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign
-  
-  Flexipage : SFFR_Opportunity_Donation_Record_Page - Clone of NPSP_Opportunity_Record_Page
-  Flexipage : SFFR_Opportunity_Membership_Record_Page - Clone of NPSP_Opportunity_Record_Page
-  Auto Assign for Profile System Admin based on the record type (only for the 2 records type: Donation-Membership) - Similar to Campaign
+TODO Acknowledgment identify if we need it or not?
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Acknowledge_Donations_by_Email.htm&type=5
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Acknowledge_Donations.htm&type=5
+TODO Tribute
+?
+TODO Matching Gift
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Config_Matching_Gifts.htm&type=5
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Work_with_Matching_Gifts.htm&type=5
 
 
 Findock changes
 Opportuntiy
-- Payment Method (and remove npsp4hub__Payment_Method__c)
-- Payment Processor
-- Target
-- Mandate
-- Payment Profile
 For a bit more detail: https://docs.findock.com/configuring-findock-for-npsp
 
 
