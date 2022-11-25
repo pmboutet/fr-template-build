@@ -3,6 +3,9 @@
 /src.orig
 /src
 
+# Build of documentation 
+doc/_build/
+
 # Python
 *.pyc
 __pycache__
