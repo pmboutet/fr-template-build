@@ -1,9 +1,0 @@
-Données test 
-================
-
-11 contacts représentent des donateurs fictifs, tous les contacts sont associés à 11 comptes de type Household.
-Respectivement 11 enregistrements d'adresses (adresses vérifiées en France) sont créés pour stocker des adresses supplémentaires pour les comptes des ménages, ce qui est pratique pour les adresses saisonnières ou lorsqu'un membre d'un ménage est absent.
-Au moins 1 don par donateur est effectué. Il y a 19 opportunités au total pour enregistrer chaque étape d'un don, de prospectif, à promis, à fermé, à reçu. Ces opportunités proviennent d'activités génératrices de revenus telles que des dons, des subventions ou des frais d'adhésion. Pour les opportunités gagnées clôturées, nous avons 18 enregistrements de paiement.
-Pour afficher le retour sur investissement à partir d'un e-mail, d'un publipostage ou d'une autre communication, 3 enregistrements de campagne sont créés.
-Nous avons 2 grandes unités de comptabilité générale pour gérer nos fonds qui devraient aller vers un programme particulier.
-5 Les enregistrements d'allocation GAU sont créés pour désigner des parties d'opportunités à des GAU particulières.

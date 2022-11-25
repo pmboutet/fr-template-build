@@ -4,7 +4,7 @@
 /src
 
 # Build of documentation 
-doc/_build/
+doc/_build
 
 # Python
 *.pyc

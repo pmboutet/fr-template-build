@@ -56,7 +56,7 @@ Generic data entry
   * first_payment (optional, date AAAA/MM/JJ, IF NOT PROVIDE next payement date else closest payement date) 
   * status (optional, enum, default = ACTIVE)
 
--reccuring_donation
+-reccuring_transaction
   * current_amount (mandatory, decimal 2, NOT NULL)
   * start_date (optional, date YYYY/MM/YY, default =  TODAY)
   * end_date (optional, date YYYY/MM/YY, default =  NONE)
@@ -138,6 +138,7 @@ Generic data entry
   *  payment_method (mandatory, enum (CHQ, VMT, CSH, PA, CB, OTHER, NATURE))
   *  payment_sub_method (optional, enum, default= NULL) -> for example paypal is a sub-method of CB
   *  ext_key (mandatory, varchar 50) -> external key within the third party system
+  *  @pm : multiple ext_key
   *  payment_idenfier (optional, varchar 50, default= NULL) -> payement processor external key 
   *  bank_batch_number (optional, varchar)
   *  accounting_row_idenfier (optional, varchar)
@@ -167,6 +168,7 @@ Specitifications for payements
 
 
 There are differents types of payements : 
+- Wallet
 - Checks 
 - Credit cards 
 - Cash 
