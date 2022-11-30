@@ -133,23 +133,47 @@
         <profile>Admin</profile>
         <recordType>Opportunity.Membership</recordType>
     </profileActionOverrides>
+    <tabs>npsp__NPSP_Resources</tabs>
+    <tabs>standard-home</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>standard-Opportunity</tabs>
+    <tabs>npe03__Recurring_Donation__c</tabs>
     <tabs>standard-Campaign</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>npsp__NPSP_Settings</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
         <mappings>
-            <tab>standard-Account</tab>
+            <tab>npsp__NPSP_Resources</tab>
         </mappings>
         <mappings>
-            <tab>standard-Campaign</tab>
+            <tab>standard-home</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Account</tab>
         </mappings>
         <mappings>
             <tab>standard-Contact</tab>
         </mappings>
         <mappings>
             <tab>standard-Opportunity</tab>
+        </mappings>
+        <mappings>
+            <tab>npe03__Recurring_Donation__c</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Campaign</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-report</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Dashboard</tab>
+        </mappings>
+        <mappings>
+            <tab>npsp__NPSP_Settings</tab>
         </mappings>
     </workspaceConfig>
 </CustomApplication>

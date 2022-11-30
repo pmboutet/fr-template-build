@@ -116,7 +116,6 @@ Cet utilisateur technique dont le nom est 'Integration User' permets à Salesfor
 Le Modèle France utilise le Processing de Findock Guided matching.
 
 TODO PROTO APSYNERGY Profile SFFR_Integration_User
-https://medium.com/salesforce-architects/security-best-practices-for-api-access-and-internal-system-users-a6199d0cda09
 
 User in English, follow additional recommendation from NPSP / Findock (https://docs.findock.com/permissions) review general permission
 

@@ -270,8 +270,6 @@ Utilisez la hiérarchie de campagne (standard Salesforce) ainsi que les vues de 
 les campagnes child (Appel dons Dec 2023 appels sortants), les segments internes et externes.
 
 
-#todo DESIGN PMB Preparer les listes view sur l'objet Campagne pour inline edit sur les quanttée envoyée, etc.et trier par défaut sur ordre de dedupe
-
 #todo DOC RAPH Campaign Content, Third Party Segment
 
 #todo DESIGN PMP Review Compact layout ES IS

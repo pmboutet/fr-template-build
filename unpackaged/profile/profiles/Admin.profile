@@ -5,6 +5,11 @@
                 <default>true</default>
                 <visible>true</visible>
         </applicationVisibilities>
+        <applicationVisibilities>
+                <application>NPSP_Admin</application>
+                <default>false</default>
+                <visible>true</visible>
+        </applicationVisibilities>
         <layoutAssignments>
                 <layout>Contact-SFFR Contact Layout</layout>
         </layoutAssignments>

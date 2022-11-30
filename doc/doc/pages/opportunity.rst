@@ -12,23 +12,14 @@ TODO DOC APSYNERGY - NPSP Settings - Recurring donation
      do not use the Acknowledgment 
        https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Acknowledge_Donations_by_Email.htm&type=5
        https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Acknowledge_Donations.htm&type=5
-       
-TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
-TODO DESIGN APSYNERGY - Translation
-TODO DESIGN APSYNERGY - Update NPSP custom setting: Recurring Donations Settings in YML
+
+     Update NPSP custom setting: Recurring Donations Settings in YML
      Opportunity Record Type: Donation
      Recurring Donation Name Format: {!npe03__Donor_Name__c} {!npe03__Amount__c} - Recurring
      Automatic Recurring Donation Naming: True
-
-TODO DESIGN PMB list view (donations et Membership)
-     https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Data_Dictionary.htm&type=5
-     review design of sales process
-
-TODO FAB NPSP Default opportunity RC to be removed
-Findock changes
-Opportuntiy
-For a bit more detail: https://docs.findock.com/configuring-findock-for-npsp
-
+       
+TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
+TODO DESIGN APSYNERGY - Translation
 
 
 TODO DOC APSYNERGY - Recurring Donation

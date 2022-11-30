@@ -11,6 +11,4 @@ TODO DESIGN PMB missing fields (Siret, Siren)
 
 TODO PROTO FAB Dup rules for account?
 
-TODO PMB Level on account / contact needed?
-
 TODO PMB contact Gender? https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Manage_Relationships_Settings.htm&type=5

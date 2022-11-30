@@ -162,17 +162,17 @@ tasks:
         options:
             settings_path: datasets/relationships.yml
 
-    npsp_org_address_enabled:
+    npsp_SetThemAll:
         description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
         group: "NPSP: Post Installation"
         options:
-            path: datasets/org_enable_address.cls
-            apex: enable_address();         
+            path: scripts/npspHelpers.cls
+            apex: SetThemAll();         
             
 flows:
 
-    config_dev1:
+    config_dev:
         steps:
             3:
                 flow: npsp_settings
@@ -220,7 +220,7 @@ flows:
         description: France Template Installation Configuration Only
         steps:
           1:
-            task: npsp_org_address_enabled
+            task: npsp_SetThemAll
             
     sffr_post_install:
         description: France Template Post Installation
@@ -248,6 +248,12 @@ flows:
                 - record_type: Campaign.SFFR_Internal_Segment
                 - record_type: Campaign.SFFR_Campaign
                   default: true
+                - record_type: Opportunity.Donation
+                  default: true
+                - record_type: Opportunity.Membership
+                - record_type: Account.HH_Account
+                  default: true
+                - record_type: Account.Organization
 
           2:
             task: deploy
