@@ -777,16 +777,6 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.npo02__LastMembershipLevel__c</fieldItem>
-                <identifier>Recordnpo02_LastMembershipLevel_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.npo02__MembershipJoinDate__c</fieldItem>
                 <identifier>Recordnpo02_MembershipJoinDate_cField</identifier>
             </fieldInstance>

@@ -1,0 +1,106 @@
+npe4__Relationship_Lookup__c:
+  Grandmother:
+    npe4__Active__c: True
+    npe4__Female__c: Granddaughter
+    npe4__Male__c: Grandson
+    npe4__Neutral__c: Grandchild
+  Husband:
+    npe4__Active__c: True
+    npe4__Female__c: Wife
+    npe4__Male__c: Husband
+    npe4__Neutral__c: Spouse
+  Employee:
+    npe4__Active__c: True
+    npe4__Female__c: Employer
+    npe4__Male__c: Employer
+    npe4__Neutral__c: Employer
+  Aunt:
+    npe4__Active__c: True
+    npe4__Female__c: Niece
+    npe4__Male__c: Nephew
+    npe4__Neutral__c: 'Sibling''s Child'
+  Wife:
+    npe4__Active__c: True
+    npe4__Female__c: Wife
+    npe4__Male__c: Husband
+    npe4__Neutral__c: Spouse
+  Grandfather:
+    npe4__Active__c: True
+    npe4__Female__c: Granddaughter
+    npe4__Male__c: Grandson
+    npe4__Neutral__c: Grandchild
+  Cousin:
+    npe4__Active__c: True
+    npe4__Female__c: Cousin
+    npe4__Male__c: Cousin
+    npe4__Neutral__c: Cousin
+  Spouse:
+    npe4__Active__c: True
+    npe4__Female__c: Spouse
+    npe4__Male__c: Spouse
+    npe4__Neutral__c: Spouse
+  Father:
+    npe4__Active__c: True
+    npe4__Female__c: Daughter
+    npe4__Male__c: Son
+    npe4__Neutral__c: Child
+  Uncle:
+    npe4__Active__c: True
+    npe4__Female__c: Niece
+    npe4__Male__c: Nephew
+    npe4__Neutral__c: 'Sibling''s Child'
+  Mother:
+    npe4__Active__c: True
+    npe4__Female__c: Daughter
+    npe4__Male__c: Son
+    npe4__Neutral__c: Child
+  Daughter:
+    npe4__Active__c: True
+    npe4__Female__c: Mother
+    npe4__Male__c: Father
+    npe4__Neutral__c: Parent
+  Partner:
+    npe4__Active__c: True
+    npe4__Female__c: Partner
+    npe4__Male__c: Partner
+    npe4__Neutral__c: Partner
+  Grandson:
+    npe4__Active__c: True
+    npe4__Female__c: Grandmother
+    npe4__Male__c: Grandfather
+    npe4__Neutral__c: Grandparent
+  Son:
+    npe4__Active__c: True
+    npe4__Female__c: Mother
+    npe4__Male__c: Father
+    npe4__Neutral__c: Parent
+  Child:
+    npe4__Active__c: True
+    npe4__Female__c: Mother
+    npe4__Male__c: Father
+    npe4__Neutral__c: Parent
+  Grandparent:
+    npe4__Active__c: True
+    npe4__Female__c: Granddaughter
+    npe4__Male__c: Grandson
+    npe4__Neutral__c: Grandchild
+  Employer:
+    npe4__Active__c: True
+    npe4__Female__c: Employee
+    npe4__Male__c: Employee
+    npe4__Neutral__c: Employee
+  Parent:
+    npe4__Active__c: True
+    npe4__Female__c: Daughter
+    npe4__Male__c: Son
+    npe4__Neutral__c: Child
+  Granddaughter:
+    npe4__Active__c: True
+    npe4__Female__c: Grandmother
+    npe4__Male__c: Grandfather
+    npe4__Neutral__c: Grandparent
+  Grandchild:
+    npe4__Active__c: True
+    npe4__Female__c: Grandmother
+    npe4__Male__c: Grandfather
+    npe4__Neutral__c: Grandparent

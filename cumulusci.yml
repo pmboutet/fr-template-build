@@ -155,25 +155,38 @@ tasks:
             options:
                 outputdir: robot/fr-template-build/results
 
+    npsp_load_csettings:
+        description: Load Reciprocal Relationship Settings
+        class_path: cumulusci.tasks.salesforce.LoadCustomSettings
+        group: "NPSP: Post Installation"
+        options:
+            settings_path: datasets/relationships.yml
+
+    npsp_org_address_enabled:
+        description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        group: "NPSP: Post Installation"
+        options:
+            path: datasets/org_enable_address.cls
+            apex: enable_address();         
+            
 flows:
-    dependencies:
-        steps:
-            3:
-                flow: npsp:config_managed
 
     config_dev:
         steps:
             3:
+                flow: npsp_settings
+            4:
                 flow: npsp:enable_rd2_managed
                 ui_options:
                     name: Enable Enhanced Recurring Donations
                     is_required: False
                     is_recommended: True
-            4:
-                flow: npsp:enable_gift_entry
             5:
-                flow: findock:configure_findock
+                flow: npsp:enable_gift_entry
             6:
+                flow: findock:configure_findock
+            7:
                 flow: complete_install
                 
     config_qa:
@@ -202,7 +215,13 @@ flows:
             task: sffr_translations
           4:
             flow: sffr_assign_compact_layout
-    
+
+    npsp_settings:
+        description: France Template Installation Configuration Only
+        steps:
+          1:
+            task: npsp_org_address_enabled
+            
     sffr_post_install:
         description: France Template Post Installation
         steps:
