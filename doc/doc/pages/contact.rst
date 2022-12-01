@@ -80,6 +80,9 @@ Présentation de page compacte : ``SFFR_Contact_Compact_Layout``
 
 Automatismes
 ~~~~~~~~~~~~~~~~~~
+
+#todo BUG APSSYNERGY Dataload Phone workflow rule not fired? or automation?
+
 #todo BACKLOG afficher au niveau du contact si son adresse principale est en pnd>0, ainsi que dans
 la compacte Layout
 
