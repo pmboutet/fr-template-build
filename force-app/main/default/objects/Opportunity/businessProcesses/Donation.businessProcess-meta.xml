@@ -15,6 +15,14 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Posted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Reversed</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Prospecting</fullName>
         <default>false</default>
     </values>

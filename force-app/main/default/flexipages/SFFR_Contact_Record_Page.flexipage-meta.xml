@@ -758,6 +758,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>npsp:relationshipsNavigator</componentName>
+                <identifier>npsp_relationshipsNavigator</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
                     <valueList>

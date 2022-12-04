@@ -21,9 +21,17 @@ TODO DOC APSYNERGY - NPSP Settings - Recurring donation
 TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
 TODO DESIGN APSYNERGY - Translation
 
+TODO FAB - related list
+RD field read only
+From Contact work on a new RD invoke
 
 TODO DOC APSYNERGY - Recurring Donation
+
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Handling_Anonymous_Donors.htm&type=5
+
 https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Create_a_Recurring_Donation.htm&type=5
+
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Configure_Recurring_Donations.htm&type=5
 
 Findock changes
 Recurring Donation:

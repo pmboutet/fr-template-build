@@ -120,6 +120,15 @@
         <won>true</won>
     </standardValue>
     <standardValue>
+        <fullName>Reversed</fullName>
+        <default>false</default>
+        <label>Reversed</label>
+        <closed>true</closed>
+        <forecastCategory>Omitted</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
         <fullName>Proposal/Review</fullName>
         <default>false</default>
         <label>Proposal/Review</label>
