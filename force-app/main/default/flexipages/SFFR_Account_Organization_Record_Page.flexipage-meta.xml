@@ -67,8 +67,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Website</fieldItem>
-                <identifier>RecordWebsiteField</identifier>
+                <fieldItem>Record.SFFR_Siren__c</fieldItem>
+                <identifier>RecordSFFR_Siren_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -79,6 +79,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.npe01__One2OneContact__c</fieldItem>
                 <identifier>Recordnpe01_One2OneContact_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Website</fieldItem>
+                <identifier>RecordWebsiteField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a869f0c5-f6e1-4767-ba6f-6e665d1148fa</name>

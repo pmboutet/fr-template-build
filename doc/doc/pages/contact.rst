@@ -93,6 +93,10 @@ dans le Compact Layout.
 
 #todo DESIGN PMB Salutation
 
+#TODO FAB design Gender? https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Manage_Relationships_Settings.htm&type=5
+
+#TOTO FAB Proto report
+
 #todo DESIGN FAB SFFR_External_Key__c to match
                  SFFR_ContactID - Autonumber - 
 
