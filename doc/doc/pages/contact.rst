@@ -81,7 +81,11 @@ Présentation de page compacte : ``SFFR_Contact_Compact_Layout``
 Automatismes
 ~~~~~~~~~~~~~~~~~~
 
-#todo BUG APSSYNERGY Dataload Phone workflow rule not fired? or automation?
+#TODO BUG APSSYNERGY Dataload Phone workflow rule not fired? or automation?
+#TODO DOC APSYNERGY ContactDonations Report
+#TODO DOC APSYNERGY
+#TODO Translation APSYNERGY
+
 
 #todo BACKLOG afficher au niveau du contact si son adresse principale est en pnd>0, ainsi que dans
 la compacte Layout
@@ -93,9 +97,7 @@ dans le Compact Layout.
 
 #todo DESIGN PMB Salutation
 
-#TODO FAB design Gender? https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Manage_Relationships_Settings.htm&type=5
-
-#TOTO FAB Proto report
+TODO DESIGN FAB Engagement plan POC
 
 Ajouter les membres du household dans contact interactions
 #TODO FAB Proto alerte visuelle
@@ -112,6 +114,7 @@ Ajouter les membres du household dans contact interactions
    48+ donateur dans les 12 derniers mois
 
 Einstein 
+
 #todo DESIGN FAB SFFR_External_Key__c to match
                  SFFR_ContactID - Autonumber - 
 
