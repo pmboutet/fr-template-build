@@ -97,6 +97,21 @@ dans le Compact Layout.
 
 #TOTO FAB Proto report
 
+Ajouter les membres du household dans contact interactions
+#TODO FAB Proto alerte visuelle
+  1. Telephone / Adress(edit npsp adress) / Email (bounced)
+  2. A donné ou pas donné : opportunity stats / estiamate...
+  3.
+
+#Report Type vivant et pas optout
+   Donateur qui a un prelevement auto en cours
+   Grand donateurs +500 par ans
+   0-12 donateur dans les 12 derniers mois
+   12-24 donateur dans les 12 derniers mois
+   24-48 donateur dans les 12 derniers mois
+   48+ donateur dans les 12 derniers mois
+
+Einstein 
 #todo DESIGN FAB SFFR_External_Key__c to match
                  SFFR_ContactID - Autonumber - 
 

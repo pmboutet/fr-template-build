@@ -8,7 +8,6 @@ TODO DESIGN APSYNERGY - Translation
 
 TODO DESIGN PMB missing fields ()
      https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Data_Dictionary.htm&type=5
-
 TODO DESIGN Affiliation limited to Organization?
 
 Engagement plan POC
