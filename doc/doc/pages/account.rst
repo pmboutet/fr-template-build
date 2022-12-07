@@ -3,6 +3,7 @@ Account
 =================
 
 TODO DOC APSYNERGY - Account
+     Update NPSP custom setting: Household Naming Settings in YML scripts/npspHelpers.cls/adjust_HouseholdNamingSettings
 TODO DESIGN APSYNERGY Data load account with data visibles on both record type (only)
 TODO DESIGN APSYNERGY - Translation
 

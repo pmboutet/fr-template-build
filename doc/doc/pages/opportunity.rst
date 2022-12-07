@@ -17,13 +17,18 @@ TODO DOC APSYNERGY - NPSP Settings - Recurring donation
      Opportunity Record Type: Donation
      Recurring Donation Name Format: {!npe03__Donor_Name__c} {!npe03__Amount__c} - Recurring
      Automatic Recurring Donation Naming: True
-       
+
+
 TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
 TODO DESIGN APSYNERGY - Translation
 
 TODO FAB - related list
 RD field read only
 From Contact work on a new RD invoke
+affiliations
+ remove all new expect from where this is supposed too
+
+TODO DESIGN FAB Enable Roolup Membership from YML Apex
 
 TODO DOC APSYNERGY - Recurring Donation
 

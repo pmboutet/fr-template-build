@@ -99,11 +99,10 @@ dans le Compact Layout.
 
 TODO DESIGN FAB Engagement plan POC
 
-Ajouter les membres du household dans contact interactions
 #TODO FAB Proto alerte visuelle
   1. Telephone / Adress(edit npsp adress) / Email (bounced)
   2. A donné ou pas donné : opportunity stats / estiamate...
-  3.
+  3. Sustainer
 
 #Report Type vivant et pas optout
    Donateur qui a un prelevement auto en cours
@@ -113,7 +112,9 @@ Ajouter les membres du household dans contact interactions
    24-48 donateur dans les 12 derniers mois
    48+ donateur dans les 12 derniers mois
 
-Einstein 
+#Fabrice POC
+Einstein POC
+Portal POC
 
 #todo DESIGN FAB SFFR_External_Key__c to match
                  SFFR_ContactID - Autonumber - 

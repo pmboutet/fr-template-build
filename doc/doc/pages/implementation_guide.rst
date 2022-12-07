@@ -83,10 +83,6 @@ C'est seulement si une opportunité est saisie que le contact ainsi crée sera a
 
 
 
-#TODO PMB il n'y a que 3 Campagne Record Type (Campagne, Interne, Externe) pourtant cette page fat référence à "Opération" -> discussion
-
-
-
 
 #NPSP Settings
 
@@ -98,10 +94,6 @@ People / Households
 
 People / Addresses
    - Address verification? Google versus Insight 
-
-Relationships
-   - should we extend?
-   TODO set gender Field? add in the contact?
    
 TODO Desactivate Households and Households Settings tab
 TODO Missing relation
