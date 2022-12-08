@@ -10,6 +10,7 @@ public static void SetThemAll() {
     enable_address();
     adjust_RDSettings();
     adjust_HouseholdNamingSettings();
+    enable_MembershipCR();
 }
 
 public static void enable_address() {
@@ -37,6 +38,29 @@ public static void adjust_HouseholdNamingSettings() {
     hnSettings.npsp__Name_Connector__c = 'et';
     hnSettings.npsp__Name_Overrun__c = 'amis';
     upsert hnSettings;
+}
+
+public static void enable_MembershipCR() {
+    npsp__Rollup__mdt[] all = [SELECT MasterLabel, npsp__Active__c, developername FROM npsp__Rollup__mdt where 	npsp__Active__c = false AND MasterLabel like '%Membership%'];
+    Metadata.DeployContainer mdContainer = new Metadata.DeployContainer();
+    Boolean isMetadataUpdateNeeded = false;
+    for (npsp__Rollup__mdt r : all) {
+        Metadata.CustomMetadata metadataRec =  new Metadata.CustomMetadata();
+        metadataRec.fullName = 'npsp__Rollup__mdt.'+r.developername;
+        metadataRec.label = r.MasterLabel;
+        Metadata.CustomMetadataValue v = new Metadata.CustomMetadataValue();
+        v.field = 'npsp__Active__c';
+        v.value = True;
+        metadataRec.values.add(v);
+        mdContainer.addMetadata(metadataRec);
+        isMetadataUpdateNeeded = true; 
+    }
+    if(isMetadataUpdateNeeded)
+    {
+        // Enqueue custom metadata deployment and get the deployment id
+        Id jobId = Metadata.Operations.enqueueDeployment(mdContainer, null);
+        System.debug(jobId);
+    }
 }
 
 public class InitException extends Exception {}
