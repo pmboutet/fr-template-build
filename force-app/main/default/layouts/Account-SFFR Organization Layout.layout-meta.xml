@@ -333,7 +333,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Account.SFR_New_Donation</actionName>
+            <actionName>Account.SFFR_New_Donation</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>

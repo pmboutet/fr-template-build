@@ -115,10 +115,6 @@
     </quickActions>
     <quickActions>
         <label></label>
-        <name>New_Open_Recurring_Donation</name>
-    </quickActions>
-    <quickActions>
-        <label></label>
         <name>npsp__New_Affiliation</name>
     </quickActions>
     <quickActions>

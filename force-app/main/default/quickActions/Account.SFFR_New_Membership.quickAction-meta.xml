@@ -12,7 +12,6 @@
         <field>StageName</field>
         <literalValue>Closed Won</literalValue>
     </fieldOverrides>
-    <label>New Membership</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
@@ -30,6 +29,11 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Amount</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>CampaignId</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
@@ -56,6 +60,7 @@
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
+    <standardLabel>NewRecordType</standardLabel>
     <targetObject>Opportunity</targetObject>
     <targetParentField>Account</targetParentField>
     <targetRecordType>Opportunity.Membership</targetRecordType>

@@ -17,22 +17,19 @@
                             <value>Contact.NewDonation</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.Contact.npe4__Relationships_Viewer</value>
+                            <value>Contact.NewMembership</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Contact.New_Open_Recurring_Donation</value>
+                            <value>Contact.npsp__New_Relationship</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.Contact.npe4__Relationships_Viewer</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.Contact.npsp__Recalculate_Rollups</value>
                         </valueListItems>
                         <valueListItems>
                             <value>FeedItem.TextPost</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Contact.npsp__New_Relationship</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Contact.npsp__New_Affiliation</value>
                         </valueListItems>
                         <valueListItems>
                             <value>FeedItem.ContentPost</value>
@@ -812,11 +809,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>adminFilters</name>
@@ -882,11 +874,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>adminFilters</name>
