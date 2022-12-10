@@ -323,6 +323,16 @@
                 <identifier>RecordBillingAddressField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npsp__Undeliverable_Address__c</fieldItem>
+                <identifier>Recordnpsp_Undeliverable_Address_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-63cd124e-b089-439e-ac0a-b456df9b6588</name>
         <type>Facet</type>
     </flexiPageRegions>

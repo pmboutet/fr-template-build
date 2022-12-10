@@ -527,6 +527,16 @@
                 <identifier>RecordMailingAddressField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npsp__Undeliverable_Address__c</fieldItem>
+                <identifier>Recordnpsp_Undeliverable_Address_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6c2a109e-ad55-44f9-b4c2-fbd71e55b50a</name>
         <type>Facet</type>
     </flexiPageRegions>
