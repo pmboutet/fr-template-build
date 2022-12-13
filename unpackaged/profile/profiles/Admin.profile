@@ -47,4 +47,7 @@
         <layoutAssignments>
                 <layout>npe03__Recurring_Donation__c-SFFR Recurring Donation Layout</layout>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>npsp__Address__c-SFFR Address Layout</layout>
+        </layoutAssignments>
 </Profile>
