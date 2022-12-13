@@ -1614,6 +1614,28 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>sfdo_analytics:predictiveMetricsCard</componentName>
+                <identifier>sfdo_analytics_predictiveMetricsCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>npsp:givingSummaryForDetailPage</componentName>
+                <identifier>npsp_givingSummaryForDetailPage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>sfdo_analytics:givingHistoryCard</componentName>
+                <identifier>sfdo_analytics_givingHistoryCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-cdefb0d0-60c2-4f26-8c62-18c2942a2419</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -1684,6 +1706,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-cdefb0d0-60c2-4f26-8c62-18c2942a2419</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.insights</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab6</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
