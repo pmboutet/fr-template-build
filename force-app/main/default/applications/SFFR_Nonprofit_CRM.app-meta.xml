@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>SFFR_Address_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>npsp__Address__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>SFFR_Address_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>npsp__Address__c</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
@@ -32,54 +50,54 @@
         <content>SFFR_Campaign_ES_Record_Page</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_External_Segment</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Campaign.SFFR_External_Segment</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Campaign_ES_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Campaign</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
         <recordType>Campaign.SFFR_External_Segment</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Campaign_IS_Record_Page</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_Internal_Segment</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Campaign.SFFR_Internal_Segment</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Campaign_IS_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_Internal_Segment</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Campaign.SFFR_Internal_Segment</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Campaign_Record_Page</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_Campaign</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Campaign.SFFR_Campaign</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Campaign_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_Campaign</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Campaign.SFFR_Campaign</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -102,36 +120,36 @@
         <content>SFFR_Account_Household_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.HH_Account</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Account.HH_Account</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Account_Organization_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.Organization</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Account.Organization</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Opportunity_Donation_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Donation</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Opportunity.Donation</recordType>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Opportunity_Membership_Record_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Membership</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
-        <recordType>Opportunity.Membership</recordType>
     </profileActionOverrides>
     <tabs>npsp__NPSP_Resources</tabs>
     <tabs>standard-home</tabs>
@@ -146,34 +164,34 @@
     <uiType>Lightning</uiType>
     <workspaceConfig>
         <mappings>
+            <tab>npe03__Recurring_Donation__c</tab>
+        </mappings>
+        <mappings>
             <tab>npsp__NPSP_Resources</tab>
         </mappings>
         <mappings>
-            <tab>standard-home</tab>
+            <tab>npsp__NPSP_Settings</tab>
         </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
         <mappings>
-            <tab>standard-Contact</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-Opportunity</tab>
-        </mappings>
-        <mappings>
-            <tab>npe03__Recurring_Donation__c</tab>
-        </mappings>
-        <mappings>
             <tab>standard-Campaign</tab>
         </mappings>
         <mappings>
-            <tab>standard-report</tab>
+            <tab>standard-Contact</tab>
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>
         </mappings>
         <mappings>
-            <tab>npsp__NPSP_Settings</tab>
+            <tab>standard-Opportunity</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-home</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-report</tab>
         </mappings>
     </workspaceConfig>
 </CustomApplication>

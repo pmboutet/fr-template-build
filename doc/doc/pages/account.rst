@@ -7,8 +7,8 @@ TODO DOC APSYNERGY - Account
      Address mgt - https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Mark_Undeliverable.htm&type=5
 TODO DESIGN APSYNERGY Data load account with data visibles on both record type (only)
 TODO DESIGN APSYNERGY - Translation
+TODO DOC APSYNERGY NPSP Address
 
-TODO DESIGN FAB Address Layout DESIGN
 
 TODO DESIGN FAB ENGAGEMENT PLAN
 
