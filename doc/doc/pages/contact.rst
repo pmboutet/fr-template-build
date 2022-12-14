@@ -95,9 +95,67 @@ dans le Compact Layout.
 
 #todo DESIGN PMB tracker en field history...
 
+Name, first name, deceased, phone, email, adresses, all opportunities, all payments, Undeliverable Mailing Address
+
 #todo DESIGN PMB Salutation
 
+Pour la salutation nous avons un champ par défaut Civilité. 
+Valeurs : 
+Monsieur et Madame :: M. & Mme  
+Madame :: Mme
+Mesdames ::	Mmes 
+Mademoiselle ::	Mlle 
+Mesdemoiselles ::	Mlles
+Monsieur ::	M.
+Messieurs	:: MM.
+Veuve	:: Vve
+Docteur	:: Dr 
+Docteurs :: Drs
+Professeur	:: Pr
+Professeurs	:: Prs
+Maître :: Me
+Maîtres	:: Mes
+Monseigneur	:: Mgr
+(source : https://www.les-abreviations.com/civilite.html)
+
+Nous avons ensuite les salutations associées et c'est là que c'est compliqué : 
+Si nous parlons à monsieur et Madame : 
+- Chère Madame, cher Monsieur BOUTET  (formel & intime)
+- Madame, Monsieur (formel & plus administratif)
+
+C'est un premier niveau de difficulté. 
+Le second c'est les termes non genrés comme docteur, professeur ou maitre. Là nous avons deux options 
+A. les genrer on aurrait donc Docteur (Masculin) une second civilité Docteur (Féminin) >> ce qui veut dire plus de civilités 
+B. utiliser le champ "genre"
+
+>>> en fait je me demande si je pourrai pas essayer de créer un formula ou 2 formula field de ouf :)
+
+
+
 TODO DESIGN FAB Engagement plan POC
+
+Je te met quelques exemples et on en reparle ! (sachant que tout sera plus ou moins spécifique par asso) 
+
+PROSPECT LEG & DONATION : 
+  1. suite à une campagne ou spontanément un contact souhaite recevoir de l'information leg 
+     -> tache envoyer la borchure / information leg  
+     -> enregistrer la demande d'une manière ou d'une autre 
+  2. la doc est envoyée en attente de prise de contact
+  3. contact est pris avec le contact : 
+     -> ouverture d'un dossier de suivi (ca c'est potentiellement ce que j'avais fait pour les legs)
+     -> affectation d'une personne en suivi 
+
+PROSPECT GRAND DONATEURS (exemple): 
+  1. on pourrait immaginer un scénario Einstein -> affectation liste d'appel -> évènement
+
+DONATEUR PONCTUEL -> REGULIER 
+  1. une opp de don est saisie 
+  2. envoi d'un welcome pack de communication par email 
+  3. mise dans une liste d'appel tel si n°
+  4. ...
+
+
+
 
 #TODO FAB Proto alerte visuelle
   1. Telephone / Adress(edit npsp adress) / Email (bounced)
@@ -113,6 +171,23 @@ TODO DESIGN FAB Engagement plan POC
    48+ donateur dans les 12 derniers mois
 
 #TODO DESIGN PMB Flow NPAI
+
+
+RETOUR DE PLIS PND 
+  1. quand un plis est reçu NPAI (n'habite pas à l'adresse indiquée) ou PND (plis non distribuable)
+  2. 3 scénarios : A - on reçoit l'info par API B - l'opérateur recherche le contact par son ID contact convivial et clic sur "marquer PND" C- recherche de fiche >> marquer PND
+  3. Dans tous les cas quand une adresse est marquée PND : 
+    --> cocher la case Undeliverable Mailing Address
+    --> ajouter 1  au compteur de PND
+  4. s'il y a un email envoyer un email au contact avec comme message : "<Salutation>, nous vous avons écrit à l'adresse <adresse>, malheureusement celui-ci nous a été retourné par la poste au motif "plis non distribuable". Pour mettre à jour votre adresse, vous pouvez nous contacter <ADRESSE SIEGE> ou directement la mettre à jour sur le lien ci contre <lien>""
+MISE A JOUR DE L'ADRESSE si l'adresse EST PND
+  1. Décocher la case PND 
+  2. Mettre le compteur à zéro
+
+SI PERSONNE MARQUEE DCD : 
+  1. Cocher do not call, do not contact, email optout, restrict sollicitations -> 0
+  2. Si don régulier actif -> créer tache "Arrêter don régulier"
+  3. Si dons dans l'année -> créer tache générer reçus fiscaux 
 
 
 #Fabrice POC
