@@ -9,7 +9,8 @@ project:
         - github: https://github.com/SFDO-Alliances/findock-fr-template
         - namespace: sfdo_analytics
           version: 1.5
-
+        - namespace: "insights"
+          version: 1.23
     git:
         default_branch: 'main'
         repo_url: https://github.com/pmboutet/fr-template-build
