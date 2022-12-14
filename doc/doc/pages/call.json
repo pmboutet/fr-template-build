@@ -1,0 +1,32 @@
+
+
+/services/data/v56.0/sobjects/cpm__Inbound_Report__c
+{
+    "cpm__Report_Type__c": "France", 
+    "cpm__Report_SubType__c": "Generic", 
+    "cpm__Contact__c": "0037a00001s2NBkAAM",
+    "cpm__Campaign__c": "7017a000001BE5RAAW",
+    "cpm__Status__c": "New",
+    "cpm__Amount__c": "50.00",
+    "cpm__Payment_Method__c": "credit_card",
+    "cpm__Date__c":"12/12/2022"
+  }
+
+
+#Mapping values
+#Fri Dec 02 13:51:02 CET 2022
+c.LastName=Temp_2__c
+c.civi=Temp_3__c
+c.email=Temp_4__c
+c.extKey=Temp_7__c
+c.fName=Temp_1__c
+o.don.1.amount=cpm__Amount__c
+o.don.1.date=cpm__Date__c
+ori.campaign=Temp_11__c
+ori.provider=cpm__Origin__c
+p.subMethod=Temp_9__c
+report.status=cpm__Status__c
+report.subtype=cpm__Report_SubType__c
+report.type=cpm__Report_Type__c
+
+2, 3, 4, 7, 11, 1, 9
