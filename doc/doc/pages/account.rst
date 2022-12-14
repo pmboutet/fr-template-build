@@ -9,6 +9,9 @@ TODO DESIGN APSYNERGY Data load account with data visibles on both record type (
 TODO DESIGN APSYNERGY - Translation
 TODO DOC APSYNERGY NPSP Address
 
+TODO DESIGN FAB address
+https://www.laposte.fr/courriers-colis/conseils-pratiques/bien-rediger-l-adresse-d-une-lettre-ou-d-un-colis
+http://www.astuceshebdo.com/2013/10/bien-ecrire-une-adresse-postale.html
 
 TODO DESIGN FAB ENGAGEMENT PLAN
 

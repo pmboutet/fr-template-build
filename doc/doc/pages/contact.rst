@@ -112,6 +112,9 @@ TODO DESIGN FAB Engagement plan POC
    24-48 donateur dans les 12 derniers mois
    48+ donateur dans les 12 derniers mois
 
+#TODO DESIGN PMB Flow NPAI
+
+
 #Fabrice POC
 Einstein POC
 Portal POC
