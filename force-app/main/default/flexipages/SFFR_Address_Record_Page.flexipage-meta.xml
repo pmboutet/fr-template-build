@@ -533,6 +533,16 @@
                 <identifier>Recordnpsp_Verified_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npsp__Pre_Verification_Address__c</fieldItem>
+                <identifier>Recordnpsp_Pre_Verification_Address_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-09493c78-13d4-4d73-b700-9dbb79c128dc</name>
         <type>Facet</type>
     </flexiPageRegions>

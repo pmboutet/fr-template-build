@@ -23,15 +23,15 @@ TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Members
 TODO DESIGN APSYNERGY - Translation
 TODO DOC APSYNERGY Roolup Membership enabled
 
+TODO DESIGN FAB PArtial Soft credit
+Adjust the search layout of finding a soft credit
+Partial Soft Credit do we need it or not?
+
 TODO FAB - related list
 RD field read only
 From Contact work on a new RD invoke
 affiliations
  remove all new expect from where this is supposed too
-
-Partial Soft Credit
-Adjust the search layout of finding a soft credit
-Partial Soft Credit do we need it or not?
 
 Account soft credit is partial… What to do with that ?
 

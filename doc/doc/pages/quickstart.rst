@@ -12,22 +12,17 @@ FR Template installation et déploiement
 
 TODO PROTO APSYNERGY Profile SFFR_Standard_User
 
-#TODO PROTOTYPE APSYNERGY ROBOFRAMEWORK to Automatize Activate French translation
-
 #TODO PROTOTYPE APSYNERGY cci Create new user SFFR_Integration_user
    review NPSP yml https://github.com/SalesforceFoundation/NPSP  create_perms_testing_user assign_permission_sets
    Add PS:
-
 
     PaymentHub Integration Base
     PaymentHub Operations
     ProcessingHub Operations
 
+TODO DESIGN APSYNERGY post install to connect DataIntegrity Integration User
+Select country France
+https://help.salesforce.com/s/articleView?id=sfdo.IP_Authorize_Data_Integrity_User.htm&type=5
 
+TODO DOC PM https://help.salesforce.com/s/articleView?id=sfdo.IP_Overview.htm&type=5
 
-#TODO DESIGN FAB Automatize Euro currency
- sphinx install steps
-#TODO DESIGN FAB desactivate NPSP Capabilities not needed 
-#TODO DESIGN FAB activate NPSP Capabilities needed
-    RD2
-    

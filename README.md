@@ -9,12 +9,17 @@ To work on this project in a scratch org:
 3.  Run `cci flow run dev_org --org dev` to deploy this project.
 4.  Run `cci flow run sffr_post_install --org dev` to run robot automations
 5.  Run `cci org browser dev` to open the org in your browser.
-6. You must Activate the French Language settings under Setup/User Interface/Transalation Workbench/Translation Language Settings
-Got some update?
-7. Run `cci task run deploy --path force-app --org dev`
+6.  You must Activate the Euro Currency under Setup/System Information
+7.  You need to authorize Data Integrity manually
+    Goto Data Integrity
+    Authorize using cci org info dev for the moment
 
 
-To get/list your scratch org changes
+Got some manual update from source files?
+1. Run `cci task run deploy --path force-app --org dev`
+
+
+To get/list your scratch org config changes?
 1. Run `cci task run list_changes --org dev -o exclude "Profile:"`
 2. Run `cci task run retrieve_changes --org dev -o exclude "Profile:"`
 
