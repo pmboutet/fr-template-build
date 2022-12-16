@@ -23,9 +23,10 @@ TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Members
 TODO DESIGN APSYNERGY - Translation
 TODO DOC APSYNERGY Roolup Membership enabled
 
-TODO DESIGN FAB PArtial Soft credit
+TODO DESIGN FAB Partial Soft credit
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Create_Soft_Credits.htm&type=5
 Adjust the search layout of finding a soft credit
-Partial Soft Credit do we need it or not?
+
 
 TODO FAB - related list
 RD field read only
