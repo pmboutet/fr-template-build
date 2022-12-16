@@ -172,13 +172,21 @@ tasks:
         options:
             settings_path: datasets/relationships.yml
 
-    npsp_SetThemAll:
+    npsp_enable_Settings:
         description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
         group: "NPSP: Post Installation"
         options:
             path: scripts/npspHelpers.cls
             apex: SetThemAll();         
+
+    npsp_enable_MembershipCR:
+        description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        group: "NPSP: Post Installation"
+        options:
+            path: scripts/npspHelpers.cls
+            apex: enable_MembershipCR();         
             
 flows:
 
@@ -193,12 +201,14 @@ flows:
             4:
                 flow: npsp:enable_gift_entry
             5:
-                flow: npsp_settings
+                task: npsp_enable_Settings
             6:
-                flow: findock:configure_findock
+                task: npsp_enable_MembershipCR
             7:
-                task: sffr_dataintegritysandbox
+                flow: findock:configure_findock
             8:
+                task: sffr_dataintegritysandbox
+            9:
                 flow: complete_install
                 
     config_qa:
@@ -228,12 +238,6 @@ flows:
           4:
             flow: sffr_assign_compact_layout
 
-    npsp_settings:
-        description: France Template Installation Configuration Only
-        steps:
-          1:
-            task: npsp_SetThemAll
-            
     sffr_post_install:
         description: France Template Post Installation
         steps:
