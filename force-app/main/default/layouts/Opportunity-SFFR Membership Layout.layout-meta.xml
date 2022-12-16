@@ -277,6 +277,14 @@
         <relatedList>RelatedContactRoleList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>npsp__Contact_Name__c</fields>
+        <fields>npsp__Role_Name__c</fields>
+        <fields>npsp__Amount__c</fields>
+        <relatedList>npsp__Partial_Soft_Credit__c.npsp__Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <customButtons>npsp__Manage_Allocations</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
@@ -320,7 +328,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1x000005EH3K</masterLabel>
+        <masterLabel>00h5r0000026VNe</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
