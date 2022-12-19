@@ -2,26 +2,38 @@
 <StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <valueTranslation>
         <masterLabel>Dr.</masterLabel>
-        <translation>Dr.</translation>
+        <translation>Dr</translation>
     </valueTranslation>
     <valueTranslation>
         <masterLabel>Mr.</masterLabel>
-        <translation>M.</translation>
+        <translation>M</translation>
     </valueTranslation>
     <valueTranslation>
         <masterLabel>Mrs.</masterLabel>
-        <translation>Mlle.</translation>
+        <translation>Mme</translation>
     </valueTranslation>
     <valueTranslation>
         <masterLabel>Ms.</masterLabel>
-        <translation>Mme.</translation>
+        <translation>Mlle</translation>
     </valueTranslation>
     <valueTranslation>
         <masterLabel>Mx.</masterLabel>
-        <translation>Mx.</translation>
+        <translation>Mx</translation>
     </valueTranslation>
     <valueTranslation>
         <masterLabel>Prof.</masterLabel>
-        <translation>Prof.</translation>
+        <translation>Prof</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wid.</masterLabel>
+        <translation>Vve</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>LL.M.</masterLabel>
+        <translation>Me</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Msgr.</masterLabel>
+        <translation>Mrg</translation>
     </valueTranslation>
 </StandardValueSetTranslation>

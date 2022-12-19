@@ -85,7 +85,16 @@ Automatismes
 #TODO DOC APSYNERGY ContactDonations Report
 #TODO DOC APSYNERGY
 #TODO Translation APSYNERGY
-
+#todo DOC APSYNERGY Salutation
+Madame :: Mme,Mrs.
+Mademoiselle ::	Mlle,Ms.
+Monsieur ::	M.,Mr.
+Sans genre ::	Mx,Mx.
+Veuve	:: Vve, Mrs.
+Docteur	:: Dr,Dr.
+Professeur	:: Pr, Prof.
+Maître :: Me,LL.M.
+Monseigneur	:: Mgr, Msgr.
 
 #todo BACKLOG afficher au niveau du contact si son adresse principale est en pnd>0, ainsi que dans
 la compacte Layout
@@ -98,7 +107,6 @@ dans le Compact Layout.
 Name, first name, deceased, phone, email, adresses, all opportunities, all payments, Undeliverable Mailing Address
 
 #todo DESIGN PMB Salutation
-
 Pour la salutation nous avons un champ par défaut Civilité. 
 Valeurs : 
 Monsieur et Madame :: M. & Mme  
@@ -117,6 +125,9 @@ Maître :: Me
 Maîtres	:: Mes
 Monseigneur	:: Mgr
 (source : https://www.les-abreviations.com/civilite.html)
+
+
+
 
 Nous avons ensuite les salutations associées et c'est là que c'est compliqué : 
 Si nous parlons à monsieur et Madame : 

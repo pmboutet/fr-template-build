@@ -14,8 +14,7 @@ https://www.laposte.fr/courriers-colis/conseils-pratiques/bien-rediger-l-adresse
 http://www.astuceshebdo.com/2013/10/bien-ecrire-une-adresse-postale.html
 
 TODO DESIGN FAB ENGAGEMENT PLAN
-TODO DESIGN Compare Contact and Align?
-
+TODO DESIGN Compare with Contact and Align?
 
 TODO PROTO FAB Dup rules for account?
 https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Merge_Contacts.htm&type=5
