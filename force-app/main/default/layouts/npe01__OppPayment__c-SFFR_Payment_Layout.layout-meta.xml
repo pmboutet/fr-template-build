@@ -31,6 +31,10 @@
                 <behavior>Edit</behavior>
                 <field>npe01__Custom_Payment_Field__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SFFR_bank_batch_key__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
