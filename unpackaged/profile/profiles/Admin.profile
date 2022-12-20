@@ -50,4 +50,8 @@
         <layoutAssignments>
                 <layout>npsp__Address__c-SFFR Address Layout</layout>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>Task-SFFR Task Layout</layout>
+        </layoutAssignments>
+
 </Profile>

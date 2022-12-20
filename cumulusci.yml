@@ -9,7 +9,8 @@ project:
         - github: https://github.com/SFDO-Alliances/findock-fr-template
         - namespace: sfdo_analytics
           version: 1.5
-
+        - namespace: "insights"
+          version: 1.23
     git:
         default_branch: 'main'
         repo_url: https://github.com/pmboutet/fr-template-build
@@ -94,6 +95,13 @@ tasks:
         options:
             path: unpackaged/listviews
 
+    sffr_dataintegritysandbox:
+        description: Configure Data Integrity for Sandbox use
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: "SFFR: Installation"
+        options:
+            path: unpackaged/dataintegrity
+
     sffr_load_sdata:
         description: Load Sample Dataset for Organizations, Households, and Addresses
         class_path: cumulusci.tasks.bulkdata.LoadData
@@ -164,31 +172,43 @@ tasks:
         options:
             settings_path: datasets/relationships.yml
 
-    npsp_SetThemAll:
+    npsp_enable_Settings:
         description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
         group: "NPSP: Post Installation"
         options:
             path: scripts/npspHelpers.cls
             apex: SetThemAll();         
+
+    npsp_enable_MembershipCR:
+        description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        group: "NPSP: Post Installation"
+        options:
+            path: scripts/npspHelpers.cls
+            apex: enable_MembershipCR();         
             
 flows:
 
     config_dev:
         steps:
             3:
-                flow: npsp_settings
-            4:
                 flow: npsp:enable_rd2_managed
                 ui_options:
                     name: Enable Enhanced Recurring Donations
                     is_required: False
                     is_recommended: True
-            5:
+            4:
                 flow: npsp:enable_gift_entry
+            5:
+                task: npsp_enable_Settings
             6:
-                flow: findock:configure_findock
+                task: npsp_enable_MembershipCR
             7:
+                flow: findock:configure_findock
+            8:
+                task: sffr_dataintegritysandbox
+            9:
                 flow: complete_install
                 
     config_qa:
@@ -218,12 +238,6 @@ flows:
           4:
             flow: sffr_assign_compact_layout
 
-    npsp_settings:
-        description: France Template Installation Configuration Only
-        steps:
-          1:
-            task: npsp_SetThemAll
-            
     sffr_post_install:
         description: France Template Post Installation
         steps:
@@ -310,6 +324,16 @@ flows:
             options:
                 api_names: npe03__Recurring_Donation__c
                 value: "%%%NAMESPACE%%%SFFR_Recurring_Donation_Compact_Layout"
+          9:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: npsp__Engagement_Plan_Template__c
+                value: "%%%NAMESPACE%%%SFFR_Compact_Layout"
+          10:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: npsp__Engagement_Plan__c
+                value: "%%%NAMESPACE%%%SFFR_Compact_Layout"
 
     sffr_add_data:
         description: Cleans up data and disables triggers before running data load.

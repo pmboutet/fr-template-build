@@ -21,6 +21,12 @@ TODO DOC APSYNERGY - NPSP Settings - Recurring donation
 
 TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
 TODO DESIGN APSYNERGY - Translation
+TODO DOC APSYNERGY Roolup Membership enabled
+
+TODO DESIGN FAB Partial Soft credit
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Create_Soft_Credits.htm&type=5
+Adjust the search layout of finding a soft credit
+
 
 TODO FAB - related list
 RD field read only
@@ -28,7 +34,9 @@ From Contact work on a new RD invoke
 affiliations
  remove all new expect from where this is supposed too
 
-TODO DESIGN FAB Enable Roolup Membership from YML Apex
+Account soft credit is partial… What to do with that ?
+
+
 
 TODO DOC APSYNERGY - Recurring Donation
 

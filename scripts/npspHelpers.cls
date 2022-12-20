@@ -10,7 +10,6 @@ public static void SetThemAll() {
     enable_address();
     adjust_RDSettings();
     adjust_HouseholdNamingSettings();
-    enable_MembershipCR();
 }
 
 public static void enable_address() {

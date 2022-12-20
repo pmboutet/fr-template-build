@@ -17,6 +17,16 @@
         <label>Mrs.</label>
     </standardValue>
     <standardValue>
+        <fullName>Wid.</fullName>
+        <default>false</default>
+        <label>Wid.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mx.</fullName>
+        <default>false</default>
+        <label>Mx.</label>
+    </standardValue>
+    <standardValue>
         <fullName>Dr.</fullName>
         <default>false</default>
         <label>Dr.</label>
@@ -27,8 +37,13 @@
         <label>Prof.</label>
     </standardValue>
     <standardValue>
-        <fullName>Mx.</fullName>
+        <fullName>LL.M.</fullName>
         <default>false</default>
-        <label>Mx.</label>
+        <label>LL.M.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Msgr.</fullName>
+        <default>false</default>
+        <label>Msgr.</label>
     </standardValue>
 </StandardValueSet>

@@ -273,8 +273,6 @@ les campagnes child (Appel dons Dec 2023 appels sortants), les segments internes
 #todo DOC RAPH Campaign Content, Third Party Segment
 https://s3-us-west-2.amazonaws.com/sfdo-docs/Campaign_Fundraising_Guide.pdf
 
-#todo DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
+#TODO DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
-#TODO DESIGN FAB Review Tab icons of new objects.
-File Note and Releated List
-
+#TODO DOC RAPH Review UI
