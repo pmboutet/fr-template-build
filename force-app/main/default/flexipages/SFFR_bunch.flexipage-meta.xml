@@ -137,6 +137,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Status__c</fieldItem>
+                <identifier>RecordSFFR_Status_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.SFFR_External_Reference__c</fieldItem>
                 <identifier>RecordSFFR_External_Reference_cField</identifier>
             </fieldInstance>

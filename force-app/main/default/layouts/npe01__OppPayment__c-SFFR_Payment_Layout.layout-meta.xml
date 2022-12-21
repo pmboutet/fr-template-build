@@ -57,6 +57,10 @@
                 <behavior>Edit</behavior>
                 <field>npe01__Written_Off__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>npsp4hub__Collected_Through__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

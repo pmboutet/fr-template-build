@@ -5,7 +5,7 @@
         <name>BankBatchExtKeyExist</name>
         <label>BankBatchExtKeyExist</label>
         <locationX>270</locationX>
-        <locationY>408</locationY>
+        <locationY>648</locationY>
         <defaultConnector>
             <targetReference>GetActiveLotAtExtBankBatch</targetReference>
         </defaultConnector>
@@ -30,7 +30,7 @@
         <name>TestIfInternalBankIdExist</name>
         <label>TestIfInternalBankIdExist</label>
         <locationX>556</locationX>
-        <locationY>288</locationY>
+        <locationY>528</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>No</name>
@@ -52,7 +52,7 @@
         <name>ThereIsAnActiveLot</name>
         <label>ThereIsAnActiveLot</label>
         <locationX>50</locationX>
-        <locationY>648</locationY>
+        <locationY>888</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>CreateBankBatch</targetReference>
@@ -65,7 +65,7 @@
                 <leftValueReference>GetOpenActiveLots.Id</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -78,7 +78,7 @@
         <name>ThereIsAnActiveLotAtExtKey</name>
         <label>ThereIsAnActiveLotAtExtKey</label>
         <locationX>490</locationX>
-        <locationY>648</locationY>
+        <locationY>888</locationY>
         <defaultConnector>
             <targetReference>CreateBankBatch</targetReference>
         </defaultConnector>
@@ -130,7 +130,7 @@
         <name>CreateBankBatch</name>
         <label>CreateBankBatch</label>
         <locationX>578</locationX>
-        <locationY>768</locationY>
+        <locationY>1008</locationY>
         <connector>
             <targetReference>UpdatePaymentWithLot</targetReference>
         </connector>
@@ -146,6 +146,12 @@
                 <elementReference>$Record.SFFR_bank_batch_key__c</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Status__c</field>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </inputAssignments>
         <object>SFFR_Bunch__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -153,7 +159,7 @@
         <name>GetActiveLotAtExtBankBatch</name>
         <label>GetActiveLotAtExtBankBatch</label>
         <locationX>490</locationX>
-        <locationY>528</locationY>
+        <locationY>768</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ThereIsAnActiveLotAtExtKey</targetReference>
@@ -191,10 +197,35 @@
         <sortOrder>Asc</sortOrder>
     </recordLookups>
     <recordLookups>
+        <name>getBatchNumFromInstallement</name>
+        <label>getBatchNumFromInstallement</label>
+        <locationX>556</locationX>
+        <locationY>288</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>setBankBatchNumberInPayment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.npsp4hub__Collected_Through__r.Id</elementReference>
+            </value>
+        </filters>
+        <object>cpm__Installment__c</object>
+        <outputAssignments>
+            <assignToReference>ExternalBankBatch</assignToReference>
+            <field>SFFR_Bank_batch__c</field>
+        </outputAssignments>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
         <name>GetOpenActiveLots</name>
         <label>GetOpenActiveLots</label>
         <locationX>50</locationX>
-        <locationY>528</locationY>
+        <locationY>768</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ThereIsAnActiveLot</targetReference>
@@ -221,10 +252,26 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>setBankBatchNumberInPayment</name>
+        <label>setBankBatchNumberInPayment</label>
+        <locationX>556</locationX>
+        <locationY>408</locationY>
+        <connector>
+            <targetReference>TestIfInternalBankIdExist</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>SFFR_bank_batch_key__c</field>
+            <value>
+                <elementReference>ExternalBankBatch</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>UpdatePaymentWithLot</name>
         <label>UpdatePaymentWithLot</label>
         <locationX>578</locationX>
-        <locationY>888</locationY>
+        <locationY>1128</locationY>
         <inputAssignments>
             <field>SFFR_Bank_Bunch__c</field>
             <value>
@@ -237,7 +284,7 @@
         <name>UpdateRecordAtActiveBatch</name>
         <label>UpdateRecordAtActiveBatch</label>
         <locationX>270</locationX>
-        <locationY>1320</locationY>
+        <locationY>1560</locationY>
         <inputAssignments>
             <field>SFFR_Bank_Bunch__c</field>
             <value>
@@ -250,7 +297,7 @@
         <locationX>705</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>TestIfInternalBankIdExist</targetReference>
+            <targetReference>getBatchNumFromInstallement</targetReference>
         </connector>
         <object>npe01__OppPayment__c</object>
         <recordTriggerType>Create</recordTriggerType>
@@ -260,6 +307,13 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Draft</status>
+    <variables>
+        <name>ExternalBankBatch</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>thisPayment</name>
         <dataType>SObject</dataType>
