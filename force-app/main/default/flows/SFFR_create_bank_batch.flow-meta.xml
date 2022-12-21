@@ -173,6 +173,13 @@
                 <elementReference>$Record.SFFR_bank_batch_key__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>SFFR_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </filters>
         <object>SFFR_Bunch__c</object>
         <outputReference>GetOpenActiveLots</outputReference>
         <queriedFields>Id</queriedFields>
@@ -198,6 +205,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.npe01__Payment_Method__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

@@ -27,6 +27,10 @@
                 <behavior>Edit</behavior>
                 <field>SFFR_Accounting_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SFFR_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
