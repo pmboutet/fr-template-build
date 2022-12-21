@@ -4,17 +4,17 @@
     <decisions>
         <name>BankBatchExtKeyExist</name>
         <label>BankBatchExtKeyExist</label>
-        <locationX>380</locationX>
+        <locationX>270</locationX>
         <locationY>408</locationY>
         <defaultConnector>
-            <targetReference>CreateBankBatch</targetReference>
+            <targetReference>GetActiveLotAtExtBankBatch</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>BankBatchExtKeyExist_no</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>thisPayment.SFFR_bank_batch_key__c</leftValueReference>
+                <leftValueReference>$Record.SFFR_bank_batch_key__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -29,7 +29,7 @@
     <decisions>
         <name>TestIfInternalBankIdExist</name>
         <label>TestIfInternalBankIdExist</label>
-        <locationX>611</locationX>
+        <locationX>556</locationX>
         <locationY>288</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -51,7 +51,7 @@
     <decisions>
         <name>ThereIsAnActiveLot</name>
         <label>ThereIsAnActiveLot</label>
-        <locationX>182</locationX>
+        <locationX>50</locationX>
         <locationY>648</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
@@ -60,6 +60,31 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>ThereIsAnActiveLot_yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOpenActiveLots.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateRecordAtActiveBatch</targetReference>
+            </connector>
+            <label>Yes attach payment to lot</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ThereIsAnActiveLotAtExtKey</name>
+        <label>ThereIsAnActiveLotAtExtKey</label>
+        <locationX>490</locationX>
+        <locationY>648</locationY>
+        <defaultConnector>
+            <targetReference>CreateBankBatch</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_attach_ext_payment_to_lot</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>GetOpenActiveLots.Id</leftValueReference>
@@ -105,7 +130,7 @@
         <name>CreateBankBatch</name>
         <label>CreateBankBatch</label>
         <locationX>578</locationX>
-        <locationY>528</locationY>
+        <locationY>768</locationY>
         <connector>
             <targetReference>UpdatePaymentWithLot</targetReference>
         </connector>
@@ -125,9 +150,43 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>GetActiveLotAtExtBankBatch</name>
+        <label>GetActiveLotAtExtBankBatch</label>
+        <locationX>490</locationX>
+        <locationY>528</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ThereIsAnActiveLotAtExtKey</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SFFR_Payment_method__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.npe01__Payment_Method__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_External_Reference__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SFFR_bank_batch_key__c</elementReference>
+            </value>
+        </filters>
+        <object>SFFR_Bunch__c</object>
+        <outputReference>GetOpenActiveLots</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>SFFR_External_Reference__c</queriedFields>
+        <queriedFields>SFFR_Bank_Date__c</queriedFields>
+        <queriedFields>SFFR_Accounting_Date__c</queriedFields>
+        <queriedFields>OwnerId</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
         <name>GetOpenActiveLots</name>
         <label>GetOpenActiveLots</label>
-        <locationX>182</locationX>
+        <locationX>50</locationX>
         <locationY>528</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -151,7 +210,7 @@
         <name>UpdatePaymentWithLot</name>
         <label>UpdatePaymentWithLot</label>
         <locationX>578</locationX>
-        <locationY>648</locationY>
+        <locationY>888</locationY>
         <inputAssignments>
             <field>SFFR_Bank_Bunch__c</field>
             <value>
@@ -163,8 +222,8 @@
     <recordUpdates>
         <name>UpdateRecordAtActiveBatch</name>
         <label>UpdateRecordAtActiveBatch</label>
-        <locationX>50</locationX>
-        <locationY>768</locationY>
+        <locationX>270</locationX>
+        <locationY>1320</locationY>
         <inputAssignments>
             <field>SFFR_Bank_Bunch__c</field>
             <value>
@@ -174,7 +233,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>732</locationX>
+        <locationX>705</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>TestIfInternalBankIdExist</targetReference>
@@ -186,7 +245,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>thisPayment</name>
         <dataType>SObject</dataType>
