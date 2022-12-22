@@ -65,11 +65,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SFFR_Fullfilment_Batch__c</field>
+                <field>SFFR_Fullfilment_Payment_Group__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SFFR_Bank_Batch__c</field>
+                <field>SFFR_Bank_Payment_Group_Ext_Key__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

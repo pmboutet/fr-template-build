@@ -36,7 +36,7 @@
             <name>No</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.SFFR_Bank_Bunch__r.Id</leftValueReference>
+                <leftValueReference>$Record.SFFR_Bank___r.Id</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -152,7 +152,7 @@
                 <stringValue>Open</stringValue>
             </value>
         </inputAssignments>
-        <object>SFFR_Bunch__c</object>
+        <object>SFFR___c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
@@ -186,7 +186,7 @@
                 <stringValue>Open</stringValue>
             </value>
         </filters>
-        <object>SFFR_Bunch__c</object>
+        <object>SFFR___c</object>
         <outputReference>GetOpenActiveLots</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
@@ -246,7 +246,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>SFFR_Bunch__c</object>
+        <object>SFFR___c</object>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -273,7 +273,7 @@
         <locationX>578</locationX>
         <locationY>1128</locationY>
         <inputAssignments>
-            <field>SFFR_Bank_Bunch__c</field>
+            <field>SFFR_Bank___c</field>
             <value>
                 <elementReference>CreateBankBatch</elementReference>
             </value>
@@ -286,7 +286,7 @@
         <locationX>270</locationX>
         <locationY>1560</locationY>
         <inputAssignments>
-            <field>SFFR_Bank_Bunch__c</field>
+            <field>SFFR_Bank___c</field>
             <value>
                 <elementReference>GetOpenActiveLots.Id</elementReference>
             </value>

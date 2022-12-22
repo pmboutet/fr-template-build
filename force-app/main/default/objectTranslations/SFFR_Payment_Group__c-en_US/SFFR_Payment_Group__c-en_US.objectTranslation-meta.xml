@@ -9,7 +9,7 @@
         <value>Payments groups</value>
     </caseValues>
     <layouts>
-        <layout>Bunch Layout</layout>
+        <layout> Layout</layout>
         <sections>
             <label></label>
             <section>Custom Links</section>
