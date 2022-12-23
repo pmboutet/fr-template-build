@@ -39,6 +39,7 @@ Account soft credit is partial… What to do with that ?
 
 
 TODO DOC APSYNERGY - Recurring Donation
+TODO DOC APSYNERGY - Enable Recurring Donation Change Log Data space considerations
 
 https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Handling_Anonymous_Donors.htm&type=5
 

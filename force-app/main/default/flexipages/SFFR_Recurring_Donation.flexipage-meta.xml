@@ -105,8 +105,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.npe03__Organization__c</fieldItem>
-                <identifier>Recordnpe03_Organization_cField2</identifier>
+                <fieldItem>Record.npe03__Amount__c</fieldItem>
+                <identifier>Recordnpe03_Amount_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -117,6 +117,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.npe03__Installment_Period__c</fieldItem>
                 <identifier>Recordnpe03_Installment_Period_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npsp__Day_of_Month__c</fieldItem>
+                <identifier>Recordnpsp_Day_of_Month_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -833,6 +843,19 @@
                 </componentInstanceProperties>
                 <componentName>npsp:rdScheduleVisualizer</componentName>
                 <identifier>rdScheduleVisualizer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>changeTypeFilter</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recordLimit</name>
+                    <value>3</value>
+                </componentInstanceProperties>
+                <componentName>npsp:rd2ChangeLog</componentName>
+                <identifier>npsp_rd2ChangeLog</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

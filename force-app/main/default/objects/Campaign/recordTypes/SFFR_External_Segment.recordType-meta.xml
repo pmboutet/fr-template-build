@@ -34,7 +34,23 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>DRTV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Door to door</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead to call</fullName>
             <default>false</default>
         </values>
         <values>
@@ -51,6 +67,10 @@
         </values>
         <values>
             <fullName>Referral Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Street marketing</fullName>
             <default>false</default>
         </values>
         <values>

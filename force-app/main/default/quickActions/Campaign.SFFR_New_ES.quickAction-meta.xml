@@ -4,6 +4,10 @@
         <field>IsActive</field>
         <formula>False</formula>
     </fieldOverrides>
+    <fieldOverrides>
+        <field>Type</field>
+        <formula>TEXT(Parent.Type)</formula>
+    </fieldOverrides>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>

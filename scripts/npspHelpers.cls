@@ -24,7 +24,8 @@ public static void adjust_RDSettings() {
     Id oppDonationTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Donation').getRecordTypeId();
     rdSettings.npsp__EnableAutomaticNaming__c = True;
     rdSettings.npe03__Record_Type__c = oppDonationTypeId;
-    rdSettings.npsp__RecurringDonationNameFormat__c = '{!npe03__Donor_Name__c} {!npe03__Amount__c} - Recurring';
+    rdSettings.npsp__RecurringDonationNameFormat__c = 'Don régulier de {!npe03__Donor_Name__c}: {!npe03__Amount__c}';
+    rdSettings.npsp__EnableChangeLog__c = True;
     upsert rdSettings;
 }
 
