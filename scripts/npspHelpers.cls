@@ -10,6 +10,7 @@ public static void SetThemAll() {
     enable_address();
     adjust_RDSettings();
     adjust_HouseholdNamingSettings();
+    adjust_ErrorSettings();
 }
 
 public static void enable_address() {
@@ -27,6 +28,12 @@ public static void adjust_RDSettings() {
     rdSettings.npsp__RecurringDonationNameFormat__c = 'Don régulier de {!npe03__Donor_Name__c}: {!npe03__Amount__c}';
     rdSettings.npsp__EnableChangeLog__c = True;
     upsert rdSettings;
+}
+
+public static void adjust_ErrorSettings() {
+    npsp__Error_Settings__c errorSettings = npsp__Error_Settings__c.getOrgDefaults();
+    errorSettings.npsp__Respect_Duplicate_Rule_Settings__c = True;
+    upsert errorSettings;
 }
 
 public static void adjust_HouseholdNamingSettings() {

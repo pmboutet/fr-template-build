@@ -3,6 +3,7 @@
     <fullName>All</fullName>
     <columns>CAMPAIGN.NAME</columns>
     <columns>CAMPAIGN.ACTIVE</columns>
+    <columns>SFFR_Dedup_Order__c</columns>
     <columns>CAMPAIGN.START_DATE</columns>
     <columns>CAMPAIGN.END_DATE</columns>
     <columns>TOT_NUM_SENT</columns>
