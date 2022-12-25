@@ -152,7 +152,7 @@
                 <stringValue>Open</stringValue>
             </value>
         </inputAssignments>
-        <object>SFFR___c</object>
+        <object>SFFR_Payment_Group__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
@@ -186,7 +186,7 @@
                 <stringValue>Open</stringValue>
             </value>
         </filters>
-        <object>SFFR___c</object>
+        <object>SFFR_Payment_Group__c</object>
         <outputReference>GetOpenActiveLots</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
@@ -246,7 +246,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>SFFR___c</object>
+        <object>SFFR_Payment_Group__c</object>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -273,7 +273,7 @@
         <locationX>578</locationX>
         <locationY>1128</locationY>
         <inputAssignments>
-            <field>SFFR_Bank___c</field>
+            <field>SFFR_Bank_Group__c</field>
             <value>
                 <elementReference>CreateBankBatch</elementReference>
             </value>
@@ -286,7 +286,7 @@
         <locationX>270</locationX>
         <locationY>1560</locationY>
         <inputAssignments>
-            <field>SFFR_Bank___c</field>
+            <field>SFFR_Bank_Group__c</field>
             <value>
                 <elementReference>GetOpenActiveLots.Id</elementReference>
             </value>

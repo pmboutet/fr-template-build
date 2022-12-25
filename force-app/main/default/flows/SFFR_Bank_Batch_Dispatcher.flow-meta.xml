@@ -66,7 +66,7 @@
                 <stringValue>0127a000002AJk7AAG</stringValue>
             </value>
         </filters>
-        <object>SFFR___c</object>
+        <object>SFFR_Payment_Group__c</object>
         <outputReference>bankBatch</outputReference>
         <queriedFields>Id</queriedFields>
         <sortField>Id</sortField>
@@ -80,7 +80,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SFFR_Bank___c</field>
+            <field>SFFR_Bank_Group__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
@@ -97,7 +97,7 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>SFFR___c</objectType>
+        <objectType>SFFR_Payment_Group__c</objectType>
     </variables>
     <variables>
         <name>countOpenBatches</name>

@@ -33,7 +33,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SFFR_bank_batch_key__c</field>
+                <field>SFFR_Payment_Group_batch_key__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

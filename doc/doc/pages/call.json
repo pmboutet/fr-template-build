@@ -12,7 +12,13 @@
     "cpm__Date__c":"12/12/2022"
   }
 
-
+  {
+    "cpm__Report_Type__c": "France", 
+    "cpm__Report_SubType__c": "Générique", 
+    "SFFR_Contact_First_Name__c": "Pierre-Marie",
+    "SFFR_Contact_Last_Name__c": "Boutet",
+    "SFFR_Contact_Last_Name__c": "pmboutet@salesforce.com"
+  }
 #Mapping values
 #Fri Dec 02 13:51:02 CET 2022
 c.LastName=Temp_2__c
@@ -24,9 +30,48 @@ o.don.1.amount=cpm__Amount__c
 o.don.1.date=cpm__Date__c
 ori.campaign=Temp_11__c
 ori.provider=cpm__Origin__c
+
 p.subMethod=Temp_9__c
 report.status=cpm__Status__c
 report.subtype=cpm__Report_SubType__c
 report.type=cpm__Report_Type__c
 
 2, 3, 4, 7, 11, 1, 9
+
+{
+  "cpm__Report_Type__c": "France", 
+  "cpm__Report_SubType__c": "Générique", 
+  "cpm__Status__c": "New",
+  "SFFR_Contact_First_Name__c": "Pierre-Marie",
+  "SFFR_Contact_Last_Name__c": "Boutet",
+  "SFFR_Contact_Email__c": "pmboutet@salesforce.com",
+  "cpm__Campaign__c": "7017a000001BE5RAAW",
+  "cpm__Amount__c": "50.00",
+  "cpm__Payment_Method__c": "credit_card",
+  "cpm__Date__c":"12/12/2022"
+}
+
+
+
+
+{
+  "cpm__Amount__c" : 99.0,
+  "cpm__Contact__c" : "0037a00001sb0gwAAA",
+  "cpm__Date__c" : "2022-12-21",
+  "cpm__Debit_Credit_Type__c" : "Credit",
+  "cpm__Origin__c" : "iRaiser",
+  "cpm__Report_Date__c" : "2022-12-21",
+  "cpm__Report_Type__c" : "France",
+  "cpm__Status__c" : "New",
+  "cpm__Report_SubType__c" : "Générique",
+  "SFFR_Contact_First_Name__c" : "Pierre-Marie",
+  "SFFR_Contact_Last_Name__c" : "Boutet",
+  "SFFR_Contact_Email__c" : "pmboutet@salesforce.com",
+  "SFFR_Contact_Mobile__c" : "0660505772",
+  "SFFR_Payer_First_Name__c" : "Fabrice",
+  "SFFR_Payer_Last_Name__c" : "Pierre",
+  "SFFR_Payer_email__c" : "fpierre@salesforce.com",
+  "SFFR_Campaign_Key__c" : "ABC",
+  "SFFR_Fullfilment_Batch__c" : null,
+  "SFFR_Bank_Batch__c" : "12"
+}

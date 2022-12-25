@@ -71,7 +71,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>npe01__OppPayment__c.SFFR_Bank___c</relatedList>
+        <relatedList>npe01__OppPayment__c.SFFR_Bank_Group__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
