@@ -1,0 +1,10 @@
+{
+    "Name" : "Inbound Report: France/Générique",
+    "cpm__Active__c" : true,
+    "cpm__Job_Size__c" : 200.0,
+    "cpm__Object__c" : "Inbound_Report",
+    "cpm__Report_Sub_Type__c" : "Générique",
+    "cpm__Report_Type__c" : "France",
+    "cpm__Rules__c" : "[{\"iconName\":\"standard:queue\",\"ruleType\":\"findDuplicates\",\"multipleResultsStrategy\":\"takeFirst\",\"singleResultStrategy\":\"takeSingleResult\",\"name\":\"TrouverContactParEmail\",\"fieldMapping\":{\"npe01__AlternateEmail__c\":{\"type\":\"field\",\"fieldName\":\"SFFR_Contact_Email__c\"}},\"id\":\"qoo6mq-23233317\",\"fieldName\":\"cpm__Contact__c\",\"fieldType\":\"reference\",\"seqNr\":\"1\",\"jobNr\":\"1\"},{\"iconName\":\"standard:topic2\",\"ruleType\":\"constant\",\"name\":\"Crédit\",\"constant\":\"Credit\",\"id\":\"D1M3km-23433821\",\"fieldName\":\"cpm__Debit_Credit_Type__c\",\"fieldType\":\"picklist\",\"seqNr\":\"2\",\"jobNr\":\"1\"},{\"iconName\":\"standard:record_create\",\"ruleType\":\"createContact\",\"name\":\"CréerLeContactNonTrouvé\",\"fieldMapping\":{\"Email\":{\"type\":\"field\",\"fieldName\":\"SFFR_Contact_Email__c\"},\"FirstName\":{\"type\":\"field\",\"fieldName\":\"SFFR_Contact_First_Name__c\"},\"LastName\":{\"type\":\"field\",\"fieldName\":\"SFFR_Contact_Last_Name__c\"}},\"id\":\"sG4GsQ-23391279\",\"fieldName\":\"cpm__Contact__c\",\"fieldType\":\"reference\",\"seqNr\":\"3\",\"jobNr\":\"1\"},{\"jobNr\":\"1\",\"seqNr\":\"4\",\"fieldType\":\"reference\",\"fieldName\":\"cpm__Installment__c\",\"id\":\"zLdv9L-17783227\",\"name\":\"CreateInstallement\",\"ruleType\":\"createInstallment\",\"iconName\":\"standard:record_create\",\"fieldMapping\":{\"SFFR_Bank_batch__c\":{\"type\":\"field\",\"fieldName\":\"SFFR_Bank_Batch__c\"}}},{\"ruleType\":\"processInstallment\",\"name\":\"Process Installment\",\"fieldName\":\"cpm__Installment__c\",\"fieldType\":\"reference\",\"id\":\"PROCINS\",\"iconName\":\"standard:partner_fund_allocation\",\"seqNr\":\"5\",\"jobNr\":\"1\",\"userGuidance\":\"Please attach a not already collected installment.\"}]",
+    "cpm__Target__c" : "-"
+  }
