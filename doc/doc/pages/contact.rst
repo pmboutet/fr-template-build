@@ -202,7 +202,6 @@ SI PERSONNE MARQUEE DCD :
 
 
 #Fabrice POC
-Einstein POC
 Portal POC
 
 #todo DESIGN FAB SFFR_External_Key__c to match

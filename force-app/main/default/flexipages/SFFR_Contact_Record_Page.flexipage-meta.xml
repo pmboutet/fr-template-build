@@ -296,6 +296,16 @@
                 <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_ContactID__c</fieldItem>
+                <identifier>RecordSFFR_ContactID_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-d9d38894-149c-4790-9d7d-b2d2ca048522</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -21,24 +21,6 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Third_Party_Segment_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>SFFR_3party_Segment__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Third_Party_Segment_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>SFFR_3party_Segment__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>SFFR_Recurring_Donation</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
@@ -53,6 +35,24 @@
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>npe03__Recurring_Donation__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Third_Party_Segment_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>SFFR_3party_Segment__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Third_Party_Segment_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>SFFR_3party_Segment__c</pageOrSobjectType>
     </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
@@ -65,32 +65,6 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Fundraising French Template</label>
     <navType>Console</navType>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>SFFR_Campaign_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Campaign</pageOrSobjectType>
-        <recordType>Campaign.SFFR_Campaign</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>SFFR_Campaign_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Campaign</pageOrSobjectType>
-        <recordType>Campaign.SFFR_Campaign</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>SFFR_Campaign_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Campaign</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>SFFR_Campaign_Record_Page</content>
@@ -187,6 +161,32 @@
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SFFR_Campaign_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SFFR_Campaign_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_Campaign</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SFFR_Campaign_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Campaign</pageOrSobjectType>
+        <recordType>Campaign.SFFR_Campaign</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
     <tabs>npsp__NPSP_Resources</tabs>
     <tabs>standard-home</tabs>
     <tabs>standard-Account</tabs>
@@ -198,6 +198,7 @@
     <tabs>standard-Dashboard</tabs>
     <tabs>npsp__NPSP_Settings</tabs>
     <uiType>Lightning</uiType>
+    <utilityBar>Fundraising_French_Template_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>npe03__Recurring_Donation__c</tab>
