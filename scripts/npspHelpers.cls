@@ -8,6 +8,7 @@
 */
 public static void SetThemAll() {
     enable_address();
+    adjust_OpportunitySettings();
     adjust_RDSettings();
     adjust_HouseholdNamingSettings();
     adjust_ErrorSettings();
@@ -18,6 +19,29 @@ public static void enable_address() {
     // Re-enable address management after the data load has fully completed.
     cAndOSettings.npsp__Organizational_Account_Addresses_Enabled__c = True;
     upsert cAndOSettings;
+}
+
+public static void adjust_OpportunitySettings() {
+    try {
+        npsp__Opportunity_Naming_Settings__c oSettings1 = new npsp__Opportunity_Naming_Settings__c();
+        oSettings1.Name = 'Donation';
+        oSettings1.npsp__Attribution__c = 'Both';
+        oSettings1.npsp__Date_Format__c = 'dd/MM/yyyy';
+        oSettings1.npsp__Opportunity_Name_Format__c = 'Don le {!CloseDate} du {!Account.Name} pour {!Amount}';
+        oSettings1.npsp__Opportunity_Record_Types__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Donation').getRecordTypeId();
+        upsert oSettings1;
+    }
+	catch(Exception e){}
+    try {
+        npsp__Opportunity_Naming_Settings__c oSettings2 = new npsp__Opportunity_Naming_Settings__c();
+        oSettings2.Name = 'Membership';
+        oSettings2.npsp__Attribution__c = 'Both';
+        oSettings2.npsp__Date_Format__c = 'dd/MM/yyyy';
+        oSettings2.npsp__Opportunity_Name_Format__c = 'Membre depuis le {!CloseDate} du {!Account.Name} pour {!Amount}';
+        oSettings2.npsp__Opportunity_Record_Types__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Membership').getRecordTypeId();
+        upsert oSettings2;
+    }
+    catch(Exception e){}
 }
 
 public static void adjust_RDSettings() {
