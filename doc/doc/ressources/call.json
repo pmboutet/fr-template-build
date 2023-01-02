@@ -54,8 +54,12 @@ report.type=cpm__Report_Type__c
 
 
 
+
+
+CALL TO CREATE PAYMENT : 
 {
   "cpm__Amount__c" : 99.0,
+  "cpm__Payment_Method__c": "CreditCard",
   "cpm__Date__c" : "2022-12-21",
   "cpm__Debit_Credit_Type__c" : "Credit",
   "cpm__Origin__c" : "iRaiser",
@@ -72,3 +76,5 @@ report.type=cpm__Report_Type__c
   "SFFR_Payer_email__c" : "fpierre@salesforce.com",
   "SFFR_Campaign_Key__c" : "ABC"
 }
+
+To create new payment method go to Findock config
