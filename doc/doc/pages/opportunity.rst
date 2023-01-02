@@ -30,7 +30,6 @@ Adjust the search layout of finding a soft credit
 
 TODO FAB - related list
 RD field read only
-From Contact work on a new RD invoke
 affiliations
  remove all new expect from where this is supposed too
 
@@ -39,6 +38,7 @@ Account soft credit is partial… What to do with that ?
 
 
 TODO DOC APSYNERGY - Recurring Donation
+TODO DOC APSYNERGY - Enable Recurring Donation Change Log Data space considerations
 
 https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Handling_Anonymous_Donors.htm&type=5
 

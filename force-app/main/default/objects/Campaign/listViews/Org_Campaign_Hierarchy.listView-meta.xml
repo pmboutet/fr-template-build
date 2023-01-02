@@ -4,6 +4,7 @@
     <columns>CAMPAIGN.START_DATE</columns>
     <columns>CAMPAIGN.NAME</columns>
     <columns>CAMPAIGN.RECORDTYPE</columns>
+    <columns>SFFR_Dedup_Order__c</columns>
     <columns>TOT_NUM_SENT</columns>
     <columns>CAMPAIGN.TOT_OPPORTUNITIES</columns>
     <columns>TOT_AMOUNT_WON</columns>

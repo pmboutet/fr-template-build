@@ -745,6 +745,11 @@
             <field>SFFR_Retrict_Yearly_Marketing_Sol__c</field>
             <table>Contact</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SFFR_ContactID__c</field>
+            <table>Contact</table>
+        </columns>
         <masterLabel>Contacts</masterLabel>
     </sections>
     <sections>

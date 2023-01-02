@@ -12,9 +12,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Address</fullName>
+                <fullName>DirectMail</fullName>
                 <default>false</default>
-                <label>Address</label>
+                <label>Direct Mail</label>
             </value>
             <value>
                 <fullName>Email</fullName>

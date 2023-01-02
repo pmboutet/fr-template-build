@@ -8,8 +8,10 @@
 */
 public static void SetThemAll() {
     enable_address();
+    adjust_OpportunitySettings();
     adjust_RDSettings();
     adjust_HouseholdNamingSettings();
+    adjust_ErrorSettings();
 }
 
 public static void enable_address() {
@@ -19,13 +21,43 @@ public static void enable_address() {
     upsert cAndOSettings;
 }
 
+public static void adjust_OpportunitySettings() {
+    try {
+        npsp__Opportunity_Naming_Settings__c oSettings1 = new npsp__Opportunity_Naming_Settings__c();
+        oSettings1.Name = 'Donation';
+        oSettings1.npsp__Attribution__c = 'Both';
+        oSettings1.npsp__Date_Format__c = 'dd/MM/yyyy';
+        oSettings1.npsp__Opportunity_Name_Format__c = 'Don le {!CloseDate} du {!Account.Name} pour {!Amount}';
+        oSettings1.npsp__Opportunity_Record_Types__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Donation').getRecordTypeId();
+        upsert oSettings1;
+    }
+	catch(Exception e){}
+    try {
+        npsp__Opportunity_Naming_Settings__c oSettings2 = new npsp__Opportunity_Naming_Settings__c();
+        oSettings2.Name = 'Membership';
+        oSettings2.npsp__Attribution__c = 'Both';
+        oSettings2.npsp__Date_Format__c = 'dd/MM/yyyy';
+        oSettings2.npsp__Opportunity_Name_Format__c = 'Membre depuis le {!CloseDate} du {!Account.Name} pour {!Amount}';
+        oSettings2.npsp__Opportunity_Record_Types__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Membership').getRecordTypeId();
+        upsert oSettings2;
+    }
+    catch(Exception e){}
+}
+
 public static void adjust_RDSettings() {
     npe03__Recurring_Donations_Settings__c rdSettings = npe03__Recurring_Donations_Settings__c.getOrgDefaults();
     Id oppDonationTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Donation').getRecordTypeId();
     rdSettings.npsp__EnableAutomaticNaming__c = True;
     rdSettings.npe03__Record_Type__c = oppDonationTypeId;
-    rdSettings.npsp__RecurringDonationNameFormat__c = '{!npe03__Donor_Name__c} {!npe03__Amount__c} - Recurring';
+    rdSettings.npsp__RecurringDonationNameFormat__c = 'Don régulier de {!npe03__Donor_Name__c}: {!npe03__Amount__c}';
+    rdSettings.npsp__EnableChangeLog__c = True;
     upsert rdSettings;
+}
+
+public static void adjust_ErrorSettings() {
+    npsp__Error_Settings__c errorSettings = npsp__Error_Settings__c.getOrgDefaults();
+    errorSettings.npsp__Respect_Duplicate_Rule_Settings__c = True;
+    upsert errorSettings;
 }
 
 public static void adjust_HouseholdNamingSettings() {

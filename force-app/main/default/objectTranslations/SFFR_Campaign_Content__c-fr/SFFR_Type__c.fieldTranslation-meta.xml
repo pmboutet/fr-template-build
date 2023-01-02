@@ -4,8 +4,8 @@
     <label>Type de contenu</label>
     <name>SFFR_Type__c</name>
     <picklistValues>
-        <masterLabel>Address</masterLabel>
-        <translation>Adresse</translation>
+        <masterLabel>Direct Mail</masterLabel>
+        <translation>Plis</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Email</masterLabel>
