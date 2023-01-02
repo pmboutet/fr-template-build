@@ -56,7 +56,6 @@ report.type=cpm__Report_Type__c
 
 {
   "cpm__Amount__c" : 99.0,
-  "cpm__Contact__c" : "0037a00001sb0gwAAA",
   "cpm__Date__c" : "2022-12-21",
   "cpm__Debit_Credit_Type__c" : "Credit",
   "cpm__Origin__c" : "iRaiser",
@@ -71,7 +70,5 @@ report.type=cpm__Report_Type__c
   "SFFR_Payer_First_Name__c" : "Fabrice",
   "SFFR_Payer_Last_Name__c" : "Pierre",
   "SFFR_Payer_email__c" : "fpierre@salesforce.com",
-  "SFFR_Campaign_Key__c" : "ABC",
-  "SFFR_Fullfilment_Batch__c" : null,
-  "SFFR_Bank_Batch__c" : "12"
+  "SFFR_Campaign_Key__c" : "ABC"
 }

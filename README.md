@@ -13,6 +13,11 @@ To work on this project in a scratch org:
 7.  You need to authorize Data Integrity manually
     Goto Data Integrity
     Authorize using cci org info dev for the moment
+8.  curl (or alike) /services/data/v56.0/sobjects/cpm__Guided_Matching_Setup__c 
+    post this content : doc/doc/pages/inbound_report_set_up.json
+    for the moment 
+9.  manually disabled NPSP payment automatic creation 
+
 
 
 Got some manual update from source files?
