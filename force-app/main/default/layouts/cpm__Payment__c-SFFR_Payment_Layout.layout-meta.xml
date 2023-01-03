@@ -31,6 +31,10 @@
                 <behavior>Edit</behavior>
                 <field>cpm__Inbound_Report__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SFFR_Payment_Group__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
