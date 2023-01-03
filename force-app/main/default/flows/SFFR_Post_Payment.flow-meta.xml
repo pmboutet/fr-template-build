@@ -52,6 +52,11 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>BankLotName</name>
+        <dataType>String</dataType>
+        <expression>&quot;Lot &quot;&amp;TEXT({!getInstallement.cpm__Payment_Method__c})&amp;&quot; du &quot;&amp;TEXT({!$Flow.CurrentDateTime})&amp;IF({!getInstallement.SFFR_Bank_Group__c} = &quot;&quot;, &quot;&quot;, &quot; ext. n°:&quot;&amp;{!getInstallement.SFFR_Bank_Group__c})</expression>
+    </formulas>
     <interviewLabel>SFFR_Post_Payment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFFR_Post_Payment</label>
     <processMetadataValues>
@@ -85,7 +90,7 @@
         <inputAssignments>
             <field>Name</field>
             <value>
-                <elementReference>getInstallement.SFFR_Bank_Group__c</elementReference>
+                <elementReference>BankLotName</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
