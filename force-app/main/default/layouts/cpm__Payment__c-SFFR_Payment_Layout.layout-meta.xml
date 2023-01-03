@@ -33,7 +33,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SFFR_Payment_Group__c</field>
+                <field>SFFR_Bank_Payment_Group__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
