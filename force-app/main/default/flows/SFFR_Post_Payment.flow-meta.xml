@@ -78,6 +78,7 @@
         <label>CreateBankBatch</label>
         <locationX>462</locationX>
         <locationY>984</locationY>
+        <assignRecordIdToReference>bankBatch.Id</assignRecordIdToReference>
         <connector>
             <targetReference>updateRecord</targetReference>
         </connector>
@@ -88,13 +89,24 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>BankRT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>SFFR_External_Reference__c</field>
             <value>
                 <elementReference>getInstallement.SFFR_Bank_Group__c</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Payment_Method__c</field>
+            <value>
+                <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
+            </value>
+        </inputAssignments>
         <object>SFFR_Payment_Group__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <name>getInstallement</name>
@@ -221,7 +233,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Bank</stringValue>
+                <stringValue>SFFR_Bank</stringValue>
             </value>
         </filters>
         <object>RecordType</object>
@@ -240,7 +252,7 @@
         <inputAssignments>
             <field>SFFR_Bank_Payment_Group__c</field>
             <value>
-                <elementReference>CreateBankBatch</elementReference>
+                <elementReference>bankBatch.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -264,7 +276,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>bankBatch</name>
         <dataType>SObject</dataType>
