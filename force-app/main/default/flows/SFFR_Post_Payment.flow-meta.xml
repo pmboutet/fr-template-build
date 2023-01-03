@@ -45,6 +45,9 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>updateRecord</targetReference>
+            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -75,6 +78,9 @@
         <label>CreateBankBatch</label>
         <locationX>462</locationX>
         <locationY>984</locationY>
+        <connector>
+            <targetReference>updateRecord</targetReference>
+        </connector>
         <inputAssignments>
             <field>Name</field>
             <value>
@@ -85,12 +91,6 @@
             <field>SFFR_External_Reference__c</field>
             <value>
                 <elementReference>getInstallement.SFFR_Bank_Group__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>SFFR_Payment_method__c</field>
-            <value>
-                <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
             </value>
         </inputAssignments>
         <object>SFFR_Payment_Group__c</object>
@@ -149,7 +149,7 @@
             </value>
         </filters>
         <filters>
-            <field>SFFR_Payment_method__c</field>
+            <field>SFFR_Payment_Method__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
@@ -194,7 +194,7 @@
             </value>
         </filters>
         <filters>
-            <field>SFFR_Payment_method__c</field>
+            <field>SFFR_Payment_Method__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
@@ -232,6 +232,25 @@
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
+    <recordUpdates>
+        <name>updateRecord</name>
+        <label>updateRecord</label>
+        <locationX>374</locationX>
+        <locationY>1200</locationY>
+        <inputAssignments>
+            <field>SFFR_Bank_Payment_Group__c</field>
+            <value>
+                <elementReference>CreateBankBatch</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>cpm__Payment_Method__c</field>
+            <value>
+                <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
@@ -245,7 +264,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>bankBatch</name>
         <dataType>SObject</dataType>

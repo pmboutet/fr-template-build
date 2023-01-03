@@ -4,29 +4,49 @@
     <active>true</active>
     <label>Fulfillement</label>
     <picklistValues>
-        <picklist>SFFR_Payment_method__c</picklist>
+        <picklist>SFFR_Payment_Method__c</picklist>
         <values>
-            <fullName>ARC</fullName>
+            <fullName>Acceptgiro</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>BOC</fullName>
+            <fullName>BACS Direct Debit</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>CCD</fullName>
+            <fullName>Bollettino Postale</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>PPD</fullName>
+            <fullName>Cash</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>TEL</fullName>
+            <fullName>Check</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>WEB</fullName>
+            <fullName>Credit Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CreditCard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Debit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ideal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OGM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEPA Direct Debit</fullName>
             <default>false</default>
         </values>
     </picklistValues>
