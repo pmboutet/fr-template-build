@@ -39,6 +39,10 @@
                 <behavior>Edit</behavior>
                 <field>SFFR_Payment__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>SFFR_Payment_Split__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
