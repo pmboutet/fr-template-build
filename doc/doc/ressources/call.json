@@ -56,7 +56,55 @@ report.type=cpm__Report_Type__c
 
 
 
-CALL TO CREATE PAYMENT : 
+# 
+#  CALL TO CREATE PAYMENT : 
+#  Cas simple d'un payemnt de 99€ par CB
+#
+{
+  "cpm__Amount__c" : 99.0,
+  "cpm__Payment_Method__c": "CreditCard",
+  "cpm__Date__c" : "2022-12-21",
+  "cpm__Debit_Credit_Type__c" : "Credit",
+  "cpm__Origin__c" : "iRaiser",
+  "cpm__Report_Date__c" : "2022-12-21",
+  "cpm__Report_Type__c" : "France",
+  "cpm__Status__c" : "New",
+  "cpm__Report_SubType__c" : "Générique",
+  "SFFR_Contact_First_Name__c" : "Pierre-Marie",
+  "SFFR_Contact_Last_Name__c" : "Boutet",
+  "SFFR_Contact_Email__c" : "pmboutet@salesforce.com",
+  "SFFR_Contact_Mobile__c" : "0660505772",
+  "SFFR_Campaign_Key__c" : "ABC"
+}
+
+
+
+# 
+#  CALL TO CREATE PAYMENT : 
+#  Add this to previous JSON to create a PAYER 
+#
+
+
+{
+  "SFFR_Payer_First_Name__c" : "Fabrice",
+  "SFFR_Payer_Last_Name__c" : "Pierre",
+  "SFFR_Payer_email__c" : "fpierre@salesforce.com",
+}
+
+# 
+#  CALL TO GROUP SOME PAYMENT : 
+#  Add this to previous JSON to create a PAYER 
+#
+
+{
+  "SFFR_Payment_Key__c" : "123"
+}
+
+
+# 
+#  My test 
+#
+
 {
   "cpm__Amount__c" : 99.0,
   "cpm__Payment_Method__c": "CreditCard",
@@ -76,5 +124,3 @@ CALL TO CREATE PAYMENT :
   "SFFR_Payer_email__c" : "fpierre@salesforce.com",
   "SFFR_Campaign_Key__c" : "ABC"
 }
-
-To create new payment method go to Findock config

@@ -253,6 +253,26 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Payment__c</fieldItem>
+                <identifier>RecordSFFR_Payment_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Payment_Split__c</fieldItem>
+                <identifier>RecordSFFR_Payment_Split_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.npsp4hub__Custom_Payment_Reference__c</fieldItem>
                 <identifier>Recordnpsp4hub_Custom_Payment_Reference_cField</identifier>
             </fieldInstance>
