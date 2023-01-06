@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFFR_Bank_Payment_Group</fullName>
+    <fields>SFFR_Batch_Total__c</fields>
+    <fields>Banked_Total__c</fields>
+    <fields>SFFR_Bank_Date__c</fields>
+    <fields>SFFR_Accounting_Date__c</fields>
+    <fields>OwnerId</fields>
+    <label>Bank Payment Group</label>
+</CompactLayout>

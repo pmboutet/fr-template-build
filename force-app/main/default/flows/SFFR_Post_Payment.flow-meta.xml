@@ -18,6 +18,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>AddPaymentCurrentAmountToBankBatch</name>
+        <label>AddPaymentCurrentAmountToBankBatch</label>
+        <locationX>314</locationX>
+        <locationY>2928</locationY>
+        <assignmentItems>
+            <assignToReference>bankBatch.SFFR_Batch_Total__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.cpm__Amount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AddAmountToBankBatch</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>resetMasterPaymentAmount</name>
         <label>resetMasterPaymentAmount</label>
         <locationX>402</locationX>
@@ -78,7 +94,7 @@
                 <leftValueReference>paymentRT</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>12</stringValue>
+                    <stringValue>preventMeFromRunning </stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -116,7 +132,7 @@
         <name>ifNoMasterPayment_2</name>
         <label>ifNoMasterPayment</label>
         <locationX>446</locationX>
-        <locationY>3264</locationY>
+        <locationY>3384</locationY>
         <defaultConnector>
             <targetReference>CurrentPaymentRecord_withMaster</targetReference>
         </defaultConnector>
@@ -207,7 +223,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>getOppAtInstall</targetReference>
+                <targetReference>AddPaymentCurrentAmountToBankBatch</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -281,7 +297,7 @@
     <recordCreates>
         <name>CreateBankBatch</name>
         <label>CreateBankBatch</label>
-        <locationX>534</locationX>
+        <locationX>578</locationX>
         <locationY>2928</locationY>
         <assignRecordIdToReference>bankBatch.Id</assignRecordIdToReference>
         <connector>
@@ -297,6 +313,12 @@
             <field>RecordTypeId</field>
             <value>
                 <elementReference>BankRT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Batch_Total__c</field>
+            <value>
+                <elementReference>bankBatch.SFFR_Batch_Total__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -548,6 +570,8 @@
         <outputReference>bankBatch</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
+        <queriedFields>Banked_Total__c</queriedFields>
+        <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
@@ -593,6 +617,8 @@
         <outputReference>bankBatch</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
+        <queriedFields>Banked_Total__c</queriedFields>
+        <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
@@ -600,7 +626,7 @@
         <name>getOppAtInstall</name>
         <label>getOppAtInstall</label>
         <locationX>446</locationX>
-        <locationY>3144</locationY>
+        <locationY>3264</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ifNoMasterPayment_2</targetReference>
@@ -721,10 +747,34 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>AddAmountToBankBatch</name>
+        <label>AddAmountToBankBatch</label>
+        <locationX>314</locationX>
+        <locationY>3048</locationY>
+        <connector>
+            <targetReference>getOppAtInstall</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>bankBatch.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SFFR_Batch_Total__c</field>
+            <value>
+                <elementReference>bankBatch.SFFR_Batch_Total__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SFFR_Payment_Group__c</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>CurrentPaymentRecord_withMaster</name>
         <label>CurrentPaymentRecord_withMaster</label>
         <locationX>578</locationX>
-        <locationY>3384</locationY>
+        <locationY>3504</locationY>
         <connector>
             <targetReference>updateMaster</targetReference>
         </connector>
@@ -752,7 +802,7 @@
         <name>fault</name>
         <label>fault</label>
         <locationX>842</locationX>
-        <locationY>3744</locationY>
+        <locationY>3864</locationY>
         <inputAssignments>
             <field>cpm__Description__c</field>
             <value>
@@ -765,7 +815,7 @@
         <name>updateCurrentPaymentRecord</name>
         <label>updateCurrentPaymentRecord</label>
         <locationX>314</locationX>
-        <locationY>3384</locationY>
+        <locationY>3504</locationY>
         <connector>
             <targetReference>updateOpportunityRecord</targetReference>
         </connector>
@@ -799,7 +849,7 @@
         <name>updateMaster</name>
         <label>updateMaster</label>
         <locationX>578</locationX>
-        <locationY>3504</locationY>
+        <locationY>3624</locationY>
         <connector>
             <targetReference>updateOpportunityRecord_withMaster</targetReference>
         </connector>
@@ -859,7 +909,7 @@
         <name>updateOpportunityRecord</name>
         <label>updateOpportunityRecord</label>
         <locationX>314</locationX>
-        <locationY>3504</locationY>
+        <locationY>3624</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -886,7 +936,7 @@
         <name>updateOpportunityRecord_withMaster</name>
         <label>updateOpportunityRecord_withMaster</label>
         <locationX>578</locationX>
-        <locationY>3624</locationY>
+        <locationY>3744</locationY>
         <faultConnector>
             <targetReference>fault</targetReference>
         </faultConnector>
