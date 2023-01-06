@@ -2,6 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SFFR_Split</fullName>
     <active>true</active>
+    <compactLayoutAssignment>SFFR_Payment_compact_layout</compactLayoutAssignment>
     <label>Split</label>
     <picklistValues>
         <picklist>cpm__Payment_Method__c</picklist>
