@@ -5,12 +5,28 @@
         <name>addAmount</name>
         <label>addAmount</label>
         <locationX>490</locationX>
-        <locationY>1824</locationY>
+        <locationY>1944</locationY>
         <assignmentItems>
             <assignToReference>GetMasterPaymentAtThisKey.cpm__Amount__c</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>loopAmount.cpm__Amount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loopAmount</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>resetMasterPaymentAmount</name>
+        <label>resetMasterPaymentAmount</label>
+        <locationX>402</locationX>
+        <locationY>1704</locationY>
+        <assignmentItems>
+            <assignToReference>GetMasterPaymentAtThisKey.cpm__Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.cpm__Amount__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -100,7 +116,7 @@
         <name>ifNoMasterPayment_2</name>
         <label>ifNoMasterPayment</label>
         <locationX>446</locationX>
-        <locationY>3144</locationY>
+        <locationY>3264</locationY>
         <defaultConnector>
             <targetReference>CurrentPaymentRecord_withMaster</targetReference>
         </defaultConnector>
@@ -150,7 +166,7 @@
         <name>ifPGroupNumberSet</name>
         <label>ifPGroupNumberSet</label>
         <locationX>446</locationX>
-        <locationY>2352</locationY>
+        <locationY>2472</locationY>
         <defaultConnector>
             <targetReference>getOpenLots</targetReference>
         </defaultConnector>
@@ -175,7 +191,7 @@
         <name>ifThereIsAnActiveLot</name>
         <label>ifThereIsAnActiveLot</label>
         <locationX>446</locationX>
-        <locationY>2688</locationY>
+        <locationY>2808</locationY>
         <defaultConnector>
             <targetReference>CreateBankBatch</targetReference>
         </defaultConnector>
@@ -233,7 +249,7 @@
         <name>loopAmount</name>
         <label>loopAmount</label>
         <locationX>402</locationX>
-        <locationY>1704</locationY>
+        <locationY>1824</locationY>
         <collectionReference>getSplitedAmountAtThisKey</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -266,7 +282,7 @@
         <name>CreateBankBatch</name>
         <label>CreateBankBatch</label>
         <locationX>534</locationX>
-        <locationY>2808</locationY>
+        <locationY>2928</locationY>
         <assignRecordIdToReference>bankBatch.Id</assignRecordIdToReference>
         <connector>
             <targetReference>getOppAtInstall</targetReference>
@@ -494,7 +510,7 @@
         <name>getOpenLots</name>
         <label>getOpenLots</label>
         <locationX>578</locationX>
-        <locationY>2472</locationY>
+        <locationY>2592</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ifThereIsAnActiveLot</targetReference>
@@ -539,7 +555,7 @@
         <name>getOpenLotsAtPGroupNum</name>
         <label>getOpenLotsAtPGroupNum</label>
         <locationX>314</locationX>
-        <locationY>2472</locationY>
+        <locationY>2592</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ifThereIsAnActiveLot</targetReference>
@@ -584,7 +600,7 @@
         <name>getOppAtInstall</name>
         <label>getOppAtInstall</label>
         <locationX>446</locationX>
-        <locationY>3024</locationY>
+        <locationY>3144</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ifNoMasterPayment_2</targetReference>
@@ -683,7 +699,7 @@
         <locationY>1584</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>loopAmount</targetReference>
+            <targetReference>resetMasterPaymentAmount</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -708,7 +724,7 @@
         <name>CurrentPaymentRecord_withMaster</name>
         <label>CurrentPaymentRecord_withMaster</label>
         <locationX>578</locationX>
-        <locationY>3264</locationY>
+        <locationY>3384</locationY>
         <connector>
             <targetReference>updateMaster</targetReference>
         </connector>
@@ -736,7 +752,7 @@
         <name>fault</name>
         <label>fault</label>
         <locationX>842</locationX>
-        <locationY>3624</locationY>
+        <locationY>3744</locationY>
         <inputAssignments>
             <field>cpm__Description__c</field>
             <value>
@@ -749,7 +765,7 @@
         <name>updateCurrentPaymentRecord</name>
         <label>updateCurrentPaymentRecord</label>
         <locationX>314</locationX>
-        <locationY>3264</locationY>
+        <locationY>3384</locationY>
         <connector>
             <targetReference>updateOpportunityRecord</targetReference>
         </connector>
@@ -783,7 +799,7 @@
         <name>updateMaster</name>
         <label>updateMaster</label>
         <locationX>578</locationX>
-        <locationY>3384</locationY>
+        <locationY>3504</locationY>
         <connector>
             <targetReference>updateOpportunityRecord_withMaster</targetReference>
         </connector>
@@ -819,17 +835,31 @@
         <name>updateMasterAmount</name>
         <label>updatM</label>
         <locationX>402</locationX>
-        <locationY>2040</locationY>
+        <locationY>2160</locationY>
         <connector>
             <targetReference>ifPGroupNumberSet</targetReference>
         </connector>
-        <inputReference>GetMasterPaymentAtThisKey</inputReference>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetMasterPaymentAtThisKey.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>cpm__Amount__c</field>
+            <value>
+                <elementReference>GetMasterPaymentAtThisKey.cpm__Amount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>cpm__Payment__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>updateOpportunityRecord</name>
         <label>updateOpportunityRecord</label>
         <locationX>314</locationX>
-        <locationY>3384</locationY>
+        <locationY>3504</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -856,7 +886,7 @@
         <name>updateOpportunityRecord_withMaster</name>
         <label>updateOpportunityRecord_withMaster</label>
         <locationX>578</locationX>
-        <locationY>3504</locationY>
+        <locationY>3624</locationY>
         <faultConnector>
             <targetReference>fault</targetReference>
         </faultConnector>
@@ -885,6 +915,14 @@
     <start>
         <locationX>155</locationX>
         <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>cpm__Installment__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <object>cpm__Payment__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <scheduledPaths>
