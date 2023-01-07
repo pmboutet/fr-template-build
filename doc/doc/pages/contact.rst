@@ -201,6 +201,10 @@ SI PERSONNE MARQUEE DCD :
   3. Si dons dans l'année -> créer tache générer reçus fiscaux 
 
 
+#TODO PMD Design Review
+https://www.salesforceben.com/salesforce-duplicate-rules/#:~:text=Duplicate%20Rules%3A%20Will%20use%20those,Contacts%2C%20upon%20create%20and%20edit.
+https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Merge_Contacts.htm&type=5
+
 #Fabrice POC
 Portal POC
 

@@ -8,6 +8,7 @@
 */
 public static void SetThemAll() {
     enable_address();
+    adjust_PaymentsSettings();
     adjust_OpportunitySettings();
     adjust_RDSettings();
     adjust_HouseholdNamingSettings();
@@ -21,6 +22,11 @@ public static void enable_address() {
     upsert cAndOSettings;
 }
 
+public static void adjust_PaymentsSettings() {
+    npe01__Contacts_And_Orgs_Settings__c cAndOSettings = npe01__Contacts_And_Orgs_Settings__c.getOrgDefaults();
+    cAndOSettings.npe01__Payments_Enabled__c = False;
+    upsert cAndOSettings;
+}
 public static void adjust_OpportunitySettings() {
     try {
         npsp__Opportunity_Naming_Settings__c oSettings1 = new npsp__Opportunity_Naming_Settings__c();

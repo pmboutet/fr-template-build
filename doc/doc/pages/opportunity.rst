@@ -27,16 +27,6 @@ TODO DESIGN FAB Partial Soft credit
 https://help.salesforce.com/s/articleView?id=sfdo.NPSP_Create_Soft_Credits.htm&type=5
 Adjust the search layout of finding a soft credit
 
-
-TODO FAB - related list
-RD field read only
-affiliations
- remove all new expect from where this is supposed too
-
-Account soft credit is partial… What to do with that ?
-
-
-
 TODO DOC APSYNERGY - Recurring Donation
 TODO DOC APSYNERGY - Enable Recurring Donation Change Log Data space considerations
 
