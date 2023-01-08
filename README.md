@@ -17,6 +17,7 @@ To work on this project in a scratch org:
     post this content : doc/doc/pages/ressources/inbound_report_set_up.json
     for the moment @TODO DESIGN FAB
 9.  manually disabled NPSP payment automatic creation @TODO DESIGN FAB
+10. create Check and Cash payment method within findock general config and deploy it @TODO FAB
 
 
 
