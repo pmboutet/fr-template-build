@@ -130,10 +130,6 @@
     <picklistValues>
         <picklist>npsp4hub__Payment_Method__c</picklist>
         <values>
-            <fullName>Acceptgiro</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>BACS Direct Debit</fullName>
             <default>false</default>
         </values>
