@@ -6,7 +6,7 @@
     <label>Payment Group</label>
     <referenceTo>SFFR_Payment_Group__c</referenceTo>
     <relationshipLabel>Payments</relationshipLabel>
-    <relationshipName>Group of Payments</relationshipName>
+    <relationshipName>GroupOfPayments</relationshipName>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
