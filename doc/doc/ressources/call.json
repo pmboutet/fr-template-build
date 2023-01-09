@@ -100,9 +100,32 @@ report.type=cpm__Report_Type__c
   "SFFR_Payment_Key__c" : "123"
 }
 
+# 
+#  My test cas simple avec Payeur 
+#
+
+{
+  "cpm__Amount__c" : 20.0,
+  "cpm__Payment_Method__c": "CreditCard",
+  "cpm__Date__c" : "2022-12-21",
+  "cpm__Debit_Credit_Type__c" : "Credit",
+  "cpm__Origin__c" : "iRaiser",
+  "cpm__Report_Date__c" : "2022-12-21",
+  "cpm__Report_Type__c" : "France",
+  "cpm__Status__c" : "New",
+  "cpm__Report_SubType__c" : "Générique",
+  "SFFR_Contact_First_Name__c" : "Salomé",
+  "SFFR_Contact_Last_Name__c" : "Boutet",
+  "SFFR_Contact_Email__c" : "sboutet@salesforce.com",
+  "SFFR_Contact_Mobile__c" : "0660505772",
+  "SFFR_Payer_First_Name__c" : "Pierre-Marie",
+  "SFFR_Payer_Last_Name__c" : "Boutet",
+  "SFFR_Payer_email__c" : "pmboutet@salesforce.com",
+  "SFFR_Campaign_Key__c" : "campagne-cotisation"
+}
 
 # 
-#  My test 
+#  My test A 
 #
 
 [{
