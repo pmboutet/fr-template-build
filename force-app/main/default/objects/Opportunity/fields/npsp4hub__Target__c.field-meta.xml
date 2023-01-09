@@ -9,7 +9,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <controllingField>npsp4hub__Target__c</controllingField>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
