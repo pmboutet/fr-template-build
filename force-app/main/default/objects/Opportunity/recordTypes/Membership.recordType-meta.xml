@@ -185,13 +185,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>npsp4hub__Target__c</picklist>
-        <values>
-            <fullName>Sepa Bank</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>npsp__Acknowledgment_Status__c</picklist>
         <values>
             <fullName>Acknowledged</fullName>
