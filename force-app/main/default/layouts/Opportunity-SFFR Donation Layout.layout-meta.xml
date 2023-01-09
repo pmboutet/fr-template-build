@@ -307,10 +307,6 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>npe01__OppPayment__c.npe01__Opportunity__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>ContactName</fields>
         <fields>Role</fields>
         <fields>ContactTitle</fields>
@@ -383,7 +379,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h3N000004Mfz5</masterLabel>
+        <masterLabel>00h7a000002vC20</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
