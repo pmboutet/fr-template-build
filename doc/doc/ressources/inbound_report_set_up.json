@@ -9,6 +9,7 @@
     "cpm__Target__c" : "-"
 }
 
+
   il faut aussi ajouter une méthode de payment "cash" et une méthode de payment "check" puis déployer la config
 
   il faut aller dans setup >> Process Automation Settings >> et definir un user par défaut 

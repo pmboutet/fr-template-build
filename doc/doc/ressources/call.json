@@ -1,189 +1,60 @@
 
-
+//sercice URL 
 /services/data/v56.0/sobjects/cpm__Inbound_Report__c
-{
-    "cpm__Report_Type__c": "France", 
-    "cpm__Report_SubType__c": "Generic", 
-    "cpm__Contact__c": "0037a00001s2NBkAAM",
-    "cpm__Campaign__c": "7017a000001BE5RAAW",
-    "cpm__Status__c": "New",
-    "cpm__Amount__c": "50.00",
-    "cpm__Payment_Method__c": "credit_card",
-    "cpm__Date__c":"12/12/2022"
-  }
-
-  {
-    "cpm__Report_Type__c": "France", 
-    "cpm__Report_SubType__c": "Générique", 
-    "SFFR_Contact_First_Name__c": "Pierre-Marie",
-    "SFFR_Contact_Last_Name__c": "Boutet",
-    "SFFR_Contact_Last_Name__c": "pmboutet@salesforce.com"
-  }
-#Mapping values
-#Fri Dec 02 13:51:02 CET 2022
-c.LastName=Temp_2__c
-c.civi=Temp_3__c
-c.email=Temp_4__c
-c.extKey=Temp_7__c
-c.fName=Temp_1__c
-o.don.1.amount=cpm__Amount__c
-o.don.1.date=cpm__Date__c
-ori.campaign=Temp_11__c
-ori.provider=cpm__Origin__c
-
-p.subMethod=Temp_9__c
-report.status=cpm__Status__c
-report.subtype=cpm__Report_SubType__c
-report.type=cpm__Report_Type__c
-
-2, 3, 4, 7, 11, 1, 9
 
 {
-  "cpm__Report_Type__c": "France", 
-  "cpm__Report_SubType__c": "Générique", 
-  "cpm__Status__c": "New",
-  "SFFR_Contact_First_Name__c": "Pierre-Marie",
-  "SFFR_Contact_Last_Name__c": "Boutet",
-  "SFFR_Contact_Email__c": "pmboutet@salesforce.com",
-  "cpm__Campaign__c": "7017a000001BE5RAAW",
-  "cpm__Amount__c": "50.00",
-  "cpm__Payment_Method__c": "credit_card",
-  "cpm__Date__c":"12/12/2022"
-}
-
-
-
-
-
-
-# 
-#  CALL TO CREATE PAYMENT : 
-#  Cas simple d'un payemnt de 99€ par CB
-#
-{
-  "cpm__Amount__c" : 99.0,
-  "cpm__Payment_Method__c": "CreditCard",
-  "cpm__Date__c" : "2022-12-21",
-  "cpm__Debit_Credit_Type__c" : "Credit",
-  "cpm__Origin__c" : "iRaiser",
-  "cpm__Report_Date__c" : "2022-12-21",
-  "cpm__Report_Type__c" : "France",
-  "cpm__Status__c" : "New",
-  "cpm__Report_SubType__c" : "Générique",
-  "SFFR_Contact_First_Name__c" : "Pierre-Marie",
-  "SFFR_Contact_Last_Name__c" : "Boutet",
-  "SFFR_Contact_Email__c" : "pmboutet@salesforce.com",
+  //processor
+  "cpm__Report_Type__c" : "France", //mandatory don't change
+  "cpm__Report_SubType__c" : "Générique", // mandatory don't change
+  "cpm__Status__c" : "New", //mandatory don't change
+  //contact
+  "SFFR_Contact_First_Name__c" : "Ronald",
+  "SFFR_Contact_Last_Name__c" : "Durand",
+  "SFFR_Contact_Email__c" : "sqqdsdqsdqsdurand@salesforce.com",
   "SFFR_Contact_Mobile__c" : "0660505772",
-  "SFFR_Campaign_Key__c" : "ABC"
-}
-
-
-
-# 
-#  CALL TO CREATE PAYMENT : 
-#  Add this to previous JSON to create a PAYER 
-#
-
-
-{
+  //payer (optionnal : don't add those fields if payer = contact)
   "SFFR_Payer_First_Name__c" : "Fabrice",
   "SFFR_Payer_Last_Name__c" : "Pierre",
   "SFFR_Payer_email__c" : "fpierre@salesforce.com",
+  //campaign
+  "cpm__Origin__c" : "HelloAsso", 
+  "SFFR_Campaign_Key__c" : "campagne-noel-22", // campaign external key. If no key found this will create a campaign 
+  //payment groups / batches 
+  "SFFR_Bank_Payment_Group_Ext_Key__c": "BNP10", // bank batch (optional : auto-created if null) 
+  "SFFR_Fullfilment_Payment_Group__c": "1234",  // fullfilment batch 
+  //Payment and affectation
+  "cpm__Amount__c" : 20.0, // amount 
+  "cpm__Payment_Method__c": "Check", //payment_method
+  "SFFR_Type__c": "Donation",  //Donation or Membership record type
+  "cpm__Date__c" : "2022-12-21", // donation/opportunity date 
+  "cpm__Report_Date__c" : "2022-12-21", // fullfilment date
+  "cpm__Debit_Credit_Type__c" : "Credit", //Credit or Debit (debit not tested so far)
+  //Payment key to regroup payments 
+  "SFFR_Payment_Key__c" : "111111111" // this will create a master payment and attach eatch payment to it as a payment split 
+                                      // note that a payment key only regroup payment from same fullfilment payment group and same payment_method
 }
 
-# 
-#  CALL TO GROUP SOME PAYMENT : 
-#  Add this to previous JSON to create a PAYER 
-#
 
 {
-  "SFFR_Payment_Key__c" : "123"
-}
-
-# 
-#  My test 1 : 
-#
-
-{
-  "cpm__Amount__c" : 20.0,
-  "cpm__Payment_Method__c": "CreditCard",
-  "cpm__Date__c" : "2022-12-21",
-  "cpm__Debit_Credit_Type__c" : "Credit",
-  "cpm__Origin__c" : "iRaiser",
-  "cpm__Report_Date__c" : "2022-12-21",
-  "cpm__Report_Type__c" : "France",
-  "cpm__Status__c" : "New",
-  "cpm__Report_SubType__c" : "Générique",
+  "cpm__Report_Type__c" : "France", 
+  "cpm__Report_SubType__c" : "Générique", 
+  "cpm__Status__c" : "New", 
   "SFFR_Contact_First_Name__c" : "Ronald",
-  "SFFR_Contact_Last_Name__c" : "Dupond",
-  "SFFR_Contact_Email__c" : "RonaldDupond@salesforce.com",
+  "SFFR_Contact_Last_Name__c" : "Durand",
+  "SFFR_Contact_Email__c" : "sqqdsdqsdqsdurand@salesforce.com",
   "SFFR_Contact_Mobile__c" : "0660505772",
-  "SFFR_Campaign_Key__c" : "campagne-noel-22",
-  "SFFR_Bank_Payment_Group_Ext_Key__c": "POC IS"
-}
-
-{
-  "cpm__Amount__c" : 20.0,
-  "cpm__Payment_Method__c": "CreditCard",
+  "SFFR_Payer_First_Name__c" : "Fabrice",
+  "SFFR_Payer_Last_Name__c" : "Pierre",
+  "SFFR_Payer_email__c" : "fpierre@salesforce.com",
+  "cpm__Origin__c" : "HelloAsso", 
+  "SFFR_Campaign_Key__c" : "campagne-noel-22", 
+  "SFFR_Bank_Payment_Group_Ext_Key__c": "BNP10", 
+  "SFFR_Fullfilment_Payment_Group__c": "1234", 
+  "cpm__Amount__c" : 20.0, 
+  "cpm__Payment_Method__c": "Check",
+  "SFFR_Type__c": "Donation", 
   "cpm__Date__c" : "2022-12-21",
-  "cpm__Debit_Credit_Type__c" : "Credit",
-  "cpm__Origin__c" : "iRaiser",
   "cpm__Report_Date__c" : "2022-12-21",
-  "cpm__Report_Type__c" : "France",
-  "cpm__Status__c" : "New",
-  "cpm__Report_SubType__c" : "Générique",
-  "SFFR_Contact_First_Name__c" : "Salomé",
-  "SFFR_Contact_Last_Name__c" : "Boutet",
-  "SFFR_Contact_Email__c" : "sboutet@salesforce.com",
-  "SFFR_Contact_Mobile__c" : "0660505772",
-  "SFFR_Payer_First_Name__c" : "Pierre-Marie",
-  "SFFR_Payer_Last_Name__c" : "Boutet",
-  "SFFR_Payer_email__c" : "pmboutet@salesforce.com",
-  "SFFR_Campaign_Key__c" : "campagne-noel-22",
-  "SFFR_Bank_Payment_Group_Ext_Key__c": "POC IS"
+  "cpm__Debit_Credit_Type__c" : "Credit", 
+  "SFFR_Payment_Key__c" : "111111111"
 }
-
-
-{
-  "cpm__Amount__c" : 30.0,
-  "cpm__Payment_Method__c": "CreditCard",
-  "cpm__Date__c" : "2022-12-21",
-  "cpm__Debit_Credit_Type__c" : "Credit",
-  "cpm__Origin__c" : "iRaiser",
-  "cpm__Report_Date__c" : "2022-12-21",
-  "cpm__Report_Type__c" : "France",
-  "cpm__Status__c" : "New",
-  "cpm__Report_SubType__c" : "Générique",
-  "SFFR_Contact_First_Name__c" : "Sophie",
-  "SFFR_Contact_Last_Name__c" : "SFDO",
-  "SFFR_Contact_Email__c" : "ssfdo@salesforce.com",
-  "SFFR_Contact_Mobile__c" : "0660505772",
-  "SFFR_Payer_First_Name__c" : "Paul",
-  "SFFR_Payer_Last_Name__c" : "MSFDO",
-  "SFFR_Payer_email__c" : "msfdo@salesforce.com",
-  "SFFR_Campaign_Key__c" : "campagne-noel-22",
-  "SFFR_Payment_Key__c" : "DOFPIDOQIFPDLSklSMLDKQMLA",
-  "SFFR_Bank_Payment_Group_Ext_Key__c": "POC IS"
-}
-{
-  "cpm__Amount__c" : 15.0,
-  "cpm__Payment_Method__c": "CreditCard",
-  "cpm__Date__c" : "2022-12-21",
-  "cpm__Debit_Credit_Type__c" : "Credit",
-  "cpm__Origin__c" : "iRaiser",
-  "cpm__Report_Date__c" : "2022-12-21",
-  "cpm__Report_Type__c" : "France",
-  "cpm__Status__c" : "New",
-  "cpm__Report_SubType__c" : "Générique",
-  "SFFR_Contact_First_Name__c" : "Sophie",
-  "SFFR_Contact_Last_Name__c" : "SFDO",
-  "SFFR_Contact_Email__c" : "ssfdo@salesforce.com",
-  "SFFR_Contact_Mobile__c" : "0660505772",
-  "SFFR_Payer_First_Name__c" : "Paul",
-  "SFFR_Payer_Last_Name__c" : "MSFDO",
-  "SFFR_Payer_email__c" : "msfdo@salesforce.com",
-  "SFFR_Campaign_Key__c" : "campagne-noel-22",
-  "SFFR_Payment_Key__c" : "DOFPIDOQIFPDLSklSMLDKQMLA",
-  "SFFR_Bank_Payment_Group_Ext_Key__c": "POC IS"
-}
-
