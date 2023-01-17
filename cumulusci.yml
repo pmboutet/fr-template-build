@@ -6,13 +6,13 @@ project:
         api_version: '56.0'
     dependencies:
         - github: https://github.com/SalesforceFoundation/NPSP
-        - github: https://github.com/FinDockLabs/findock-fr-template
+        - github: https://github.com/SFDO-Alliances/findock-fr-template
         - namespace: sfdo_analytics
           version: 1.5
         - namespace: "insights"
           version: 1.23
     git:
-        default_branch: 'main'
+        default_branch: 'third-party-integration'
         repo_url: https://github.com/pmboutet/fr-template-build
 
     source_format: sfdx
@@ -334,6 +334,11 @@ flows:
             options:
                 api_names: npsp__Engagement_Plan__c
                 value: "%%%NAMESPACE%%%SFFR_Compact_Layout"
+          11:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: cpm__Payment__c
+                value: "%%%NAMESPACE%%%SFFR_Payment_compact_layout"
 
     sffr_add_data:
         description: Cleans up data and disables triggers before running data load.

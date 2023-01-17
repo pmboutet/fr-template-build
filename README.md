@@ -13,6 +13,13 @@ To work on this project in a scratch org:
 7.  You need to authorize Data Integrity manually
     Goto Data Integrity
     Authorize using cci org info dev for the moment
+8.  curl (or alike) /services/data/v56.0/sobjects/cpm__Guided_Matching_Setup__c 
+    post this content : doc/doc/pages/ressources/inbound_report_set_up.json
+    for the moment @TODO DESIGN FAB
+9.  manually disabled NPSP payment automatic creation @TODO DESIGN FAB
+10. create Check and Cash payment method within findock general config and deploy it @TODO FAB
+11. create manually a new NPSP installment.SFFR_Type -> recordTypeID rule in PAYMENTHUB FOR NPSP Opportunity Installment Field Mapping
+
 
 
 Got some manual update from source files?
