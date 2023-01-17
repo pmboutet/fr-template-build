@@ -14,9 +14,7 @@ To work on this project in a scratch org:
 7.  Authorize Data Integrity
    From Data Integrity, Select France, (cci org inf dev) to enter username/password
 8.  Authorize Findock(ProcessingHub, WebHub)
-9.  manually disabled NPSP payment automatic creation @TODO DESIGN FAB
-10. create Check and Cash payment method within findock general config and deploy it @TODO FAB
-11. create manually a new NPSP installment.SFFR_Type -> recordTypeID rule in PAYMENTHUB FOR NPSP Opportunity Installment Field Mapping
+9. create manually a new NPSP installment.SFFR_Type -> recordTypeID rule in PAYMENTHUB FOR NPSP Opportunity Installment Field Mapping
 
 
 

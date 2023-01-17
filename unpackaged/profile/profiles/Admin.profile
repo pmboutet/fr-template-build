@@ -53,5 +53,4 @@
         <layoutAssignments>
                 <layout>Task-SFFR Task Layout</layout>
         </layoutAssignments>
-
 </Profile>

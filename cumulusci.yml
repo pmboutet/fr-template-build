@@ -282,7 +282,12 @@ flows:
                 - record_type: Account.HH_Account
                   default: true
                 - record_type: Account.Organization
-
+                - record_type: cpm__Payment__c.SFFR_Payment
+                  default: true
+                - record_type: cpm__Payment__c.SFFR_Split
+                - record_type: SFFR_Payment_Group__c.SFFR_Bank
+                  default: true
+                - record_type: SFFR_Payment_Group__c.SFFR_Fulfillement
           2:
             task: deploy
             ui_options:
