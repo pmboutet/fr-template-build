@@ -12,7 +12,7 @@ project:
         - namespace: "insights"
           version: 1.23
     git:
-        default_branch: 'third-party-integration'
+        default_branch: 'main'
         repo_url: https://github.com/pmboutet/fr-template-build
 
     source_format: sfdx

@@ -9,10 +9,11 @@ To work on this project in a scratch org:
 3.  Run `cci flow run dev_org --org dev` to deploy this project.
 4.  Run `cci flow run sffr_post_install --org dev` to run robot automations
 5.  Run `cci org browser dev` to open the org in your browser.
-6.  You must Activate the Euro Currency under Setup/System Information
-7.  You need to authorize Data Integrity manually
-    Goto Data Integrity
-    Authorize using cci org info dev for the moment
+6.  Activate the Euro Currency
+   Setup, Company Information, Edit, currency Locale = French(France) - EUR, Save
+7.  Authorize Data Integrity
+   From Data Integrity, Select France, (cci org inf dev) to enter username/password
+8.  Authorize Findock(ProcessingHub, WebHub)
 8.  curl (or alike) /services/data/v56.0/sobjects/cpm__Guided_Matching_Setup__c 
     post this content : doc/doc/pages/ressources/inbound_report_set_up.json
     for the moment @TODO DESIGN FAB
