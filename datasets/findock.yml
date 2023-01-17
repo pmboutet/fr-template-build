@@ -1,0 +1,11 @@
+Insert cpm__Guided_Matching_Setup__c:
+  sf_object: cpm__Guided_Matching_Setup__c
+  fields:
+  - Name
+  - cpm__Active__c
+  - cpm__Job_Size__c
+  - cpm__Object__c
+  - cpm__Report_Sub_Type__c
+  - cpm__Report_Type__c
+  - cpm__Rules__c
+  - cpm__Target__c

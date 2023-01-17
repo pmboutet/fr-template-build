@@ -112,6 +112,16 @@ tasks:
             drop_missing_schema: True
             ignore_row_errors: true
 
+    sffr_load_findockdata:
+        description: Load Findock Dataset for Guided Matching
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: "SFFR: Findock Data Load"
+        options:
+            mapping: datasets/findock.yml
+            sql_path: datasets/findock.sql
+            drop_missing_schema: True
+            ignore_row_errors: true
+
     sffr_translations:
         description: Configure Translations
         class_path: cumulusci.tasks.salesforce.Deploy
@@ -209,6 +219,8 @@ flows:
             8:
                 task: sffr_dataintegritysandbox
             9:
+                task: sffr_load_findockdata
+            10:
                 flow: complete_install
                 
     config_qa:
