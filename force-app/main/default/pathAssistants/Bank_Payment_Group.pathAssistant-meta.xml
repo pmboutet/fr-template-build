@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>SFFR_Payment_Group__c</entityName>
+    <fieldName>SFFR_Status__c</fieldName>
+    <masterLabel>Bank Payment Group</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>SFFR_Bank_Date__c</fieldNames>
+        <info>&lt;p&gt;Add the date when this payment group is sent to bank. &lt;/p&gt;&lt;p&gt;Note that bank date field will be automatically automatically  set to day date for &amp;quot;credit card&amp;quot; or &amp;quot;transfer&amp;quot; like payment method.&lt;/p&gt;</info>
+        <picklistValueName>Bank</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SFFR_Status__c</fieldNames>
+        <info>&lt;p&gt;Payment group is automatically closed after the maximum payment per group configured by your administrator. You can close the Payment Group manually anyway.&lt;/p&gt;&lt;p&gt;Note that bank group will be automatically close every day.&lt;/p&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SFFR_Status__c</fieldNames>
+        <info>&lt;p&gt;Before sending to the bank verify that the payment group amount is equal to the expected sum of payment. &lt;/p&gt;&lt;p&gt;Note that this action is critical for checks and cash payments&lt;/p&gt;</info>
+        <picklistValueName>Pre-checked</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Set this status if accounting team adjusted all payment and payment groups. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Reconciled</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>SFFR_Bank</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>Bank_Payment_Group</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Bank Payment Group</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>SFFR_Bank</recordTypeName>
+    <sobjectType>SFFR_Payment_Group__c</sobjectType>
+    <targetField>SFFR_Status__c</targetField>
+    <targetFieldChangeToValues>Reconciled,Pre-checked</targetFieldChangeToValues>
+</AnimationRule>

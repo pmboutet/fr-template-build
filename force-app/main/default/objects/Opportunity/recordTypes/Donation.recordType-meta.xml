@@ -128,6 +128,64 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>npsp4hub__Payment_Method__c</picklist>
+        <values>
+            <fullName>BACS Direct Debit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bollettino Postale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CreditCard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Debit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ideal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OGM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEPA Direct Debit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>npsp4hub__Payment_Processor__c</picklist>
+        <values>
+            <fullName>Custom Processor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaymentHub-SEPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PaymentHub-Stripe</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>npsp__Acknowledgment_Status__c</picklist>
         <values>
             <fullName>Acknowledged</fullName>

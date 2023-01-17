@@ -366,3 +366,42 @@ If there is an error in a batch (like non existing campaign code) clients have 2
 
 Best option is to perform a dryrun import and ask for corrections before writing a single line in the accounting. 
 
+
+
+
+FICHIER DE CONFIG GUIDED matching
+-----------------------------------
+
+Dans guided_matching_setups (l'objet) : 
+
+Rules for the ruleset:
+Make sure to create the temp fields
+Use Report Type = France 
+and Report Sub Type = Generic
+Object = Inbound_Report
+Target = -
+Active = True
+
+Mapping : 
+
+[{"iconName":"standard:queue","ruleType":"findDuplicates","multipleResultsStrategy":"takeFirst","singleResultStrategy":"takeSingleResult","name":"FindDuplicateByContactDetails","fieldMapping":{"FirstName":{"type":"field","fieldName":"Temp_1__c"},"LastName":{"type":"field","fieldName":"Temp_2__c"}},"id":"JN9ect-81088694","fieldName":"cpm__Contact__c","fieldType":"reference","seqNr":"1","jobNr":"1"},{"jobNr":"1","seqNr":"2","fieldType":"picklist","fieldName":"cpm__Debit_Credit_Type__c","id":"jklNjc-83288307","constant":"Credit","name":"SetDebitCreditTypeToCredit","ruleType":"constant"},{"iconName":"standard:display_text","ruleType":"regexp","name":"SetPaymentMethod","inputFieldName":"Payment_Method_Normalised__c","regExp":".*","regExpCapturingGroup":0,"id":"g4WR7C-81653155","fieldName":"cpm__Payment_Method__c","fieldType":"string","seqNr":"3","jobNr":"1"},{"jobNr":"1","seqNr":"4","fieldType":"reference","fieldName":"cpm__Campaign__c","id":"r1dIzg-98868024","name":"FindCampaignByExternalId","queryFirstWhereTransactionField":"Temp_11__c","queryFirstWhereQueryObjectField":"External_Campaign_Name__c","queryReturnField":"Id","queryObject":"Campaign","singleResultStrategy":"takeSingleResult","multipleResultsStrategy":"guidedReview","ruleType":"query","iconName":"standard:entity"},{"entryCriteria":[{"comparisonOperator":"notEquals","fieldType":"textarea","fieldName":"Temp_1__c","id":"i3oSyW-83778502"},{"comparisonOperator":"notEquals","fieldType":"textarea","fieldName":"Temp_2__c","id":"bhxzTk-83786557"},{"comparisonOperator":"notEquals","fieldType":"textarea","fieldName":"Temp_4__c","id":"rhXdWk-83924207"}],"iconName":"standard:record_create","ruleType":"createContact","name":"CreateContactIfNotFound","fieldMapping":{"FirstName":{"type":"field","fieldName":"Temp_1__c"},"LastName":{"type":"field","fieldName":"Temp_2__c"},"Salutation":{"type":"field","fieldName":"Temp_3__c"}},"id":"Bhtdw8-81189148","fieldName":"cpm__Contact__c","fieldType":"reference","seqNr":"5","jobNr":"1"},{"jobNr":"1","seqNr":"6","fieldType":"reference","fieldName":"cpm__Contact__c","id":"4102gz-83716823","name":"ContactGuidedReview","guidedReviewAccountSearchFieldsToDisplay":["Name"],"guidedReviewSearchFieldsToDisplay":["FirstName","LastName","npe01__HomeEmail__c"],"referencedObject":"Contact","guidedReviewType":"contactAccountSearch","ruleType":"manualInput"},{"fieldMapping":{"cpm__Payment_Method__c":{"fieldName":"Payment_Method_Normalised__c","type":"field"}},"iconName":"standard:record_create","ruleType":"createInstallment","name":"CreateInstallment","id":"ZtZRFL-81412076","fieldName":"cpm__Installment__c","fieldType":"reference","seqNr":"7","jobNr":"1"},{"userGuidance":"Please attach a not already collected installment.","jobNr":"1","seqNr":"8","iconName":"standard:partner_fund_allocation","id":"PROCINS","fieldType":"reference","fieldName":"cpm__Installment__c","name":"ProcessInstallment","ruleType":"processInstallment"}]
+
+Dataloarder : 
+
+#Mapping values
+#Fri Dec 02 13:51:02 CET 2022
+c.LastName=Temp_2__c
+c.civi=Temp_3__c
+c.email=Temp_4__c
+c.extKey=Temp_7__c
+c.fName=Temp_1__c
+o.don.1.amount=cpm__Amount__c
+o.don.1.date=cpm__Date__c
+ori.campaign=Temp_11__c
+ori.provider=cpm__Origin__c
+p.subMethod=Temp_9__c
+report.status=cpm__Status__c
+report.subtype=cpm__Report_SubType__c
+report.type=cpm__Report_Type__c
+
+
