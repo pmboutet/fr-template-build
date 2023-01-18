@@ -59,6 +59,16 @@
                 <identifier>Recordcpm_Collection_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Bank_Deposit_Date__c</fieldItem>
+                <identifier>RecordSFFR_Bank_Deposit_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-cddaaacf-27f9-44ef-963a-dddd537f5d58</name>
         <type>Facet</type>
     </flexiPageRegions>
