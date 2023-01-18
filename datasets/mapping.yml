@@ -1,0 +1,1220 @@
+Insert BusinessHours:
+  sf_object: BusinessHours
+  fields:
+  - IsActive
+  - IsDefault
+  - Name
+  - TimeZoneSidKey
+Insert SFFR_Campaign_Content__c:
+  sf_object: SFFR_Campaign_Content__c
+  fields:
+  - Name
+  - SFFR_Description__c
+  - SFFR_Type__c
+  - SFFR_Unit_Cost__c
+Insert SFFR_Payment_Group__c:
+  sf_object: SFFR_Payment_Group__c
+  fields:
+  - Banked_Total__c
+  - Name
+  - RecordTypeId
+  - SFFR_Accounting_Date__c
+  - SFFR_Bank_Date__c
+  - SFFR_Batch_Total__c
+  - SFFR_External_Reference__c
+  - SFFR_Payment_Method__c
+  - SFFR_Status__c
+Insert cpm__Guided_Matching_Setup__c:
+  sf_object: cpm__Guided_Matching_Setup__c
+  fields:
+  - Name
+  - cpm__Active__c
+  - cpm__Job_Size__c
+  - cpm__Object__c
+  - cpm__Report_Sub_Type__c
+  - cpm__Report_Type__c
+  - cpm__Rules__c
+  - cpm__Target__c
+Insert npo02__Household__c:
+  sf_object: npo02__Household__c
+  fields:
+  - Name
+  - npo02__Always_Anonymous__c
+  - npo02__AverageAmount__c
+  - npo02__Best_Gift_Year_Total__c
+  - npo02__Best_Gift_Year__c
+  - npo02__FirstCloseDate__c
+  - npo02__Formal_Greeting__c
+  - npo02__HouseholdEmail__c
+  - npo02__HouseholdPhone__c
+  - npo02__Household_ID__c
+  - npo02__Informal_Greeting__c
+  - npo02__LargestAmount__c
+  - npo02__LastCloseDate__c
+  - npo02__LastMembershipAmount__c
+  - npo02__LastMembershipDate__c
+  - npo02__LastMembershipLevel__c
+  - npo02__LastMembershipOrigin__c
+  - npo02__LastOppAmount__c
+  - npo02__MailingCity__c
+  - npo02__MailingCountry__c
+  - npo02__MailingPostalCode__c
+  - npo02__MailingState__c
+  - npo02__MailingStreet__c
+  - npo02__MembershipEndDate__c
+  - npo02__MembershipJoinDate__c
+  - npo02__NumberOfClosedOpps__c
+  - npo02__NumberOfMembershipOpps__c
+  - npo02__OppAmount2YearsAgo__c
+  - npo02__OppAmountLastNDays__c
+  - npo02__OppAmountLastYear__c
+  - npo02__OppAmountThisYear__c
+  - npo02__OppsClosed2YearsAgo__c
+  - npo02__OppsClosedLastNDays__c
+  - npo02__OppsClosedLastYear__c
+  - npo02__OppsClosedThisYear__c
+  - npo02__SYSTEM_CUSTOM_NAMING__c
+  - npo02__SmallestAmount__c
+  - npo02__TotalMembershipOppAmount__c
+  - npo02__TotalOppAmount__c
+  - npsp__Number_of_Household_Members__c
+Insert npsp__Batch__c:
+  sf_object: npsp__Batch__c
+  fields:
+  - Name
+  - npsp__Batch_Status__c
+  - npsp__Description__c
+  - npsp__Number_of_Items__c
+  - npsp__Object_Name__c
+Insert proh__File__c:
+  sf_object: proh__File__c
+  fields:
+  - proh__Chatter_Feed_Item__c
+  - proh__Failed_Elements__c
+  - proh__File_Type__c
+  - proh__Filename__c
+  - proh__Format__c
+  - proh__Group_Identifier__c
+  - proh__Hashcode__c
+  - proh__Narrative__c
+  - proh__ProcessingHub_Id__c
+  - proh__Source__c
+  - proh__Status__c
+  - proh__Successful_Elements__c
+  - proh__Total_Record_Amount__c
+  - proh__Total_Record_Count__c
+  - proh__Total_elements__c
+  - proh__Unique_File_Reference__c
+  lookups:
+    proh__Parent__c:
+      table: proh__File__c
+      after: Insert proh__File__c
+Insert SFFR_Campaign_Content_Item__c:
+  sf_object: SFFR_Campaign_Content_Item__c
+  fields:
+  - SFFR_Description__c
+  - SFFR_Type__c
+  - SFFR_Unit_Cost__c
+  lookups:
+    SFFR_Campaign_Content__c:
+      table: SFFR_Campaign_Content__c
+Insert cpm__Payment_Journey__c:
+  sf_object: cpm__Payment_Journey__c
+  fields:
+  - Name
+  lookups:
+    cpm__Business_Hours__c:
+      table: BusinessHours
+Insert cpm__Recurring_Mandate_Schedule__c:
+  sf_object: cpm__Recurring_Mandate_Schedule__c
+  fields:
+  - Name
+  - RecordTypeId
+  - cpm__Auto_Create__c
+  - cpm__End_Date__c
+  - cpm__Exclude_from_Auto_Run__c
+  - cpm__Initial_Generated_JSON__c
+  - cpm__Monthly_Day_Strategy__c
+  - cpm__Process_on_Friday__c
+  - cpm__Process_on_Monday__c
+  - cpm__Process_on_Saturday__c
+  - cpm__Process_on_Sunday__c
+  - cpm__Process_on_Thursday__c
+  - cpm__Process_on_Tuesday__c
+  - cpm__Process_on_Wednesday__c
+  - cpm__Processing_Date_Conflict_Strategy__c
+  - cpm__Repeat_Frequency__c
+  - cpm__Run_Date_Conflict_Strategy__c
+  - cpm__Run_of_Days_before_Processing_date__c
+  - cpm__Start_Date__c
+  - cpm__Status__c
+  - cpm__Stored_JSON__c
+  - cpm__Sub_Type__c
+  - cpm__Target__c
+  - cpm__Targeted_Day_of_Month__c
+  lookups:
+    cpm__Business_Hours__c:
+      table: BusinessHours
+Insert cpm__Transaction_Set__c:
+  sf_object: cpm__Transaction_Set__c
+  fields:
+  - cpm__BIC_Code__c
+  - cpm__Closing_Balance_Date__c
+  - cpm__Closing_Balance__c
+  - cpm__Default_Payment_Method__c
+  - cpm__Default_Payment_Processor__c
+  - cpm__Default_Target__c
+  - cpm__Electronic_Sequence_Number__c
+  - cpm__Filename__c
+  - cpm__Filesize__c
+  - cpm__Filetype__c
+  - cpm__From_Date__c
+  - cpm__IBAN__c
+  - cpm__Last_Status_Reason__c
+  - cpm__Nr_Of_Failed__c
+  - cpm__Nr_Of_Guided_Review__c
+  - cpm__Nr_Of_Ignored__c
+  - cpm__Nr_Of_Matched__c
+  - cpm__Nr_Of_New__c
+  - cpm__Nr_Of_No_Match__c
+  - cpm__Nr_Of_Other__c
+  - cpm__Nr_Of_Processing__c
+  - cpm__Number_Of_Credit_Entries_from_file__c
+  - cpm__Number_Of_Debit_Entries_from_file__c
+  - cpm__Opening_Balance_Date__c
+  - cpm__Opening_Balance__c
+  - cpm__ProcessingHub_Id__c
+  - cpm__Status__c
+  - cpm__To_Date__c
+  - cpm__Total_Amount_Credit_from_file__c
+  - cpm__Total_Amount_Debit_from_file__c
+  lookups:
+    cpm__Guided_Matching_Setup__c:
+      table: cpm__Guided_Matching_Setup__c
+Insert cpm__Mandate_Schedule__c:
+  sf_object: cpm__Mandate_Schedule__c
+  fields:
+  - cpm__Exclude_from_Auto_Run__c
+  - cpm__Generate_Async_Apex_Job_Id__c
+  - cpm__Last_Status_Reason__c
+  - cpm__Processing_Date__c
+  - cpm__Run_Date__c
+  - cpm__Status_Before_Failed__c
+  - cpm__Status__c
+  - cpm__Sub_Type__c
+  - cpm__Target__c
+  - cpm__Validate_Async_Apex_Job_Id__c
+  lookups:
+    cpm__Recurring_Mandate_Schedule__c:
+      table: cpm__Recurring_Mandate_Schedule__c
+Insert cpm__Recurring_Payment_Schedule__c:
+  sf_object: cpm__Recurring_Payment_Schedule__c
+  fields:
+  - Name
+  - RecordTypeId
+  - cpm__Additional_SOQL__c
+  - cpm__Auto_Create__c
+  - cpm__Collect_on_Friday__c
+  - cpm__Collect_on_Monday__c
+  - cpm__Collect_on_Saturday__c
+  - cpm__Collect_on_Sunday__c
+  - cpm__Collect_on_Thursday__c
+  - cpm__Collect_on_Tuesday__c
+  - cpm__Collect_on_Wednesday__c
+  - cpm__Collection_Date_Conflict_Strategy__c
+  - cpm__End_Date__c
+  - cpm__Exclude_from_Auto_Run__c
+  - cpm__Finished_Status__c
+  - cpm__Initial_Generated_JSON__c
+  - cpm__Monthly_Collection_Day_Strategy__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Repeat_Frequency__c
+  - cpm__Run_Date_Conflict_Strategy__c
+  - cpm__Run_of_Days_before_Collection_date__c
+  - cpm__Selection_Day_Strategy__c
+  - cpm__Source__c
+  - cpm__Start_Date__c
+  - cpm__Status__c
+  - cpm__Stored_JSON__c
+  - cpm__Target__c
+  - cpm__Targeted_Collection_Day_of_Month__c
+  lookups:
+    cpm__Business_Hours__c:
+      table: BusinessHours
+    cpm__Payment_Journey__c:
+      table: cpm__Payment_Journey__c
+Insert cpm__Payment_Schedule__c:
+  sf_object: cpm__Payment_Schedule__c
+  fields:
+  - cpm__Additional_SOQL__c
+  - cpm__Channel__c
+  - cpm__Close_Async_Apex_Job_Id__c
+  - cpm__Collection_Date__c
+  - cpm__Exclude_from_Auto_Run__c
+  - cpm__Finished_Status__c
+  - cpm__Generator_Class__c
+  - cpm__Hashcode__c
+  - cpm__Hashcode_date__c
+  - cpm__Job_Group_Identifier__c
+  - cpm__Last_Status_Reason__c
+  - cpm__Nr_Of_Installments__c
+  - cpm__PaymentMethod__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Prepare_Async_Apex_Job_Id__c
+  - cpm__Prepare_SOQL_Query__c
+  - cpm__Process_Async_Apex_Job_Id__c
+  - cpm__Process_Batch_Size__c
+  - cpm__Processor_Class__c
+  - cpm__Run_Date__c
+  - cpm__Selection_Date__c
+  - cpm__Source__c
+  - cpm__Status_Before_Failed__c
+  - cpm__Status__c
+  - cpm__Target__c
+  - cpm__Total_Value__c
+  - cpm__Totals_Async_Apex_Job_Id__c
+  - cpm__Validate_Job_Id__c
+  lookups:
+    cpm__Original_Payment_Schedule__c:
+      table: cpm__Payment_Schedule__c
+      after: Insert cpm__Payment_Schedule__c
+    cpm__Payment_Journey__c:
+      table: cpm__Payment_Journey__c
+    cpm__Recurring_Payment_Schedule__c:
+      table: cpm__Recurring_Payment_Schedule__c
+Insert Account:
+  sf_object: Account
+  fields:
+  - Name
+  - RecordTypeId
+  - SFFR_Siren__c
+  - npe01__SYSTEMIsIndividual__c
+  - npe01__SYSTEM_AccountType__c
+  - npo02__AverageAmount__c
+  - npo02__Best_Gift_Year_Total__c
+  - npo02__Best_Gift_Year__c
+  - npo02__FirstCloseDate__c
+  - npo02__Formal_Greeting__c
+  - npo02__HouseholdPhone__c
+  - npo02__Informal_Greeting__c
+  - npo02__LargestAmount__c
+  - npo02__LastCloseDate__c
+  - npo02__LastMembershipAmount__c
+  - npo02__LastMembershipDate__c
+  - npo02__LastMembershipLevel__c
+  - npo02__LastMembershipOrigin__c
+  - npo02__LastOppAmount__c
+  - npo02__MembershipEndDate__c
+  - npo02__MembershipJoinDate__c
+  - npo02__NumberOfClosedOpps__c
+  - npo02__NumberOfMembershipOpps__c
+  - npo02__OppAmount2YearsAgo__c
+  - npo02__OppAmountLastNDays__c
+  - npo02__OppAmountLastYear__c
+  - npo02__OppAmountThisYear__c
+  - npo02__OppsClosed2YearsAgo__c
+  - npo02__OppsClosedLastNDays__c
+  - npo02__OppsClosedLastYear__c
+  - npo02__OppsClosedThisYear__c
+  - npo02__SYSTEM_CUSTOM_NAMING__c
+  - npo02__SmallestAmount__c
+  - npo02__TotalMembershipOppAmount__c
+  - npo02__TotalOppAmount__c
+  - npsp__All_Members_Deceased__c
+  - npsp__CustomizableRollups_UseSkewMode__c
+  - npsp__Funding_Focus__c
+  - npsp__Grantmaker__c
+  - npsp__Matching_Gift_Administrator_Name__c
+  - npsp__Matching_Gift_Amount_Max__c
+  - npsp__Matching_Gift_Amount_Min__c
+  - npsp__Matching_Gift_Annual_Employee_Max__c
+  - npsp__Matching_Gift_Comments__c
+  - npsp__Matching_Gift_Company__c
+  - npsp__Matching_Gift_Email__c
+  - npsp__Matching_Gift_Info_Updated__c
+  - npsp__Matching_Gift_Percent__c
+  - npsp__Matching_Gift_Phone__c
+  - npsp__Matching_Gift_Request_Deadline__c
+  - npsp__Number_of_Household_Members__c
+  - npsp__Sustainer__c
+  - npsp__Undeliverable_Address__c
+  lookups:
+    ParentId:
+      table: Account
+      after: Insert Account
+    npe01__One2OneContact__c:
+      table: Contact
+      after: Insert Contact
+    npsp__Batch__c:
+      table: npsp__Batch__c
+Insert SFFR_3party_Segment__c:
+  sf_object: SFFR_3party_Segment__c
+  fields:
+  - Name
+  - SFFR_Description__c
+  - SFFR_External_Key__c
+  - SFFR_Type__c
+  lookups:
+    SFFR_Supplier__c:
+      table: Account
+Insert npsp__Address__c:
+  sf_object: npsp__Address__c
+  fields:
+  - SFFR_UM_Reason__c
+  - SFFR_UM__c
+  - npsp__API_Response__c
+  - npsp__Address_Type__c
+  - npsp__Administrative_Area__c
+  - npsp__Ambiguous__c
+  - npsp__Congressional_District__c
+  - npsp__County_Name__c
+  - npsp__Default_Address__c
+  - npsp__Exclude_from_Updates__c
+  - npsp__Latest_End_Date__c
+  - npsp__Latest_Start_Date__c
+  - npsp__MailingCity__c
+  - npsp__MailingCountry__c
+  - npsp__MailingPostalCode__c
+  - npsp__MailingState__c
+  - npsp__MailingStreet2__c
+  - npsp__MailingStreet__c
+  - npsp__NCOA_Evaluation_Date__c
+  - npsp__NCOA_Result_Code__c
+  - npsp__Pre_Verification_Address__c
+  - npsp__Seasonal_End_Day__c
+  - npsp__Seasonal_End_Month__c
+  - npsp__Seasonal_Start_Day__c
+  - npsp__Seasonal_Start_Month__c
+  - npsp__State_Lower_District__c
+  - npsp__State_Upper_District__c
+  - npsp__Undeliverable__c
+  - npsp__Verification_Status__c
+  - npsp__Verified_Date__c
+  - npsp__Verified__c
+  lookups:
+    npsp__Household_Account__c:
+      table: Account
+Insert Campaign:
+  sf_object: Campaign
+  fields:
+  - IsActive
+  - Name
+  - RecordTypeId
+  - SFFR_Dedup_Order__c
+  - SFFR_Delivered_Quantity__c
+  - SFFR_Dispatcher_External_Key__c
+  - SFFR_External_Key__c
+  - SFFR_Max_Ordered_Quantity__c
+  - SFFR_Segmentations_External_Key__c
+  lookups:
+    ParentId:
+      table: Campaign
+      after: Insert Campaign
+    SFFR_3party_Segment__c:
+      table: SFFR_3party_Segment__c
+    SFFR_Campaign_Content__c:
+      table: SFFR_Campaign_Content__c
+    SFFR_Dispatcher__c:
+      table: Account
+Insert Contact:
+  sf_object: Contact
+  fields:
+  - DoNotCall
+  - FirstName
+  - Gender__c
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - LastName
+  - SFFR_Do_Not_Thanks__c
+  - SFFR_GDPR_Status__c
+  - SFFR_No_Tax_Receipt__c
+  - SFFR_Retrict_Yearly_Marketing_Sol__c
+  - cpm__ProcessingHub_Id__c
+  - insights__Deceased_Date__c
+  - insights__Deceased_Reviewed_Date__c
+  - insights__Email_Reviewed_Date__c
+  - insights__Email_Status__c
+  - insights__Email_Verified__c
+  - insights__Phone_Reviewed_Date__c
+  - insights__Phone_Status__c
+  - insights__Phone_Verified__c
+  - npe01__AlternateEmail__c
+  - npe01__HomeEmail__c
+  - npe01__PreferredPhone__c
+  - npe01__Preferred_Email__c
+  - npe01__Primary_Address_Type__c
+  - npe01__Private__c
+  - npe01__Secondary_Address_Type__c
+  - npe01__SystemAccountProcessor__c
+  - npe01__WorkEmail__c
+  - npe01__WorkPhone__c
+  - npo02__AverageAmount__c
+  - npo02__Best_Gift_Year_Total__c
+  - npo02__Best_Gift_Year__c
+  - npo02__FirstCloseDate__c
+  - npo02__Household_Naming_Order__c
+  - npo02__LargestAmount__c
+  - npo02__LastCloseDate__c
+  - npo02__LastMembershipAmount__c
+  - npo02__LastMembershipDate__c
+  - npo02__LastMembershipLevel__c
+  - npo02__LastMembershipOrigin__c
+  - npo02__LastOppAmount__c
+  - npo02__MembershipEndDate__c
+  - npo02__MembershipJoinDate__c
+  - npo02__Naming_Exclusions__c
+  - npo02__NumberOfClosedOpps__c
+  - npo02__NumberOfMembershipOpps__c
+  - npo02__OppAmount2YearsAgo__c
+  - npo02__OppAmountLastNDays__c
+  - npo02__OppAmountLastYear__c
+  - npo02__OppAmountThisYear__c
+  - npo02__OppsClosed2YearsAgo__c
+  - npo02__OppsClosedLastNDays__c
+  - npo02__OppsClosedLastYear__c
+  - npo02__OppsClosedThisYear__c
+  - npo02__SmallestAmount__c
+  - npo02__Soft_Credit_Last_Year__c
+  - npo02__Soft_Credit_This_Year__c
+  - npo02__Soft_Credit_Total__c
+  - npo02__Soft_Credit_Two_Years_Ago__c
+  - npo02__SystemHouseholdProcessor__c
+  - npo02__TotalMembershipOppAmount__c
+  - npo02__TotalOppAmount__c
+  - npsp__CustomizableRollups_UseSkewMode__c
+  - npsp__Deceased__c
+  - npsp__Do_Not_Contact__c
+  - npsp__Exclude_from_Household_Formal_Greeting__c
+  - npsp__Exclude_from_Household_Informal_Greeting__c
+  - npsp__Exclude_from_Household_Name__c
+  - npsp__First_Soft_Credit_Amount__c
+  - npsp__First_Soft_Credit_Date__c
+  - npsp__Largest_Soft_Credit_Amount__c
+  - npsp__Largest_Soft_Credit_Date__c
+  - npsp__Last_Soft_Credit_Amount__c
+  - npsp__Last_Soft_Credit_Date__c
+  - npsp__Number_of_Soft_Credits_Last_N_Days__c
+  - npsp__Number_of_Soft_Credits_Last_Year__c
+  - npsp__Number_of_Soft_Credits_This_Year__c
+  - npsp__Number_of_Soft_Credits_Two_Years_Ago__c
+  - npsp__Number_of_Soft_Credits__c
+  - npsp__Soft_Credit_Last_N_Days__c
+  - npsp__Sustainer__c
+  - npsp__Undeliverable_Address__c
+  - npsp__is_Address_Override__c
+  - paysepa__Tax_Code__c
+  - phstr__Stripe_Customer_Id__c
+  - sfdo_analytics__Is_First_Time_Donor__c
+  - sfdo_analytics__Is_Recurring_Donor__c
+  - sfdo_analytics__Is_Top_Donor__c
+  - sfdo_analytics__Likel_FTD_at_conversion_EPB__c
+  - sfdo_analytics__Likel_FTD_at_conversion_backup__c
+  - sfdo_analytics__Likel_RD_at_conversion_EPB__c
+  - sfdo_analytics__Likel_RD_at_conversion_backup__c
+  - sfdo_analytics__Likel_become_first_time_donor_backup__c
+  - sfdo_analytics__Likel_become_recurring_donor_backup__c
+  - sfdo_analytics__Likel_become_top_donor_backup__c
+  - sfdo_analytics__Likel_top_donor_at_conversion_EPB__c
+  - sfdo_analytics__Likel_top_donor_at_conversion_backup__c
+  lookups:
+    AccountId:
+      table: Account
+    ReportsToId:
+      table: Contact
+      after: Insert Contact
+    SFFR_Campaign_Origin__c:
+      table: Campaign
+    npo02__Household__c:
+      table: npo02__Household__c
+    npsp__Batch__c:
+      table: npsp__Batch__c
+    npsp__Current_Address__c:
+      table: npsp__Address__c
+    npsp__Primary_Affiliation__c:
+      table: Account
+Insert cpm__Payment_Profile__c:
+  sf_object: cpm__Payment_Profile__c
+  fields:
+  - RecordTypeId
+  - cpm__Active__c
+  - cpm__BIC_Code__c
+  - cpm__Bank_Account__c
+  - cpm__Bank_Name__c
+  - cpm__Brand__c
+  - cpm__CCV__c
+  - cpm__Card_BIN__c
+  - cpm__City__c
+  - cpm__Clearing_Member_Id__c
+  - cpm__Country__c
+  - cpm__Credit_Card_Number__c
+  - cpm__Enforce_Uniqueness__c
+  - cpm__Expiration_Date__c
+  - cpm__Expiration_Year__c
+  - cpm__Funding_Type__c
+  - cpm__Holder_Name__c
+  - cpm__Housename_Or_Number__c
+  - cpm__Housenumber__c
+  - cpm__IBAN__c
+  - cpm__Primary_Identifier__c
+  - cpm__ProcessingHub_Id__c
+  - cpm__State_Province__c
+  - cpm__Street__c
+  - cpm__Suffix__c
+  - cpm__Token_Issuer__c
+  - cpm__Token__c
+  - cpm__Unique_Identifier__c
+  - cpm__Wallet_Id__c
+  - cpm__Wallet_Type__c
+  - cpm__Zipcode__c
+  - paysepa__Custom_Tax_Code__c
+  - phstr__Fingerprint__c
+  lookups:
+    cpm__Account__c:
+      table: Account
+    cpm__Contact__c:
+      table: Contact
+Insert npe5__Affiliation__c:
+  sf_object: npe5__Affiliation__c
+  fields:
+  - npe5__Description__c
+  - npe5__EndDate__c
+  - npe5__Primary__c
+  - npe5__Role__c
+  - npe5__StartDate__c
+  - npe5__Status__c
+  - npsp__Related_Opportunity_Contact_Role__c
+  lookups:
+    npe5__Contact__c:
+      table: Contact
+    npe5__Organization__c:
+      table: Account
+Insert cpm__Mandate__c:
+  sf_object: cpm__Mandate__c
+  fields:
+  - cpm__Active__c
+  - cpm__Custom_Reference__c
+  - cpm__Date_Signed__c
+  - cpm__End_Date__c
+  - cpm__Last_Status_Reason__c
+  - cpm__Last_Used__c
+  - cpm__Payment_Processor__c
+  - cpm__Prefix__c
+  - cpm__Prenotification_Date__c
+  - cpm__Reference__c
+  - cpm__Sort_Code__c
+  - cpm__Status__c
+  - cpm__Target__c
+  - cpm__Type__c
+  - cpm__Unique_Mandate_Id__c
+  - cpm__Use_First_on_next_run__c
+  - phstr__Payment_Method_Id__c
+  lookups:
+    cpm__Mandate_Schedule__c:
+      table: cpm__Mandate_Schedule__c
+    cpm__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    proh__File__c:
+      table: proh__File__c
+Insert cpm__Recurring_Payment__c:
+  sf_object: cpm__Recurring_Payment__c
+  fields:
+  - cpm__Active__c
+  - cpm__Amount__c
+  - cpm__Bank_Statement_Description__c
+  - cpm__Collection_Day_of_Month__c
+  - cpm__Custom_Account_Holder_Name__c
+  - cpm__Custom_BIC__c
+  - cpm__Custom_IBAN__c
+  - cpm__Custom_Mandate_Active__c
+  - cpm__Custom_Mandate_Date_Signed__c
+  - cpm__Custom_Mandate_ID__c
+  - cpm__Custom_Payment_Reference__c
+  - cpm__Description_of_Gift__c
+  - cpm__End_Date_Reached__c
+  - cpm__End_Date__c
+  - cpm__Expected_Remaining_Revenue__c
+  - cpm__Frequency__c
+  - cpm__Generated_Payment_Reference__c
+  - cpm__Mandatory_payment__c
+  - cpm__Next_Collection_Date__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Payment_QR__c
+  - cpm__Payment_Url__c
+  - cpm__Start_Date__c
+  - cpm__Status_Reason__c
+  - cpm__Status__c
+  - cpm__Target__c
+  - cpm__ls_coll_date__c
+  - cpm__n_of_collected_installments__c
+  lookups:
+    cpm__Account__c:
+      table: Account
+    cpm__Contact__c:
+      table: Contact
+    cpm__Mandate__c:
+      table: cpm__Mandate__c
+    cpm__Originating_Campaign__c:
+      table: Campaign
+    cpm__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+Insert npe03__Recurring_Donation__c:
+  sf_object: npe03__Recurring_Donation__c
+  fields:
+  - Name
+  - npe03__Amount__c
+  - npe03__Date_Established__c
+  - npe03__Installment_Period__c
+  - npe03__Installments__c
+  - npe03__Last_Payment_Date__c
+  - npe03__Next_Payment_Date__c
+  - npe03__Open_Ended_Status__c
+  - npe03__Paid_Amount__c
+  - npe03__Schedule_Type__c
+  - npe03__Total_Paid_Installments__c
+  - npsp4hub__Bank_Statement_Description__c
+  - npsp4hub__Custom_Payment_Reference__c
+  - npsp4hub__Generated_Payment_Reference__c
+  - npsp4hub__Payment_Method__c
+  - npsp4hub__Payment_Processor__c
+  - npsp4hub__Payment_QR__c
+  - npsp4hub__Payment_Url__c
+  - npsp4hub__Target__c
+  - npsp__ACH_Last_4__c
+  - npsp__Always_Use_Last_Day_Of_Month__c
+  - npsp__CardExpirationMonth__c
+  - npsp__CardExpirationYear__c
+  - npsp__CardLast4__c
+  - npsp__ChangeType__c
+  - npsp__ClosedReason__c
+  - npsp__CommitmentId__c
+  - npsp__CurrentYearValue__c
+  - npsp__Day_of_Month__c
+  - npsp__DisableFirstInstallment__c
+  - npsp__EndDate__c
+  - npsp__InstallmentFrequency__c
+  - npsp__LastElevateEventPlayed__c
+  - npsp__LastElevateVersionPlayed__c
+  - npsp__NextYearValue__c
+  - npsp__PaymentMethod__c
+  - npsp__RecurringType__c
+  - npsp__StartDate__c
+  - npsp__Status__c
+  lookups:
+    npe03__Contact__c:
+      table: Contact
+    npe03__Organization__c:
+      table: Account
+    npe03__Recurring_Donation_Campaign__c:
+      table: Campaign
+    npsp4hub__Mandate__c:
+      table: cpm__Mandate__c
+    npsp4hub__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+Insert Opportunity:
+  sf_object: Opportunity
+  fields:
+  - CloseDate
+  - IsPrivate
+  - Name
+  - RecordTypeId
+  - StageName
+  - npe01__Contact_Id_for_Role__c
+  - npe01__Do_Not_Automatically_Create_Payment__c
+  - npe01__Member_Level__c
+  - npe01__Membership_End_Date__c
+  - npe01__Membership_Origin__c
+  - npe01__Membership_Start_Date__c
+  - npo02__systemHouseholdContactRoleProcessor__c
+  - npsp4hub__Bank_Statement_Description__c
+  - npsp4hub__Custom_Payment_Reference__c
+  - npsp4hub__Generated_Payment_QR__c
+  - npsp4hub__Generated_Payment_Reference__c
+  - npsp4hub__Generated_Payment_Url__c
+  - npsp4hub__Payment_Method__c
+  - npsp4hub__Payment_Processor__c
+  - npsp4hub__Recurring_Payment_QR__c
+  - npsp4hub__Recurring_Payment_Reference__c
+  - npsp4hub__Recurring_Payment_Url__c
+  - npsp4hub__Target__c
+  - npsp__Acknowledgment_Date__c
+  - npsp__Acknowledgment_Status__c
+  - npsp__Ask_Date__c
+  - npsp__Batch_Number__c
+  - npsp__Closed_Lost_Reason__c
+  - npsp__CommitmentId__c
+  - npsp__DisableContactRoleAutomation__c
+  - npsp__Fair_Market_Value__c
+  - npsp__Gift_Strategy__c
+  - npsp__Grant_Contract_Date__c
+  - npsp__Grant_Contract_Number__c
+  - npsp__Grant_Period_End_Date__c
+  - npsp__Grant_Period_Start_Date__c
+  - npsp__Grant_Program_Area_s__c
+  - npsp__Grant_Requirements_Website__c
+  - npsp__Honoree_Information__c
+  - npsp__Honoree_Name__c
+  - npsp__In_Kind_Description__c
+  - npsp__In_Kind_Donor_Declared_Value__c
+  - npsp__In_Kind_Type__c
+  - npsp__Is_Grant_Renewal__c
+  - npsp__Matching_Gift_Employer__c
+  - npsp__Matching_Gift_Status__c
+  - npsp__Notification_Message__c
+  - npsp__Notification_Preference__c
+  - npsp__Notification_Recipient_Email__c
+  - npsp__Notification_Recipient_Information__c
+  - npsp__Notification_Recipient_Name__c
+  - npsp__Primary_Contact_Campaign_Member_Status__c
+  - npsp__Qualified_Date__c
+  - npsp__Recurring_Donation_Installment_Number__c
+  - npsp__Requested_Amount__c
+  - npsp__Tribute_Notification_Date__c
+  - npsp__Tribute_Notification_Status__c
+  - npsp__Tribute_Type__c
+  lookups:
+    AccountId:
+      table: Account
+    CampaignId:
+      table: Campaign
+    ContactId:
+      table: Contact
+    SFFR_Payment_Split__c:
+      table: cpm__Payment__c
+      after: Insert cpm__Payment__c
+    SFFR_Payment__c:
+      table: cpm__Payment__c
+      after: Insert cpm__Payment__c
+    npe03__Recurring_Donation__c:
+      table: npe03__Recurring_Donation__c
+    npsp4hub__Mandate__c:
+      table: cpm__Mandate__c
+    npsp4hub__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    npsp__Batch__c:
+      table: npsp__Batch__c
+    npsp__Honoree_Contact__c:
+      table: Contact
+    npsp__Matching_Gift_Account__c:
+      table: Account
+    npsp__Matching_Gift__c:
+      table: Opportunity
+      after: Insert Opportunity
+    npsp__Notification_Recipient_Contact__c:
+      table: Contact
+    npsp__Previous_Grant_Opportunity__c:
+      table: Opportunity
+      after: Insert Opportunity
+    npsp__Primary_Contact__c:
+      table: Contact
+Insert cpm__Inbound_Report__c:
+  sf_object: cpm__Inbound_Report__c
+  fields:
+  - RecordTypeId
+  - SFFR_Bank_Payment_Group_Ext_Key__c
+  - SFFR_Campaign_Key__c
+  - SFFR_Contact_Email__c
+  - SFFR_Contact_First_Name__c
+  - SFFR_Contact_Last_Name__c
+  - SFFR_Contact_Mobile__c
+  - SFFR_Fullfilment_Payment_Group__c
+  - SFFR_Payer_First_Name__c
+  - SFFR_Payer_Last_Name__c
+  - SFFR_Payer_email__c
+  - SFFR_Payment_Key__c
+  - SFFR_Type__c
+  - cpm__Accepted__c
+  - cpm__Account_Holder_Name__c
+  - cpm__Account_Number_Additional__c
+  - cpm__Account_Number__c
+  - cpm__Amount__c
+  - cpm__Campaign_Member_Id__c
+  - cpm__Checksum__c
+  - cpm__Date__c
+  - cpm__Debit_Credit_Type__c
+  - cpm__Document_Type__c
+  - cpm__Event_Date__c
+  - cpm__Event_Parameters__c
+  - cpm__Existing_Installment_Expected__c
+  - cpm__External_Id__c
+  - cpm__Guided_Matching_Error__c
+  - cpm__Guided_Matching_Installment_Processed__c
+  - cpm__Guided_Matching_Job_Id__c
+  - cpm__Guided_Matching_Log__c
+  - cpm__Guided_Matching_Nr_of_Retries__c
+  - cpm__Guided_Matching_Nr_of_Rules_Processed__c
+  - cpm__Has_Been_In_Guided_Review__c
+  - cpm__Mandate_Reference__c
+  - cpm__Matched_By_ProcessingHub__c
+  - cpm__Multiple_Installment_Ids__c
+  - cpm__Origin__c
+  - cpm__Original_Mandate_Reference__c
+  - cpm__Other_Installment_Ids__c
+  - cpm__Payment_Intent_Id__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Payment_Reference__c
+  - cpm__Post_Office__c
+  - cpm__ProcessingHub_Id__c
+  - cpm__RAW_Message__c
+  - cpm__Reason_Code__c
+  - cpm__Reasoncode_Explaination__c
+  - cpm__Reasoncode_Explanation__c
+  - cpm__Record_Id__c
+  - cpm__Recurring_Id__c
+  - cpm__Report_Date__c
+  - cpm__Report_Status_Reason_Information__c
+  - cpm__Report_Status__c
+  - cpm__Report_SubType__c
+  - cpm__Report_Type__c
+  - cpm__Sequence_Number__c
+  - cpm__Source__c
+  - cpm__Start_Guided_Matching__c
+  - cpm__Status_Reason__c
+  - cpm__Status__c
+  - cpm__Target__c
+  - cpm__Transaction_Code__c
+  - cpm__Unique_Identifier__c
+  - cpm__WebhookURL__c
+  - proh__Original_Batch_Id__c
+  - proh__Original_File_Id__c
+  - proh__Original_Transaction_Id__c
+  lookups:
+    SFFR_Payer_Contact__c:
+      table: Contact
+    cpm__Account__c:
+      table: Account
+    cpm__Campaign__c:
+      table: Campaign
+    cpm__Contact__c:
+      table: Contact
+    cpm__Guided_Matching_Setup__c:
+      table: cpm__Guided_Matching_Setup__c
+    cpm__Installment__c:
+      table: cpm__Installment__c
+      after: Insert cpm__Installment__c
+    cpm__Mandate__c:
+      table: cpm__Mandate__c
+    cpm__Message__c:
+      table: cpm__Message__c
+      after: Insert cpm__Message__c
+    cpm__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    proh__File__c:
+      table: proh__File__c
+    proh__Original_Batch__c:
+      table: proh__File__c
+    proh__Original_File__c:
+      table: proh__File__c
+Insert cpm__Installment__c:
+  sf_object: cpm__Installment__c
+  fields:
+  - RecordTypeId
+  - SFFR_Bank_Group__c
+  - SFFR_Payment_Key__c
+  - SFFR_Type__c
+  - cpm__Amount_Open__c
+  - cpm__Amount__c
+  - cpm__Bank_Statement_Description__c
+  - cpm__Collection_Count__c
+  - cpm__Custom_1__c
+  - cpm__Custom_2__c
+  - cpm__Custom_3__c
+  - cpm__Custom_4__c
+  - cpm__Custom_5__c
+  - cpm__Custom_Account_Holder_Name__c
+  - cpm__Custom_BIC__c
+  - cpm__Custom_IBAN__c
+  - cpm__Custom_Mandate_Date_Signed__c
+  - cpm__Custom_Mandate_ID__c
+  - cpm__Custom_Payment_Reference__c
+  - cpm__Custom_Sequence_Type__c
+  - cpm__Due_Date__c
+  - cpm__External_ID__c
+  - cpm__GUID__c
+  - cpm__Generated_Payment_Reference__c
+  - cpm__Last_Cancelled_Date__c
+  - cpm__Last_Collection_Date__c
+  - cpm__Last_Failed_Date__c
+  - cpm__Last_Failure_Reason__c
+  - cpm__Last_Paid_Date__c
+  - cpm__Last_Raw_Request__c
+  - cpm__Last_Raw_Response__c
+  - cpm__Last_ReasonCode_Received__c
+  - cpm__Last_Refunded_Date__c
+  - cpm__Last_Rejection_Date__c
+  - cpm__Last_Reversal_Date__c
+  - cpm__Last_Status_Reason__c
+  - cpm__Mandatory_payment__c
+  - cpm__Origin__c
+  - cpm__Original_Due_Date__c
+  - cpm__PayLinks_Page__c
+  - cpm__Pay_Url__c
+  - cpm__Payment_Intent_Id__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Payment_QR__c
+  - cpm__Payment_Transaction_Id__c
+  - cpm__ProcessingHub_Id__c
+  - cpm__Processor__c
+  - cpm__Recurring_Pay_Url__c
+  - cpm__Recurring_Payment_QR__c
+  - cpm__Recurring_Payment_Reference__c
+  - cpm__Source__c
+  - cpm__Status_Reason__c
+  - cpm__Status__c
+  - cpm__Target__c
+  - cpm__WebhookURL__c
+  - cpm__of_times_cancelled__c
+  - cpm__of_times_failed__c
+  - cpm__of_times_paid__c
+  - cpm__of_times_refunded__c
+  - cpm__of_times_rejected__c
+  - cpm__of_times_reversed__c
+  lookups:
+    SFFR_Payer_Contact__c:
+      table: Contact
+    cpm__Account__c:
+      table: Account
+    cpm__Contact__c:
+      table: Contact
+    cpm__Mandate__c:
+      table: cpm__Mandate__c
+    cpm__Originating_Campaign__c:
+      table: Campaign
+    cpm__Payment_Journey__c:
+      table: cpm__Payment_Journey__c
+    cpm__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    cpm__Payment_Schedule__c:
+      table: cpm__Payment_Schedule__c
+    cpm__Recurring_Payment__c:
+      table: cpm__Recurring_Payment__c
+    cpm__Relates_To__c:
+      table: cpm__Installment__c
+      after: Insert cpm__Installment__c
+    cpm__Transaction_Sub_Element__c:
+      table: cpm__Transaction_Sub_Element__c
+      after: Insert cpm__Transaction_Sub_Element__c
+    npsp4hub__Opportunity__c:
+      table: Opportunity
+    npsp4hub__Payment__c:
+      table: npe01__OppPayment__c
+      after: Insert npe01__OppPayment__c
+    proh__File__c:
+      table: proh__File__c
+Insert cpm__Message__c:
+  sf_object: cpm__Message__c
+  fields:
+  - cpm__End_Time__c
+  - cpm__Estimated_Execution_Time__c
+  - cpm__Event_Date__c
+  - cpm__Event_Parameters__c
+  - cpm__External_Id__c
+  - cpm__Failure_Reason__c
+  - cpm__Handler__c
+  - cpm__Idempotency_Key__c
+  - cpm__Log__c
+  - cpm__Payload__c
+  - cpm__Payment_Intent_Id__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Response__c
+  - cpm__Start_Time__c
+  - cpm__Status__c
+  - cpm__Target__c
+  - cpm__Type__c
+  - cpm__WebhookURL__c
+  lookups:
+    cpm__Account__c:
+      table: Account
+    cpm__Contact__c:
+      table: Contact
+    cpm__Inbound_Report__c:
+      table: cpm__Inbound_Report__c
+    cpm__Installment__c:
+      table: cpm__Installment__c
+    cpm__Payment_Schedule__c:
+      table: cpm__Payment_Schedule__c
+Insert cpm__Transaction__c:
+  sf_object: cpm__Transaction__c
+  fields:
+  - cpm__Account_Holder_Name__c
+  - cpm__Account_Servicer_Reference__c
+  - cpm__Additional_Entry_Information__c
+  - cpm__Address_Line_1__c
+  - cpm__Amount__c
+  - cpm__BIC_Code__c
+  - cpm__Batch_Id__c
+  - cpm__Building_Number__c
+  - cpm__Campaign_Member_Id__c
+  - cpm__City__c
+  - cpm__Country__c
+  - cpm__Custom_1__c
+  - cpm__Custom_2__c
+  - cpm__Custom_3__c
+  - cpm__Custom_4__c
+  - cpm__Custom_5__c
+  - cpm__Date__c
+  - cpm__End_To_End_ID__c
+  - cpm__Entry_Reference__c
+  - cpm__Entry_Type__c
+  - cpm__Failure_Status__c
+  - cpm__Guided_Matching_Error__c
+  - cpm__Guided_Matching_Installment_Processed__c
+  - cpm__Guided_Matching_Job_Id__c
+  - cpm__Guided_Matching_Log__c
+  - cpm__Guided_Matching_Nr_Of_Retries__c
+  - cpm__Guided_Matching_Nr_Of_Rules_Processed__c
+  - cpm__Has_Been_In_Guided_Review__c
+  - cpm__IBAN__c
+  - cpm__Last_Worked_On_Date__c
+  - cpm__Mandate_Reference__c
+  - cpm__Matched_By_ProcessingHub__c
+  - cpm__Multiple_Installment_Ids__c
+  - cpm__Open_Amount__c
+  - cpm__Other_Installment_Ids__c
+  - cpm__Payment_Info_Id__c
+  - cpm__Payment_Reference__c
+  - cpm__PostalCode__c
+  - cpm__Primary__c
+  - cpm__ProcessingHub_Id__c
+  - cpm__Processor__c
+  - cpm__Raw_XML_entry__c
+  - cpm__Reason_Code__c
+  - cpm__Remittance_Information__c
+  - cpm__Reported_Payment_Method_Code__c
+  - cpm__Reported_Payment_Method__c
+  - cpm__Reversal_Indicator__c
+  - cpm__Start_Guided_Matching__c
+  - cpm__Status_Reason__c
+  - cpm__Status__c
+  - cpm__Street__c
+  - cpm__Target__c
+  - cpm__Type__c
+  - cpm__Value_Date__c
+  lookups:
+    cpm__Account__c:
+      table: Account
+    cpm__Campaign__c:
+      table: Campaign
+    cpm__Contact__c:
+      table: Contact
+    cpm__Installment__c:
+      table: cpm__Installment__c
+    cpm__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    cpm__Transaction_set__c:
+      table: cpm__Transaction_Set__c
+Insert npe01__OppPayment__c:
+  sf_object: npe01__OppPayment__c
+  fields:
+  - npe01__Check_Reference_Number__c
+  - npe01__Custom_Payment_Field__c
+  - npe01__Paid__c
+  - npe01__Payment_Amount__c
+  - npe01__Payment_Date__c
+  - npe01__Payment_Method__c
+  - npe01__Scheduled_Date__c
+  - npe01__Written_Off__c
+  - npsp4hub__Payment_Processor__c
+  - npsp4hub__Target__c
+  - npsp__ACH_Code__c
+  - npsp__ACH_Last_4__c
+  - npsp__Authorized_Date__c
+  - npsp__Authorized_UTC_Timestamp__c
+  - npsp__Batch_Number__c
+  - npsp__Card_Expiration_Month__c
+  - npsp__Card_Expiration_Year__c
+  - npsp__Card_Last_4__c
+  - npsp__Card_Network__c
+  - npsp__DebitType__c
+  - npsp__Donor_Cover_Amount__c
+  - npsp__Elevate_Original_Payment_ID__c
+  - npsp__Elevate_Payment_API_Declined_Reason__c
+  - npsp__Elevate_Payment_API_Status__c
+  - npsp__Elevate_Payment_Created_Date__c
+  - npsp__Elevate_Payment_Created_UTC_Timestamp__c
+  - npsp__Elevate_Payment_ID__c
+  - npsp__Elevate_Transaction_Fee__c
+  - npsp__Gateway_ID__c
+  - npsp__Gateway_Payment_ID__c
+  - npsp__Gateway_Transaction_Fee__c
+  - npsp__Origin_ID__c
+  - npsp__Origin_Name__c
+  - npsp__Origin_Type__c
+  - npsp__Payment_Acknowledged_Date__c
+  - npsp__Payment_Acknowledgment_Status__c
+  - npsp__Total_Transaction_Fees__c
+  - npsp__Type__c
+  lookups:
+    npe01__Opportunity__c:
+      table: Opportunity
+    npsp4hub__Collected_Through__c:
+      table: cpm__Installment__c
+    npsp4hub__Mandate__c:
+      table: cpm__Mandate__c
+    npsp4hub__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    npsp__OriginalPayment__c:
+      table: npe01__OppPayment__c
+      after: Insert npe01__OppPayment__c
+Insert cpm__Transaction_Sub_Element__c:
+  sf_object: cpm__Transaction_Sub_Element__c
+  fields:
+  - cpm__Amount__c
+  - cpm__Credit_Debit__c
+  - cpm__Party__c
+  - cpm__ProcessingHub_Id__c
+  - cpm__Status__c
+  - cpm__Type__c
+  lookups:
+    cpm__Cost_Bearer__c:
+      table: Account
+    cpm__Transaction__c:
+      table: cpm__Transaction__c
+Insert cpm__Payment__c:
+  sf_object: cpm__Payment__c
+  fields:
+  - RecordTypeId
+  - cpm__Amount__c
+  - cpm__Collection_Date__c
+  - cpm__Description__c
+  - cpm__External_ID__c
+  - cpm__IBAN__c
+  - cpm__Payment_Method__c
+  - cpm__Payment_Processor__c
+  - cpm__Payment_Reference__c
+  - cpm__Processor__c
+  - cpm__Reason_for_Mutation__c
+  - cpm__Reversal_Reason_Code__c
+  - cpm__Target__c
+  lookups:
+    SFFR_Bank_Payment_Group__c:
+      table: SFFR_Payment_Group__c
+    SFFR_Payment_Group__c:
+      table: SFFR_Payment_Group__c
+    cpm__Account__c:
+      table: Account
+    cpm__Contact__c:
+      table: Contact
+    cpm__Inbound_Report__c:
+      table: cpm__Inbound_Report__c
+    cpm__Installment__c:
+      table: cpm__Installment__c
+    cpm__Mandate__c:
+      table: cpm__Mandate__c
+    cpm__Originating_Campaign__c:
+      table: Campaign
+    cpm__Payment_Profile__c:
+      table: cpm__Payment_Profile__c
+    cpm__Recurring_Payment__c:
+      table: cpm__Recurring_Payment__c
+    cpm__Transaction_Sub_Element__c:
+      table: cpm__Transaction_Sub_Element__c
+    cpm__Transaction__c:
+      table: cpm__Transaction__c
+    proh__File__c:
+      table: proh__File__c

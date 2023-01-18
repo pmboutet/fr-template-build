@@ -21,13 +21,13 @@ RecordType ID <- Type   only on ceeate
 Got some manual update from source files?
 1. Run `cci task run deploy --path force-app --org dev`
 
-
 To get/list your scratch org config changes?
 1. Run `cci task run list_changes --org dev -o exclude "Profile:"`
 2. Run `cci task run retrieve_changes --org dev -o exclude "Profile:"`
 
 To get/list your data changes?
-1. Run 
+1. Run `cci task run generate_dataset_mapping --org dev`
+2. Run `cci task run extract_dataset --org dev`
 
 ## Authorize a Dev Hub using CLI
  
