@@ -15,7 +15,7 @@ To work on this project in a scratch org:
    From Data Integrity, Select France, (cci org inf dev) to enter username/password
 8.  Authorize Findock(ProcessingHub, WebHub)
 9. create manually a new NPSP installment.SFFR_Type -> recordTypeID rule in PAYMENTHUB FOR NPSP Opportunity Installment Field Mapping
-RecordType ID <- Type   only on ceeate
+RecordType ID <- Type   only on create
 
 
 Got some manual update from source files?

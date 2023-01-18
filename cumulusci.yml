@@ -351,12 +351,18 @@ flows:
             task:  sffr_assign_compact_layout_task
             options:
                 api_names: npsp__Engagement_Plan__c
-                value: "%%%NAMESPACE%%%SFFR_Compact_Layout"
           11:
             task:  sffr_assign_compact_layout_task
             options:
                 api_names: cpm__Payment__c
                 value: "%%%NAMESPACE%%%SFFR_Payment_compact_layout"
+          12:
+            task:  sffr_assign_compact_layout_task
+            options:
+                api_names: SFFR_Payment_Group__c
+                value: "%%%NAMESPACE%%%SFFR_Bank_Payment_Group"
+                value: "%%%NAMESPACE%%%SFFR_Compact_Layout"
+
 
     sffr_add_data:
         description: Cleans up data and disables triggers before running data load.

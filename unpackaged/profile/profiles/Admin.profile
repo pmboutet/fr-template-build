@@ -36,7 +36,7 @@
                 <layout>Account-SFFR Organization Layout</layout>
                 <recordType>Account.Organization</recordType>
         </layoutAssignments>
-                <layoutAssignments>
+        <layoutAssignments>
                 <layout>Opportunity-SFFR Donation Layout</layout>
                 <recordType>Opportunity.Donation</recordType>
         </layoutAssignments>
@@ -52,5 +52,13 @@
         </layoutAssignments>
         <layoutAssignments>
                 <layout>Task-SFFR Task Layout</layout>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>cpm_Payment__c-SFFR_Payment_Layout</layout>
+                <recordType>cpm_Payment__c.SFFR_Payment</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>cpm_Payment__c-Split</layout>
+                <recordType>cpm_Payment__c.SFFR_Split</recordType>
         </layoutAssignments>
 </Profile>
