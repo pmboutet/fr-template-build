@@ -271,6 +271,7 @@ flows:
                 is_required: True
                 is_recommended: True
             options:
+              api_name: SFFR Integration User,System Administrator
               record_types:
                 - record_type: Campaign.SFFR_External_Segment
                 - record_type: Campaign.SFFR_Internal_Segment
