@@ -351,6 +351,7 @@ flows:
             task:  sffr_assign_compact_layout_task
             options:
                 api_names: npsp__Engagement_Plan__c
+                value: "%%%NAMESPACE%%%SFFR_Compact_Layout"
           11:
             task:  sffr_assign_compact_layout_task
             options:
