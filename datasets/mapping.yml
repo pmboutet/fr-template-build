@@ -39,6 +39,7 @@ Insert npo02__Household__c:
   sf_object: npo02__Household__c
   fields:
   - Name
+  - npo02__Addressee__c
   - npo02__Always_Anonymous__c
   - npo02__AverageAmount__c
   - npo02__Best_Gift_Year_Total__c
