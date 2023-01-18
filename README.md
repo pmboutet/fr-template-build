@@ -15,7 +15,7 @@ To work on this project in a scratch org:
    From Data Integrity, Select France, (cci org inf dev) to enter username/password
 8.  Authorize Findock(ProcessingHub, WebHub)
 9. create manually a new NPSP installment.SFFR_Type -> recordTypeID rule in PAYMENTHUB FOR NPSP Opportunity Installment Field Mapping
-
+RecordType ID <- Type   only on ceeate
 
 
 Got some manual update from source files?
@@ -25,6 +25,9 @@ Got some manual update from source files?
 To get/list your scratch org config changes?
 1. Run `cci task run list_changes --org dev -o exclude "Profile:"`
 2. Run `cci task run retrieve_changes --org dev -o exclude "Profile:"`
+
+To get/list your data changes?
+1. Run 
 
 ## Authorize a Dev Hub using CLI
  

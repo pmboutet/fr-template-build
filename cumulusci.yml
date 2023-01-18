@@ -107,8 +107,8 @@ tasks:
         class_path: cumulusci.tasks.bulkdata.LoadData
         group: "SFFR: Data Load"
         options:
-            mapping: datasets/mapping.yml
-            sql_path: datasets/sample.sql
+            mapping: datasets/samplemapping.yml
+            sql_path: datasets/sampledata.sql
             drop_missing_schema: True
             ignore_row_errors: true
 
