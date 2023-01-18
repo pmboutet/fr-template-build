@@ -54,11 +54,11 @@
                 <layout>Task-SFFR Task Layout</layout>
         </layoutAssignments>
         <layoutAssignments>
-                <layout>cpm_Payment__c-SFFR_Payment_Layout</layout>
-                <recordType>cpm_Payment__c.SFFR_Payment</recordType>
+                <layout>cpm__Payment__c-SFFR_Payment_Layout</layout>
+                <recordType>cpm__Payment__c.SFFR_Payment</recordType>
         </layoutAssignments>
         <layoutAssignments>
-                <layout>cpm_Payment__c-Split</layout>
-                <recordType>cpm_Payment__c.SFFR_Split</recordType>
+                <layout>cpm__Payment__c-SFFR_Split_Payment_Layout</layout>
+                <recordType>cpm__Payment__c.SFFR_Split</recordType>
         </layoutAssignments>
 </Profile>
