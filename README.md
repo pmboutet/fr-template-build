@@ -14,9 +14,6 @@ To work on this project in a scratch org:
 7.  Authorize Data Integrity
    From Data Integrity, Select France, (cci org inf dev) to enter username/password
 8.  Authorize Findock(ProcessingHub, WebHub)
-9. create manually a new NPSP installment.SFFR_Type -> recordTypeID rule in PAYMENTHUB FOR NPSP Opportunity Installment Field Mapping
-RecordType ID <- Type   only on create
-
 
 Got some manual update from source files?
 1. Run `cci task run deploy --path force-app --org dev`
@@ -91,3 +88,12 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
 
    ## Install https://cumulusci.readthedocs.io/en/stable/robot.html
    copy the unziped file to document and copy mv ../../chromedriver /usr/local/bin
+
+
+
+
+
+
+  ## Deploy to a Production Org
+  1. Create an org via environment hub foundation
+  2. Org Created: fpierre_ftdemo1@salesforce.com

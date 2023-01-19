@@ -190,6 +190,14 @@ tasks:
             path: scripts/npspHelpers.cls
             apex: SetThemAll();         
 
+    findock_enable_Settings:
+        description: add SFFR specific findock settings
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        group: "findock: Post Installation"
+        options:
+            path: scripts/findockHelpers.cls
+            apex: SetThemAll();         
+
     npsp_enable_MembershipCR:
         description: Enable Address management for non-Household Accounts (Required if loading Sample Data)
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
@@ -217,10 +225,12 @@ flows:
             7:
                 flow: findock:configure_findock
             8:
-                task: sffr_dataintegritysandbox
+                task: findock_enable_Settings
             9:
-                task: sffr_load_findockdata
+                task: sffr_dataintegritysandbox
             10:
+                task: sffr_load_findockdata
+            11:
                 flow: complete_install
                 
     config_qa:

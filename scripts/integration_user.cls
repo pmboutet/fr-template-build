@@ -4,7 +4,7 @@ public static void createIntegrationUser() {
                     SELECT Id, Name
                     FROM Profile
                     WHERE Name = 'SFFR Integration User'
-                    LIMIT 1
+                    LIMIT 1 
                 ];
 
     User integUser =  new User(
