@@ -31,9 +31,18 @@ To get/list your data changes?
   2. Org Created via foundation devhub: fpierre_ftdemo2@salesforce.com
   2.1 Enable Translation Workbench - Setup / Transalation WB
   3. Run `cci org connect production` login/allow
-  4. Run `cci flow run install_prod --org production`
-  5. Company Info / Timezone + Locale
-  6. Authorized Insight
+  4. Run `cci flow run install_demo --org production`
+  5.  Activate the Euro Currency + Default Time Zone from
+   Setup, Company Information, Edit, 
+      Currency Locale = French(France) - EUR
+      Default Time Zone= GMT +1 CET Paris
+    Save
+  6.  Authorize Data Integrity
+   From Data Integrity, Select France, (cci org inf dev) to enter username/password
+  8.  Authorize Findock(ProcessingHub, WebHub)
+   From Findock LEX App, More, Setup
+      ProcessingHub to enter username/password Connect
+      WebHub to enter username/password Connect
   7. Add Missing Permission Set to Fabrice
   8. Findock Setup both service + remote site settings
 

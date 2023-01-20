@@ -206,7 +206,7 @@ tasks:
             path: scripts/npspHelpers.cls
             apex: enable_MembershipCR();         
 
-    deploy1:
+    deploylocal:
         description: Deploy test
         class_path: cumulusci.tasks.salesforce.Deploy
         options:
@@ -217,44 +217,55 @@ flows:
     config_dev:
         steps:
             3:
-                flow: config
-    install_prod:
-        steps:
-            2:
-                task: deploy1
-
-            3:
-                flow: config
-    config:
-        steps:
-            1:
                 flow: npsp:enable_rd2_managed
                 ui_options:
                     name: Enable Enhanced Recurring Donations
                     is_required: False
                     is_recommended: True
-            2:
+            4:
                 flow: npsp:enable_gift_entry
-            3:
-                task: npsp_enable_Settings
-            4:
-                task: npsp_enable_MembershipCR
             5:
-                flow: findock:configure_findock
+                task: npsp_enable_Settings
             6:
-                task: findock_enable_Settings
+                task: npsp_enable_MembershipCR
             7:
-                task: sffr_dataintegritysandbox
-            8:
-                task: sffr_load_findockdata
-            9:
-                flow: complete_install
-                
-    config_qa:
-        steps:
-            3:
                 flow: findock:configure_findock
+            8:
+                task: findock_enable_Settings
+            9:
+                task: sffr_dataintegritysandbox
+            10:
+                task: sffr_load_findockdata
+            11:
+                flow: complete_install
+
+    install_demo:
+        steps:
+            1:
+                flow: dependencies
+            2:
+                task: deploylocal
+            3:
+                flow: npsp:enable_rd2_managed
+                ui_options:
+                    name: Enable Enhanced Recurring Donations
+                    is_required: False
+                    is_recommended: True
             4:
+                flow: npsp:enable_gift_entry
+            5:
+                task: npsp_enable_Settings
+            6:
+                task: npsp_enable_MembershipCR
+            7:
+                flow: findock:configure_findock
+            8:
+                task: findock_enable_Settings
+            9:
+                task: sffr_dataintegritysandbox
+            10:
+                task: sffr_load_findockdata
+            11:
                 flow: complete_install
 
     complete_install:
@@ -389,6 +400,7 @@ flows:
             options:
                 api_names: SFFR_Payment_Group__c
                 value: "%%%NAMESPACE%%%SFFR_Payment_Group"
+                
     sffr_add_data:
         description: Cleans up data and disables triggers before running data load.
         steps:
