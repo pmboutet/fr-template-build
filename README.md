@@ -28,10 +28,10 @@ To get/list your data changes?
 
 ## Deploy to a Production Org
   1. Create an org via environment hub foundation
-  2. Org Created via foundation devhub: fpierre_ftdemo1@salesforce.com
-  2.1 Enable Translation Workbench
+  2. Org Created via foundation devhub: fpierre_ftdemo2@salesforce.com
+  2.1 Enable Translation Workbench - Setup / Transalation WB
   3. Run `cci org connect production` login/allow
-  4. Run `cci flow run dev_org --org production`
+  4. Run `cci flow run install_prod --org production`
   5. Company Info / Timezone + Locale
   6. Authorized Insight
   7. Add Missing Permission Set to Fabrice

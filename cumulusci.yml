@@ -205,11 +205,24 @@ tasks:
         options:
             path: scripts/npspHelpers.cls
             apex: enable_MembershipCR();         
-            
+
+    deploy1:
+        description: Deploy test
+        class_path: cumulusci.tasks.salesforce.Deploy
+        options:
+            path: force-app
+
 flows:
 
     config_dev:
         steps:
+            3:
+                flow: config
+    install_prod:
+        steps:
+            2:
+                task: deploy1
+
             3:
                 flow: config
     config:
