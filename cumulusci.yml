@@ -211,26 +211,30 @@ flows:
     config_dev:
         steps:
             3:
+                flow: config
+    config:
+        steps:
+            1:
                 flow: npsp:enable_rd2_managed
                 ui_options:
                     name: Enable Enhanced Recurring Donations
                     is_required: False
                     is_recommended: True
-            4:
+            2:
                 flow: npsp:enable_gift_entry
-            5:
+            3:
                 task: npsp_enable_Settings
-            6:
+            4:
                 task: npsp_enable_MembershipCR
-            7:
+            5:
                 flow: findock:configure_findock
-            8:
+            6:
                 task: findock_enable_Settings
-            9:
+            7:
                 task: sffr_dataintegritysandbox
-            10:
+            8:
                 task: sffr_load_findockdata
-            11:
+            9:
                 flow: complete_install
                 
     config_qa:
