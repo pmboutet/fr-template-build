@@ -334,6 +334,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>EmailHighlightAction</actionName>
+            <actionType>ProductivityAction</actionType>
+            <sortOrder>18</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Account.SFFR_New_Membership</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
@@ -422,11 +427,6 @@
             <actionName>ChangeRecordType</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>17</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>EmailHighlightAction</actionName>
-            <actionType>ProductivityAction</actionType>
-            <sortOrder>18</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>

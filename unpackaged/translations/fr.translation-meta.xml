@@ -21,7 +21,7 @@
         <name>SFFR_ContactOrigin</name>
     </customLabels>
     <customLabels>
-        <label>Téléphone et adresse</label>
+        <label>Téléphone et Adresse</label>
         <name>SFFR_PhoneAndAddress</name>
     </customLabels>
     <customLabels>
@@ -37,7 +37,7 @@
         <name>SFFR_Transactions</name>
     </customLabels>
     <customLabels>
-        <label>Telephone et Courriel</label>
+        <label>Téléphone et Courriel</label>
         <name>SFFR_PhoneAndEmail</name>
     </customLabels>
     <customLabels>
@@ -71,5 +71,9 @@
     <customLabels>
         <label>Tapez un nom de rubrique et appuyez sur Entrée.</label>
         <name>SFFR_QualifiersSearchHint</name>
+    </customLabels>
+    <customLabels>
+        <label>Standardisation</label>
+        <name>SFFR_Standardization</name>
     </customLabels>
 </Translations>

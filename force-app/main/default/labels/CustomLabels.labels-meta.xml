@@ -136,4 +136,12 @@
         <shortDescription>SFFR_QualifiersSearchHint</shortDescription>
         <value>Type a topic name and press Enter.</value>
     </labels>
+    <labels>
+        <fullName>SFFR_Standardization</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Standardization</shortDescription>
+        <value>Standardization</value>
+    </labels>
 </CustomLabels>

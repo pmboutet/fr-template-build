@@ -2,6 +2,10 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldSets>
         <label></label>
+        <name>cpm__newContactManualReview</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
         <name>npsp__BDE_Entry_FS</name>
     </fieldSets>
     <fieldSets>
@@ -11,6 +15,14 @@
     <fieldSets>
         <label></label>
         <name>npsp__ContactMergeFoundFS</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>proh__SOSL_ReturnFields</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>proh__newContact</name>
     </fieldSets>
     <layouts>
         <layout>Contact Layout</layout>
@@ -48,38 +60,10 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>Contact Lightning Layout</layout>
+        <layout>Contact PaymentHub Layout</layout>
         <sections>
             <label></label>
-            <section>Contact Details</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Donation Information</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Donation Totals</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Household Address</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Household Donation Info</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Membership Information</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Misc</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Soft Credit Total</section>
+            <section>Custom Links</section>
         </sections>
     </layouts>
     <layouts>
@@ -96,18 +80,6 @@
     <quickActions>
         <label></label>
         <name>NewDonation</name>
-    </quickActions>
-    <quickActions>
-        <label></label>
-        <name>NewInKind</name>
-    </quickActions>
-    <quickActions>
-        <label></label>
-        <name>NewInKindGift</name>
-    </quickActions>
-    <quickActions>
-        <label></label>
-        <name>NewMajorGift</name>
     </quickActions>
     <quickActions>
         <label></label>
@@ -131,19 +103,11 @@
     </quickActions>
     <webLinks>
         <label></label>
-        <name>Copy_Address_to_Household</name>
-    </webLinks>
-    <webLinks>
-        <label></label>
         <name>GoogleMaps</name>
     </webLinks>
     <webLinks>
         <label></label>
         <name>GoogleSearch</name>
-    </webLinks>
-    <webLinks>
-        <label></label>
-        <name>Relationships_Viewer</name>
     </webLinks>
     <webLinks>
         <label></label>
