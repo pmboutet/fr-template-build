@@ -70,7 +70,7 @@ public static void adjust_HouseholdNamingSettings() {
     npsp__Household_Naming_Settings__c hnSettings = npsp__Household_Naming_Settings__c.getOrgDefaults();
     hnSettings.npsp__Contact_Overrun_Count__c = 4;
     hnSettings.npsp__Formal_Greeting_Format__c = '{!{!Salutation} {!FirstName}} {!LastName}';
-    hnSettings.npsp__Household_Name_Format__c = 'Foyé de {!LastName}';
+    hnSettings.npsp__Household_Name_Format__c = 'Foyer {!LastName}';
     hnSettings.npsp__Informal_Greeting_Format__c = '{!{!FirstName}}';
     hnSettings.npsp__Name_Connector__c = 'et';
     hnSettings.npsp__Name_Overrun__c = 'amis';
