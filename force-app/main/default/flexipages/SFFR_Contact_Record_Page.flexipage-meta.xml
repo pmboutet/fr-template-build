@@ -2450,7 +2450,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Payments</value>
+                    <value>Paiments</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
@@ -2466,6 +2466,13 @@
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
                 <identifier>lst_dynamicRelatedList7</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.LanguageLocaleKey}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>fr</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>

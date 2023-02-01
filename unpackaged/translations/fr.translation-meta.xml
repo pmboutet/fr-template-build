@@ -21,7 +21,7 @@
         <name>SFFR_ContactOrigin</name>
     </customLabels>
     <customLabels>
-        <label>Téléphone et Adresse</label>
+        <label>Téléphone et adresse</label>
         <name>SFFR_PhoneAndAddress</name>
     </customLabels>
     <customLabels>
@@ -37,15 +37,15 @@
         <name>SFFR_Transactions</name>
     </customLabels>
     <customLabels>
-        <label>Téléphone et Courriel</label>
+        <label>Téléphone et courriel</label>
         <name>SFFR_PhoneAndEmail</name>
     </customLabels>
     <customLabels>
-        <label>Adresse Principale</label>
+        <label>Adresse principale</label>
         <name>SFFR_MainAddress</name>
     </customLabels>
     <customLabels>
-        <label>Adresse Secondaire</label>
+        <label>Adresse secondaire</label>
         <name>SFFR_SecondaryAddress</name>
     </customLabels>
     <customLabels>
