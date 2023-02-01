@@ -76,4 +76,84 @@
         <label>Standardisation</label>
         <name>SFFR_Standardization</name>
     </customLabels>
+    <customLabels>
+        <label>Statistique sur les dons</label>
+        <name>SFFR_GiftStatistics</name>
+    </customLabels>
+    <customLabels>
+        <label>Dons des 3 dernières années</label>
+        <name>SFFR_GiftPast3Y</name>
+    </customLabels>
+    <customLabels>
+        <label>Statistique sur les foyers</label>
+        <name>SFFR_HouseholdStatistics</name>
+    </customLabels>
+    <customLabels>
+        <label>Statistique sur crédits indirects</label>
+        <name>SFFR_SoftCreditStatistics</name>
+    </customLabels>
+    <customLabels>
+        <label>Crédits indirects des 3 dernières années</label>
+        <name>SFFR_SoftCreditPast3Y</name>
+    </customLabels>
+    <customLabels>
+        <label>Statistique sur les adhésions</label>
+        <name>SFFR_MembershipStatistics</name>
+    </customLabels>
+    <customLabels>
+        <label>Dons</label>
+        <name>SFFR_Gifts</name>
+    </customLabels>
+    <customLabels>
+        <label>Crédits indirects</label>
+        <name>SFFR_SoftCredit</name>
+    </customLabels>
+    <customLabels>
+        <label>Adhésions</label>
+        <name>SFFR_Membership</name>
+    </customLabels>
+    <customLabels>
+        <label>Probabilité de devenir premier donateur</label>
+        <name>sfdo_analytics__firstTimeDonorLikelihoodLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Probabilité de devenir donateur régulier</label>
+        <name>sfdo_analytics__recurringDonorLikelihoodLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Probabilité de devenir le meilleur donateur</label>
+        <name>sfdo_analytics__topDonorLikelihoodLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Métriques prédictives</label>
+        <name>sfdo_analytics__predictiveMetricsCardTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Aucun résultat</label>
+        <name>sfdo_analytics__noResultsLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Historique des dons</label>
+        <name>sfdo_analytics__givingHistoryCardTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Durée de vie</label>
+        <name>sfdo_analytics__givingHistoryCardLifetimeLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Cette année</label>
+        <name>sfdo_analytics__givingHistoryCardAnnualLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Plus grand</label>
+        <name>sfdo_analytics__givingHistoryCardHighestGiftLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Plus récent</label>
+        <name>sfdo_analytics__givingHistoryCardMostRecentGiftLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Moyen</label>
+        <name>sfdo_analytics__givingHistoryCardMostAverageGiftLabel</name>
+    </customLabels>
 </Translations>

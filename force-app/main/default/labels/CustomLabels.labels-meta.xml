@@ -144,4 +144,76 @@
         <shortDescription>SFFR_Standardization</shortDescription>
         <value>Standardization</value>
     </labels>
+    <labels>
+        <fullName>SFFR_GiftStatistics</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_GiftStatistics</shortDescription>
+        <value>Gift Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_GiftPast3Y</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_GiftPast3Y</shortDescription>
+        <value>Gifts From Past 3 Years</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_HouseholdStatistics</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_HouseholdStatistics</shortDescription>
+        <value>Household Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_SoftCreditStatistics</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_SoftCreditStatistics</shortDescription>
+        <value>Soft Credit Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_SoftCreditPast3Y</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_SoftCreditPast3Y</shortDescription>
+        <value>Soft Credit From Past 3 Years</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_MembershipStatistics</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_MembershipStatistics</shortDescription>
+        <value>Membership Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Gifts</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Gifts</shortDescription>
+        <value>Gifts</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_SoftCredit</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_SoftCredit</shortDescription>
+        <value>Soft Credit</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Membership</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Membership</shortDescription>
+        <value>Membership</value>
+    </labels>
 </CustomLabels>
