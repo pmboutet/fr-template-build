@@ -15,8 +15,9 @@ To work on this project in a scratch org:
    From Data Integrity, Select France, (cci org inf dev) to enter username/password
 8.  Authorize Findock(ProcessingHub, WebHub)
 
-Got some manual update from source files?
+Got some manual update from source files and or additional transalations?
 1. Run `cci task run deploy --path force-app --org dev`
+2. Run `cci task run sffr_translations --org dev`  
 
 To get/list your scratch org config changes?
 1. Run `cci task run list_changes --org dev -o exclude "Profile:"`
