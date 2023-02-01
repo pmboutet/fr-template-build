@@ -4,8 +4,8 @@
     <assignments>
         <name>addToTal</name>
         <label>addToTal</label>
-        <locationX>308</locationX>
-        <locationY>1118</locationY>
+        <locationX>352</locationX>
+        <locationY>1454</locationY>
         <assignmentItems>
             <assignToReference>total_amount</assignToReference>
             <operator>Add</operator>
@@ -27,13 +27,13 @@
     <assignments>
         <name>assign_to_inbound</name>
         <label>assign_to_inbound</label>
-        <locationX>308</locationX>
-        <locationY>878</locationY>
+        <locationX>352</locationX>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>inboundSingle.cpm__Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>masterContactId.Id</elementReference>
+                <elementReference>Inbound_benificiary.recordId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -134,6 +134,13 @@
                 <elementReference>Inbound_Campaign_lookup.recordId</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>inboundSingle.SFFR_Payer_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>masterContactId.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>createInboundReport</targetReference>
         </connector>
@@ -141,8 +148,8 @@
     <assignments>
         <name>assigntocollection</name>
         <label>assigntocollection</label>
-        <locationX>308</locationX>
-        <locationY>1238</locationY>
+        <locationX>352</locationX>
+        <locationY>1574</locationY>
         <assignmentItems>
             <assignToReference>InboundReportCollection</assignToReference>
             <operator>Add</operator>
@@ -153,6 +160,22 @@
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setPaymentKey</name>
+        <label>setPaymentKey</label>
+        <locationX>440</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>inboundSingle.SFFR_Payment_Key__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>paymentKey</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>assign_to_inbound</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -236,6 +259,31 @@
         </value>
     </choices>
     <decisions>
+        <name>hasToSplitPayment</name>
+        <label>hasToSplitPayment</label>
+        <locationX>352</locationX>
+        <locationY>878</locationY>
+        <defaultConnector>
+            <targetReference>setPaymentKey</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_split</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Inbound_Amount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Inbound_Split_Amount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_to_inbound</targetReference>
+            </connector>
+            <label>yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>loop</name>
         <label>loop</label>
         <locationX>176</locationX>
@@ -258,6 +306,11 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>paymentKey</name>
+        <dataType>String</dataType>
+        <expression>{!masterContactId.Id} &amp; &quot;-&quot; &amp; TEXT({!$Flow.InterviewStartTime})</expression>
+    </formulas>
     <interviewLabel>SFFR-fullfilment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFFR-fullfilment</label>
     <processMetadataValues>
@@ -282,8 +335,8 @@
     <recordCreates>
         <name>createInboundReport</name>
         <label>createInboundReport</label>
-        <locationX>308</locationX>
-        <locationY>998</locationY>
+        <locationX>352</locationX>
+        <locationY>1334</locationY>
         <connector>
             <targetReference>addToTal</targetReference>
         </connector>
@@ -313,13 +366,13 @@
     <screens>
         <name>Affectation</name>
         <label>Affectation</label>
-        <locationX>308</locationX>
+        <locationX>352</locationX>
         <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>assign_to_inbound</targetReference>
+            <targetReference>hasToSplitPayment</targetReference>
         </connector>
         <fields>
             <name>Affectation_Section1</name>
@@ -667,7 +720,7 @@
             <targetReference>SearchContact</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>SearchContact</name>
         <label>SearchContact</label>
