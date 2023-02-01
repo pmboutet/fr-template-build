@@ -327,6 +327,11 @@ flows:
                 - record_type: SFFR_Payment_Group__c.SFFR_Bank
                   default: true
                 - record_type: SFFR_Payment_Group__c.SFFR_Fulfillement
+                - record_type: cpm__Payment_Profile__c.cpm__IBAN
+                  default: true
+                - record_type: cpm__Payment_Profile__c.cpm__Credit_Card
+                - record_type: cpm__Payment_Profile__c.phstr__Bank_Account
+                
           2:
             task: deploy
             ui_options:

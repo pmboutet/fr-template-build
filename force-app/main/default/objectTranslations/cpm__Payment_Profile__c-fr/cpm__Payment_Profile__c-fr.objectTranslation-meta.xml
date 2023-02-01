@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value></value>
+        <value>Profile de paiment</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value></value>
+        <value>Profiles de paiement</value>
     </caseValues>
     <fieldSets>
         <label></label>
@@ -16,7 +16,7 @@
         <label></label>
         <name>proh__newProfile</name>
     </fieldSets>
-    <gender></gender>
+    <gender>Masculine</gender>
     <layouts>
         <layout>Credit Card</layout>
         <sections>
@@ -51,11 +51,11 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label></label>
+            <label>Détails de l'IBAN</label>
             <section>IBAN details</section>
         </sections>
         <sections>
-            <label></label>
+            <label>Informations système</label>
             <section>System information</section>
         </sections>
     </layouts>
@@ -77,28 +77,28 @@
             <section>Custom Links</section>
         </sections>
     </layouts>
-    <nameFieldLabel></nameFieldLabel>
+    <nameFieldLabel>Référence</nameFieldLabel>
     <recordTypes>
         <description></description>
-        <label></label>
+        <label>Carte de crédit</label>
         <name>cpm__Credit_Card</name>
     </recordTypes>
     <recordTypes>
         <description></description>
-        <label></label>
+        <label>IBAN</label>
         <name>cpm__IBAN</name>
     </recordTypes>
     <recordTypes>
         <description></description>
-        <label></label>
+        <label>Compte bancaire (ancien)</label>
         <name>cpm__Legacy_Bank_Account</name>
     </recordTypes>
     <recordTypes>
         <description></description>
-        <label></label>
+        <label>Compte bancaire</label>
         <name>phstr__Bank_Account</name>
     </recordTypes>
-    <startsWith></startsWith>
+    <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage></errorMessage>
         <name>cpm__BIC_is_mandatory_for_non_NL_IBANS</name>
