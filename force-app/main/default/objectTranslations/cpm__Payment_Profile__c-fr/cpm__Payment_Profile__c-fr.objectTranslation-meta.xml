@@ -18,10 +18,10 @@
     </fieldSets>
     <gender>Masculine</gender>
     <layouts>
-        <layout>Credit Card</layout>
+        <layout>BBAN</layout>
         <sections>
             <label></label>
-            <section>Credit Card information</section>
+            <section>Bank Account details</section>
         </sections>
         <sections>
             <label></label>
@@ -29,10 +29,25 @@
         </sections>
         <sections>
             <label></label>
-            <section>Holder validation</section>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Credit Card</layout>
+        <sections>
+            <label>Informations sur la carte de crédit</label>
+            <section>Credit Card information</section>
         </sections>
         <sections>
             <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Validation du titulaire</label>
+            <section>Holder validation</section>
+        </sections>
+        <sections>
+            <label>Informations système</label>
             <section>System Detail</section>
         </sections>
         <sections>
@@ -51,7 +66,7 @@
             <section>Custom Links</section>
         </sections>
         <sections>
-            <label>Détails de l'IBAN</label>
+            <label>Informations sur l&apos;IBAN</label>
             <section>IBAN details</section>
         </sections>
         <sections>
@@ -78,6 +93,11 @@
         </sections>
     </layouts>
     <nameFieldLabel>Référence</nameFieldLabel>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>cpm__BBAN</name>
+    </recordTypes>
     <recordTypes>
         <description>Stocke les informations de carte de crédit</description>
         <label>Carte de crédit</label>

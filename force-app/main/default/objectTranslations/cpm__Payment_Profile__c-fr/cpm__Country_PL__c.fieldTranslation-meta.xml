@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>Type de portefeuille</label>
-    <name>cpm__Wallet_Type__c</name>
+    <label></label>
+    <name>cpm__Country_PL__c</name>
     <picklistValues>
-        <masterLabel>Apple Pay</masterLabel>
+        <masterLabel>GB</masterLabel>
         <translation></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Google Pay</masterLabel>
+        <masterLabel>Other</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SE</masterLabel>
         <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>
