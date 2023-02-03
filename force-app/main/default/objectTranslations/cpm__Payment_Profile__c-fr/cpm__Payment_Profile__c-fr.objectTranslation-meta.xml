@@ -36,11 +36,11 @@
             <section>System Detail</section>
         </sections>
         <sections>
-            <label></label>
+            <label>Détails du jeton</label>
             <section>Token details</section>
         </sections>
         <sections>
-            <label></label>
+            <label>Portefeuille</label>
             <section>Wallet</section>
         </sections>
     </layouts>
@@ -79,12 +79,12 @@
     </layouts>
     <nameFieldLabel>Référence</nameFieldLabel>
     <recordTypes>
-        <description></description>
+        <description>Stocke les informations de carte de crédit</description>
         <label>Carte de crédit</label>
         <name>cpm__Credit_Card</name>
     </recordTypes>
     <recordTypes>
-        <description></description>
+        <description>Stocke les informations de compte bancaire au format IBAN</description>
         <label>IBAN</label>
         <name>cpm__IBAN</name>
     </recordTypes>
