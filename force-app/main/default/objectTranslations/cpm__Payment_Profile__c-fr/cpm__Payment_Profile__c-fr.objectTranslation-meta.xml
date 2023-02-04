@@ -18,21 +18,6 @@
     </fieldSets>
     <gender>Masculine</gender>
     <layouts>
-        <layout>BBAN</layout>
-        <sections>
-            <label></label>
-            <section>Bank Account details</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>System Information</section>
-        </sections>
-    </layouts>
-    <layouts>
         <layout>Credit Card</layout>
         <sections>
             <label>Informations sur la carte de crédit</label>
@@ -93,11 +78,6 @@
         </sections>
     </layouts>
     <nameFieldLabel>Référence</nameFieldLabel>
-    <recordTypes>
-        <description></description>
-        <label></label>
-        <name>cpm__BBAN</name>
-    </recordTypes>
     <recordTypes>
         <description>Stocke les informations de carte de crédit</description>
         <label>Carte de crédit</label>
