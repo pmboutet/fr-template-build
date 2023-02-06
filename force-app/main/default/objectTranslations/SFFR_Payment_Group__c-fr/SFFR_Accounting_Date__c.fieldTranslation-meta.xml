@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <help></help>
-    <label>Compte</label>
-    <name>cpm__Account__c</name>
-    <relationshipLabel></relationshipLabel>
+    <label>Date comptable</label>
+    <name>SFFR_Accounting_Date__c</name>
 </CustomFieldTranslation>
