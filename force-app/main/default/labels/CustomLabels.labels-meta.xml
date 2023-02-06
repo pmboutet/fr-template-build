@@ -216,4 +216,20 @@
         <shortDescription>SFFR_Membership</shortDescription>
         <value>Membership</value>
     </labels>
+    <labels>
+        <fullName>SFFR_Target</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Target</shortDescription>
+        <value>Target</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Campaign_Target</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Campaign_Target</shortDescription>
+        <value>Statistics</value>
+    </labels>
 </CustomLabels>

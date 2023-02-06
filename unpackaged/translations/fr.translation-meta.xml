@@ -156,4 +156,12 @@
         <label>Moyen</label>
         <name>sfdo_analytics__givingHistoryCardMostAverageGiftLabel</name>
     </customLabels>
+    <customLabels>
+        <label>Cible</label>
+        <name>SFFR_Target</name>
+    </customLabels>
+    <customLabels>
+        <label>Statistiques</label>
+        <name>SFFR_Campaign_Target</name>
+    </customLabels>
 </Translations>
