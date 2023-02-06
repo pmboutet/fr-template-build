@@ -292,14 +292,14 @@ flows:
         description: France Template Post Installation
         steps:
           1:
-            task: sffr_activate_french_language
-          2: 
             task: sffr_integration_user
-          3:
+          2:
             task: sffr_connect_findock_prochub
-          4:
+          3:
             task: sffr_connect_findock_webhub
-            
+          4: 
+            task: sffr_activate_french_language
+
     sffr_profile:
         steps:
           1:
