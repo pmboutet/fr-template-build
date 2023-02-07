@@ -46,6 +46,7 @@ To get/list your data changes?
       WebHub to enter username/password Connect
   7. Add Missing Permission Set to Fabrice
   8. Findock Setup both service + remote site settings
+  9. Einstein Analytics - enable Backup Model
 
 
 ## Authorize a Dev Hub using CLI
