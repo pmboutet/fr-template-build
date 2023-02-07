@@ -76,6 +76,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>SFFR_Membership_Type__c</picklist>
+        <values>
+            <fullName>Committee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Membership</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Type</picklist>
         <values>
             <fullName>Existing Business</fullName>
@@ -138,14 +149,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Cash</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Check</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Credit Transfer</fullName>
             <default>false</default>
         </values>
@@ -172,10 +175,6 @@
     </picklistValues>
     <picklistValues>
         <picklist>npsp4hub__Payment_Processor__c</picklist>
-        <values>
-            <fullName>Custom Processor</fullName>
-            <default>false</default>
-        </values>
         <values>
             <fullName>PaymentHub-SEPA</fullName>
             <default>false</default>
