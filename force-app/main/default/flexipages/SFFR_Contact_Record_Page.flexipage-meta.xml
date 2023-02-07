@@ -571,6 +571,16 @@
                 <identifier>Recordnpsp_is_Address_Override_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.npsp__Current_Address__c</fieldItem>
+                <identifier>Recordnpsp_Current_Address_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6ee70881-bd8f-43ba-a422-2962f123f88c</name>
         <type>Facet</type>
     </flexiPageRegions>

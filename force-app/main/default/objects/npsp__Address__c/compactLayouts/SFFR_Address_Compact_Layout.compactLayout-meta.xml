@@ -6,5 +6,6 @@
     <fields>npsp__Formula_MailingAddress__c</fields>
     <fields>npsp__Undeliverable__c</fields>
     <fields>SFFR_UM_Reason__c</fields>
+    <fields>SFFR_UM__c</fields>
     <label>SFFR Address Compact Layout</label>
 </CompactLayout>
