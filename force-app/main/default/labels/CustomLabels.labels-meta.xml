@@ -304,4 +304,36 @@
         <shortDescription>SFFR_GrantmakingInformation</shortDescription>
         <value>Grantmaking Information</value>
     </labels>
+    <labels>
+        <fullName>SFFR_PL</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_PL</shortDescription>
+        <value>P&amp;L</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Payment</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Payment</shortDescription>
+        <value>Payment</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Bank</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Bank</shortDescription>
+        <value>Bank</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Other</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Other</shortDescription>
+        <value>Other</value>
+    </labels>
 </CustomLabels>

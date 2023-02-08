@@ -200,4 +200,20 @@
         <label>Informations sur le subventionnement</label>
         <name>SFFR_GrantmakingInformation</name>
     </customLabels>
+    <customLabels>
+        <label>RSI</label>
+        <name>SFFR_PL</name>
+    </customLabels>
+    <customLabels>
+        <label>Paiement</label>
+        <name>SFFR_Payment</name>
+    </customLabels>
+    <customLabels>
+        <label>Banque</label>
+        <name>SFFR_Bank</name>
+    </customLabels>
+    <customLabels>
+        <label>Autre</label>
+        <name>SFFR_Other</name>
+    </customLabels>
 </Translations>
