@@ -7,6 +7,6 @@
     <fields>EndDate</fields>
     <fields>HierarchyNumberSent</fields>
     <fields>HierarchyAmountWonOpportunities</fields>
-    <fields>HierarchyAmountAllOpportunities</fields>
+    <fields>SFFR_ROI__c</fields>
     <label>SFFR Campaign Compact Layout</label>
 </CompactLayout>

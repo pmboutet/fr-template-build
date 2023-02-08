@@ -7,6 +7,6 @@
     <fields>ExpectedRevenue</fields>
     <fields>BudgetedCost</fields>
     <fields>ActualCost</fields>
-    <fields>NumberSent</fields>
+    <fields>SFFR_ROI__c</fields>
     <label>SFFR Internal Segment Compact Layout</label>
 </CompactLayout>

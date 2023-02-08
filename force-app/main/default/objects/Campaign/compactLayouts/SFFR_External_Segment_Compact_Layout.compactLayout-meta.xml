@@ -7,6 +7,6 @@
     <fields>Type</fields>
     <fields>SFFR_Dispatcher__c</fields>
     <fields>SFFR_Campaign_Content__c</fields>
-    <fields>SFFR_3party_Segment__c</fields>
+    <fields>SFFR_ROI__c</fields>
     <label>SFFR External Segment Compact Layout</label>
 </CompactLayout>
