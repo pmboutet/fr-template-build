@@ -101,6 +101,10 @@
         <name>SFFR_MembershipStatistics</name>
     </customLabels>
     <customLabels>
+        <label>Informations sur les adhésions</label>
+        <name>SFFR_MembershipInformation</name>
+    </customLabels>
+    <customLabels>
         <label>Dons</label>
         <name>SFFR_Gifts</name>
     </customLabels>
@@ -163,5 +167,25 @@
     <customLabels>
         <label>Statistiques</label>
         <name>SFFR_Campaign_Target</name>
+    </customLabels>
+    <customLabels>
+        <label>Dons</label>
+        <name>SFFR_Donations</name>
+    </customLabels>
+    <customLabels>
+        <label>Informations sur les dons</label>
+        <name>SFFR_DonationInformation</name>
+    </customLabels>
+    <customLabels>
+        <label>Statistique sur les dons</label>
+        <name>SFFR_DonationStatistics</name>
+    </customLabels>
+    <customLabels>
+        <label>Téléphones</label>
+        <name>SFFR_Phone</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresses</label>
+        <name>SFFR_Address</name>
     </customLabels>
 </Translations>

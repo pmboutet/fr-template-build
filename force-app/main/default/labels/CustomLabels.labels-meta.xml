@@ -193,6 +193,14 @@
         <value>Membership Statistics</value>
     </labels>
     <labels>
+        <fullName>SFFR_MembershipInformation</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_MembershipInformation</shortDescription>
+        <value>Membership Information</value>
+    </labels>
+    <labels>
         <fullName>SFFR_Gifts</fullName>
         <categories>SFFR</categories>
         <language>en_US</language>
@@ -231,5 +239,45 @@
         <protected>false</protected>
         <shortDescription>SFFR_Campaign_Target</shortDescription>
         <value>Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Donations</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Donations</shortDescription>
+        <value>Donations</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_DonationInformation</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_DonationInformation</shortDescription>
+        <value>Donation Information</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_DonationStatistics</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_DonationStatistics</shortDescription>
+        <value>Donation Statistics</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Phone</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_SFFR_Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Address</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Address</shortDescription>
+        <value>Address</value>
     </labels>
 </CustomLabels>
