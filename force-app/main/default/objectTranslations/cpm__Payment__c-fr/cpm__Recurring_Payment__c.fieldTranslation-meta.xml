@@ -3,5 +3,5 @@
     <help></help>
     <label>Paiement récurrent</label>
     <name>cpm__Recurring_Payment__c</name>
-    <relationshipLabel></relationshipLabel>
+    <relationshipLabel>Paiements</relationshipLabel>
 </CustomFieldTranslation>

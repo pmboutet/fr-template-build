@@ -2,5 +2,5 @@
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>Ventilation du paiement</label>
     <name>SFFR_Payment_Split__c</name>
-    <relationshipLabel></relationshipLabel>
+    <relationshipLabel>Opportunités</relationshipLabel>
 </CustomFieldTranslation>
