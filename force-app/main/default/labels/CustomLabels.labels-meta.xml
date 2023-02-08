@@ -280,4 +280,28 @@
         <shortDescription>SFFR_Address</shortDescription>
         <value>Address</value>
     </labels>
+    <labels>
+        <fullName>SFFR_MatchingGiftInformation</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_MatchingGiftInformation</shortDescription>
+        <value>Matching Gift Information</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_MembershipGrants</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_MembershipGrants</shortDescription>
+        <value>Membership &amp; Grants</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_GrantmakingInformation</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_GrantmakingInformation</shortDescription>
+        <value>Grantmaking Information</value>
+    </labels>
 </CustomLabels>

@@ -188,4 +188,16 @@
         <label>Adresses</label>
         <name>SFFR_Address</name>
     </customLabels>
+    <customLabels>
+        <label>Informations sur le don jumelé</label>
+        <name>SFFR_MatchingGiftInformation</name>
+    </customLabels>
+    <customLabels>
+        <label>Adhésions et subventions</label>
+        <name>SFFR_MembershipGrants</name>
+    </customLabels>
+    <customLabels>
+        <label>Informations sur le subventionnement</label>
+        <name>SFFR_GrantmakingInformation</name>
+    </customLabels>
 </Translations>
