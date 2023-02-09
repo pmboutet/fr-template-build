@@ -48,7 +48,10 @@ To get/list your data changes?
   8. Findock Setup both service + remote site settings
   9. Einstein Analytics - enable Backup Model
 
-
+Manual Prod update
+1. Run `cci task run deploy --path force-app --org`
+2. Run `cci task run sffr_translations --org`  
+3. Run `cci flow run sffr_profile --org`  
 ## Authorize a Dev Hub using CLI
  
 sfdx force:auth:web:login -d -a <org_name>
