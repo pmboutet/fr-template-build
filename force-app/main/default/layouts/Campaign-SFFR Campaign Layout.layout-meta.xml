@@ -218,8 +218,6 @@
     </relatedContent>
     <relatedLists>
         <fields>CAMPAIGN.NAME</fields>
-        <fields>CAMPAIGN.TOTAL_NUM_LEADS</fields>
-        <fields>CAMPAIGN.TOT_CONVERTED_LEADS</fields>
         <fields>CAMPAIGN.TOT_CONTACTS</fields>
         <fields>CAMPAIGN.TOT_OPPORTUNITIES</fields>
         <fields>CAMPAIGN.TOT_WON_OPPORTUNITIES</fields>
@@ -281,7 +279,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h5r000001lnTy</masterLabel>
+        <masterLabel>00h5E000002Vvg0</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
