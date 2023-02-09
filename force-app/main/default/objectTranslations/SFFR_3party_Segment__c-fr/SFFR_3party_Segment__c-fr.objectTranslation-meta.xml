@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value>Third Party Segment</value>
+        <value>Segment tiers</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value>Third Party Segments</value>
+        <value>Segment tiers</value>
     </caseValues>
     <gender>Masculine</gender>
     <layouts>

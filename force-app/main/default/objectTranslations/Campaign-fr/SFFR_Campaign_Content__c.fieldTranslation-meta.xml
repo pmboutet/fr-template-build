@@ -3,5 +3,5 @@
     <help>Recherche du contenu de la campagne.</help>
     <label>Contenu de la campagne</label>
     <name>SFFR_Campaign_Content__c</name>
-    <relationshipLabel></relationshipLabel>
+    <relationshipLabel>Contenu de la campagne</relationshipLabel>
 </CustomFieldTranslation>

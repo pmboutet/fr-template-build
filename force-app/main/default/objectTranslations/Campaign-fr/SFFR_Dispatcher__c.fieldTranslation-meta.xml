@@ -3,5 +3,5 @@
     <help>Recherche du Compte tiers succeptible de distribuer le message de l&apos;association.</help>
     <label>Routeur</label>
     <name>SFFR_Dispatcher__c</name>
-    <relationshipLabel></relationshipLabel>
+    <relationshipLabel>Campagnes</relationshipLabel>
 </CustomFieldTranslation>

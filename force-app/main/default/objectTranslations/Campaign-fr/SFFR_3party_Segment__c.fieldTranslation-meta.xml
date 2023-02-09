@@ -3,5 +3,5 @@
     <help>Recherche du segment externe de cette campagne (régie pub, base de contact externe louée).</help>
     <label>Segment externe</label>
     <name>SFFR_3party_Segment__c</name>
-    <relationshipLabel></relationshipLabel>
+    <relationshipLabel>Segments tiers</relationshipLabel>
 </CustomFieldTranslation>

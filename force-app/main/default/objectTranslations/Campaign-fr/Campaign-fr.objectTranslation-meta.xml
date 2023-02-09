@@ -1,54 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <layouts>
-        <layout>Campaign Layout</layout>
-        <sections>
-            <label></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>SFFR Campaign ES Layout</layout>
-        <sections>
-            <label></label>
-            <section>Campaign Segment Designation</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Media</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>New Section</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>P&amp;L</section>
-        </sections>
-        <sections>
-            <label></label>
-            <section>Target</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>SFFR Campaign Layout</layout>
-        <sections>
-            <label></label>
-            <section>Liens Personnalisés</section>
-        </sections>
-    </layouts>
-    <quickActions>
-        <label></label>
-        <name>nes</name>
-    </quickActions>
-    <quickActions>
-        <label></label>
-        <name>new_external</name>
-    </quickActions>
     <recordTypes>
         <label>Campagne</label>
         <name>SFFR_Campaign</name>
@@ -61,16 +12,4 @@
         <label>Segment Interne</label>
         <name>SFFR_Internal_Segment</name>
     </recordTypes>
-    <webLinks>
-        <label></label>
-        <name>Household_Mailing_List</name>
-    </webLinks>
-    <webLinks>
-        <label></label>
-        <name>ViewCampaignInfluenceReport</name>
-    </webLinks>
-    <webLinks>
-        <label></label>
-        <name>npo02__Household_Mailing_List</name>
-    </webLinks>
 </CustomObjectTranslation>
