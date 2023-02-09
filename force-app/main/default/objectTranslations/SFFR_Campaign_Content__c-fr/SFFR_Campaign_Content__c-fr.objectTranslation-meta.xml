@@ -10,4 +10,5 @@
     </caseValues>
     <gender>Masculine</gender>
     <startsWith>Consonant</startsWith>
+    <nameFieldLabel>Nom</nameFieldLabel>
 </CustomObjectTranslation>
