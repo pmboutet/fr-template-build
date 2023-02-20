@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SFFR_Type__c</fullName>
+    <defaultValue>&quot;donation&quot;</defaultValue>
     <externalId>false</externalId>
     <label>Type</label>
     <length>38</length>

@@ -14,6 +14,7 @@ To work on this project in a scratch org:
 7.  Authorize Data Integrity
    From Data Integrity, Select France, (cci org inf dev) to enter username/password
 8.  Authorize Findock(ProcessingHub, WebHub)
+9. assign SFFR_inbound_report layout to system admin
 
 Got some manual update from source files and or additional transalations?
 1. Run `cci task run deploy --path force-app --org dev`
