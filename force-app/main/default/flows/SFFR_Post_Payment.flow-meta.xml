@@ -377,7 +377,7 @@
         <inputAssignments>
             <field>cpm__Description__c</field>
             <value>
-                <stringValue>FLOW CREATED</stringValue>
+                <elementReference>$Record.cpm__External_ID__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -494,6 +494,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <description>Try to get the master payment if this master payment has already been created</description>
         <name>GetMasterPaymentAtThisKey</name>
         <label>GetMasterPaymentAtThisKey</label>
         <locationX>226</locationX>
@@ -522,6 +523,13 @@
             <operator>NotEqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>cpm__Collection_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.cpm__Collection_Date__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -983,7 +991,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>bankBatch</name>
         <dataType>SObject</dataType>
@@ -1006,6 +1014,39 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <scale>2</scale>
+    </variables>
+    <variables>
+        <name>nb_max_chq</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>30.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>nb_max_other</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>100.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>nb_max_sepa</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>1000.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>paymentRT</name>
