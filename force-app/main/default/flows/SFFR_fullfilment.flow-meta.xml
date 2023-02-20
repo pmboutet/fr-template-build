@@ -657,7 +657,7 @@
                     <name>Inbound_Fullfilment_date</name>
                     <dataType>Date</dataType>
                     <defaultValue>
-                        <elementReference>$System.OriginDateTime</elementReference>
+                        <elementReference>$Flow.CurrentDate</elementReference>
                     </defaultValue>
                     <fieldText>Fullfilment date</fieldText>
                     <fieldType>InputField</fieldType>
@@ -667,7 +667,7 @@
                     <name>Inbound_Payment_date</name>
                     <dataType>Date</dataType>
                     <defaultValue>
-                        <elementReference>$System.OriginDateTime</elementReference>
+                        <elementReference>$Flow.CurrentDate</elementReference>
                     </defaultValue>
                     <fieldText>Payment date</fieldText>
                     <fieldType>InputField</fieldType>
@@ -720,7 +720,7 @@
             <targetReference>SearchContact</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>SearchContact</name>
         <label>SearchContact</label>
