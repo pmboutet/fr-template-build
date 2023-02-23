@@ -159,7 +159,7 @@ CREATE TABLE "Contact" (
 	"Title" VARCHAR(255), 
 	"MobilePhone" VARCHAR(255), 
 	"HomePhone" VARCHAR(255), 
-	"Gender__c" VARCHAR(255), 
+	"GenderIdentity" VARCHAR(255), 
 	"HasOptedOutOfEmail" VARCHAR(255), 
 	"HasOptedOutOfFax" VARCHAR(255), 
 	"LastName" VARCHAR(255), 

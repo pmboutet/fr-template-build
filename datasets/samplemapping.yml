@@ -244,7 +244,7 @@ Insert Contact:
   - Title
   - MobilePhone
   - HomePhone
-  - Gender__c
+  - GenderIdentity
   - HasOptedOutOfEmail
   - HasOptedOutOfFax
   - LastName

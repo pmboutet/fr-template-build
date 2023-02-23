@@ -424,7 +424,7 @@ Insert Contact:
   fields:
   - DoNotCall
   - FirstName
-  - Gender__c
+  - GenderIdentity
   - HasOptedOutOfEmail
   - HasOptedOutOfFax
   - LastName

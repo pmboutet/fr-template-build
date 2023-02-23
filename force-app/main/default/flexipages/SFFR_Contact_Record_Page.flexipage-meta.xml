@@ -116,8 +116,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Gender__c</fieldItem>
-                <identifier>RecordGender_cField</identifier>
+                <fieldItem>Record.GenderIdentity</fieldItem>
+                <identifier>RecordGenderIdentityField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -2673,6 +2673,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>showLegacyActivityComposer</name>
+                    <value>false</value>
+                </componentInstanceProperties>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
                 <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>

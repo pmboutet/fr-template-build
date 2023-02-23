@@ -707,11 +707,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Gender__c</field>
-            <table>Contact</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SFFR_Campaign_Origin__c</field>
             <table>Contact</table>
         </columns>
@@ -738,6 +733,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>SFFR_ContactID__c</field>
+            <table>Contact</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>GenderIdentity</field>
             <table>Contact</table>
         </columns>
         <masterLabel>Contacts</masterLabel>
