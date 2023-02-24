@@ -9,6 +9,10 @@
         <name>SFFR_SystemInformation</name>
     </customLabels>
     <customLabels>
+        <label>Informations</label>
+        <name>SFFR_Information</name>
+    </customLabels>
+    <customLabels>
         <label>Identité</label>
         <name>SFFR_Identity</name>
     </customLabels>
@@ -215,6 +219,10 @@
     <customLabels>
         <label>Autre</label>
         <name>SFFR_Other</name>
+    </customLabels>
+    <customLabels>
+        <label>Description</label>
+        <name>SFFR_Description</name>
     </customLabels>
     <flowDefinitions>
         <flows>

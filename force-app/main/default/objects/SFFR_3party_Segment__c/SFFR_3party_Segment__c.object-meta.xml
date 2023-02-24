@@ -155,7 +155,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Third Party Segment</label>
     <nameField>
-        <label>Third Party Segment Name</label>
+        <label>Name</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>

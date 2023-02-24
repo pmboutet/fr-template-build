@@ -9,6 +9,14 @@
         <value>System Information</value>
     </labels>
     <labels>
+        <fullName>SFFR_Information</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Information</shortDescription>
+        <value>Information</value>
+    </labels>
+    <labels>
         <fullName>SFFR_Identity</fullName>
         <categories>SFFR</categories>
         <language>en_US</language>
@@ -335,5 +343,13 @@
         <protected>false</protected>
         <shortDescription>SFFR_Other</shortDescription>
         <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>SFFR_Description</fullName>
+        <categories>SFFR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFFR_Description</shortDescription>
+        <value>Description</value>
     </labels>
 </CustomLabels>
