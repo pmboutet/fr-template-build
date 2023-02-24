@@ -81,11 +81,11 @@
     <nameFieldLabel></nameFieldLabel>
     <recordTypes>
         <description></description>
-        <label></label>
+        <label>Paiment</label>
         <name>SFFR_Payment</name>
     </recordTypes>
     <recordTypes>
-        <label></label>
+        <label>Détail</label>
         <name>SFFR_Split</name>
     </recordTypes>
     <startsWith></startsWith>

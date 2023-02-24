@@ -18,11 +18,11 @@
     </layouts>
     <nameFieldLabel></nameFieldLabel>
     <recordTypes>
-        <label></label>
+        <label>Banque</label>
         <name>SFFR_Bank</name>
     </recordTypes>
     <recordTypes>
-        <label></label>
+        <label>Fulfillement</label>
         <name>SFFR_Fulfillement</name>
     </recordTypes>
     <startsWith></startsWith>

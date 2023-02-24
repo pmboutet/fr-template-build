@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <help></help>
-    <label></label>
+    <label>Total du lot</label>
     <name>SFFR_Batch_Total__c</name>
 </CustomFieldTranslation>

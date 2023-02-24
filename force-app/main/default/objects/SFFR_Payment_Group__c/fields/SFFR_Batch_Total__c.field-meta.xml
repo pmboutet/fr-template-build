@@ -4,7 +4,7 @@
     <description>Flow updated sum of collected amount</description>
     <externalId>false</externalId>
     <inlineHelpText>Amount that was originally collected in this payment group (before any payment possibly get rejected by the bank)</inlineHelpText>
-    <label>Batch_Total</label>
+    <label>Batch Total</label>
     <precision>12</precision>
     <required>false</required>
     <scale>2</scale>
