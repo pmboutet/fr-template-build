@@ -276,3 +276,4 @@ https://s3-us-west-2.amazonaws.com/sfdo-docs/Campaign_Fundraising_Guide.pdf
 #TODO DOC RAPH both internal and external are similare by desing: looks like the fields relating to external segment are on the Internal Segment page layout : Code source, Identifiant routeur externe, Routeur 
 
 #TODO DOC RAPH Review UI
+#TODO DOC Opportynity related list in Campaign only works with Campaing Influence set to false

@@ -20,7 +20,6 @@ TODO DOC APSYNERGY - NPSP Settings - Recurring donation
 
 
 TODO DESIGN APSYNERGY Data load Opportunity of 2 recordtype donation and Membership
-TODO DESIGN APSYNERGY - Translation
 TODO DOC APSYNERGY Roolup Membership enabled
 
 TODO DESIGN FAB Partial Soft credit
