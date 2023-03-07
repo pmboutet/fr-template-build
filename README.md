@@ -2,19 +2,29 @@
 
 ## Development
 
-To work on this project in a scratch org:
+0. Pre requisite - Build Applications with CumulusCI (https://trailhead.salesforce.com/content/learn/trails/build-applications-with-cumulusci)
+
+## Deploy to a Production Org
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
 
-2. CumulusCI: If you have CCI already ensure that your VS Code is running the latest version of SFDX with the following command in the Terminal `sfdx update`
+2. CumulusCI: If you have CCI already ensure that your VS Code is running the latest version of SFDX with the following command in the Terminal `sfdx update` and  `pipx upgrade cumulusci`
 3.  Run `cci flow run dev_org --org dev` to deploy this project.
-4.  Run `cci flow run sffr_post_install --org dev` to run robot automations
+4.  Run `cci flow run sffr_post_install --org dev` to run robot automations (WARNING currently partially failing)
+4.1 Find in the log the Integrzation User username ie: integration.user@sffrXXX.org
 5.  Run `cci org browser dev` to open the org in your browser.
-6.  Activate the Euro Currency
+5.1  Activate the Euro Currency
    Setup, Company Information, Edit, currency Locale = French(France) - EUR, Save
-7.  Authorize Data Integrity
-   From Data Integrity, Select France, (cci org inf dev) to enter username/password
-8.  Authorize Findock(ProcessingHub, WebHub)
-9. assign SFFR_inbound_report layout to system admin
+5.2.  Activate the French Translation
+   Setup, Translation Language Settings, Edit France, Active, Save
+6.  Authorize Data Integrity
+   retrieve admin username/pswd Run `cci org info dev` or use the Integration User 
+   From Data Integrity application, Select France, Save, enter username/password, Allow
+7.  Authorize Findock(ProcessingHub, WebHub)
+   From Findock LEX App, More, Setup
+      ProcessingHub to enter username/password Connect
+      WebHub to enter username/password Connect
+ using the Integration User / (default pswd: fundr@isingfrT3mplat3*:*<>><!#) if asked to change it use the same and add a at the end
+
 
 Got some manual update from source files and or additional transalations?
 1. Run `cci task run deploy --path force-app --org dev`
@@ -29,7 +39,7 @@ To get/list your data changes?
 2. Run `cci task run extract_dataset --org dev`
 
 ## Deploy to a Production Org
-  1. Create an org via environment hub foundation
+  1. Create an pde or pee org via environment hub foundation
   2. Org Created via foundation devhub: fpierre_ftdemo2@salesforce.com
   2.1 Enable Translation Workbench - Setup / Transalation WB
   3. Run `cci org connect production` login/allow
@@ -49,10 +59,12 @@ To get/list your data changes?
   8. Findock Setup both service + remote site settings
   9. Einstein Analytics - enable Backup Model
 
-Manual Prod update
+Incremental update to a production org
 1. Run `cci task run deploy --path force-app --org`
-2. Run `cci task run sffr_translations --org`  
-3. Run `cci flow run sffr_profile --org`  
+2. Run `cci task run sffr_translations --org`
+3. Run `cci flow run sffr_profile --org`
+
+
 ## Authorize a Dev Hub using CLI
  
 sfdx force:auth:web:login -d -a <org_name>
