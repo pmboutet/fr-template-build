@@ -28,12 +28,14 @@ public static void adjust_PaymentsSettings() {
     upsert cAndOSettings;
 }
 public static void adjust_OpportunitySettings() {
+    // Avoid using variables in the name of the opportunity as this is very costly to regenerate the opportunity names.
+    // You could either Manual invoke the Refresh Opportunity Name or Schedule the NPSP Batch.
     try {
         npsp__Opportunity_Naming_Settings__c oSettings1 = new npsp__Opportunity_Naming_Settings__c();
         oSettings1.Name = 'Donation';
         oSettings1.npsp__Attribution__c = 'Both';
         oSettings1.npsp__Date_Format__c = 'dd/MM/yyyy';
-        oSettings1.npsp__Opportunity_Name_Format__c = 'Don le {!CloseDate} du {!Account.Name} pour {!Amount}';
+        oSettings1.npsp__Opportunity_Name_Format__c = 'Don le {!CloseDate}';
         oSettings1.npsp__Opportunity_Record_Types__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Donation').getRecordTypeId();
         upsert oSettings1;
     }
@@ -43,7 +45,7 @@ public static void adjust_OpportunitySettings() {
         oSettings2.Name = 'Membership';
         oSettings2.npsp__Attribution__c = 'Both';
         oSettings2.npsp__Date_Format__c = 'dd/MM/yyyy';
-        oSettings2.npsp__Opportunity_Name_Format__c = 'Membre depuis le {!CloseDate} du {!Account.Name} pour {!Amount}';
+        oSettings2.npsp__Opportunity_Name_Format__c = 'Membre depuis le {!CloseDate}';
         oSettings2.npsp__Opportunity_Record_Types__c = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Membership').getRecordTypeId();
         upsert oSettings2;
     }
