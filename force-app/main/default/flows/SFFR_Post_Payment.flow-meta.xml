@@ -973,14 +973,6 @@
     <start>
         <locationX>155</locationX>
         <locationY>0</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>cpm__Installment__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>cpm__Payment__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <scheduledPaths>
@@ -991,7 +983,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>bankBatch</name>
         <dataType>SObject</dataType>
