@@ -24,6 +24,7 @@
       ProcessingHub to enter username/password Connect
       WebHub to enter username/password Connect
  using the Integration User / (default pswd: fundr@isingfrT3mplat3*:*<>><!#) if asked to change it use the same and add a at the end
+8. Einstein Analytics - enable Backup Model
 
 
 Got some manual update from source files and or additional transalations?
