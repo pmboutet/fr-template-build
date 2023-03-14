@@ -14,6 +14,9 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Contact.SFFR_New_Payment</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Contact.NewDonation</value>
                         </valueListItems>
                         <valueListItems>

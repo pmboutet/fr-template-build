@@ -4,8 +4,8 @@
     <assignments>
         <name>addToTal</name>
         <label>addToTal</label>
-        <locationX>352</locationX>
-        <locationY>1454</locationY>
+        <locationX>402</locationX>
+        <locationY>1670</locationY>
         <assignmentItems>
             <assignToReference>total_amount</assignToReference>
             <operator>Add</operator>
@@ -27,8 +27,8 @@
     <assignments>
         <name>assign_to_inbound</name>
         <label>assign_to_inbound</label>
-        <locationX>352</locationX>
-        <locationY>1214</locationY>
+        <locationX>402</locationX>
+        <locationY>1550</locationY>
         <assignmentItems>
             <assignToReference>inboundSingle.cpm__Contact__c</assignToReference>
             <operator>Assign</operator>
@@ -138,18 +138,25 @@
             <assignToReference>inboundSingle.SFFR_Payer_Contact__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>masterContactId.Id</elementReference>
+                <elementReference>getMasterContact.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>inboundSingle.cpm__Account_Holder_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Inbound_benificiary.recordName</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>createInboundReport</targetReference>
+            <targetReference>addToTal</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>assigntocollection</name>
         <label>assigntocollection</label>
-        <locationX>352</locationX>
-        <locationY>1574</locationY>
+        <locationX>402</locationX>
+        <locationY>1790</locationY>
         <assignmentItems>
             <assignToReference>InboundReportCollection</assignToReference>
             <operator>Add</operator>
@@ -159,14 +166,14 @@
         </assignmentItems>
         <connector>
             <isGoTo>true</isGoTo>
-            <targetReference>loop</targetReference>
+            <targetReference>Allocation_Loop</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>setPaymentKey</name>
         <label>setPaymentKey</label>
-        <locationX>440</locationX>
-        <locationY>998</locationY>
+        <locationX>490</locationX>
+        <locationY>1334</locationY>
         <assignmentItems>
             <assignToReference>inboundSingle.SFFR_Payment_Key__c</assignToReference>
             <operator>Assign</operator>
@@ -181,8 +188,8 @@
     <assignments>
         <name>SetRemainingAmount</name>
         <label>SetRemainingAmount</label>
-        <locationX>176</locationX>
-        <locationY>518</locationY>
+        <locationX>226</locationX>
+        <locationY>854</locationY>
         <assignmentItems>
             <assignToReference>RemainingAmount</assignToReference>
             <operator>Assign</operator>
@@ -191,7 +198,23 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>loop</targetReference>
+            <targetReference>Allocation_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Total_InboundReportCollection</name>
+        <label>Total_InboundReportCollection</label>
+        <locationX>50</locationX>
+        <locationY>1094</locationY>
+        <assignmentItems>
+            <assignToReference>count_InboundReportCollection</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>InboundReportCollection</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Summary</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -259,10 +282,82 @@
         </value>
     </choices>
     <decisions>
+        <name>Allocation_Loop</name>
+        <label>Allocation Loop</label>
+        <locationX>226</locationX>
+        <locationY>974</locationY>
+        <defaultConnector>
+            <targetReference>Affectation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Allocate</defaultConnectorLabel>
+        <rules>
+            <name>All_is_Allocated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Inbound_Amount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>total_amount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Total_InboundReportCollection</targetReference>
+            </connector>
+            <label>All is Allocated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>HasARecordId</name>
+        <label>HasARecordId</label>
+        <locationX>490</locationX>
+        <locationY>158</locationY>
+        <defaultConnector>
+            <targetReference>ContactSearch</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Contact</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getMasterContact</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>HasAValidContactRecord</name>
+        <label>HasAValidContactRecord</label>
+        <locationX>490</locationX>
+        <locationY>614</locationY>
+        <defaultConnectorLabel>Error Not Expected</defaultConnectorLabel>
+        <rules>
+            <name>Yes2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getMasterContact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Payment</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>hasToSplitPayment</name>
         <label>hasToSplitPayment</label>
-        <locationX>352</locationX>
-        <locationY>878</locationY>
+        <locationX>402</locationX>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>setPaymentKey</targetReference>
         </defaultConnector>
@@ -283,36 +378,15 @@
             <label>yes</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>loop</name>
-        <label>loop</label>
-        <locationX>176</locationX>
-        <locationY>638</locationY>
-        <defaultConnector>
-            <targetReference>Affectation</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>continue</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Inbound_Amount</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>total_amount</elementReference>
-                </rightValue>
-            </conditions>
-            <label>continue</label>
-        </rules>
-    </decisions>
+    <description>Simplified Gift Entry like Screen flow that allow to get a complex Fulfilment capture and created as few Inbound Report records</description>
     <environments>Default</environments>
     <formulas>
         <name>paymentKey</name>
         <dataType>String</dataType>
-        <expression>{!masterContactId.Id} &amp; &quot;-&quot; &amp; TEXT({!$Flow.InterviewStartTime})</expression>
+        <expression>{!getMasterContact.Id} &amp; &quot;-&quot; &amp; TEXT({!$Flow.InterviewStartTime})</expression>
     </formulas>
-    <interviewLabel>SFFR-fullfilment {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>SFFR-fullfilment</label>
+    <interviewLabel>SFFR {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SFFR Fulfilment Entry</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -333,30 +407,27 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>createInboundReport</name>
-        <label>createInboundReport</label>
-        <locationX>352</locationX>
+        <name>createInboundReports</name>
+        <label>createInboundReports</label>
+        <locationX>50</locationX>
         <locationY>1334</locationY>
-        <connector>
-            <targetReference>addToTal</targetReference>
-        </connector>
-        <inputReference>inboundSingle</inputReference>
+        <inputReference>InboundReportCollection</inputReference>
     </recordCreates>
     <recordLookups>
-        <name>getContact</name>
-        <label>getContact</label>
-        <locationX>176</locationX>
-        <locationY>278</locationY>
+        <name>getMasterContact</name>
+        <label>getMasterContact</label>
+        <locationX>490</locationX>
+        <locationY>494</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Payment</targetReference>
+            <targetReference>HasAValidContactRecord</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>masterContactId.Id</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -366,8 +437,8 @@
     <screens>
         <name>Affectation</name>
         <label>Affectation</label>
-        <locationX>352</locationX>
-        <locationY>758</locationY>
+        <locationX>402</locationX>
+        <locationY>1094</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -390,6 +461,10 @@
                     <fieldType>InputField</fieldType>
                     <isRequired>false</isRequired>
                     <scale>2</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Value must be greater than zero and lower or equal than {!RemainingAmount}&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>( {!Inbound_Split_Amount} &gt; 0 ) &amp;&amp; ({!Inbound_Split_Amount}  &lt;= {!RemainingAmount})</formulaExpression>
+                    </validationRule>
                 </fields>
                 <fields>
                     <name>Inbound_Type</name>
@@ -438,7 +513,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>masterContactId.Id</elementReference>
+                            <elementReference>getMasterContact.Id</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -461,6 +536,23 @@
                     <fieldText>&lt;p&gt;Please allocate :&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; color: rgb(35, 92, 6);&quot;&gt;{!RemainingAmount}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt; {!total_amount} / {!Inbound_Amount}﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Affectation_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Affectation_Section2_Column1</name>
+                <fieldType>Region</fieldType>
                 <fields>
                     <name>Payment_allocation</name>
                     <dataTypeMappings>
@@ -508,7 +600,7 @@
                     <inputParameters>
                         <name>columns</name>
                         <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;SFFR_Type__c&quot;,&quot;guid&quot;:&quot;column-61d7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;cpm__Amount__c&quot;,&quot;guid&quot;:&quot;column-8cc3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Amount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;cpm__Contact__c&quot;,&quot;guid&quot;:&quot;column-a65e&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Contact&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Contact&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
+                            <stringValue>[{&quot;apiName&quot;:&quot;SFFR_Type__c&quot;,&quot;guid&quot;:&quot;column-61d7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;cpm__Amount__c&quot;,&quot;guid&quot;:&quot;column-8cc3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Amount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;cpm__Account_Holder_Name__c&quot;,&quot;guid&quot;:&quot;column-63c2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Account Holder Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -518,7 +610,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>12</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -533,8 +625,8 @@
         <description>Set payment details</description>
         <name>Payment</name>
         <label>Payment</label>
-        <locationX>176</locationX>
-        <locationY>398</locationY>
+        <locationX>226</locationX>
+        <locationY>734</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -543,7 +635,7 @@
         </connector>
         <fields>
             <name>text_1</name>
-            <fieldText>&lt;p&gt;Please enter the payment for contact &lt;span style=&quot;color: rgb(75, 108, 240);&quot;&gt;{!getContact.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Please enter the payment for contact &lt;span style=&quot;color: rgb(75, 108, 240);&quot;&gt;{!getMasterContact.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -652,6 +744,10 @@
                     <fieldType>InputField</fieldType>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;Value must be greater than zero.&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Inbound_Amount} &gt; 0</formulaExpression>
+                    </validationRule>
                 </fields>
                 <fields>
                     <name>Inbound_Fullfilment_date</name>
@@ -713,28 +809,56 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <start>
+    <screens>
+        <name>Summary</name>
+        <label>Summary</label>
         <locationX>50</locationX>
+        <locationY>1214</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>createInboundReports</targetReference>
+        </connector>
+        <fields>
+            <name>verbosemessage</name>
+            <fieldText>&lt;p&gt;You are about to create &lt;span style=&quot;color: rgb(35, 92, 6); font-size: 16px;&quot;&gt;{!count_InboundReportCollection} &lt;/span&gt;entry(ies) for a total amount of &lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 16px; color: rgb(35, 92, 6);&quot;&gt;{!total_amount} &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Create entries</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>364</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>SearchContact</targetReference>
+            <targetReference>HasARecordId</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <subflows>
-        <name>SearchContact</name>
-        <label>SearchContact</label>
-        <locationX>176</locationX>
-        <locationY>158</locationY>
+        <name>ContactSearch</name>
+        <label>ContactSearch</label>
+        <locationX>578</locationX>
+        <locationY>278</locationY>
         <connector>
-            <targetReference>getContact</targetReference>
+            <targetReference>getMasterContact</targetReference>
         </connector>
         <flowName>SFFR_Contact_Search</flowName>
         <outputAssignments>
-            <assignToReference>masterContactId</assignToReference>
-            <name>contactID</name>
+            <assignToReference>recordId</assignToReference>
+            <name>contactId</name>
         </outputAssignments>
     </subflows>
+    <variables>
+        <name>count_InboundReportCollection</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
     <variables>
         <name>InboundReportCollection</name>
         <dataType>SObject</dataType>
@@ -761,12 +885,12 @@
         <objectType>Contact</objectType>
     </variables>
     <variables>
-        <name>masterContactId</name>
-        <dataType>SObject</dataType>
+        <description>recordId</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Contact</objectType>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>RemainingAmount</name>

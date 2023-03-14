@@ -7,15 +7,16 @@
         <locationX>176</locationX>
         <locationY>278</locationY>
         <assignmentItems>
-            <assignToReference>contactID.Id</assignToReference>
+            <assignToReference>contactId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>lookupContact.recordId</elementReference>
             </value>
         </assignmentItems>
     </assignments>
+    <description>Sub flow to be used to search for a contact</description>
     <environments>Default</environments>
-    <interviewLabel>SFFR Contact Search {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>SFFR {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFFR Contact Search</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -116,11 +117,10 @@
     </start>
     <status>Active</status>
     <variables>
-        <name>contactID</name>
-        <dataType>SObject</dataType>
+        <name>contactId</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
-        <isInput>true</isInput>
+        <isInput>false</isInput>
         <isOutput>true</isOutput>
-        <objectType>Contact</objectType>
     </variables>
 </Flow>

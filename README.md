@@ -20,6 +20,7 @@
    retrieve admin username/pswd Run `cci org info dev` or use the Integration User 
    From Data Integrity application, Select France, Save, enter username/password, Allow
 7.  Authorize Findock(ProcessingHub, WebHub)
+   retrieve User SFFR Integration from Setup / User
    From Findock LEX App, More, Setup
       ProcessingHub to enter username/password Connect
       WebHub to enter username/password Connect
