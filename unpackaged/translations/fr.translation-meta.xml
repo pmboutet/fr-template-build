@@ -354,9 +354,11 @@
                     </validationRule>
                 </fields>
                 <fields>
+                    <fieldText>Type</fieldText>
                     <name>Inbound_Type</name>
                 </fields>
                 <fields>
+                    <fieldText>Bénéficiaire</fieldText>
                     <inputParameters>
                         <name>fieldApiName</name>
                         <value/>
@@ -364,7 +366,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Bénéficiaires</stringValue>
+                            <stringValue>Bénéficaire</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -386,6 +388,7 @@
                     <name>Inbound_benificiary</name>
                 </fields>
                 <fields>
+                    <fieldText>Allocation des paiements</fieldText>
                     <inputParameters>
                         <name>columns</name>
                         <value/>
@@ -462,7 +465,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Campagne source (nom)</stringValue>
+                            <stringValue>Campagne d&apos;origine (nom)</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>

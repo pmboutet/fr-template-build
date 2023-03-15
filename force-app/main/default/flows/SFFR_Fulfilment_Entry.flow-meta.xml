@@ -489,7 +489,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Beneficiary</stringValue>
+                            <stringValue>Beneficiare</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -600,7 +600,7 @@
                     <inputParameters>
                         <name>columns</name>
                         <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;SFFR_Type__c&quot;,&quot;guid&quot;:&quot;column-61d7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;cpm__Amount__c&quot;,&quot;guid&quot;:&quot;column-8cc3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Amount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;cpm__Account_Holder_Name__c&quot;,&quot;guid&quot;:&quot;column-63c2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Account Holder Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                            <stringValue>[{&quot;apiName&quot;:&quot;SFFR_Type__c&quot;,&quot;guid&quot;:&quot;column-61d7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;cpm__Amount__c&quot;,&quot;guid&quot;:&quot;column-8cc3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;Amount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;cpm__Account_Holder_Name__c&quot;,&quot;guid&quot;:&quot;column-63c2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Account Holder Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -743,7 +743,7 @@
                     <fieldText>Amount</fieldText>
                     <fieldType>InputField</fieldType>
                     <isRequired>true</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                     <validationRule>
                         <errorMessage>&lt;p&gt;Value must be greater than zero.&lt;/p&gt;</errorMessage>
                         <formulaExpression>{!Inbound_Amount} &gt; 0</formulaExpression>

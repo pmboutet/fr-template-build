@@ -11,25 +11,25 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Delete</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Contact.SFFR_New_Payment</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Contact.NewDonation</value>
+                            <value>Contact.npsp__New_Relationship</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Contact.NewMembership</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Contact.npsp__New_Relationship</value>
+                            <value>Contact.NewDonation</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.Contact.npe4__Relationships_Viewer</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CustomButton.Contact.npsp__Recalculate_Rollups</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
                             <value>FeedItem.TextPost</value>
