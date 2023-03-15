@@ -25,7 +25,11 @@
       ProcessingHub to enter username/password Connect
       WebHub to enter username/password Connect
  using the Integration User / (default pswd: fundr@isingfrT3mplat3*:*<>><!#) if asked to change it use the same and add a at the end
-8. Einstein Analytics - enable Backup Model
+8.  Findock remote site setting
+   From Findock LEX App, More, Setup / Remote Site Settings
+   Cick create initial config 
+9.  Einstein Analytics - enable Backup Model
+   From Einstein for Nonprofit App, enable Backup models
 
 
 Got some manual update from source files and or additional transalations?
