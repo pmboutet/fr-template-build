@@ -106,7 +106,7 @@
         </fields>
         <nextOrFinishButtonLabel>Select and continue</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>50</locationX>

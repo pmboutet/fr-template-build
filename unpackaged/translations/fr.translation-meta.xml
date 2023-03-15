@@ -226,20 +226,80 @@
     </customLabels>
     <flowDefinitions>
         <flows>
+            <screens>
+                <fields>
+                    <name>NotFound</name>
+                </fields>
+                <name>Contact_Lookup_Result_Screen</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>Enter_a_ContactID</name>
+                </fields>
+                <name>Contact_Lookup_Screen</name>
+            </screens>
+        </flows>
+        <fullName>SFFR_Contact_Lookup</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <fields>
+                    <fieldText>Recherche rapide</fieldText>
+                    <name>Quick_find</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Quick_find_Column1</name>
+                </fields>
+                <fields>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxValues</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value/>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value/>
+                    </inputParameters>
+                    <name>lookupContact</name>
+                </fields>
+                <name>Search_parameters</name>
+                <nextOrFinishButtonLabel>Choisir et continuer</nextOrFinishButtonLabel>
+            </screens>
+        </flows>
+        <fullName>SFFR_Contact_Search</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
             <choices>
-                <choiceText>Cash</choiceText>
+                <choiceText>Argent liquide</choiceText>
                 <name>Cash</name>
             </choices>
             <choices>
-                <choiceText>Chèque</choiceText>
+                <choiceText>Chéque</choiceText>
                 <name>Check</name>
             </choices>
             <choices>
-                <choiceText>Crédit</choiceText>
+                <choiceText>Carte de crédit</choiceText>
                 <name>Credit</name>
             </choices>
             <choices>
-                <choiceText>Virement</choiceText>
+                <choiceText>Transfert</choiceText>
                 <name>CreditTransfer</name>
             </choices>
             <choices>
@@ -255,7 +315,7 @@
                 <name>Membership</name>
             </choices>
             <choices>
-                <choiceText>SEPA</choiceText>
+                <choiceText>Prélèvement SEPA</choiceText>
                 <name>SEPADirectDebit</name>
             </choices>
             <screens>
@@ -277,11 +337,23 @@
                     <name>Affectation_Section1_Column2</name>
                 </fields>
                 <fields>
-                    <fieldText>Montant</fieldText>
-                    <name>Inbound_Split_Amount</name>
+                    <name>Affectation_Section2</name>
                 </fields>
                 <fields>
-                    <fieldText>Type</fieldText>
+                    <inputParameters>
+                        <name>width</name>
+                        <value/>
+                    </inputParameters>
+                    <name>Affectation_Section2_Column1</name>
+                </fields>
+                <fields>
+                    <fieldText>Montant</fieldText>
+                    <name>Inbound_Split_Amount</name>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;La valeur doit être supérieur à Zéro mais inférieur ou égale à {!RemainingAmount}&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                    </validationRule>
+                </fields>
+                <fields>
                     <name>Inbound_Type</name>
                 </fields>
                 <fields>
@@ -291,7 +363,9 @@
                     </inputParameters>
                     <inputParameters>
                         <name>label</name>
-                        <value/>
+                        <value>
+                            <stringValue>Bénéficiaires</stringValue>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxValues</name>
@@ -318,7 +392,9 @@
                     </inputParameters>
                     <inputParameters>
                         <name>label</name>
-                        <value/>
+                        <value>
+                            <stringValue>Allocation des paiements</stringValue>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -339,15 +415,18 @@
                     <name>Payment_allocation</name>
                 </fields>
                 <fields>
+                    <fieldText>&lt;p&gt;Merci d&apos;allouer:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; color: rgb(35, 92, 6);&quot;&gt;{!RemainingAmount}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt; {!total_amount} / {!Inbound_Amount}﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <name>payment_details</name>
                 </fields>
                 <name>Affectation</name>
             </screens>
             <screens>
                 <fields>
+                    <fieldText>Code source</fieldText>
                     <name>Campaign_external_key</name>
                 </fields>
                 <fields>
+                    <fieldText>Détails</fieldText>
                     <name>Details_payment</name>
                 </fields>
                 <fields>
@@ -365,9 +444,14 @@
                     <name>Details_payment_Column2</name>
                 </fields>
                 <fields>
+                    <fieldText>Montant</fieldText>
                     <name>Inbound_Amount</name>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;La valeur doit être supérieur à zéro.&lt;/p&gt;</errorMessage>
+                    </validationRule>
                 </fields>
                 <fields>
+                    <fieldText>Numéro du lot de la banque</fieldText>
                     <name>Inbound_Bank_batch_number</name>
                 </fields>
                 <fields>
@@ -377,7 +461,9 @@
                     </inputParameters>
                     <inputParameters>
                         <name>label</name>
-                        <value/>
+                        <value>
+                            <stringValue>Campagne source (nom)</stringValue>
+                        </value>
                     </inputParameters>
                     <inputParameters>
                         <name>maxValues</name>
@@ -390,21 +476,27 @@
                     <name>Inbound_Campaign_lookup</name>
                 </fields>
                 <fields>
+                    <fieldText>Numéro de lot</fieldText>
                     <name>Inbound_Fullfilment_batch_number</name>
                 </fields>
                 <fields>
+                    <fieldText>Date du lot</fieldText>
                     <name>Inbound_Fullfilment_date</name>
                 </fields>
                 <fields>
+                    <fieldText>Date de dépôt à la banque</fieldText>
                     <name>Inbound_Payment_date</name>
                 </fields>
                 <fields>
+                    <fieldText>Méthode de paiement</fieldText>
                     <name>Inbound_Payment_method</name>
                 </fields>
                 <fields>
+                    <fieldText>Numéro du paiement</fieldText>
                     <name>Inbound_Payment_number</name>
                 </fields>
                 <fields>
+                    <fieldText>Origine</fieldText>
                     <name>Origin</name>
                 </fields>
                 <fields>
@@ -422,14 +514,25 @@
                     <name>Origin_Column2</name>
                 </fields>
                 <fields>
+                    <fieldText>&lt;p&gt;Renseigner les informations du paiement pour &lt;span style=&quot;color: rgb(75, 108, 240);&quot;&gt;{!getMasterContact.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <name>text_1</name>
                 </fields>
                 <fields>
+                    <fieldText>&lt;p&gt;ou utilisez le&lt;/p&gt;</fieldText>
                     <name>text_2</name>
                 </fields>
                 <name>Payment</name>
+                <nextOrFinishButtonLabel>Allocations des paiements</nextOrFinishButtonLabel>
+            </screens>
+            <screens>
+                <fields>
+                    <fieldText>&lt;p&gt;Vous êtes sur le point de créer &lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt;{!count_InboundReportCollection} &lt;/span&gt;paiement(s) pour un total de &lt;span style=&quot;color: rgb(35, 92, 6); font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;{!total_amount} &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>verbosemessage</name>
+                </fields>
+                <name>Summary</name>
+                <nextOrFinishButtonLabel>Créer le(s) paiement(s)</nextOrFinishButtonLabel>
             </screens>
         </flows>
-        <fullName>SFFR_fullfilment</fullName>
+        <fullName>SFFR_Fulfilment_Entry</fullName>
     </flowDefinitions>
 </Translations>

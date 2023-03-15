@@ -16,19 +16,19 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Cash</masterLabel>
-        <translation></translation>
+        <translation>Argent liquipde</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Check</masterLabel>
-        <translation></translation>
+        <translation>Chéque</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Credit Transfer</masterLabel>
-        <translation></translation>
+        <translation>Transfert</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>CreditCard</masterLabel>
-        <translation></translation>
+        <translation>Carte de crédit</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Direct Debit</masterLabel>
@@ -44,6 +44,6 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>SEPA Direct Debit</masterLabel>
-        <translation></translation>
+        <translation>Prélèvement SEPA</translation>
     </picklistValues>
 </CustomFieldTranslation>

@@ -86,6 +86,11 @@
         <name>NewMembership</name>
     </quickActions>
     <quickActions>
+        <aspect>Master</aspect>
+        <label>Nouveau paiement</label>
+        <name>SFFR_New_Payment</name>
+    </quickActions>
+    <quickActions>
         <label></label>
         <name>npsp__New_Affiliation</name>
     </quickActions>
