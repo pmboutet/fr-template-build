@@ -15,7 +15,7 @@ release = '0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'renku-sphinx-theme'
+#    'renku-sphinx-theme'
 ]
 
 templates_path = ['_templates']
@@ -26,7 +26,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'renku'
+#html_theme = 'renku'
 html_static_path = ['_static']
 
 # sphinx-build -b html doc/doc doc/_build
