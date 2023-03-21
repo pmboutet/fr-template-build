@@ -822,7 +822,7 @@
         </connector>
         <fields>
             <name>verbosemessage</name>
-            <fieldText>&lt;p&gt;You are about to create &lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt;{!count_InboundReportCollection} &lt;/span&gt;payment(s) for a total amount of &lt;span style=&quot;color: rgb(35, 92, 6); font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;{!total_amount} &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;You are about to create &lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt;{!count_InboundReportCollection}  &lt;/span&gt;payment allocation(s) for a total amount of &lt;span style=&quot;color: rgb(35, 92, 6); font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;{!total_amount} &lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <nextOrFinishButtonLabel>Create Payment(s)</nextOrFinishButtonLabel>

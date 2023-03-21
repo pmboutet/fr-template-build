@@ -365,9 +365,7 @@
                     </inputParameters>
                     <inputParameters>
                         <name>label</name>
-                        <value>
-                            <stringValue>Bénéficaire</stringValue>
-                        </value>
+                        <value/>
                     </inputParameters>
                     <inputParameters>
                         <name>maxValues</name>
@@ -395,9 +393,7 @@
                     </inputParameters>
                     <inputParameters>
                         <name>label</name>
-                        <value>
-                            <stringValue>Allocation des paiements</stringValue>
-                        </value>
+                        <value/>
                     </inputParameters>
                     <inputParameters>
                         <name>maxRowSelection</name>
@@ -464,9 +460,7 @@
                     </inputParameters>
                     <inputParameters>
                         <name>label</name>
-                        <value>
-                            <stringValue>Campagne d&apos;origine (nom)</stringValue>
-                        </value>
+                        <value/>
                     </inputParameters>
                     <inputParameters>
                         <name>maxValues</name>
@@ -529,7 +523,7 @@
             </screens>
             <screens>
                 <fields>
-                    <fieldText>&lt;p&gt;Vous êtes sur le point de créer &lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt;{!count_InboundReportCollection} &lt;/span&gt;paiement(s) pour un total de &lt;span style=&quot;color: rgb(35, 92, 6); font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;{!total_amount} &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Vous êtes sur le point de ventiler &lt;span style=&quot;font-size: 16px; color: rgb(35, 92, 6);&quot;&gt;{!count_InboundReportCollection} &lt;/span&gt;écritures(s) pour un total de &lt;span style=&quot;color: rgb(35, 92, 6); font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;{!total_amount} &lt;/span&gt;&lt;/p&gt;</fieldText>
                     <name>verbosemessage</name>
                 </fields>
                 <name>Summary</name>
