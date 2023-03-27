@@ -4,7 +4,7 @@
 
 0. Pre requisite - Build Applications with CumulusCI (https://trailhead.salesforce.com/content/learn/trails/build-applications-with-cumulusci)
 
-## Deploy to a Production Org
+## Deploy to a Scratch Org
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
 
 2. CumulusCI: If you have CCI already ensure that your VS Code is running the latest version of SFDX with the following command in the Terminal `sfdx update` and  `pipx upgrade cumulusci`
@@ -70,7 +70,7 @@ To get/list your data changes?
   8. Findock Setup both service + remote site settings
   9. Einstein Analytics - enable Backup Model
   10. Adjust And Deploy Findoc Configuration
-   From Findock App, more, Setup, Custom Payment Methids
+   From Findock App, more, Setup, Custom Payment Methods
    New, Cash
    New, Check
    Activate both Cash and Check
