@@ -315,12 +315,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>SFFR_Payment_Group__c</field>
-            <value>
-                <elementReference>varPaymentGroup.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>cpm__Account__c</field>
             <value>
                 <elementReference>varPayerAccountId</elementReference>

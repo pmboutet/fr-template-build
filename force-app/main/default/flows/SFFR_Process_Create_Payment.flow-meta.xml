@@ -350,12 +350,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>SFFR_Payment_Group__c</field>
-            <value>
-                <elementReference>varPaymentGroup.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>cpm__Account__c</field>
             <value>
                 <elementReference>varPayerAccountId</elementReference>
@@ -593,7 +587,7 @@
         <connector>
             <targetReference>getRTPayment_Payment</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
@@ -638,7 +632,7 @@
             <targetReference>getRTPayment_Split</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Obsolete</status>
     <subflows>
         <name>subProcessPaymentGroup</name>
         <label>subProcessPaymentGroup</label>
