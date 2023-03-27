@@ -37,7 +37,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Banked_Total__c</field>
+                <field>SFFR_Banked_Total__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
