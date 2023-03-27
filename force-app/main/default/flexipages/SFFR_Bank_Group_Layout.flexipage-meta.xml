@@ -203,6 +203,26 @@
                 <identifier>RecordSFFR_Bank_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Number_Payment__c</fieldItem>
+                <identifier>RecordSFFR_Number_Payment_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Max_Payment__c</fieldItem>
+                <identifier>RecordSFFR_Max_Payment_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-80ae2637-ae8e-4a8d-ad38-408e60e2c892</name>
         <type>Facet</type>
     </flexiPageRegions>

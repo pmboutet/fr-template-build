@@ -35,6 +35,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Master_Payment__c</fieldItem>
+                <identifier>RecordSFFR_Master_Payment_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.cpm__Name__c</fieldItem>
                 <identifier>Recordcpm_Name_cField</identifier>
             </fieldInstance>

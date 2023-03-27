@@ -61,4 +61,12 @@
                 <layout>cpm__Payment__c-SFFR_Split_Payment_Layout</layout>
                 <recordType>cpm__Payment__c.SFFR_Split</recordType>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>cpm__Installment__c-SFFR_Installement_Layout</layout>
+                <recordType>cpm__Installment__c.cpm__Payable</recordType>
+        </layoutAssignments>
+        <layoutAssignments>
+                <layout>cpm__Installment__c-SFFR_Installement_Layout</layout>
+                <recordType>cpm__Installment__c.cpm__Receivable</recordType>
+        </layoutAssignments>
 </Profile>

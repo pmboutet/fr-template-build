@@ -327,12 +327,6 @@
                 <elementReference>getInstallement.SFFR_Bank_Group__c</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>SFFR_Payment_Method__c</field>
-            <value>
-                <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
-            </value>
-        </inputAssignments>
         <object>SFFR_Payment_Group__c</object>
     </recordCreates>
     <recordCreates>
@@ -567,18 +561,11 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <filters>
-            <field>SFFR_Payment_Method__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
-            </value>
-        </filters>
         <object>SFFR_Payment_Group__c</object>
         <outputReference>bankBatch</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
-        <queriedFields>Banked_Total__c</queriedFields>
+        <queriedFields>SFFR_Banked_Total__c</queriedFields>
         <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
@@ -614,18 +601,11 @@
                 <elementReference>getInstallement.SFFR_Bank_Group__c</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>SFFR_Payment_Method__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>getInstallement.cpm__Payment_Method__c</elementReference>
-            </value>
-        </filters>
         <object>SFFR_Payment_Group__c</object>
         <outputReference>bankBatch</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
-        <queriedFields>Banked_Total__c</queriedFields>
+        <queriedFields>SFFR_Banked_Total__c</queriedFields>
         <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
@@ -983,7 +963,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>bankBatch</name>
         <dataType>SObject</dataType>
