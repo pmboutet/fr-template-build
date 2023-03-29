@@ -53,6 +53,7 @@ CREATE TABLE "Account" (
 	"npsp__Number_of_Household_Members__c" VARCHAR(255), 
 	"npsp__Sustainer__c" VARCHAR(255), 
 	"npsp__Undeliverable_Address__c" VARCHAR(255), 
+	"Level__c" VARCHAR(255), 
 	"ParentId" VARCHAR(255), 
 	"Previous_Level__c" VARCHAR(255), 
 	"npe01__One2OneContact__c" VARCHAR(255), 
