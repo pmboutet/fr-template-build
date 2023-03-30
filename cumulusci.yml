@@ -107,8 +107,8 @@ tasks:
         class_path: cumulusci.tasks.bulkdata.LoadData
         group: "SFFR: Data Load"
         options:
-            mapping: datasets/samplemapping.yml
-            sql_path: datasets/sampledata.sql
+            mapping: datasets/FR/smalldataV0.yml
+            sql_path: datasets/FR/smalldataV0.sql
             drop_missing_schema: True
             ignore_row_errors: true
 
@@ -117,8 +117,8 @@ tasks:
         class_path: cumulusci.tasks.bulkdata.LoadData
         group: "SFFR: Findock Data Load"
         options:
-            mapping: datasets/findock.yml
-            sql_path: datasets/findock.sql
+            mapping: datasets/findock/findock.yml
+            sql_path: datasets/findock/findock.sql
             drop_missing_schema: True
             ignore_row_errors: true
 
@@ -229,9 +229,9 @@ flows:
             6:
                 task: npsp_enable_MembershipCR
             7:
-                flow: findock:configure_findock
-            8:
                 task: findock_enable_Settings
+            8:
+                flow: findock:configure_findock
             9:
                 task: sffr_dataintegritysandbox
             10:

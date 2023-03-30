@@ -1,13 +1,10 @@
 /**
-* This script assumes that the all NPSP Settings objects have been properly seeded with default values
-* either by loading the NPSP Settings page or running the default_npsp_settings cci task.
-*/
+* This script assumes Findock is installed but before invoking the cci task findock_deploy_config
+**/
 
-/**
- * @description: Required when loading sample data - Enable Household Address Management
-*/
 public static void SetThemAll() {
     add_OppInsFM();
+    add_CustomPaymentMethod();
 }
 
 public static void add_OppInsFM() {
@@ -24,4 +21,19 @@ public static void add_OppInsFM() {
     catch(Exception e){}
 }
 
+public static void add_CustomPaymentMethod() {
+    try {
+        cpm__Custom_Payment_Methods__c cs = new cpm__Custom_Payment_Methods__c();
+        cs.cpm__Active__c = true;
+        cs.cpm__API_Name__c = 'Cash';
+        cs.Name = cs.cpm__API_Name__c;
+        insert cs;
+        cs = new cpm__Custom_Payment_Methods__c();
+        cs.cpm__Active__c = true;
+        cs.cpm__API_Name__c = 'Check';
+        cs.Name = cs.cpm__API_Name__c;
+        insert cs;
+    }
+    catch(Exception e){}
+}
 public class InitException extends Exception {}

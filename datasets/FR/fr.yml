@@ -1,0 +1,43 @@
+Insert Contact:
+  sf_object: Contact
+  fields:
+  - DoNotCall
+  - FirstName
+  - GenderIdentity
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - LastName
+  - SFFR_Do_Not_Thanks__c
+  - SFFR_GDPR_Status__c
+  - SFFR_No_Tax_Receipt__c
+  - SFFR_Retrict_Yearly_Marketing_Sol__c
+  - npe01__AlternateEmail__c
+  - npe01__HomeEmail__c
+  - npe01__PreferredPhone__c
+  - npe01__Preferred_Email__c
+  - npe01__Primary_Address_Type__c
+  - npe01__Private__c
+  - npe01__Secondary_Address_Type__c
+  - npe01__SystemAccountProcessor__c
+  - HomePhone
+  - npe01__WorkEmail__c
+  - npe01__WorkPhone__c
+  - npsp__Deceased__c
+  - npsp__Do_Not_Contact__c
+  - Title
+  - LeadSource
+  - MobilePhone
+
+  lookups:
+    AccountId:
+      table: Account
+    SFFR_Campaign_Origin__c:
+      table: Campaign
+    npo02__Household__c:
+      table: npo02__Household__c
+    npsp__Batch__c:
+      table: npsp__Batch__c
+    npsp__Current_Address__c:
+      table: npsp__Address__c
+    npsp__Primary_Affiliation__c:
+      table: Account

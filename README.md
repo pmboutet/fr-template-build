@@ -10,7 +10,7 @@
 2. CumulusCI: If you have CCI already ensure that your VS Code is running the latest version of SFDX with the following command in the Terminal `sfdx update` and  `pipx upgrade cumulusci`
 3.  Run `cci flow run dev_org --org dev` to deploy this project.
 4.  Run `cci flow run sffr_post_install --org dev` to run robot automations (WARNING currently partially failing)
-4.1 Find in the log the Integrzation User username ie: integration.user@sffrXXX.org
+4.1 Find in the log the Integration User username ie: integration.user@sffrXXX.org
 5.  Run `cci org browser dev` to open the org in your browser.
 5.1  Activate the Euro Currency
    Setup, Company Information, Edit, currency Locale = French(France) - EUR, Save
