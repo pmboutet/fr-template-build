@@ -30,12 +30,6 @@
    Click create initial config 
 9.  Einstein Analytics - enable Backup Model
    From Einstein for Nonprofit App, enable Backup models
-10. Adjust And Deploy Findoc Configuration
-   From Findock App, more, Setup, Custom Payment Methids
-   New, Cash
-   New, Check
-   Activate both Cash and Check
-   Click Deploy config, Start Deploy
 
 Got some manual update from source files and or additional transalations?
 1. Run `cci task run deploy --path force-app --org dev`
@@ -69,12 +63,6 @@ To get/list your data changes?
   7. Add Missing Permission Set to Fabrice
   8. Findock Setup both service + remote site settings
   9. Einstein Analytics - enable Backup Model
-  10. Adjust And Deploy Findoc Configuration
-   From Findock App, more, Setup, Custom Payment Methods
-   New, Cash
-   New, Check
-   Activate both Cash and Check
-   Click Deploy config, Start Deploy
 
 Incremental update to a production org
 1. Run `cci task run deploy --path force-app --org`

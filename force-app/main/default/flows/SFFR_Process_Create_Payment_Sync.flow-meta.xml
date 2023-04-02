@@ -583,7 +583,7 @@
             <targetReference>getRTPayment_Split</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <subflows>
         <name>subProcessPaymentGroup</name>
         <label>subProcessPaymentGroup</label>

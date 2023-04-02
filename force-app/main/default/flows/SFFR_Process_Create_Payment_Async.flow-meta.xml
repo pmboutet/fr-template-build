@@ -258,7 +258,7 @@
             <targetReference>getRTPayment_Payment</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>varPayment</name>
         <dataType>SObject</dataType>

@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>computeBulkMP</name>
+        <label>computeBulkMP</label>
+        <locationX>402</locationX>
+        <locationY>1574</locationY>
+        <actionName>SFFR_BulkHelpers</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>checkMasterPayment</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>InitialAmount</name>
+            <value>
+                <elementReference>varPayment.cpm__Amount__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>keyString</name>
+            <value>
+                <elementReference>currentInstallment.cpm__Custom_Payment_Reference__c</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>setCommonPaymentMaster</name>
+        <label>setCommonPaymentMaster</label>
+        <locationX>402</locationX>
+        <locationY>1334</locationY>
+        <assignmentItems>
+            <assignToReference>varPayment.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varRTPayment_Split</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>currentOpportunity.SFFR_Payment_Split__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varPayment.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>getMasterPayment</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>setMasterPayment</name>
         <label>setMasterPayment</label>
-        <locationX>143</locationX>
-        <locationY>1694</locationY>
+        <locationX>50</locationX>
+        <locationY>1934</locationY>
         <assignmentItems>
             <assignToReference>getMasterPayment.cpm__Amount__c</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>varPayment.cpm__Amount__c</elementReference>
+                <elementReference>computeBulkMP.ComputedAmount</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -20,7 +68,7 @@
     <assignments>
         <name>setPayerAccount2Id</name>
         <label>setPayerAccount2Id</label>
-        <locationX>605</locationX>
+        <locationX>842</locationX>
         <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>varPayerAccountId</assignToReference>
@@ -30,13 +78,13 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>subProcessPaymentGroup</targetReference>
+            <targetReference>checkCustomPaymentReference</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>setPayerAccountId</name>
         <label>setPayerAccountId</label>
-        <locationX>341</locationX>
+        <locationX>578</locationX>
         <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>varPayerAccountId</assignToReference>
@@ -46,13 +94,13 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>subProcessPaymentGroup</targetReference>
+            <targetReference>checkCustomPaymentReference</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>setPayerContact2Id</name>
         <label>setPayerContact2Id</label>
-        <locationX>605</locationX>
+        <locationX>842</locationX>
         <locationY>878</locationY>
         <assignmentItems>
             <assignToReference>varPayerContactId</assignToReference>
@@ -68,7 +116,7 @@
     <assignments>
         <name>setPayerContactId</name>
         <label>setPayerContactId</label>
-        <locationX>341</locationX>
+        <locationX>578</locationX>
         <locationY>878</locationY>
         <assignmentItems>
             <assignToReference>varPayerContactId</assignToReference>
@@ -84,8 +132,8 @@
     <assignments>
         <name>setPayment</name>
         <label>setPayment</label>
-        <locationX>473</locationX>
-        <locationY>2246</locationY>
+        <locationX>710</locationX>
+        <locationY>2582</locationY>
         <assignmentItems>
             <assignToReference>varPayment.cpm__Account__c</assignToReference>
             <operator>Assign</operator>
@@ -114,22 +162,8 @@
     <assignments>
         <name>setPaymentMaster</name>
         <label>setPaymentMaster</label>
-        <locationX>275</locationX>
-        <locationY>2030</locationY>
-        <assignmentItems>
-            <assignToReference>varPayment.RecordTypeId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>getRTPayment_Split</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>currentOpportunity.SFFR_Payment_Split__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>varPayment.Id</elementReference>
-            </value>
-        </assignmentItems>
+        <locationX>402</locationX>
+        <locationY>2366</locationY>
         <assignmentItems>
             <assignToReference>currentOpportunity.SFFR_Payment__c</assignToReference>
             <operator>Assign</operator>
@@ -144,15 +178,8 @@
     <assignments>
         <name>setPaymentNoMaster</name>
         <label>setPaymentNoMaster</label>
-        <locationX>671</locationX>
-        <locationY>1454</locationY>
-        <assignmentItems>
-            <assignToReference>varPayment.SFFR_Bank_Payment_Group__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>varPaymentGroup.Id</elementReference>
-            </value>
-        </assignmentItems>
+        <locationX>1018</locationX>
+        <locationY>1334</locationY>
         <assignmentItems>
             <assignToReference>currentOpportunity.SFFR_Payment_Split__c</assignToReference>
             <operator>Assign</operator>
@@ -172,10 +199,61 @@
         </connector>
     </assignments>
     <decisions>
+        <name>check</name>
+        <label>checkBulkCreate</label>
+        <locationX>622</locationX>
+        <locationY>1814</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>setPayment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>SkipCreateMP</defaultConnectorLabel>
+        <rules>
+            <name>CreateMP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>computeBulkMP.keyString</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>createMasterPayment</targetReference>
+            </connector>
+            <label>CreateMP</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>checkBulkUpdate</name>
+        <label>checkBulkUpdate</label>
+        <locationX>182</locationX>
+        <locationY>1814</locationY>
+        <defaultConnector>
+            <targetReference>setPaymentMaster</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>SkipUpdateMP</defaultConnectorLabel>
+        <rules>
+            <name>UpdateMP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>computeBulkMP.keyString</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setMasterPayment</targetReference>
+            </connector>
+            <label>UpdateMP</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>checkCustomPaymentReference</name>
         <label>checkCustomPaymentReference</label>
-        <locationX>473</locationX>
-        <locationY>1334</locationY>
+        <locationX>710</locationX>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>setPaymentNoMaster</targetReference>
         </defaultConnector>
@@ -191,7 +269,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>getMasterPayment</targetReference>
+                <targetReference>setCommonPaymentMaster</targetReference>
             </connector>
             <label>MasterPaymentNeeded</label>
         </rules>
@@ -199,7 +277,7 @@
     <decisions>
         <name>checkDoWeHaveAllData</name>
         <label>checkDoWeHaveAllData?</label>
-        <locationX>176</locationX>
+        <locationX>248</locationX>
         <locationY>638</locationY>
         <defaultConnector>
             <targetReference>checkPayerContact</targetReference>
@@ -207,16 +285,9 @@
         <defaultConnectorLabel>Continue</defaultConnectorLabel>
         <rules>
             <name>Continue</name>
-            <conditionLogic>1 OR 2 OR (3 AND 4)</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>currentInstallment</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>currentOpportunity</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -226,14 +297,21 @@
                 <leftValueReference>varPayment.RecordTypeId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>getRTPayment_Payment</elementReference>
+                    <elementReference>varRTPayment_Payment</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>varPayment.SFFR_Master_Payment__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varPayment.RecordTypeId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>varRTPayment_Payment</elementReference>
                 </rightValue>
             </conditions>
             <label>Stop</label>
@@ -242,10 +320,10 @@
     <decisions>
         <name>checkMasterPayment</name>
         <label>checkMasterPayment</label>
-        <locationX>275</locationX>
-        <locationY>1574</locationY>
+        <locationX>402</locationX>
+        <locationY>1694</locationY>
         <defaultConnector>
-            <targetReference>createMasterPayment</targetReference>
+            <targetReference>check</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>NoMasterPayment</defaultConnectorLabel>
         <rules>
@@ -259,7 +337,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>setMasterPayment</targetReference>
+                <targetReference>checkBulkUpdate</targetReference>
             </connector>
             <label>MasterPaymentExist</label>
         </rules>
@@ -267,7 +345,7 @@
     <decisions>
         <name>checkPayerContact</name>
         <label>checkPayerContact</label>
-        <locationX>473</locationX>
+        <locationX>710</locationX>
         <locationY>758</locationY>
         <defaultConnector>
             <targetReference>setPayerContact2Id</targetReference>
@@ -319,8 +397,8 @@
     <recordCreates>
         <name>createMasterPayment</name>
         <label>createMasterPayment</label>
-        <locationX>407</locationX>
-        <locationY>1694</locationY>
+        <locationX>490</locationX>
+        <locationY>1934</locationY>
         <assignRecordIdToReference>getMasterPayment.Id</assignRecordIdToReference>
         <connector>
             <targetReference>setPaymentMaster</targetReference>
@@ -338,12 +416,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>SFFR_Bank_Payment_Group__c</field>
-            <value>
-                <elementReference>varPaymentGroup.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>SFFR_Master_Payment__c</field>
             <value>
                 <booleanValue>true</booleanValue>
@@ -358,7 +430,7 @@
         <inputAssignments>
             <field>cpm__Amount__c</field>
             <value>
-                <elementReference>varPayment.cpm__Amount__c</elementReference>
+                <elementReference>computeBulkMP.ComputedAmount</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -424,7 +496,7 @@
         <inputAssignments>
             <field>cpm__Payment_Reference__c</field>
             <value>
-                <elementReference>varPayment.Name</elementReference>
+                <elementReference>currentInstallment.cpm__Custom_Payment_Reference__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -474,7 +546,7 @@
     <recordLookups>
         <name>currentInstallment</name>
         <label>currentInstallment</label>
-        <locationX>176</locationX>
+        <locationX>248</locationX>
         <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -495,7 +567,7 @@
     <recordLookups>
         <name>currentOpportunity</name>
         <label>currentOpportunity</label>
-        <locationX>176</locationX>
+        <locationX>248</locationX>
         <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -516,18 +588,18 @@
     <recordLookups>
         <name>getMasterPayment</name>
         <label>getMasterPayment</label>
-        <locationX>275</locationX>
+        <locationX>402</locationX>
         <locationY>1454</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>checkMasterPayment</targetReference>
+            <targetReference>computeBulkMP</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>cpm__Payment_Reference__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varPayment.cpm__Payment_Reference__c</elementReference>
+                <elementReference>currentInstallment.cpm__Custom_Payment_Reference__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -551,7 +623,7 @@
     <recordLookups>
         <name>getRTPayment_Payment</name>
         <label>getRTPayment_Payment</label>
-        <locationX>176</locationX>
+        <locationX>248</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -581,7 +653,7 @@
     <recordLookups>
         <name>getRTPayment_Split</name>
         <label>getRTPayment_Split</label>
-        <locationX>176</locationX>
+        <locationX>248</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -611,8 +683,8 @@
     <recordUpdates>
         <name>c</name>
         <label>updateMasterPayment</label>
-        <locationX>143</locationX>
-        <locationY>1814</locationY>
+        <locationX>50</locationX>
+        <locationY>2054</locationY>
         <connector>
             <targetReference>setPaymentMaster</targetReference>
         </connector>
@@ -621,38 +693,29 @@
     <recordUpdates>
         <name>updateOpportunity</name>
         <label>updateOpportunity</label>
-        <locationX>473</locationX>
-        <locationY>2366</locationY>
+        <locationX>710</locationX>
+        <locationY>2702</locationY>
+        <connector>
+            <targetReference>updatePayment</targetReference>
+        </connector>
         <inputReference>currentOpportunity</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>updatePayment</name>
+        <label>updatePayment</label>
+        <locationX>710</locationX>
+        <locationY>2822</locationY>
+        <inputReference>varPayment</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
-        <locationX>50</locationX>
+        <locationX>122</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getRTPayment_Split</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
-    <subflows>
-        <name>subProcessPaymentGroup</name>
-        <label>subProcessPaymentGroup</label>
-        <locationX>473</locationX>
-        <locationY>1214</locationY>
-        <connector>
-            <targetReference>checkCustomPaymentReference</targetReference>
-        </connector>
-        <flowName>SFFR_Process_Payment_Group</flowName>
-        <inputAssignments>
-            <name>Installment</name>
-            <value>
-                <elementReference>currentInstallment</elementReference>
-            </value>
-        </inputAssignments>
-        <outputAssignments>
-            <assignToReference>varPaymentGroup</assignToReference>
-            <name>varPaymentGroup</name>
-        </outputAssignments>
-    </subflows>
+    <status>Active</status>
     <variables>
         <name>varPayerAccountId</name>
         <dataType>String</dataType>
@@ -674,14 +737,6 @@
         <isInput>true</isInput>
         <isOutput>true</isOutput>
         <objectType>cpm__Payment__c</objectType>
-    </variables>
-    <variables>
-        <name>varPaymentGroup</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>SFFR_Payment_Group__c</objectType>
     </variables>
     <variables>
         <name>varRTPayment_Payment</name>

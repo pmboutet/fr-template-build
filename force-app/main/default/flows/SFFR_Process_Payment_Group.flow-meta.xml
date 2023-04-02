@@ -274,6 +274,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>SFFR_Number_Payment__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>SFFR_Payment_Method__c</field>
             <value>
                 <elementReference>Installment.cpm__Payment_Method__c</elementReference>
@@ -469,7 +475,7 @@
             <targetReference>checkInstallment</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>Installment</name>
         <dataType>SObject</dataType>

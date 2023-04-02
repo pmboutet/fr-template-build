@@ -2,8 +2,8 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
     <environments>Default</environments>
-    <interviewLabel>SFFR_Payment_CreateTrigger {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>SFFR Payment CreateTrigger</label>
+    <interviewLabel>SFFR Opportunity UpdateTrigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SFFR Opportunity UpdateTrigger</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -26,19 +26,27 @@
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>SFFR_Master_Payment__c</field>
+            <field>SFFR_Payment__c</field>
             <operator>EqualTo</operator>
             <value>
-                <booleanValue>false</booleanValue>
+                <stringValue></stringValue>
             </value>
         </filters>
-        <object>cpm__Payment__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <filters>
+            <field>SFFR_Payment_Split__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
         <scheduledPaths>
             <connector>
-                <targetReference>subCreatePayment</targetReference>
+                <targetReference>subUpdateOpportunity</targetReference>
             </connector>
             <pathType>AsyncAfterCommit</pathType>
         </scheduledPaths>
@@ -46,17 +54,16 @@
     </start>
     <status>Active</status>
     <subflows>
-        <name>subCreatePayment</name>
-        <label>subCreatePayment</label>
+        <name>subUpdateOpportunity</name>
+        <label>subUpdateOpportunity</label>
         <locationX>308</locationX>
         <locationY>288</locationY>
-        <flowName>SFFR_Process_Create_Payment</flowName>
+        <flowName>SFFR_Process_Update_Opportunity</flowName>
         <inputAssignments>
-            <name>varPayment</name>
+            <name>varOpportunity</name>
             <value>
                 <elementReference>$Record</elementReference>
             </value>
         </inputAssignments>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
 </Flow>
