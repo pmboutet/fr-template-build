@@ -23,7 +23,7 @@
         <locationX>314</locationX>
         <locationY>2928</locationY>
         <assignmentItems>
-            <assignToReference>bankBatch.SFFR_Batch_Total__c</assignToReference>
+            <assignToReference>bankBatch.SFFR_Banked_Total__c</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>$Record.cpm__Amount__c</elementReference>
@@ -316,7 +316,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>SFFR_Batch_Total__c</field>
+            <field>SFFR_Banked_Total__c</field>
             <value>
                 <elementReference>$Record.cpm__Amount__c</elementReference>
             </value>
@@ -566,7 +566,6 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
         <queriedFields>SFFR_Banked_Total__c</queriedFields>
-        <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
@@ -606,7 +605,6 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
         <queriedFields>SFFR_Banked_Total__c</queriedFields>
-        <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
@@ -751,9 +749,9 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>SFFR_Batch_Total__c</field>
+            <field>SFFR_Banked_Total__c</field>
             <value>
-                <elementReference>bankBatch.SFFR_Batch_Total__c</elementReference>
+                <elementReference>bankBatch.SFFR_Banked_Total__c</elementReference>
             </value>
         </inputAssignments>
         <object>SFFR_Payment_Group__c</object>
@@ -963,7 +961,7 @@
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>bankBatch</name>
         <dataType>SObject</dataType>

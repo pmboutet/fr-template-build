@@ -33,10 +33,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SFFR_Batch_Total__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>SFFR_Banked_Total__c</field>
             </layoutItems>
             <layoutItems>

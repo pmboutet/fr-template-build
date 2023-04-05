@@ -5,7 +5,7 @@
         <label>computeBulkMP</label>
         <locationX>402</locationX>
         <locationY>1574</locationY>
-        <actionName>SFFR_BulkHelpers</actionName>
+        <actionName>SFFR_BulkHelpers_SimpleAdd</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>checkMasterPayment</targetReference>

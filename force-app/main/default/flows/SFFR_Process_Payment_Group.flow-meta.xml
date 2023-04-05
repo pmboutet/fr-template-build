@@ -7,13 +7,6 @@
         <locationX>182</locationX>
         <locationY>854</locationY>
         <assignmentItems>
-            <assignToReference>varPaymentGroup.SFFR_Batch_Total__c</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Installment.cpm__Amount__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varPaymentGroup.SFFR_Banked_Total__c</assignToReference>
             <operator>Add</operator>
             <value>
@@ -256,7 +249,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>SFFR_Batch_Total__c</field>
+            <field>SFFR_Banked_Total__c</field>
             <value>
                 <elementReference>Installment.cpm__Amount__c</elementReference>
             </value>
@@ -330,7 +323,6 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
         <queriedFields>SFFR_Banked_Total__c</queriedFields>
-        <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <queriedFields>SFFR_Number_Payment__c</queriedFields>
         <queriedFields>SFFR_Max_Payment__c</queriedFields>
         <sortField>Id</sortField>
@@ -425,7 +417,6 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>SFFR_External_Reference__c</queriedFields>
         <queriedFields>SFFR_Banked_Total__c</queriedFields>
-        <queriedFields>SFFR_Batch_Total__c</queriedFields>
         <queriedFields>SFFR_Number_Payment__c</queriedFields>
         <queriedFields>SFFR_Max_Payment__c</queriedFields>
         <sortField>Id</sortField>
@@ -475,7 +466,7 @@
             <targetReference>checkInstallment</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>Installment</name>
         <dataType>SObject</dataType>

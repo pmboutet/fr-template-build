@@ -1,4 +1,4 @@
-public without sharing class SFFR_BulkHelpers {
+public without sharing class SFFR_BulkHelpers_SimpleAdd {
 
     public class Input {
         @InvocableVariable(description='External key')
@@ -6,9 +6,6 @@ public without sharing class SFFR_BulkHelpers {
 
         @InvocableVariable(description='Initial Amount')
         public Decimal InitialAmount;
-        
-        @InvocableVariable(description='RecordId')
-        public String recordId;
     }
 
     public class Output {
@@ -17,13 +14,10 @@ public without sharing class SFFR_BulkHelpers {
         
         @InvocableVariable(description='Computer Amount')
         public Decimal ComputedAmount;
-        
-        @InvocableVariable(description='RecordId')
-        public String recordId;
     }
     
-    @InvocableMethod(label='Current Batch Concurrent Addition' iconName='slds:standard:apex_plugin' description='Bulkify keyString / Amount sum' category= 'Bulkification')
-    public static List<Output> computeCreate(List<Input> inputs) {
+    @InvocableMethod(label='Bulkify Addition' iconName='slds:standard:apex_plugin' description='Bulkify keyString / Amount sum' category= 'Bulkification')
+    public static List<Output> computeSimpleAdd(List<Input> inputs) {
         List<Output> outputs = new List<Output>{};
         for (Input input: inputs) {
             Output newOutput = new Output();
@@ -33,14 +27,12 @@ public without sharing class SFFR_BulkHelpers {
 				foundOutput.ComputedAmount += input.InitialAmount;
                 newOutput = new Output();
                 newOutput.keyString = '';
-                newOutput.RecordId = foundOutput.RecordId;
                 outputs.add(newOutput);
             }
             else
             {
                 // Let's add the input
                 newOutput.keyString = input.keyString;
-                newOutput.RecordId = input.RecordId;
                 newOutput.ComputedAmount = input.InitialAmount;
                 outputs.add(newOutput);
             }

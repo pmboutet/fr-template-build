@@ -3,7 +3,6 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>SFFR_External_Reference__c</columns>
-    <columns>SFFR_Batch_Total__c</columns>
     <columns>SFFR_Banked_Total__c</columns>
     <columns>SFFR_Status__c</columns>
     <columns>SFFR_Bank_Date__c</columns>
