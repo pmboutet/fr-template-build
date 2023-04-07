@@ -155,8 +155,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Payment Group</label>
     <nameField>
+        <displayFormat>PG-{0000}</displayFormat>
         <label>Payment Group Name</label>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Payment Groups</pluralLabel>
     <searchLayouts></searchLayouts>
