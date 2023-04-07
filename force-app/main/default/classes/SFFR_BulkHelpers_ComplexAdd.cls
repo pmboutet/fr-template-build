@@ -61,8 +61,10 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
             foundPaymentGroup.ComputedSum1 += input.InitialSum1;
             foundPaymentGroup.ComputedSum2 += input.InitialSum2;
             // Process foundPaymentGroup - Close if needed
-            if ( foundPaymentGroup.ComputedSum1 >= input.MaxSum1 ) {
-                foundPaymentGroup.OpenGroup = False;
+            if ( input.MaxSum1 > 0 ) {
+                if ( foundPaymentGroup.ComputedSum1 >= input.MaxSum1 ) {
+                    foundPaymentGroup.OpenGroup = False;
+                }
             }
             // Add a new Output (related to the foundPaymentGroup.internalKey)
             newOutput.internalKey = foundPaymentGroup.internalKey;
@@ -82,8 +84,10 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
             newOutput.ComputedSum2 = input.InitialSum2;
             newOutput.OpenGroup = True;
             // Process Closure - Close if needed
-            if ( newOutput.ComputedSum1 >= input.MaxSum1 ) {
-                newOutput.OpenGroup = False;
+            if ( input.MaxSum1 > 0 ) {
+                if ( newOutput.ComputedSum1 >= input.MaxSum1 ) {
+                    newOutput.OpenGroup = False;
+                }
             }
         }
         // Add a new Output
