@@ -3,17 +3,150 @@
     <actionCalls>
         <name>computeBulkPG</name>
         <label>computeBulkPG</label>
-        <locationX>248</locationX>
-        <locationY>1430</locationY>
+        <locationX>402</locationX>
+        <locationY>1550</locationY>
         <actionName>SFFR_BulkHelpers_ComplexAdd</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>checkOpenPaymentGroupFound</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>externalKey</name>
+            <value>
+                <elementReference>varExternalKey</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>externalKey2</name>
+            <value>
+                <elementReference>varExternalKey2</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>IncrementSum1</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>IncrementSum2</name>
+            <value>
+                <elementReference>varPayment.cpm__Amount__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>InitialSum1</name>
+            <value>
+                <elementReference>varInitialSum1</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>InitialSum2</name>
+            <value>
+                <elementReference>varInitialSum2</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>internalKey</name>
+            <value>
+                <elementReference>varInternalKey</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>MaxSum1</name>
+            <value>
+                <elementReference>varMaxSum1</elementReference>
+            </value>
+        </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>setAssignVariables</name>
+        <label>setAssignVariables</label>
+        <locationX>270</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>varExternalKey</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varExternalKey2</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varPayment.cpm__Installment__r.SFFR_Bank_Group__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>getBankGroupfromExternalReference</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setAssignVariables2</name>
+        <label>setAssignVariables</label>
+        <locationX>534</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>varExternalKey</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varExternalKey2</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>getPaymentGroupfromMethod</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setPayment</name>
+        <label>setPayment</label>
+        <locationX>402</locationX>
+        <locationY>2222</locationY>
+        <assignmentItems>
+            <assignToReference>varPayment.SFFR_Bank_Payment_Group__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varPaymentGroupId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varPayment.SFFR_Bank_Payment_Group_Internal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>computeBulkPG.internalKey</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>updatePayment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setPaymentFromPGInternal</name>
+        <label>setPaymentFromPGInternal</label>
+        <locationX>930</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>varPayment.SFFR_Bank_Payment_Group__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getBankGroupfromInternalReference.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>updatePayment</targetReference>
+        </connector>
+    </assignments>
     <constants>
         <name>conMaximumItem</name>
         <dataType>Number</dataType>
@@ -21,10 +154,10 @@
     <decisions>
         <name>checkBankGroupProvided</name>
         <label>checkBankGroupProvided</label>
-        <locationX>248</locationX>
+        <locationX>402</locationX>
         <locationY>1094</locationY>
         <defaultConnector>
-            <targetReference>getPaymentGroupfromMethod</targetReference>
+            <targetReference>setAssignVariables2</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>NoBankGroupProvided</defaultConnectorLabel>
         <rules>
@@ -38,15 +171,65 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>getBankGroupfromExternalReference</targetReference>
+                <targetReference>setAssignVariables</targetReference>
             </connector>
             <label>BankGroupProvided</label>
         </rules>
     </decisions>
     <decisions>
+        <name>checkBulkCreate</name>
+        <label>checkBulkCreate</label>
+        <locationX>622</locationX>
+        <locationY>1790</locationY>
+        <defaultConnector>
+            <targetReference>setPayment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>SkipCreatePG</defaultConnectorLabel>
+        <rules>
+            <name>CreatePG</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>computeBulkPG.externalKey</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>createPaymentGroup</targetReference>
+            </connector>
+            <label>CreatePG</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>checkBulkUpdate</name>
+        <label>checkBulkUpdate</label>
+        <locationX>182</locationX>
+        <locationY>1790</locationY>
+        <defaultConnector>
+            <targetReference>setPayment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>SkipUpdatePG</defaultConnectorLabel>
+        <rules>
+            <name>UpdatePG</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>computeBulkPG.externalKey</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>updatePaymentGroup</targetReference>
+            </connector>
+            <label>UpdatePG</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>checkBypassAutomation</name>
         <label>checkBypassAutomation</label>
-        <locationX>50</locationX>
+        <locationX>94</locationX>
         <locationY>974</locationY>
         <defaultConnector>
             <targetReference>checkBankGroupProvided</targetReference>
@@ -66,13 +249,38 @@
         </rules>
     </decisions>
     <decisions>
-        <name>checkDoWeHaveAllData</name>
-        <label>checkDoWeHaveAllData?</label>
-        <locationX>347</locationX>
-        <locationY>398</locationY>
-        <defaultConnectorLabel>Stop</defaultConnectorLabel>
+        <name>checkFounndPGInternal</name>
+        <label>checkFounndPGInternal</label>
+        <locationX>1062</locationX>
+        <locationY>758</locationY>
+        <defaultConnectorLabel>Error_PGInternal</defaultConnectorLabel>
         <rules>
-            <name>Continue</name>
+            <name>FoundPGInternal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getBankGroupfromInternalReference</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setPaymentFromPGInternal</targetReference>
+            </connector>
+            <label>FoundPGInternal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>checkHasBankPG</name>
+        <label>checkHasBankPG</label>
+        <locationX>677</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>checkHasBankPGInternal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Skip</defaultConnectorLabel>
+        <rules>
+            <name>GetOnePG</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>varPayment.RecordTypeId</leftValueReference>
@@ -91,32 +299,67 @@
             <connector>
                 <targetReference>getPaymentGroupSetting</targetReference>
             </connector>
-            <label>Continue</label>
+            <label>GetOnePG</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>checkHasBankPGInternal</name>
+        <label>checkHasBankPGInternal</label>
+        <locationX>1260</locationX>
+        <locationY>518</locationY>
+        <defaultConnectorLabel>End</defaultConnectorLabel>
+        <rules>
+            <name>GetOnePGInternal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varPayment.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>varRTPayment_Payment</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varPayment.SFFR_Bank_Payment_Group_Internal__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getBankGroupfromInternalReference</targetReference>
+            </connector>
+            <label>GetOnePGInternal</label>
         </rules>
     </decisions>
     <decisions>
         <name>checkOpenPaymentGroupFound</name>
         <label>checkOpenPaymentGroupFound</label>
-        <locationX>248</locationX>
-        <locationY>1550</locationY>
-        <defaultConnectorLabel>NoPaymentGroupFound</defaultConnectorLabel>
+        <locationX>402</locationX>
+        <locationY>1670</locationY>
+        <defaultConnector>
+            <targetReference>checkBulkCreate</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>NoPaymentGroup</defaultConnectorLabel>
         <rules>
-            <name>PaymentGroupFound</name>
+            <name>PaymentGroupExist</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>varPaymentGroup</leftValueReference>
+                <leftValueReference>varPaymentGroupId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <label>PaymentGroupFound</label>
+            <connector>
+                <targetReference>checkBulkUpdate</targetReference>
+            </connector>
+            <label>PaymentGroupExist</label>
         </rules>
     </decisions>
     <decisions>
         <name>checkPaymentGroupSetting</name>
         <label>checkPaymentGroupSetting</label>
-        <locationX>50</locationX>
+        <locationX>94</locationX>
         <locationY>638</locationY>
         <defaultConnector>
             <targetReference>getDefaultPaymentGroupSetting</targetReference>
@@ -126,7 +369,7 @@
             <name>foundPaymentGroupSetting</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>varPaymentGroup</leftValueReference>
+                <leftValueReference>varMaxSum1</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -140,9 +383,9 @@
     </decisions>
     <environments>Default</environments>
     <formulas>
-        <name>UniqKey</name>
+        <name>forStatus</name>
         <dataType>String</dataType>
-        <expression>{!varPaymentGroup.SFFR_External_Reference__c} + &quot;__&quot; + {!varPaymentGroup.SFFR_Payment_Method__c}</expression>
+        <expression>IF({!computeBulkPG.OpenGroup}, &apos;Open&apos;, &apos;Close&apos;)</expression>
     </formulas>
     <interviewLabel>SFFR Process Update Payment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFFR Process Update Payment</label>
@@ -165,12 +408,71 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>createPaymentGroup</name>
+        <label>createPaymentGroup</label>
+        <locationX>490</locationX>
+        <locationY>1910</locationY>
+        <assignRecordIdToReference>varPaymentGroupId</assignRecordIdToReference>
+        <connector>
+            <targetReference>setPayment</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>varRTPaymentGroup_Bank</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Banked_Total__c</field>
+            <value>
+                <elementReference>computeBulkPG.ComputedSum2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_External_Reference__c</field>
+            <value>
+                <elementReference>varPayment.cpm__Installment__r.SFFR_Bank_Group__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Internal_Reference__c</field>
+            <value>
+                <elementReference>computeBulkPG.internalKey</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Max_Payment__c</field>
+            <value>
+                <elementReference>varMaxSum1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Number_Payment__c</field>
+            <value>
+                <elementReference>computeBulkPG.ComputedSum1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Payment_Method__c</field>
+            <value>
+                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Status__c</field>
+            <value>
+                <elementReference>forStatus</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SFFR_Payment_Group__c</object>
+    </recordCreates>
     <recordLookups>
         <name>getBankGroupfromExternalReference</name>
         <label>getBankGroupfromExternalReference</label>
-        <locationX>116</locationX>
-        <locationY>1214</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <locationX>270</locationX>
+        <locationY>1334</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>computeBulkPG</targetReference>
         </connector>
@@ -193,31 +495,82 @@
             <field>SFFR_External_Reference__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varPayment.cpm__Installment__r.SFFR_Bank_Group__c</elementReference>
+                <elementReference>varExternalKey2</elementReference>
             </value>
         </filters>
         <filters>
             <field>SFFR_Payment_Method__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+                <elementReference>varExternalKey</elementReference>
             </value>
         </filters>
         <object>SFFR_Payment_Group__c</object>
-        <outputReference>varPaymentGroup</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>SFFR_External_Reference__c</queriedFields>
-        <queriedFields>SFFR_Banked_Total__c</queriedFields>
-        <queriedFields>SFFR_Number_Payment__c</queriedFields>
-        <queriedFields>SFFR_Max_Payment__c</queriedFields>
-        <queriedFields>SFFR_Internal_Reference__c</queriedFields>
+        <outputAssignments>
+            <assignToReference>varPaymentGroupId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varInitialSum2</assignToReference>
+            <field>SFFR_Banked_Total__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varExternalKey2</assignToReference>
+            <field>SFFR_External_Reference__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varInternalKey</assignToReference>
+            <field>SFFR_Internal_Reference__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varMaxSum1</assignToReference>
+            <field>SFFR_Max_Payment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varInitialSum1</assignToReference>
+            <field>SFFR_Number_Payment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varExternalKey</assignToReference>
+            <field>SFFR_Payment_Method__c</field>
+        </outputAssignments>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
     <recordLookups>
+        <name>getBankGroupfromInternalReference</name>
+        <label>getBankGroupfromInternalReference</label>
+        <locationX>1062</locationX>
+        <locationY>638</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>checkFounndPGInternal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varRTPaymentGroup_Bank</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Internal_Reference__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varPayment.SFFR_Bank_Payment_Group_Internal__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SFFR_Payment_Group__c</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>getDefaultPaymentGroupSetting</name>
         <label>getDefaultPaymentGroupSetting</label>
-        <locationX>138</locationX>
+        <locationX>182</locationX>
         <locationY>758</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -237,16 +590,16 @@
             <field>SFFR_Bypass__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>varMaximumItem</assignToReference>
+            <assignToReference>varMaxSum1</assignToReference>
             <field>SFFR_Max_Payment__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>getPaymentGroupfromMethod</name>
         <label>getPaymentGroupfromMethod</label>
-        <locationX>380</locationX>
-        <locationY>1214</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <locationX>534</locationX>
+        <locationY>1334</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>computeBulkPG</targetReference>
         </connector>
@@ -267,33 +620,54 @@
         </filters>
         <filters>
             <field>SFFR_External_Reference__c</field>
-            <operator>IsNull</operator>
+            <operator>EqualTo</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <elementReference>varExternalKey2</elementReference>
             </value>
         </filters>
         <filters>
             <field>SFFR_Payment_Method__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+                <elementReference>varExternalKey</elementReference>
             </value>
         </filters>
         <object>SFFR_Payment_Group__c</object>
-        <outputReference>varPaymentGroup</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>SFFR_External_Reference__c</queriedFields>
-        <queriedFields>SFFR_Banked_Total__c</queriedFields>
-        <queriedFields>SFFR_Number_Payment__c</queriedFields>
-        <queriedFields>SFFR_Max_Payment__c</queriedFields>
-        <queriedFields>SFFR_Internal_Reference__c</queriedFields>
+        <outputAssignments>
+            <assignToReference>varPaymentGroupId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varInitialSum2</assignToReference>
+            <field>SFFR_Banked_Total__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varExternalKey2</assignToReference>
+            <field>SFFR_External_Reference__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varInternalKey</assignToReference>
+            <field>SFFR_Internal_Reference__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varMaxSum1</assignToReference>
+            <field>SFFR_Max_Payment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varInitialSum1</assignToReference>
+            <field>SFFR_Number_Payment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varExternalKey</assignToReference>
+            <field>SFFR_Payment_Method__c</field>
+        </outputAssignments>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
     </recordLookups>
     <recordLookups>
         <name>getPaymentGroupSetting</name>
         <label>getPaymentGroupSetting</label>
-        <locationX>50</locationX>
+        <locationX>94</locationX>
         <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -313,14 +687,14 @@
             <field>SFFR_Bypass__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>varMaximumItem</assignToReference>
+            <assignToReference>varMaxSum1</assignToReference>
             <field>SFFR_Max_Payment__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>getRTPayment_Payment</name>
         <label>getRTPayment_Payment</label>
-        <locationX>347</locationX>
+        <locationX>677</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -350,11 +724,11 @@
     <recordLookups>
         <name>getRTPaymentGroup_Bank</name>
         <label>getRTPaymentGroup_Bank</label>
-        <locationX>347</locationX>
+        <locationX>677</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>checkDoWeHaveAllData</targetReference>
+            <targetReference>checkHasBankPG</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -377,14 +751,57 @@
             <field>Id</field>
         </outputAssignments>
     </recordLookups>
+    <recordUpdates>
+        <name>updatePayment</name>
+        <label>updatePayment</label>
+        <locationX>677</locationX>
+        <locationY>2534</locationY>
+        <inputReference>varPayment</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>updatePaymentGroup</name>
+        <label>updatePaymentGroup</label>
+        <locationX>50</locationX>
+        <locationY>1910</locationY>
+        <connector>
+            <targetReference>setPayment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varPaymentGroupId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SFFR_Banked_Total__c</field>
+            <value>
+                <elementReference>computeBulkPG.ComputedSum2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Number_Payment__c</field>
+            <value>
+                <elementReference>computeBulkPG.ComputedSum1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Status__c</field>
+            <value>
+                <elementReference>forStatus</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SFFR_Payment_Group__c</object>
+    </recordUpdates>
     <start>
-        <locationX>221</locationX>
+        <locationX>551</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getRTPayment_Payment</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>varBypassAutomation</name>
         <dataType>Boolean</dataType>
@@ -396,29 +813,55 @@
         </value>
     </variables>
     <variables>
-        <name>varMaximumItem</name>
+        <name>varExternalKey</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varExternalKey2</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varInitialSum1</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <scale>2</scale>
         <value>
-            <elementReference>conMaximumItem</elementReference>
+            <numberValue>0.0</numberValue>
         </value>
     </variables>
     <variables>
-        <name>varPayerAccountId</name>
+        <name>varInitialSum2</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varInternalKey</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>varPayerContactId</name>
-        <dataType>String</dataType>
+        <name>varMaxSum1</name>
+        <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+        <scale>2</scale>
     </variables>
     <variables>
         <name>varPayment</name>
@@ -429,22 +872,14 @@
         <objectType>cpm__Payment__c</objectType>
     </variables>
     <variables>
-        <name>varPaymentGroup</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>SFFR_Payment_Group__c</objectType>
-    </variables>
-    <variables>
-        <name>varRTPayment_Payment</name>
+        <name>varPaymentGroupId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>varRTPayment_Split</name>
+        <name>varRTPayment_Payment</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

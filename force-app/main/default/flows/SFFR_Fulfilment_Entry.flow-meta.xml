@@ -75,14 +75,14 @@
             <assignToReference>inboundSingle.SFFR_Bank_Payment_Group_Ext_Key__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue></stringValue>
+                <elementReference>Inbound_Bank_batch_number</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>inboundSingle.SFFR_Fullfilment_Payment_Group__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue></stringValue>
+                <elementReference>Inbound_Fullfilment_batch_number</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>

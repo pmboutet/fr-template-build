@@ -26,8 +26,10 @@
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterLogic>and</filterLogic>
+        <connector>
+            <targetReference>subUpdatePayment</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>SFFR_Bank_Payment_Group__c</field>
             <operator>IsNull</operator>
@@ -35,12 +37,30 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>SFFR_Bank_Payment_Group_Internal__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
         <object>cpm__Payment__c</object>
-        <recordTriggerType>Update</recordTriggerType>
-        <scheduledPaths>
-            <pathType>AsyncAfterCommit</pathType>
-        </scheduledPaths>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>InvalidDraft</status>
+    <status>Active</status>
+    <subflows>
+        <name>subUpdatePayment</name>
+        <label>subUpdatePayment</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <flowName>SFFR_Process_Update_Payment</flowName>
+        <inputAssignments>
+            <name>varPayment</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
 </Flow>

@@ -5,6 +5,8 @@ Flow
 SFFR Contact Search: Screen flow to seaerch for a contact
 
 SFFR Fulfilment Entry: Screen flow to create inbound_report
+  Set the following fields:
+  - 
 
 SFFR Opportunity UpdateTrigger: Correct associated Payment if needed
   Only if SFFR_Payment is nul and SFFR_Payment_Split is not null
