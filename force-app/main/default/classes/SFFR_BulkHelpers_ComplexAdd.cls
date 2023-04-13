@@ -1,6 +1,13 @@
 public without sharing class SFFR_BulkHelpers_ComplexAdd {
 
     public class Input {
+        
+        @InvocableVariable(description='Creation Date')
+        public Date creationDate;
+
+        @InvocableVariable(description='Now Date')
+        public Date nowDate;
+        
         @InvocableVariable(description='External key')
         public String externalKey = '';
         
@@ -55,7 +62,7 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
         }
         return outputs;
     }
-    
+
     private static void computeInput(Input input,List<Output> outputs) {
         Output newOutput = new Output();
         Output foundPaymentGroup = findOpenKeys(input,outputs);
@@ -120,6 +127,13 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
                     }
                 }
             }
+            if (retval != null) {
+                if (!sameDay(input.creationDate,input.nowDate)) {
+                    // We have an open group from a different day
+                    retval.OpenGroup = False;
+                    retval = null;
+                }
+            }
         }
         catch(Exception e) {
         }
@@ -127,7 +141,7 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
     }
     
     public static String generateRandString(Integer length) {
-        final String chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        String chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         String randStr = '';
         while (randStr.length() < length) {
             Integer idx = Math.mod(Math.abs(Crypto.getRandomInteger()), chars.length());
@@ -136,4 +150,14 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
         return randStr;
     }
     
+    private static Boolean sameDay(Date Date1, Date Date2) {
+        Boolean retval = false;
+        try {
+        	retVal = Date1.isSameDay(Date2);
+        }
+        catch(Exception e) {
+        }
+        return retval;
+    }
+
 }

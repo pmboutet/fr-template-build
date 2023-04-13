@@ -4,6 +4,8 @@ public class SFFR_BulkHelpers_ComplexAddTest {
     private static void testcomputeComplexAdd() {
         List<SFFR_BulkHelpers_ComplexAdd.Input> inputs = new List<SFFR_BulkHelpers_ComplexAdd.Input>();
         SFFR_BulkHelpers_ComplexAdd.Input input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '123456';
         input.externalKey = 'key1';
         input.externalKey2 = 'key1.1';
@@ -14,6 +16,8 @@ public class SFFR_BulkHelpers_ComplexAddTest {
         input.MaxSum1 = 1;
         inputs.add(input);
         input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '123456';
         input.externalKey = 'key1';
         input.externalKey2 = 'key1.1';
@@ -22,6 +26,8 @@ public class SFFR_BulkHelpers_ComplexAddTest {
         input.MaxSum1 = 1;
         inputs.add(input);
         input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '1234567';
         input.externalKey = 'key2';
         input.externalKey2 = 'key2.1';
@@ -30,6 +36,8 @@ public class SFFR_BulkHelpers_ComplexAddTest {
         input.MaxSum1 = 10;
         inputs.add(input);
         input = new SFFR_BulkHelpers_ComplexAdd.Input();
+		input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '1234567';
         input.externalKey = 'key2';
         input.externalKey2 = 'key2.1';
@@ -38,26 +46,35 @@ public class SFFR_BulkHelpers_ComplexAddTest {
         input.MaxSum1 = 10;
         inputs.add(input);
 		input = new SFFR_BulkHelpers_ComplexAdd.Input();
+		input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '';
         input.externalKey = 'key3';
         input.externalKey2 = 'key3.1';
-        input.InitialSum1 = 1;
+        input.InitialSum1 = 0;
+        input.IncrementSum1 = 1;
         input.InitialSum2 = 20;
         input.MaxSum1 = 2;
 		inputs.add(input);
 		input = new SFFR_BulkHelpers_ComplexAdd.Input();
+		input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '';
         input.externalKey = 'key3';
         input.externalKey2 = 'key3.1';
-        input.InitialSum1 = 1;
+        input.InitialSum1 = 0;
+        input.IncrementSum1 = 1;
         input.InitialSum2 = 20;
         input.MaxSum1 = 2;
         inputs.add(input);
 		input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '';
         input.externalKey = 'key3';
         input.externalKey2 = 'key3.1';
-        input.InitialSum1 = 1;
+        input.InitialSum1 = 0;
+        input.IncrementSum1 = 1;
         input.InitialSum2 = 15;
         input.MaxSum1 = 2;
         inputs.add(input);
@@ -73,29 +90,38 @@ public class SFFR_BulkHelpers_ComplexAddTest {
         System.Debug(outputs[6]);
        	System.assertEquals('123456', outputs[0].internalKey);
         System.assertEquals(1, outputs[0].ComputedSum1);
-        System.assertEquals(10, outputs[0].ComputedSum2);
+        System.assertEquals(110, outputs[0].ComputedSum2);
         System.assertEquals(1, outputs[1].ComputedSum1);
         System.assertEquals(20, outputs[1].ComputedSum2);
-        System.assertEquals(2, outputs[2].ComputedSum1);
-        System.assertEquals(30, outputs[2].ComputedSum2);
-        System.assertEquals(40, outputs[4].ComputedSum2);
+        System.assertEquals(1, outputs[2].ComputedSum1);
+        System.assertEquals(10, outputs[2].ComputedSum2);
+        System.assertEquals(20, outputs[4].ComputedSum2);
+        System.assertEquals(2, outputs[4].ComputedSum1);
+        System.assertEquals(0, outputs[5].ComputedSum1);
+        System.assertEquals(1, outputs[6].ComputedSum1);
     }
 	@isTest
     private static void testcomputeSimpleAdd() {
         List<SFFR_BulkHelpers_ComplexAdd.Input> inputs = new List<SFFR_BulkHelpers_ComplexAdd.Input>();
         SFFR_BulkHelpers_ComplexAdd.Input input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '';
         input.externalKey = '1';
         input.externalKey2 = '';
         input.InitialSum1 = 10;
         inputs.add(input);
         input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '';
         input.externalKey = '1';
         input.externalKey2 = '';
         input.InitialSum1 = 20;
         inputs.add(input);
         input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
         input.internalKey = '';
         input.externalKey = '3';
         input.externalKey2 = '';
@@ -104,8 +130,38 @@ public class SFFR_BulkHelpers_ComplexAddTest {
        	List<SFFR_BulkHelpers_ComplexAdd.Output> outputs = SFFR_BulkHelpers_ComplexAdd.computeComplexAdd(inputs);
         System.assertEquals(inputs.size(), outputs.size());
        	System.assertEquals('1', outputs[0].externalKey);
+        System.assertEquals(10, outputs[0].ComputedSum1);
+        System.assertEquals(0, outputs[0].ComputedSum2);
+        System.Debug(inputs);
+        System.Debug(outputs);
+    }
+    @isTest
+    private static void test1() {
+        List<SFFR_BulkHelpers_ComplexAdd.Input> inputs = new List<SFFR_BulkHelpers_ComplexAdd.Input>();
+        SFFR_BulkHelpers_ComplexAdd.Input input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today();
+        input.nowDate = Date.today();
+        input.internalKey = '';
+        input.externalKey = 'A';
+        input.externalKey2 = '1';
+        input.InitialSum1 = 1;
+        inputs.add(input);
+        input = new SFFR_BulkHelpers_ComplexAdd.Input();
+        input.creationDate = Date.today().addDays(1);
+        input.nowDate = Date.today();
+        input.internalKey = '';
+        input.externalKey = 'A';
+        input.externalKey2 = '1';
+        input.InitialSum1 = 1;
+        inputs.add(input);
+       	List<SFFR_BulkHelpers_ComplexAdd.Output> outputs = SFFR_BulkHelpers_ComplexAdd.computeComplexAdd(inputs);
+        System.Debug(inputs);
+        System.Debug(outputs[0]);
+        System.Debug(outputs[1]);
+        System.assertEquals(inputs.size(), outputs.size());
+       	System.assertEquals('A', outputs[0].externalKey);
         System.assertEquals(1, outputs[0].ComputedSum1);
-        System.assertEquals(110, outputs[0].ComputedSum2);
+        System.assertEquals(0, outputs[0].ComputedSum2);
         System.Debug(inputs);
         System.Debug(outputs);
     }
