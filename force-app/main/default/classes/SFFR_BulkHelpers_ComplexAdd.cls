@@ -101,6 +101,10 @@ public without sharing class SFFR_BulkHelpers_ComplexAdd {
                     newOutput.OpenGroup = False;
                 }
             }
+            if (!sameDay(input.creationDate,input.nowDate)) {
+                // We have an open group from a different day
+                newOutput.OpenGroup = False;
+            }
         }
         // Add a new Output
         outputs.add(newOutput);

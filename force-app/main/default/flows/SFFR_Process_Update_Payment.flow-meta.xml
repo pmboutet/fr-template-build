@@ -12,6 +12,12 @@
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
+            <name>creationDate</name>
+            <value>
+                <elementReference>varCreationDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>externalKey</name>
             <value>
                 <elementReference>varExternalKey</elementReference>
@@ -59,6 +65,12 @@
                 <elementReference>varMaxSum1</elementReference>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>nowDate</name>
+            <value>
+                <elementReference>forToday</elementReference>
+            </value>
+        </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>57.0</apiVersion>
@@ -71,7 +83,7 @@
             <assignToReference>varExternalKey</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+                <elementReference>varPayment.cpm__Payment_Method__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -94,7 +106,7 @@
             <assignToReference>varExternalKey</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+                <elementReference>varPayment.cpm__Payment_Method__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -385,7 +397,12 @@
     <formulas>
         <name>forStatus</name>
         <dataType>String</dataType>
-        <expression>IF({!computeBulkPG.OpenGroup}, &apos;Open&apos;, &apos;Close&apos;)</expression>
+        <expression>IF({!computeBulkPG.OpenGroup}, &apos;Open&apos;, &apos;Closed&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>forToday</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
     </formulas>
     <interviewLabel>SFFR Process Update Payment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFFR Process Update Payment</label>
@@ -456,7 +473,7 @@
         <inputAssignments>
             <field>SFFR_Payment_Method__c</field>
             <value>
-                <elementReference>varPayment.cpm__Installment__r.cpm__Payment_Method__c</elementReference>
+                <elementReference>varPayment.cpm__Payment_Method__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -506,6 +523,10 @@
             </value>
         </filters>
         <object>SFFR_Payment_Group__c</object>
+        <outputAssignments>
+            <assignToReference>varCreationDate</assignToReference>
+            <field>CreatedDate</field>
+        </outputAssignments>
         <outputAssignments>
             <assignToReference>varPaymentGroupId</assignToReference>
             <field>Id</field>
@@ -633,6 +654,10 @@
             </value>
         </filters>
         <object>SFFR_Payment_Group__c</object>
+        <outputAssignments>
+            <assignToReference>varCreationDate</assignToReference>
+            <field>CreatedDate</field>
+        </outputAssignments>
         <outputAssignments>
             <assignToReference>varPaymentGroupId</assignToReference>
             <field>Id</field>
@@ -810,6 +835,16 @@
         <isOutput>false</isOutput>
         <value>
             <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varCreationDate</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>forToday</elementReference>
         </value>
     </variables>
     <variables>
