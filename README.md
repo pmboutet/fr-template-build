@@ -21,7 +21,7 @@
    From Data Integrity application, Select France, Save, enter username/password, Allow
 7.  Authorize Findock(ProcessingHub, WebHub)
    retrieve User SFFR Integration from Setup / User
-   From Findock LEX App, More, Setup
+   From Findock LEX App, More, Setup, Under Extensions - System
       ProcessingHub to enter username/password Connect
       WebHub to enter username/password Connect
  using the Integration User / (default pswd: fundr@isingfrT3mplat3*:*<>><!#) if asked to change it use the same and add a at the end
