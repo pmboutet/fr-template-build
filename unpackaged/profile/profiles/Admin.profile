@@ -69,4 +69,7 @@
                 <layout>cpm__Installment__c-SFFR_Installement_Layout</layout>
                 <recordType>cpm__Installment__c.cpm__Receivable</recordType>
         </layoutAssignments>
+        <layoutAssignments>
+                <layout>cpm__Inbound_Report__c-SFFR_Inbound_Report_Layout</layout>
+        </layoutAssignments>
 </Profile>

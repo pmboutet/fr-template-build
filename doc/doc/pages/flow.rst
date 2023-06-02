@@ -52,6 +52,35 @@ SFFR Process Create Payment
   Update Opportunity
   Update Payment
   
+
+TODO
+  Remove Payment SFFR_Bank_Payment_Group_Internal__c
+  ? Remove Inbound SFFR_Fullfilment_Payment_Group__c
+  Add Payment Field - SFFR_Bank_Payment_Group_Automation__c - default false to skip record processing
+  Add InboundReport SFFR_Bank_Payment_Group_Automated__c - bool - default false
+  Add Instalment SFFR_Bank_Group_Automated__c
+  Update Process Create Payment and set Payement SFFR_Bank_Payment_Group_Automation__c to true
+
+  Get common data
+  Get Next Job
+  Loop  
+Get First Payment Method exit if none
+If Payment bank group
+Get Payment to Process based on the Payment Method of the Day
+Get Paymentgroupsetting
+Foreach record
+  If Payment bank group provided
+  If Bypass -> set Skip = true
+  Else
+   If no open group
+     Create a new group with payment count
+     Set Payment group
+     async update payment
+   Else
+     set Payment group
+     async update group count
+     shall we close the group
+
 SFFR Process Update Payment
   If RT is Payment and Bank Payment group is empty
     ExternalKey = Payment.Method

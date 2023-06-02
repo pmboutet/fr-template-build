@@ -38,6 +38,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>SFFR_Bank_Payment_Group_Automated__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>SFFR_Bank_Payment_Group_Ext_Key__c</field>
             </layoutItems>
         </layoutColumns>
@@ -420,7 +424,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h3O000002QZBY</masterLabel>
+        <masterLabel>00h5t000000v7UW</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

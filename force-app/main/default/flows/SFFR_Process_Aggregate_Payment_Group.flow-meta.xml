@@ -3,8 +3,8 @@
     <actionCalls>
         <name>computeBulkPG</name>
         <label>computeBulkPG</label>
-        <locationX>402</locationX>
-        <locationY>1550</locationY>
+        <locationX>584</locationX>
+        <locationY>1598</locationY>
         <actionName>SFFR_BulkHelpers_ComplexAdd</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -77,8 +77,8 @@
     <assignments>
         <name>setAssignVariables</name>
         <label>setAssignVariables</label>
-        <locationX>270</locationX>
-        <locationY>1214</locationY>
+        <locationX>452</locationX>
+        <locationY>1262</locationY>
         <assignmentItems>
             <assignToReference>varExternalKey</assignToReference>
             <operator>Assign</operator>
@@ -100,8 +100,8 @@
     <assignments>
         <name>setAssignVariables2</name>
         <label>setAssignVariables</label>
-        <locationX>534</locationX>
-        <locationY>1214</locationY>
+        <locationX>716</locationX>
+        <locationY>1262</locationY>
         <assignmentItems>
             <assignToReference>varExternalKey</assignToReference>
             <operator>Assign</operator>
@@ -123,8 +123,8 @@
     <assignments>
         <name>setPayment</name>
         <label>setPayment</label>
-        <locationX>402</locationX>
-        <locationY>2222</locationY>
+        <locationX>584</locationX>
+        <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>varPayment.SFFR_Bank_Payment_Group__c</assignToReference>
             <operator>Assign</operator>
@@ -146,8 +146,8 @@
     <assignments>
         <name>setPaymentFromPGInternal</name>
         <label>setPaymentFromPGInternal</label>
-        <locationX>930</locationX>
-        <locationY>878</locationY>
+        <locationX>1112</locationX>
+        <locationY>926</locationY>
         <assignmentItems>
             <assignToReference>varPayment.SFFR_Bank_Payment_Group__c</assignToReference>
             <operator>Assign</operator>
@@ -159,6 +159,24 @@
             <targetReference>updatePayment</targetReference>
         </connector>
     </assignments>
+    <collectionProcessors>
+        <name>Limit</name>
+        <elementSubtype>SortCollectionProcessor</elementSubtype>
+        <label>Limit</label>
+        <locationX>319</locationX>
+        <locationY>401</locationY>
+        <collectionProcessorType>SortCollectionProcessor</collectionProcessorType>
+        <collectionReference>Get_Payment_to_Process</collectionReference>
+        <connector>
+            <targetReference>Loop</targetReference>
+        </connector>
+        <limit>50</limit>
+        <sortOptions>
+            <doesPutEmptyStringAndNullFirst>false</doesPutEmptyStringAndNullFirst>
+            <sortField>cpm__Collection_Date__c</sortField>
+            <sortOrder>Asc</sortOrder>
+        </sortOptions>
+    </collectionProcessors>
     <constants>
         <name>conMaximumItem</name>
         <dataType>Number</dataType>
@@ -166,8 +184,8 @@
     <decisions>
         <name>checkBankGroupProvided</name>
         <label>checkBankGroupProvided</label>
-        <locationX>402</locationX>
-        <locationY>1094</locationY>
+        <locationX>584</locationX>
+        <locationY>1142</locationY>
         <defaultConnector>
             <targetReference>setAssignVariables2</targetReference>
         </defaultConnector>
@@ -191,8 +209,8 @@
     <decisions>
         <name>checkBulkCreate</name>
         <label>checkBulkCreate</label>
-        <locationX>622</locationX>
-        <locationY>1790</locationY>
+        <locationX>804</locationX>
+        <locationY>1838</locationY>
         <defaultConnector>
             <targetReference>setPayment</targetReference>
         </defaultConnector>
@@ -216,8 +234,8 @@
     <decisions>
         <name>checkBulkUpdate</name>
         <label>checkBulkUpdate</label>
-        <locationX>182</locationX>
-        <locationY>1790</locationY>
+        <locationX>364</locationX>
+        <locationY>1838</locationY>
         <defaultConnector>
             <targetReference>setPayment</targetReference>
         </defaultConnector>
@@ -241,8 +259,8 @@
     <decisions>
         <name>checkBypassAutomation</name>
         <label>checkBypassAutomation</label>
-        <locationX>94</locationX>
-        <locationY>974</locationY>
+        <locationX>276</locationX>
+        <locationY>1022</locationY>
         <defaultConnector>
             <targetReference>checkBankGroupProvided</targetReference>
         </defaultConnector>
@@ -263,8 +281,8 @@
     <decisions>
         <name>checkFounndPGInternal</name>
         <label>checkFounndPGInternal</label>
-        <locationX>1062</locationX>
-        <locationY>758</locationY>
+        <locationX>1244</locationX>
+        <locationY>806</locationY>
         <defaultConnectorLabel>Error_PGInternal</defaultConnectorLabel>
         <rules>
             <name>FoundPGInternal</name>
@@ -285,8 +303,8 @@
     <decisions>
         <name>checkHasBankPG</name>
         <label>checkHasBankPG</label>
-        <locationX>677</locationX>
-        <locationY>398</locationY>
+        <locationX>777</locationX>
+        <locationY>560</locationY>
         <defaultConnector>
             <targetReference>checkHasBankPGInternal</targetReference>
         </defaultConnector>
@@ -317,8 +335,8 @@
     <decisions>
         <name>checkHasBankPGInternal</name>
         <label>checkHasBankPGInternal</label>
-        <locationX>1260</locationX>
-        <locationY>518</locationY>
+        <locationX>1442</locationX>
+        <locationY>566</locationY>
         <defaultConnectorLabel>End</defaultConnectorLabel>
         <rules>
             <name>GetOnePGInternal</name>
@@ -346,8 +364,8 @@
     <decisions>
         <name>checkOpenPaymentGroupFound</name>
         <label>checkOpenPaymentGroupFound</label>
-        <locationX>402</locationX>
-        <locationY>1670</locationY>
+        <locationX>584</locationX>
+        <locationY>1718</locationY>
         <defaultConnector>
             <targetReference>checkBulkCreate</targetReference>
         </defaultConnector>
@@ -371,8 +389,8 @@
     <decisions>
         <name>checkPaymentGroupSetting</name>
         <label>checkPaymentGroupSetting</label>
-        <locationX>94</locationX>
-        <locationY>638</locationY>
+        <locationX>158</locationX>
+        <locationY>749</locationY>
         <defaultConnector>
             <targetReference>getDefaultPaymentGroupSetting</targetReference>
         </defaultConnector>
@@ -404,8 +422,19 @@
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
-    <interviewLabel>SFFR Process Update Payment {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>SFFR Process Update Payment</label>
+    <interviewLabel>SFFR {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SFFR Process - Aggregate Payment Group</label>
+    <loops>
+        <name>Loop</name>
+        <label>Loop</label>
+        <locationX>488</locationX>
+        <locationY>402</locationY>
+        <collectionReference>Get_Payment_to_Process</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>checkHasBankPG</targetReference>
+        </nextValueConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -415,7 +444,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -428,8 +457,8 @@
     <recordCreates>
         <name>createPaymentGroup</name>
         <label>createPaymentGroup</label>
-        <locationX>490</locationX>
-        <locationY>1910</locationY>
+        <locationX>672</locationX>
+        <locationY>1958</locationY>
         <assignRecordIdToReference>varPaymentGroupId</assignRecordIdToReference>
         <connector>
             <targetReference>setPayment</targetReference>
@@ -485,10 +514,79 @@
         <object>SFFR_Payment_Group__c</object>
     </recordCreates>
     <recordLookups>
+        <name>Get_Payment_Method_To_Process</name>
+        <label>Get Payment Method To Process</label>
+        <locationX>320</locationX>
+        <locationY>74</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Payment_to_Process</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varRTPayment_Payment</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Bank_Payment_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>cpm__Payment__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>cpm__Payment_Method__c</queriedFields>
+        <sortField>cpm__Collection_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Payment_to_Process</name>
+        <label>Get Payment to Process</label>
+        <locationX>320</locationX>
+        <locationY>245</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Limit</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varRTPayment_Payment</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Bank_Payment_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>cpm__Payment_Method__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Payment_Method_To_Process.cpm__Payment_Method__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>cpm__Payment__c</object>
+        <sortField>cpm__Collection_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>getBankGroupfromExternalReference</name>
         <label>getBankGroupfromExternalReference</label>
-        <locationX>270</locationX>
-        <locationY>1334</locationY>
+        <locationX>452</locationX>
+        <locationY>1382</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>computeBulkPG</targetReference>
@@ -561,8 +659,8 @@
     <recordLookups>
         <name>getBankGroupfromInternalReference</name>
         <label>getBankGroupfromInternalReference</label>
-        <locationX>1062</locationX>
-        <locationY>638</locationY>
+        <locationX>1244</locationX>
+        <locationY>686</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>checkFounndPGInternal</targetReference>
@@ -591,8 +689,8 @@
     <recordLookups>
         <name>getDefaultPaymentGroupSetting</name>
         <label>getDefaultPaymentGroupSetting</label>
-        <locationX>182</locationX>
-        <locationY>758</locationY>
+        <locationX>534</locationX>
+        <locationY>743</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>checkBypassAutomation</targetReference>
@@ -618,8 +716,8 @@
     <recordLookups>
         <name>getPaymentGroupfromMethod</name>
         <label>getPaymentGroupfromMethod</label>
-        <locationX>534</locationX>
-        <locationY>1334</locationY>
+        <locationX>716</locationX>
+        <locationY>1382</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>computeBulkPG</targetReference>
@@ -692,8 +790,8 @@
     <recordLookups>
         <name>getPaymentGroupSetting</name>
         <label>getPaymentGroupSetting</label>
-        <locationX>94</locationX>
-        <locationY>518</locationY>
+        <locationX>276</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>checkPaymentGroupSetting</targetReference>
@@ -719,8 +817,8 @@
     <recordLookups>
         <name>getRTPayment_Payment</name>
         <label>getRTPayment_Payment</label>
-        <locationX>677</locationX>
-        <locationY>158</locationY>
+        <locationX>859</locationX>
+        <locationY>205</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>getRTPaymentGroup_Bank</targetReference>
@@ -749,11 +847,11 @@
     <recordLookups>
         <name>getRTPaymentGroup_Bank</name>
         <label>getRTPaymentGroup_Bank</label>
-        <locationX>677</locationX>
-        <locationY>278</locationY>
+        <locationX>859</locationX>
+        <locationY>325</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>checkHasBankPG</targetReference>
+            <targetReference>Get_Payment_Method_To_Process</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -779,15 +877,15 @@
     <recordUpdates>
         <name>updatePayment</name>
         <label>updatePayment</label>
-        <locationX>677</locationX>
-        <locationY>2534</locationY>
+        <locationX>859</locationX>
+        <locationY>2582</locationY>
         <inputReference>varPayment</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>updatePaymentGroup</name>
         <label>updatePaymentGroup</label>
-        <locationX>50</locationX>
-        <locationY>1910</locationY>
+        <locationX>232</locationX>
+        <locationY>1958</locationY>
         <connector>
             <targetReference>setPayment</targetReference>
         </connector>
@@ -820,13 +918,13 @@
         <object>SFFR_Payment_Group__c</object>
     </recordUpdates>
     <start>
-        <locationX>551</locationX>
-        <locationY>0</locationY>
+        <locationX>733</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>getRTPayment_Payment</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>varBypassAutomation</name>
         <dataType>Boolean</dataType>
