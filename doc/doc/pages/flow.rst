@@ -55,7 +55,7 @@ SFFR Process Create Payment
 
 TODO
   Remove Payment SFFR_Bank_Payment_Group_Internal__c
-  ? Remove Inbound SFFR_Fullfilment_Payment_Group__c
+  ? Remove Inbound SFFR_Fullfilment_Payment_Group__c todo payment + remove UI
   Add Payment Field - SFFR_Bank_Payment_Group_Automation__c - default false to skip record processing
   Add InboundReport SFFR_Bank_Payment_Group_Automated__c - bool - default false
   Add Instalment SFFR_Bank_Group_Automated__c

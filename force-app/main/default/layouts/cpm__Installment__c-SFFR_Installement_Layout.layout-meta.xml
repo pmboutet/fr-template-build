@@ -143,6 +143,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>SFFR_Fullfilment_Payment_Group__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>SFFR_Bank_Group__c</field>
             </layoutItems>
         </layoutColumns>
@@ -161,6 +165,9 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>cpm__Payment_Transaction_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

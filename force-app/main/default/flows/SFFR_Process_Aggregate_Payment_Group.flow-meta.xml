@@ -185,7 +185,7 @@
         <name>check_Analyse_Payment_Record</name>
         <label>check - Analyse Payment Record</label>
         <locationX>308</locationX>
-        <locationY>490</locationY>
+        <locationY>487</locationY>
         <defaultConnectorLabel>No Handled Yet</defaultConnectorLabel>
         <rules>
             <name>No_Payment_To_Process</name>
@@ -200,6 +200,25 @@
             <label>No Payment To Process</label>
         </rules>
         <rules>
+            <name>Internal_Grouping</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Payment_Method_To_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Payment_Method_To_Process.SFFR_Bank_Group_Automated__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Internal Grouping</label>
+        </rules>
+        <rules>
             <name>External_Grouping</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
@@ -211,9 +230,9 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Payment_Method_To_Process.SFFR_Bank_Group__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue></stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -244,31 +263,15 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Payment_Method_To_Process.SFFR_Bank_Group__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue></stringValue>
-                </rightValue>
-            </conditions>
-            <label>No Grouping Needed</label>
-        </rules>
-        <rules>
-            <name>Internal_Grouping</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Payment_Method_To_Process</leftValueReference>
                 <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Payment_Method_To_Process.SFFR_Bank_Group_Automated__c</leftValueReference>
-                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <label>Internal Grouping</label>
+            <connector>
+                <targetReference>process_No_Grouping_Needed</targetReference>
+            </connector>
+            <label>No Grouping Needed</label>
         </rules>
     </decisions>
     <decisions>
@@ -970,6 +973,58 @@
         </outputAssignments>
     </recordLookups>
     <recordUpdates>
+        <name>process_No_Grouping_Needed</name>
+        <label>process - No Grouping Needed</label>
+        <locationX>779</locationX>
+        <locationY>362</locationY>
+        <connector>
+            <targetReference>Pause</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varRTPayment_Payment</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Bank_Payment_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Bank_Payment_Group_Automation__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Bank_Group__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SFFR_Bank_Group_Automated__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SFFR_Bank_Payment_Group_Automation__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>cpm__Payment__c</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>updatePayment</name>
         <label>updatePayment</label>
         <locationX>859</locationX>
@@ -1120,4 +1175,41 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
+    <waits>
+        <name>Pause</name>
+        <label>Pause</label>
+        <locationX>1384</locationX>
+        <locationY>231</locationY>
+        <defaultConnector>
+            <targetReference>Get_Payment_Method_To_Process</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <name>Now</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Get_Payment_Method_To_Process</targetReference>
+            </connector>
+            <eventType>AlarmEvent</eventType>
+            <inputParameters>
+                <name>AlarmTime</name>
+                <value>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+                <value>
+                    <stringValue>Hours</stringValue>
+                </value>
+            </inputParameters>
+            <label>Now</label>
+        </waitEvents>
+    </waits>
 </Flow>

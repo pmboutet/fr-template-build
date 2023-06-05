@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>56.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>addToTal</name>
         <label>addToTal</label>
@@ -76,13 +76,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Inbound_Bank_batch_number</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>inboundSingle.SFFR_Fullfilment_Payment_Group__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Inbound_Fullfilment_batch_number</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -707,13 +700,6 @@
             <fields>
                 <name>Origin_Column2</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Inbound_Fullfilment_batch_number</name>
-                    <dataType>String</dataType>
-                    <fieldText>Fullfilment batch number</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>false</isRequired>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>

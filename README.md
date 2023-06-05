@@ -127,7 +127,6 @@ cci service connect devhub mydevhub —project [Configure devhub to target scrat
          #### Decription
          - This job will open Setup > User Interface > Translation Workbech > Translate Language Settings. Check Active Checkebox, Click on Save
 
-
          
 
    ## Install https://cumulusci.readthedocs.io/en/stable/robot.html
