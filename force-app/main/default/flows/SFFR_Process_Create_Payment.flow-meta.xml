@@ -194,6 +194,27 @@
                 <elementReference>varPayment.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varPayment.SFFR_Bank_Payment_Group_Automation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varPayment.SFFR_Bank_Group__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentInstallment.SFFR_Bank_Group__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varPayment.SFFR_Bank_Group_Automated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentInstallment.SFFR_Bank_Group_Automated__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>setPayment</targetReference>
         </connector>
@@ -413,6 +434,24 @@
             <field>SFFR_Bank_Deposit_Date__c</field>
             <value>
                 <elementReference>varPayment.SFFR_Bank_Deposit_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Bank_Group_Automated__c</field>
+            <value>
+                <elementReference>currentInstallment.SFFR_Bank_Group_Automated__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Bank_Group__c</field>
+            <value>
+                <elementReference>currentInstallment.SFFR_Bank_Group__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SFFR_Bank_Payment_Group_Automation__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>

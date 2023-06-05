@@ -60,6 +60,9 @@ TODO
   Add InboundReport SFFR_Bank_Payment_Group_Automated__c - bool - default false
   Add Instalment SFFR_Bank_Group_Automated__c
   Update Process Create Payment and set Payement SFFR_Bank_Payment_Group_Automation__c to true
+    We set the Master Payment or Payment not splitted to true
+  Add Payment Bank Group (copy from instalment)
+  Add Payment Bank Group Automated (copy from instalment)
 
   Get common data
   Get Next Job

@@ -148,6 +148,13 @@
                 <elementReference>Inbound_benificiary.recordName</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>inboundSingle.SFFR_Bank_Payment_Group_Automated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Inbound_Bank_Payment_Group_Automated</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>addToTal</targetReference>
         </connector>
@@ -781,18 +788,24 @@
                 <name>Details_payment_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Inbound_Payment_number</name>
+                    <name>Inbound_Bank_batch_number</name>
                     <dataType>String</dataType>
-                    <fieldText>Payment number</fieldText>
+                    <defaultValue>
+                        <elementReference>$User.Username</elementReference>
+                    </defaultValue>
+                    <fieldText>Payment Group</fieldText>
                     <fieldType>InputField</fieldType>
                     <isRequired>false</isRequired>
                 </fields>
                 <fields>
-                    <name>Inbound_Bank_batch_number</name>
-                    <dataType>String</dataType>
-                    <fieldText>Bank batch number</fieldText>
+                    <name>Inbound_Bank_Payment_Group_Automated</name>
+                    <dataType>Boolean</dataType>
+                    <defaultValue>
+                        <booleanValue>true</booleanValue>
+                    </defaultValue>
+                    <fieldText>Payment Group (Automatic)</fieldText>
                     <fieldType>InputField</fieldType>
-                    <isRequired>false</isRequired>
+                    <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>

@@ -270,6 +270,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Bank_Payment_Group_Automation__c</fieldItem>
+                <identifier>RecordSFFR_Bank_Payment_Group_Automation_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.cpm__Description__c</fieldItem>
                 <identifier>Recordcpm_Description_cField</identifier>
             </fieldInstance>
@@ -482,6 +492,26 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Bank_Group__c</fieldItem>
+                <identifier>RecordSFFR_Bank_Group_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Bank_Group_Automated__c</fieldItem>
+                <identifier>RecordSFFR_Bank_Group_Automated_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>

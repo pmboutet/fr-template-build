@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFFR_Split_Compact_Layout</fullName>
+    <fields>cpm__Account__c</fields>
+    <fields>cpm__Collection_Date__c</fields>
+    <fields>cpm__Payment_Method__c</fields>
+    <label>SFFR Split Compact Layout</label>
+</CompactLayout>

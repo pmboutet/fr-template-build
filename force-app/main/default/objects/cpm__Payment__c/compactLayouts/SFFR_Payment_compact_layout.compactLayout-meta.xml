@@ -6,5 +6,5 @@
     <fields>cpm__Collection_Date__c</fields>
     <fields>SFFR_Bank_Payment_Group__c</fields>
     <fields>cpm__Payment_Method__c</fields>
-    <label>Payment compact layout</label>
+    <label>SFFR Payment Compact Layout</label>
 </CompactLayout>
