@@ -189,6 +189,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.SFFR_Collection_Date__c</fieldItem>
+                <identifier>RecordSFFR_Collection_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.SFFR_Accounting_Date__c</fieldItem>
                 <identifier>RecordSFFR_Accounting_Date_cField</identifier>
             </fieldInstance>
@@ -320,6 +330,10 @@
                     <value>Facet-a898c450-0030-4a92-8e30-962627ccb0e2</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>Bank lot description</value>
                 </componentInstanceProperties>
@@ -332,6 +346,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-7a8e51a1-b741-425a-87bd-592a8edb5716</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>

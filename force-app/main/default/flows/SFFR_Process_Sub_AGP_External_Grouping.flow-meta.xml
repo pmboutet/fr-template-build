@@ -5,7 +5,7 @@
         <name>assign_Counts</name>
         <label>assign Counts</label>
         <locationX>264</locationX>
-        <locationY>854</locationY>
+        <locationY>866</locationY>
         <assignmentItems>
             <assignToReference>varPGNumberPayment</assignToReference>
             <operator>Add</operator>
@@ -38,11 +38,29 @@
             <targetReference>count_Payments</targetReference>
         </connector>
     </assignments>
+    <collectionProcessors>
+        <name>LimitList</name>
+        <elementSubtype>SortCollectionProcessor</elementSubtype>
+        <label>LimitList</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <collectionProcessorType>SortCollectionProcessor</collectionProcessorType>
+        <collectionReference>get_Payment</collectionReference>
+        <connector>
+            <targetReference>count_Payments</targetReference>
+        </connector>
+        <limit>500</limit>
+        <sortOptions>
+            <doesPutEmptyStringAndNullFirst>false</doesPutEmptyStringAndNullFirst>
+            <sortField>cpm__Collection_Date__c</sortField>
+            <sortOrder>Asc</sortOrder>
+        </sortOptions>
+    </collectionProcessors>
     <decisions>
         <name>check_PaymentGroup_Exit</name>
         <label>check PaymentGroup Exit</label>
         <locationX>176</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <defaultConnector>
             <targetReference>create_PaymentGroup</targetReference>
         </defaultConnector>
@@ -51,7 +69,7 @@
             <name>PaymentGroup_Exit</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>lookup_Bank_Payment_Group</leftValueReference>
+                <leftValueReference>varPGId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -70,7 +88,7 @@
         <name>count_Payments</name>
         <label>count Payments</label>
         <locationX>176</locationX>
-        <locationY>734</locationY>
+        <locationY>758</locationY>
         <collectionReference>get_Payment</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -103,7 +121,7 @@
         <name>create_PaymentGroup</name>
         <label>create PaymentGroup</label>
         <locationX>264</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignRecordIdToReference>varPGId</assignRecordIdToReference>
         <connector>
             <targetReference>get_Payment</targetReference>
@@ -127,6 +145,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>SFFR_Max_Payment__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>SFFR_Number_Payment__c</field>
             <value>
                 <elementReference>varPGNumberPayment</elementReference>
@@ -144,10 +168,10 @@
         <name>get_Payment</name>
         <label>get Payment</label>
         <locationX>176</locationX>
-        <locationY>614</locationY>
+        <locationY>542</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>count_Payments</targetReference>
+            <targetReference>LimitList</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -195,7 +219,7 @@
         <name>lookup_Bank_Payment_Group</name>
         <label>lookup Bank Payment Group</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>check_PaymentGroup_Exit</targetReference>
@@ -235,7 +259,7 @@
         <name>update_PaymentGroup</name>
         <label>update PaymentGroup</label>
         <locationX>176</locationX>
-        <locationY>1190</locationY>
+        <locationY>1166</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -262,7 +286,7 @@
         <name>update_Payments</name>
         <label>update Payments</label>
         <locationX>176</locationX>
-        <locationY>1070</locationY>
+        <locationY>1058</locationY>
         <connector>
             <targetReference>update_PaymentGroup</targetReference>
         </connector>
