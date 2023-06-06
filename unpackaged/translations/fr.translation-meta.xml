@@ -473,10 +473,6 @@
                     <name>Inbound_Campaign_lookup</name>
                 </fields>
                 <fields>
-                    <fieldText>Numéro de lot</fieldText>
-                    <name>Inbound_Fullfilment_batch_number</name>
-                </fields>
-                <fields>
                     <fieldText>Date du lot</fieldText>
                     <name>Inbound_Fullfilment_date</name>
                 </fields>
@@ -487,10 +483,6 @@
                 <fields>
                     <fieldText>Méthode de paiement</fieldText>
                     <name>Inbound_Payment_method</name>
-                </fields>
-                <fields>
-                    <fieldText>Numéro du paiement</fieldText>
-                    <name>Inbound_Payment_number</name>
                 </fields>
                 <fields>
                     <fieldText>Origine</fieldText>
