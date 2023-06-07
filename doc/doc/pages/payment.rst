@@ -29,6 +29,19 @@ Saisie manuelle
          - The Integration User Username is dynamic
          - The Integration User password is hardcoded
 
+
+Financial data & process
+
+Data Model change
+      Inbound_report
+      Installment
+      Payment
+      Payment Group
+      Payment Group Setting
+      Opportunity
+
+
+
 Flows
 SFFR Fulfilment Entry: Screen Flow invoked from App Tool Bar or from Contact Record
 SFFR Contact Search: SubFlow Screen Flokw invoked from SFFR Fulfilment Entry
@@ -40,9 +53,3 @@ TODO DOC APSYNERGY post install to connect Payment Processing with the Findock I
 
 TODO DESIGN APSYNERGY post install to connect WebHub with the Findock Integration User
 
-TODO DESIGN PMB Payment typical use case
-Define Json
-Define SI Processing to put the file in the InBound Report
-Build Guided Matching Rules
-Findock check list
-Findock Event template

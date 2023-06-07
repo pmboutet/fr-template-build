@@ -52,92 +52,61 @@ SFFR Process Create Payment
   Update Opportunity
   Update Payment
   
+SFFR Process - Aggregate Payment Group
+  Get the first Payment to process filtered on RecordType, Bank Payment Group(null), Bank Payment Group (automation)(true)
+    sorted by Collection Date Asc
+  If Internal Grouping (Record found and Payment Group Automated(true))
+    Invoke Subflow SFFR Process - Sub - AGP - Internal Grouping
+    Pause
+    Goto Get the first Payment
+  If External Grouping (Record found and Payment Group Automated(false) and Bank Group(not empty))
+    Invoke Subflow SFFR Process - Sub - AGP - External Grouping
+    Pause
+    Goto Get the first Payment
+  If No Grouping Needed (Record found and Payment Group Automated(false) and Bank Group(empty))
+    Update All Payment where no grouping is needed and set Bank Payment Group (automation) to false
+    Pause
+    Goto Get the first Payment
+  If No Payment To Process (Record not found)
+    Exit
 
-TODO
-  Remove Payment SFFR_Bank_Payment_Group_Internal__c
-  ? Remove Inbound SFFR_Fullfilment_Payment_Group__c todo payment + remove UI
-  Add Payment Field - SFFR_Bank_Payment_Group_Automation__c - default false to skip record processing
-  Add InboundReport SFFR_Bank_Payment_Group_Automated__c - bool - default false
-  Add Instalment SFFR_Bank_Group_Automated__c
-  Update Process Create Payment and set Payement SFFR_Bank_Payment_Group_Automation__c to true
-    We set the Master Payment or Payment not splitted to true
-  Add Payment Bank Group (copy from instalment)
-  Add Payment Bank Group Automated (copy from instalment)
+SFFR Process - Sub - AGP - Internal Grouping
+  Close all Payment Group filtered by RecordType, External Reference(BankGroup), Max Payment(not 0), Collection Date(before first Payment)
+  lookup Payment Group filtered by RecordType, External Reference(BankGroup), Collection Date, Payment Method, Status(Open)
+  If Payment Group not found
+    Get Max Payment From Payment Group Setting filtered by Payment Method
+    If not defined
+      Get Max Payment From Payment Group Setting filtered by Default
+        If not defined
+          Max Payment = 200
+    Create Payment Group (External Reference(BankGroup),Max Payment(Max Payment),Status(Open),Banked Total(0),Number Payment(0))
+  Get (all) Payments to attach to this Payment Group filtered by RecordType, Bank Payment Group(null), 
+    Bank Payment Group (automation)(true), Payment Group Automated(true), Bank Group, Payment Method
+  Limit the Payments to 100 record in order to avoid flow limits
+  Foreach Payments
+    If Max Payment = Number of Payment
+      Exit
+    Increment Number of Payment
+    Add Amount to Banked Total
+    Assign Payment Group to current Payment
+    Add current Payment to future Payments update list
+  If Max Payment = Number of Payment
+    Payment Group Status set to Close
+  Update Payments
+  Update Payment Group
 
-  Get common data
-  Get Next Job
-  Loop  
-Get First Payment Method exit if none
-If Payment bank group
-Get Payment to Process based on the Payment Method of the Day
-Get Paymentgroupsetting
-Foreach record
-  If Payment bank group provided
-  If Bypass -> set Skip = true
-  Else
-   If no open group
-     Create a new group with payment count
-     Set Payment group
-     async update payment
-   Else
-     set Payment group
-     async update group count
-     shall we close the group
+SFFR Process - Sub - AGP - External Grouping
+  lookup Payment Group filtered by RecordType, External Reference(BankGroup)
+  If Payment Group not found
+    Create Payment Group (External Reference(BankGroup),Max Payment(0),Status(Open),Banked Total(0),Number Payment(0))
+  Get (all) Payments to attach to this Payment Group filtered by RecordType, Bank Payment Group(null), 
+    Bank Payment Group (automation)(true), Payment Group Automated(false) and the right Bank Group
+  Limit the Payments to 500 record in order to avoid flow limits
+  Foreach Payments
+    Increment Number of Payment
+    Add Amount to Banked Total
+    Assign Payment Group to current Payment
+    Add current Payment to future Payments update list
+  Update Payments
+  Update Payment Group
 
-SFFR Process Update Payment
-  If RT is Payment and Bank Payment group is empty
-    ExternalKey = Payment.Method
-    ExternalKey2 = Installment.Bankgroup
-    If Installment.Bankgroup provided
-    Get getPaymentGroupSetting where MasterLabel is Payment.cpm__Payment_Method__c
-      Set varMaxSum1 and varBypassAutomation
-    If varMaxSum1 is null 
-      Get getPaymentGroupSetting where MasterLabel is Default
-        Set varMaxSum1 and varBypassAutomation
-    Endif
-    If varBypassAutomation
-      ExternalKeyEnd
-    Else
-    EndIf
-  Else
-    If RT is Payment and Bank Payment group (internal) is not empty
-      Get PaymentGroup where RT is Bank and IntenralRefernece is Bank Payment group (internal)
-      If Record Found
-        Set Payment.Bank Payment Group to Found PaymentGroup
-      Else
-        End
-      Endif
-    Else
-      End
-    Endif
-  Update Payment Record
-
-SFFR Process Update Payment
-  If RT is Payment and Bank Payment group is empty
-    ExternalKey = Payment.Method
-    ExternalKey2 = Installment.Bankgroup
-    If Installment.Bankgroup provided
-    Get getPaymentGroupSetting where MasterLabel is Payment.cpm__Payment_Method__c
-      Set varMaxSum1 and varBypassAutomation
-    If varMaxSum1 is null 
-      Get getPaymentGroupSetting where MasterLabel is Default
-        Set varMaxSum1 and varBypassAutomation
-    Endif
-    If varBypassAutomation
-      ExternalKeyEnd
-    Else
-    EndIf
-  Else
-    If RT is Payment and Bank Payment group (internal) is not empty
-      Get PaymentGroup where RT is Bank and IntenralRefernece is Bank Payment group (internal)
-      If Record Found
-        Set Payment.Bank Payment Group to Found PaymentGroup
-      Else
-        End
-      Endif
-    Else
-      End
-    Endif
-  Update Payment Record
-
-SFFR Process Payment Group: Process Payment Group
