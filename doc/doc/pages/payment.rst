@@ -44,12 +44,6 @@ Data Model change
 
 Flows
 SFFR Fulfilment Entry: Screen Flow invoked from App Tool Bar or from Contact Record
-SFFR Contact Search: SubFlow Screen Flokw invoked from SFFR Fulfilment Entry
+SFFR Contact Search: SubFlow Screen Flow invoked from SFFR Fulfilment Entry
 
-
-TODO DOC APSYNERGY Create Findock Integration User + Add permission Set see: https://docs.findock.com/permissions/
-      task assign_permission_sets: https://cumulusci.readthedocs.io/en/stable/tasks.html#assign-permission-sets
-TODO DOC APSYNERGY post install to connect Payment Processing with the Findock Integration User
-
-TODO DESIGN APSYNERGY post install to connect WebHub with the Findock Integration User
 

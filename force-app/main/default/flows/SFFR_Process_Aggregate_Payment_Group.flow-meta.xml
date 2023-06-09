@@ -287,7 +287,7 @@
             <targetReference>getRTPayment_Payment</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>process_External_Grouping</name>
         <label>process - External Grouping</label>

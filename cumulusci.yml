@@ -11,6 +11,9 @@ project:
           version: 1.5
         - namespace: "insights"
           version: 1.23
+        # adding Schedul o matic https://github.com/SalesforceLabs/Schedul-o-matic-9000
+        - version_id: 04t1Q000000lqHQ
+        - github: https://github.com/GitGonexa/gonexa-fr-template
     git:
         default_branch: 'main'
         repo_url: https://github.com/pmboutet/fr-template-build
@@ -70,7 +73,7 @@ plans:
               namespace: npsp
               restore: True
         6:
-            flow: sffr_assign_compact_layout 
+            flow: sffr_assign_compact_layout
 
 tasks:
     robot:
@@ -238,6 +241,10 @@ flows:
                 task: sffr_load_findockdata
             11:
                 flow: complete_install
+            12:
+                task: assign_permission_sets
+                options:
+                  api_names: Schedulomatic9000User
 
     install_demo:
         steps:
