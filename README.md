@@ -30,7 +30,7 @@
    Click create initial config 
 9.  Einstein Analytics - enable Backup Model
    From Einstein for Nonprofit App, enable Backup models
-10. Install https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FZ981UAD&tab=e
+10. Manually schedule Group Bank Automation
 
 Got some manual update from source files and or additional transalations?
 1. Run `cci task run deploy --path force-app --org dev`
