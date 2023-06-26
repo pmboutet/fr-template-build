@@ -11,7 +11,7 @@
 3.  Run `cci flow run dev_org --org dev` to deploy this project.
 4.  Run `cci flow run sffr_post_install --org dev` to run robot automations (WARNING currently partially failing)
 4.1 Find in the log the Integration User username ie: integration.user@sffrXXX.org
-5.  Run `cci org browser dev` to open the org in your browser.
+5.  Run ` dev` to open the org in your browser.
 5.1  Activate the Euro Currency
    Setup, Company Information, Edit, currency Locale = French(France) - EUR, Save
 5.2.  Activate the French Translation
@@ -31,6 +31,7 @@
 9.  Einstein Analytics - enable Backup Model
    From Einstein for Nonprofit App, enable Backup models
 10. Manually schedule Group Bank Automation
+   Add a new flow scheduled every 60' calling flow: SFFR Process - Aggregate Payment Group
 
 Got some manual update from source files and or additional transalations?
 1. Run `cci task run deploy --path force-app --org dev`
@@ -64,6 +65,8 @@ To get/list your data changes?
   7. Add Missing Permission Set to Fabrice
   8. Findock Setup both service + remote site settings
   9. Einstein Analytics - enable Backup Model
+  10. Manually schedule Group Bank Automation
+   Add a new flow scheduled every 60' calling flow: SFFR Process - Aggregate Payment Group
 
 Incremental update to a production org
 1. Run `cci task run deploy --path force-app --org`
